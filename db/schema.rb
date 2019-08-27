@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_27_121318) do
+ActiveRecord::Schema.define(version: 2019_08_27_131744) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,6 +33,17 @@ ActiveRecord::Schema.define(version: 2019_08_27_121318) do
     t.index ["user_id"], name: "index_events_on_user_id"
   end
 
+  create_table "suggestions", force: :cascade do |t|
+    t.string "value"
+    t.datetime "start_date"
+    t.datetime "end_date"
+    t.boolean "selected", default: false
+    t.bigint "topic_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["topic_id"], name: "index_suggestions_on_topic_id"
+  end
+
   create_table "surveys", force: :cascade do |t|
     t.string "name"
     t.datetime "deadline"
@@ -40,6 +51,14 @@ ActiveRecord::Schema.define(version: 2019_08_27_121318) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["event_id"], name: "index_surveys_on_event_id"
+  end
+
+  create_table "topics", force: :cascade do |t|
+    t.string "name"
+    t.bigint "survey_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["survey_id"], name: "index_topics_on_survey_id"
   end
 
   create_table "user_events", force: :cascade do |t|
@@ -69,7 +88,9 @@ ActiveRecord::Schema.define(version: 2019_08_27_121318) do
   end
 
   add_foreign_key "events", "users"
+  add_foreign_key "suggestions", "topics"
   add_foreign_key "surveys", "events"
+  add_foreign_key "topics", "surveys"
   add_foreign_key "user_events", "events"
   add_foreign_key "user_events", "users"
 end
