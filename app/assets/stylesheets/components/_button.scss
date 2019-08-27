@@ -63,13 +63,13 @@
       border-radius: 50%;
     }
 
-    .switch-text:before {
-      content: "Non";
-    }
+    // .switch-text:before {
+    //   content: "Non";
+    // }
 
-    .switch-text:after {
-      content: "Oui";
-    }
+    // .switch-text:after {
+    //   content: "Oui";
+    // }
 
 /* Toggles-list Date-Lieu-Budget/pers */
 
@@ -79,5 +79,12 @@
 
     .toggles-list div {
       flex-grow: 1;
+    }
+
+    .add-pic-btn {
+      position:relative;
+      height: 30px;
+      display: flex;
+      margin: auto;
     }
 
