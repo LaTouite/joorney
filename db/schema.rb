@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_27_110039) do
+ActiveRecord::Schema.define(version: 2019_08_27_121318) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 2019_08_27_110039) do
     t.datetime "end_date"
     t.string "destination"
     t.integer "budget_per_participant_cents", default: 0, null: false
-    t.string "budget_per_participant_currency", default: "USD", null: false
+    t.string "budget_per_participant_currency", default: "EUR", null: false
     t.string "photo"
     t.datetime "deadline"
     t.string "token"
@@ -31,6 +31,15 @@ ActiveRecord::Schema.define(version: 2019_08_27_110039) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_events_on_user_id"
+  end
+
+  create_table "surveys", force: :cascade do |t|
+    t.string "name"
+    t.datetime "deadline"
+    t.bigint "event_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["event_id"], name: "index_surveys_on_event_id"
   end
 
   create_table "user_events", force: :cascade do |t|
@@ -60,6 +69,7 @@ ActiveRecord::Schema.define(version: 2019_08_27_110039) do
   end
 
   add_foreign_key "events", "users"
+  add_foreign_key "surveys", "events"
   add_foreign_key "user_events", "events"
   add_foreign_key "user_events", "users"
 end
