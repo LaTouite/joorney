@@ -9,7 +9,7 @@ class EventsController < ApplicationController
   def create
     @event = Event.new(params_event)
     @event.save
-    redirect_to event_path(@event)
+    # redirect_to event_path(@event)
     authorize @event
   end
 
