@@ -18,7 +18,7 @@
         <div class="col-8">
           <%= simple_form_for [@event] do |f| %>
             <%= f.input :name, label: "Nom de l'évènement" %>
-            <%= f.input :event_category, label: "Type", collection: ["EVJF", "EVG", "Anniversaire", "Weekend", "Autre"] %>
+            <%= f.input :event_category, label: "Type", collection: Event::EVENT_CATEGORIES %>
             <p> Connaissez-vous déjà ...</p>
             <div class="toggles-list">
               <div class="toggle-date">
