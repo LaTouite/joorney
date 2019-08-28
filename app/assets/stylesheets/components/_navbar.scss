@@ -10,3 +10,53 @@
 .navbar-lewagon .navbar-brand img {
   width: 40px;
 }
+
+
+
+
+.navbar-joorney {
+  display: flex;
+  height: 70px;
+  // margin-bottom: 100px;
+}
+
+.navbar-joorney .onglets {
+  display: flex;
+  flex-grow: 1;
+  width: 30vw;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar-joorney .onglets p {
+  margin-left: 30px;
+  margin-right: 30px;
+  margin-bottom: 0px;
+}
+
+.navbar-joorney .logo {
+  width: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar-joorney .dark-part {
+  width: 300px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  justify-content: space-between;
+  padding: 0 32px;
+}
+
+// .navbar-joorney .dark-part p {
+.navbar-joorney .dark-part p {
+  margin-bottom: 0px;
+}
+
+.navbar-joorney .logo p {
+  margin-bottom: 0px;
+}
+
+
