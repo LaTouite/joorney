@@ -16,6 +16,11 @@ class EventsController < ApplicationController
     authorize @event
   end
 
+  def show
+    @event = Event.find(params[:id])
+    authorize @event
+  end
+
   def invite
     @event = Event.find(params[:id])
     authorize :event, :invite?
