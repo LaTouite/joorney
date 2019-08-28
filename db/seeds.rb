@@ -45,6 +45,13 @@ events_attributes =
   token: "123456",
   user_id: User.last[:id],
   destination: "Lille"
+},
+{
+name: "EVG de Nico",
+event_category: "EVG",
+token: "6789",
+destination: "Prague",
+user_id: User.last[:id]
 }]
 
 Event.create!(events_attributes)
