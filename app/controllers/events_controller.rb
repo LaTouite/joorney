@@ -3,6 +3,7 @@ class EventsController < ApplicationController
   def new
     @event = Event.new
     authorize @event
+    @survey = Survey.new
   end
 
   def create

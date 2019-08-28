@@ -11,4 +11,5 @@ class Event < ApplicationRecord
  validates :token, presence: true, uniqueness: true
 
   mount_uploader :photo, PhotoUploader
+
 end
