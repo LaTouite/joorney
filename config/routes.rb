@@ -8,9 +8,18 @@ Rails.application.routes.draw do
     member do
       get 'invite'
     end
+    
+    resources :user_events do
+      member do
+        post :send_invitation
+      end
+    end
+    
   end
 
   resources :surveys, only: [:show] do
     resources :topics, only: [:create]
   end
 end
+
+
