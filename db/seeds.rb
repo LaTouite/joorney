@@ -7,6 +7,8 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 puts 'Cleaning database...'
 
+#Topics
+Topic.destroy_all
 #Surveys
 Survey.destroy_all
 #Events
