@@ -8,7 +8,7 @@ class Event < ApplicationRecord
 
  validates :name, presence: true
  validates :event_category, presence: true, inclusion: { in: EVENT_CATEGORIES }
- validates :token, presence: true, uniqueness: true
+ #validates :token, presence: true, uniqueness: true
 
   mount_uploader :photo, PhotoUploader
 

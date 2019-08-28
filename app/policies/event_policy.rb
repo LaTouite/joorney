@@ -10,6 +10,10 @@ class EventPolicy < ApplicationPolicy
   def show?
     return true
   end
+  
+  def invite?
+    true
+  end
 
   class Scope < Scope
     def resolve
