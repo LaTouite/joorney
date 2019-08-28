@@ -18,7 +18,7 @@
         </li>
         <li>
           <i class="fas fa-home"></i>
-          <%= link_to "Logement", new_event_path, class: "tab-underlined" %>
+          <%= link_to "Logement", accomodation_event_path(@event), class: "tab-underlined" %>
         </li>
         <li>
           <i class="fas fa-snowboarding"></i>
@@ -53,7 +53,7 @@
           <p>Date</p>
           <div class="db-info-detail-value with-border-right">
             <%if @event.start_date? %>
-            <h2><%= @event.start_date.strftime("%d/%m/%Y") %> - <%= @event.end_date.strftime("%d/%m/%Y") %></h2>
+            <h2><%= @event.start_date.strftime("%d/%m/%F") %> - <%= @event.end_date.strftime("%d/%m/%Y") %></h2>
             <% else %>
             <h2>?</h2>
             <%end%>
