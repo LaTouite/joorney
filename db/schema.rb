@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_27_131744) do
+ActiveRecord::Schema.define(version: 2019_08_28_204908) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,8 +19,8 @@ ActiveRecord::Schema.define(version: 2019_08_27_131744) do
     t.string "name"
     t.string "event_category"
     t.string "thematics", array: true
-    t.datetime "start_date"
-    t.datetime "end_date"
+    t.date "start_date"
+    t.date "end_date"
     t.string "destination"
     t.integer "budget_per_participant_cents", default: 0, null: false
     t.string "budget_per_participant_currency", default: "EUR", null: false
