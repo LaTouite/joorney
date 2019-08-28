@@ -3,12 +3,17 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :events do
-    resources :surveys
+    resources :surveys, only: [:new, :create, :edit, :update]
+    member do
+      get 'invite'
+    end
+    
     resources :user_events do
       member do
         post :send_invitation
       end
     end
+    
   end
 end
 
