@@ -4,13 +4,6 @@ class SurveysController < ApplicationController
     @event = Event.find(params[:event_id])
     @survey = Survey.new
     authorize @survey
-    # TOPIC = [@event.destination, @event.start_date, @event.end_date, @event.budget_per_participant_cents]
-    # TOPIC.each do |topic|
-    #   @topics = []
-    #   if topic == nil
-    #     @topics << Topic.new
-    #   end
-    # end
   end
 
   def create
