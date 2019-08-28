@@ -9,26 +9,106 @@
     <a class="nav-link" id="guests-tab" data-toggle="tab" href="#guests" role="tab" aria-controls="guests" aria-selected="false">Inviter les participants (optionnel)</a>
   </li>
 </ul>
-
 <div class="tab-content" id="myTabContent">
-
-  <div class="tab-pane fade show active" id="infos" role="tabpanel" aria-labelledby="infos-tab">Les infos générales de votre évènement :
-
-
-
-
-
-
+  <!-- ONGLET 1 : FIN CRÉA EVENT -->
+  <!-- ONGLET 2 : DÉBUT DU FORMULAIRE -->
+  <div class="tab-pane fade show active" id="infos" role="tabpanel" aria-labelledby="infos-tab">
+    <div class="row tab-pane fade" id="survey" role="tabpanel" aria-labelledby="survey-tab">
+      <div class='col-8'>
+        <div>
+          <p>Les infos générales de votre évènement :</p>
+          <p>1. Préciser les champs que vous souhaitez inclure dans le sondage</p>
+          <p>2. Limiter le nombre de choix en proposant vos idées</p>
+        </div>
+        <%= simple_form_for [@event] do |f| %>
+        <!-- CHAMP 1 début -->
+        <div>
+          <div>
+            <h1>Champ 1</h1>
+            <h2>Disponibilités</h2>
+          </div>
+          <!-- DATES début -->
+          <div class='survey-question'>
+            <%= f.input :start_date, label: "Date de début", required: false, input_html: {class: "datepicker"} %>
+            <%= f.input :end_date, label: "Date de fin", required: false, input_html: {class: "datepicker"} %>
+            <i class="fas fa-plus-circle"></i>
+          </div>
+          <!-- DATES fin -->
+        </div>
+        <!-- CHAMP 1 fin -->
+        <!-- CHAMP 2 début -->
+        <div>
+          <h1>Champ 2</h1>
+          <h2>Budget max/participant</h2>
+          <%= f.input :budget_per_participant_cents, as: :range, class: 'range', collection: 0..10 %>
+          <div id='range-value'></div>
+        </div>
+        <!-- CHAMP 2 fin -->
+        <!-- CHAMP 3 début -->
+        <div>
+          <h1>Champ 3</h1>
+          <h2>Destination</h2>
+          <div class='survey-question'>
+            <%= f.input :destination %>
+            <i class="fas fa-plus-circle"></i>
+          </div>
+        </div>
+        <!-- CHAMP 3 fin -->
+        <!-- CHAMP 4 début -->
+        <div>
+          <h1>Champ 4</h1>
+          <h2>Thématique</h2>
+          <div class='survey-question'>
+            <%= f.input :thematics, collection: Event::THEMATICS %>
+            <i class="fas fa-plus-circle"></i>
+          </div>
+        </div>
+        <!-- CHAMP 4 fin -->
+        <!-- SUBMIT BTN début -->
+        <%= link_to "Valider" %>
+        <%= link_to "Réaliser cette étape plus tard" %>
+        <p>Pssss: les participants pourront remplir le sondage une fois qu’ils auront rejoint le projet. (étape suivante)</p>
+        <!-- SUBMIT BTN fin -->
+      </div>
+              <% end %>
+      <!-- ONGLET 2 : FIN DE LA PARTIE GAUCHE DU FORMULAIRE -->
+      <!-- ONGLET 2 : DÉBUT DE LA PARTIE DROITE DU FORMULAIRE -->
+      <div class='col-4 dynamic-survey'>
+        <div>
+          <h1>Sondage<span id='survey_name'></span></h1>
+          <p>Informations à préciser pour l’événement.Cela m’aidera à proposer une organisation qui contente tout le monde ;)</p>
+        </div>
+        <div>
+          <h1>Disponibilités</h1>
+          <div>
+            <div>DIV<div>
+            <i class="far fa-thumbs-up thumb"></i>
+          </div>
+        </div>
+        <div>
+          <h1>Budget max/participant</h1>
+          <div>DIV<div>
+        </div>
+        <div>
+          <h1>Destination<span> (un seul choix possible)</span></h1>
+          <div>
+            <div>DIV<div>
+            <i class="far fa-thumbs-up thumb"></i>
+          </div>
+        </div>
+        <div>
+          <h1>Thématiques</h1>
+          <div>
+            <div>DIV<div>
+            <i class="far fa-thumbs-up thumb"></i>
+          </div>
+        </div>
+      </div>
+      <!-- ONGLET 2 : FIN DE LA PARTIE DROITE DU FORMULAIRE -->
+      <!-- ONGLET 2 : FIN DU FORMULAIRE -->
+    </div>
   </div>
-
-  <div class="tab-pane fade" id="survey" role="tabpanel" aria-labelledby="survey-tab">Créer un sondage pour choisir avec tous les participants les infos générales
-
-
-
-
-
-  </div>
-
+  <!-- ONGLET 3 (début) -->
   <div class="tab-pane fade" id="guests" role="tabpanel" aria-labelledby="guests-tab">J'invite mes participants
 
 

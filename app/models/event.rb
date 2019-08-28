@@ -3,7 +3,10 @@ class Event < ApplicationRecord
   has_many :userevents
   has_many :surveys
 
+  EVENT_CATEGORIES = ["EVJF", "EVG", "Anniversaire", "Weekend", "Autre"]
+  THEMATICS = ["Culture", "Sports extrêmes", "Sensation", "Gastronomie"]
+
   validates :name, presence: true
-  validates :event_category, presence: true, inclusion: { in: ["EVJF", "EVG", "Anniversaire", "Weekend", "Autre"] }
+  validates :event_category, presence: true, inclusion: { in: EVENT_CATEGORIES }
   validates :token, presence: true, uniqueness: true
 end
