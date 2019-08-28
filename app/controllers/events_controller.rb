@@ -6,6 +6,7 @@ class EventsController < ApplicationController
   end
 
   def create
+    raise
     @event = Event.new(params_event)
     @event.user = current_user
     if @event.save

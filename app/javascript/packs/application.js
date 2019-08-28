@@ -1,4 +1,6 @@
 import "bootstrap";
+// require("chartkick")
+// require("chart.js")
 
 // Ne fonctionne pas pour la date : à mon avis parce que id de date divisé en plusieurs dans simple form avec année, mois,...
 

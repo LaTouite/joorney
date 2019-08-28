@@ -3,42 +3,144 @@
 </div>
 
 <div class="container">
+
   <div class="row">
 
     <div class="col-8">
-      <div id="dashboard-nav">
-      </div>
+      <ul id="dashboard-nav" class="list-inline tabs-underlined">
+        <li>
+          <i class="fas fa-tachometer-alt"></i>
+          <%= link_to "Dashboard", event_path(@event), class: "tab-underlined active" %>
+        </li>
+        <li>
+          <i class="fas fa-poll-h"></i>
+          <%= link_to "Sondage", new_event_path, class: "tab-underlined" %>
+        </li>
+        <li>
+          <i class="fas fa-home"></i>
+          <%= link_to "Logement", new_event_path, class: "tab-underlined" %>
+        </li>
+        <li>
+          <i class="fas fa-snowboarding"></i>
+          <%= link_to "Activités", new_event_path, class: "tab-underlined" %>
+        </li>
+        <li>
+          <i class="fas fa-snowboarding"></i>
+          <%= link_to "Transport", new_event_path, class: "tab-underlined" %>
+        </li>
+        <li>
+          <i class="fas fa-piggy-bank"></i>
+          <%= link_to "Cagnotte", new_event_path, class: "tab-underlined" %>
+        </li>
+        <li>
+          <i class="far fa-calendar-alt"></i>
+          <%= link_to "Agenda", new_event_path, class: "tab-underlined" %>
+        </li>
+      </ul>
+
       <div id="dashboard-main-info" class="dashboard-card">
         <div class="db-info-detail">
-          <h5>Budget/pers</h5>
+          <p>Budget/pers</p>
+          <div class="db-info-detail-value with-border-right">
+            <%if @event.budget_per_participant_cents? %>
+            <h2><%= @event.budget_per_participant_cents * 100 %></h2>
+            <% else %>
+            <h2>?</h2>
+            <%end%>
+          </div>
         </div>
         <div class="db-info-detail">
-          <h5>Date</h5>
+          <p>Date</p>
+          <div class="db-info-detail-value with-border-right">
+            <%if @event.start_date? %>
+            <h2><%= @event.start_date.strftime("%d/%m/%Y") %> - <%= @event.end_date.strftime("%d/%m/%Y") %></h2>
+            <% else %>
+            <h2>?</h2>
+            <%end%>
+          </div>
         </div>
         <div class="db-info-detail">
-          <h5>Lieu</h5>
+          <p>Lieu</p>
+          <div class="db-info-detail-value">
+            <%if @event.destination? %>
+            <h2><%= @event.destination %></h2>
+            <% else %>
+            <h2>?</h2>
+            <%end%>
+          </div>
         </div>
       </div>
+
       <div id="dashboard-progression" class="dashboard-card">
+        <a id="dashboard-progression-pay" href=#>
+        Payer la totalité
+        </a>
+        <h4>Progression</h4>
+        <div id="db-progression-details">
+          <div class="db-progression-detail">
+            <i class="fas fa-circle"></i>
+            <p>Sondage</p>
+          </div>
+          <div class="db-progression-detail">
+            <i class="fas fa-circle"></i>
+            <p>Inviter <br>les<br>participants</p>
+          </div>
+          <div class="db-progression-detail">
+            <i class="fas fa-circle"></i>
+            <p>Logement</p>
+          </div>
+          <div class="db-progression-detail">
+            <i class="fas fa-circle"></i>
+            <p>Activités</p>
+          </div>
+          <div class="db-progression-detail">
+            <i class="fas fa-circle"></i>
+            <p>Transport</p>
+          </div>
+          <div class="db-progression-detail">
+            <i class="fas fa-circle"></i>
+            <p>Cagnotte</p>
+          </div>
+          <div class="db-progression-detail">
+            <i class="fas fa-circle"></i>
+            <p>Agenda</p>
+          </div>
+        </div>
       </div>
+
       <div id="dashboard-budget">
         <div id="dashboard-budget-tot" class="dashboard-card">
+          <h4>Budget total</h4>
         </div>
         <div id="dashboard-costs" class="dashboard-card">
+          <h4>Répartition des coûts</h4>
+          <div class="db-costs-chart">
+            <i class="fas fa-chart-pie"></i>
+          </div>
+          <div class="db-costs-legend">
+
+          </div>
         </div>
       </div>
       <div id="settings" class="dashboard-card">
-        <div id="settings-survey">
-          <p>Créer un sondage</p>
-        </div>
-        <div id="settings-guests">
-          <p>Gérer la liste des participants</p>
-        </div>
-        <div id="settings-tips">
-          <p>Voir nos conseils</p>
-        </div>
-        <div id="settings-new-event">
-          <p>Créer un autre projet</p>
+        <h4>Et plus encore</h4>
+        <div id="settings-details">
+          <div class="settings-detail">
+            <i class="fas fa-poll-h"></i>
+            <p>Créer un sondage</p>
+          </div>
+          <div class="settings-detail">
+            <i class="fas fa-user-friends"></i>
+            <p>Gérer la liste des participants</p>
+          </div>
+          <div class="settings-detail">
+            <i class="fas fa-lightbulb"></i>
+            <p>Voir nos conseils</p>
+          </div>
+          <div class="settings-detail">
+            <i class="fas fa-plus-circle"></i>
+            <p>Créer un autre projet</p>
+          </div>
         </div>
       </div>
     </div>

@@ -7,6 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 puts 'Cleaning database...'
 
+Event.destroy_all
 #Users
 User.destroy_all
 
@@ -28,9 +29,18 @@ puts 'Creating events...'
 
 events_attributes =
 [{
-name: "EVG de Bernadette",
+name: "EVJF de Bernadette",
 event_category: "EVJF",
 token: "12345",
+user_id: User.last[:id]
+}]
+
+events_attributes =
+[{
+name: "EVG de Nico",
+event_category: "EVG",
+token: "6789",
+destination: "Prague",
 user_id: User.last[:id]
 }]
 
