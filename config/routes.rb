@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'topics/create'
   devise_for :users
   root to: 'pages#home'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
@@ -7,5 +8,9 @@ Rails.application.routes.draw do
     member do
       get 'invite'
     end
+  end
+
+  resources :surveys, only: [:show] do
+    resources :topics, only: [:create]
   end
 end

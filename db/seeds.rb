@@ -7,8 +7,12 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 puts 'Cleaning database...'
 
+#Surveys
+Survey.destroy_all
+#Events
 Event.destroy_all
-#Users
+#Users (Les Users doivent être détruits en dernier,
+#car un Event ne peut exister sans User)
 User.destroy_all
 
 puts 'Creating users...'
@@ -25,18 +29,24 @@ User.create!(users_attributes)
 
 puts 'Users created !'
 
+
 puts 'Creating events...'
 
 events_attributes =
 [{
-name: "EVJF de Bernadette",
-event_category: "EVJF",
-token: "12345",
-user_id: User.last[:id]
-}]
-
-events_attributes =
-[{
+  name: "EVJF de Bernadette",
+  event_category: "EVJF",
+  token: "12345",
+  user_id: User.last[:id]
+},
+{
+  name: "EVG de Jean-Mimi",
+  event_category: "EVG",
+  token: "123456",
+  user_id: User.last[:id],
+  destination: "Lille"
+},
+{
 name: "EVG de Nico",
 event_category: "EVG",
 token: "6789",

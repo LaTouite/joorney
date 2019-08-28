@@ -1,6 +1,23 @@
+.champs {
+  display: flex;
+}
+
+.champ_nb {
+  margin-right: 15px;
+}
+
 .survey-question {
-  display : flex;
-  justify-content: flex-start;
+}
+
+
+
+.plus {
+}
+
+.submit-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .dynamic-survey {
