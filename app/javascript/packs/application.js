@@ -56,21 +56,30 @@ if (document.querySelector("#checkbox-toggle-survey-budget")) {
 
 // Faire apparaître le résultat de l'input range
 // lorsque le curseur se déplace
-var slider = document.querySelector(".range");
-var output = document.querySelector("#range-value");
-output.innerHTML = slider.value; // Display the default slider value
+const range = () => {
+  const slider = document.querySelector(".range");
+  const output = document.querySelector("#range-value");
+  output.innerHTML = slider.value; // Display the default slider value
 
-// Update the current slider value (each time you drag the slider handle)
-slider.oninput = function() {
-  output.innerHTML = this.value;
+  // Update the current slider value (each time you drag the slider handle)
+  slider.oninput = function() {
+    output.innerHTML = this.value;
+  }
 }
+if (document.querySelector('.range')) { range();}
 
 // POUCE change de couleur au clic
 const thumbUp = () => {
   const thumb = document.querySelector('.far');
 
   thumb.addEventListener("click", (event) => {
-    ((event.currentTarget.classList.toggle("fas")) && (event.currentTarget.classList.toggle("far")));
+    if (event.currentTarget.classList.contains('far')) {
+      event.currentTarget.classList.remove("far");
+      event.currentTarget.classList.add("fas");
+    } else {
+      event.currentTarget.classList.remove("fas");
+      event.currentTarget.classList.add("far");
+    }
   });
 }
 
@@ -78,4 +87,20 @@ if (document.querySelector('.far')) { thumbUp();}
 // FIN POUCE
 
 // clic sur le "+" de survey (dates)
-// A FAIRE
+const plus = () => {
+  const plus = document.querySelector('.plus');
+  plus.addEventListener("click", (event) => {
+    plus.insertAdjacentHTML('beforebegin', '</br><span>choix 2</span>');
+  });
+}
+
+if (document.querySelector('.plus')) { plus();}
+
+// const plus = () => {
+//   const plus = document.querySelectorAll('.plus');
+//   plus.forEach.addEventListener("click", (event) => {
+//     plus.insertAdjacentHTML('beforebegin', '</br><span>choix 2</span>');
+//   });
+// }
+
+// if (document.querySelector('.far')) { plus();}
