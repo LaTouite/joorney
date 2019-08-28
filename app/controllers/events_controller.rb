@@ -13,6 +13,11 @@ class EventsController < ApplicationController
     authorize @event
   end
 
+  def show
+    @event = Event.find(params[:id])
+    authorize @event
+  end
+
   private
 
   def params_event
