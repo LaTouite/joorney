@@ -2,87 +2,106 @@
 <div class='m-4'>
   <div class='row'>
     <div class='col-8'>
-      <div>
-        <p>Les infos générales de votre évènement :</p>
-        <p>1. Préciser les champs que vous souhaitez inclure dans le sondage</p>
-        <p>2. Limiter le nombre de choix en proposant vos idées</p>
+      <div class='mb-5'>
+        <h4>1. Préciser les champs que vous souhaitez inclure dans le sondage</h4>
+        <h4>2. Limiter le nombre de choix en proposant vos idées</h4>
       </div>
       <%= simple_form_for [@event, @survey] do |f| %>
       <!-- CHAMP 1 début -->
-      <div>
-        <div>
-          <h1>Champ 1</h1>
-          <h2>Disponibilités</h2>
-        </div>
-        <!-- DATES début -->
-        <div class='survey-question'>
-          <%#= f.input :start_date, label: "Date de début", required: false, input_html: {class: "datepicker"} %>
-          <%#= f.input :end_date, label: "Date de fin", required: false, input_html: {class: "datepicker"} %>
-          <i class="fas fa-plus-circle"></i>
-        </div>
+      <% if @event.start_date == nil %>
+        <div class='mb-5'>
+          <div class='champs'>
+            <h4 class='champ_nb'>Champ 1</h4>
+            <h4>Disponibilités</h4>
+          </div>
+          <!-- DATES début -->
+          <div class='survey-question'>
+            <%#= f.input :start_date, label: "Date de début", required: false, input_html: {class: "datepicker"} %>
+            <%#= f.input :end_date, label: "Date de fin", required: false, input_html: {class: "datepicker"} %>
+            <span>choix 1</span>
+            <i class="fas fa-plus-circle plus"></i>
+          </div>
         <!-- DATES fin -->
-      </div>
+        </div>
+      <% end %>
       <!-- CHAMP 1 fin -->
       <!-- CHAMP 2 début -->
-      <div>
-        <h1>Champ 2</h1>
-        <h2>Budget max/participant</h2>
-      </div>
+      <% if @event.budget_per_participant_cents == 0 %>
+        <div class='mb-5'>
+          <div class='champs'>
+            <h4 class='champ_nb'>Champ 2</h4>
+            <h4>Budget max/participant</h4>
+          </div>
+          <p>Chaque participant préciser ason budget<p>
+        </div>
+      <% end %>
       <!-- CHAMP 2 fin -->
       <!-- CHAMP 3 début -->
-      <div>
-        <h1>Champ 3</h1>
-        <h2>Destination</h2>
-        <div class='survey-question'>
-          <%#= f.input :destination %>
-          <i class="fas fa-plus-circle"></i>
+      <% if @event.destination == nil %>
+        <div class='mb-5'>
+          <div class= 'champs'>
+            <h4 class='champ_nb'>Champ 3</h4>
+            <h4>Destination</h4>
+          </div>
+          <div class='survey-question'>
+            <%#= f.input :destination %>
+            <span>choix 1</span>
+            <i class="fas fa-plus-circle plus"></i>
+          </div>
         </div>
-      </div>
+      <% end %>
       <!-- CHAMP 3 fin -->
       <!-- CHAMP 4 début -->
-      <div>
-        <h1>Champ 4</h1>
-        <h2>Thématique</h2>
+      <% if @event.thematics == nil %>
+      <div class='mb-5'>
+        <div class='champs'>
+          <h4 class='champ_nb'>Champ 4</h4>
+          <h4>Thématique</h4>
+        </div>
         <div class='survey-question'>
           <%#= f.input :thematics, collection: Event::THEMATICS %>
-          <i class="fas fa-plus-circle"></i>
+          <span>choix 1</span>
+          <i class="fas fa-plus-circle plus"></i>
         </div>
       </div>
+      <% end %>
       <!-- CHAMP 4 fin -->
       <!-- SUBMIT BTN début -->
-      <%= link_to "Valider" %>
-      <%= link_to "Réaliser cette étape plus tard" %>
-      <p>Pssss: les participants pourront remplir le sondage une fois qu’ils auront rejoint le projet. (étape suivante)</p>
+      <div class='submit-area mb-5'>
+        <%= f.submit "Valider", class: 'btn btn-primary' %>
+        <div><%= link_to "Réaliser cette étape plus tard" %></div>
+      </div>
       <!-- SUBMIT BTN fin -->
+      <p>Pssss: les participants pourront remplir le sondage une fois qu’ils auront rejoint le projet. (étape suivante)</p>
     </div>
     <!-- ONGLET 2 : FIN DE LA PARTIE GAUCHE DU FORMULAIRE -->
     <!-- ONGLET 2 : DÉBUT DE LA PARTIE DROITE DU FORMULAIRE -->
     <div class='col-4 dynamic-survey'>
       <div>
-        <h1>Sondage<span id='survey_name'></span></h1>
+        <h4>Sondage<span id='survey_name'></span></h4>
         <p>Informations à préciser pour l’événement.Cela m’aidera à proposer une organisation qui contente tout le monde ;)</p>
       </div>
       <div>
-        <h1>Disponibilités</h1>
+        <h4>Disponibilités</h4>
         <div>
           <div>DIV</div>
           <i class="far fa-thumbs-up thumb"></i>
         </div>
       </div>
       <div>
-        <h1>Budget max/participant</h1>
+        <h4>Budget max/participant</h4>
         <%#= f.input :budget_per_participant_cents, as: :range, class: 'range', collection: 0..10 %>
         <div id='range-value'></div>
       </div>
       <div>
-        <h1>Destination<span> (un seul choix possible)</span></h1>
+        <h4>Destination<span> (un seul choix possible)</span></h4>
         <div>
           <div>DIV</div>
           <i class="far fa-thumbs-up thumb"></i>
         </div>
       </div>
       <div>
-        <h1>Thématiques</h1>
+        <h4>Thématiques</h4>
         <div>
           <div>DIV</div>
           <i class="far fa-thumbs-up thumb"></i>
@@ -91,7 +110,7 @@
       <% end %>
     </div>
     <!-- ONGLET 2 : FIN DE LA PARTIE DROITE DU FORMULAIRE -->
-    <!-- ONGLET 2 : FIN DU FORMULAIRE -->
   </div>
+  <!-- ONGLET 2 : FIN DU FORMULAIRE -->
 </div>
 

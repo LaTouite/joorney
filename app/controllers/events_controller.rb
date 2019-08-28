@@ -9,7 +9,10 @@ class EventsController < ApplicationController
     @event = Event.new(params_event)
     @event.user = current_user
     if @event.save
-      redirect_to new_event_survey_path(@event)
+      survey = Survey.new(name: @event.name)
+      survey.event = @event
+      survey.save
+      redirect_to survey_path(survey)
     else
       render :new
     end
