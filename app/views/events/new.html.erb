@@ -10,6 +10,76 @@
   </li>
 </ul>
 <div class="tab-content" id="myTabContent">
+
+  <div class="tab-pane fade show active" id="infos" role="tabpanel" aria-labelledby="infos-tab">
+    <div class="container">
+      <div class="row">
+        <div class="col-8">
+          <%= simple_form_for [@event] do |f| %>
+            <%= f.input :name, label: "Nom de l'évènement" %>
+            <%= f.input :event_category, label: "Type", collection: Event::EVENT_CATEGORIES %>
+            <p> Connaissez-vous déjà ...</p>
+            <div class="toggles-list">
+              <div class="toggle-date">
+                La date
+                <label class="switch">
+                  <input type="checkbox" id="checkbox-toggle-survey-date">
+                  <span class="slider round switch-text"></span>
+                </label>
+                <div id="event_start_date_full" class="d-none" disabled >
+                  <%= f.input :start_date, label: "Date de début", placeholder: 'Date de début' %>
+                </div>
+                <div id="event_end_date_full" class="d-none" disabled>
+                  <%= f.input :end_date, label: "Date de fin", placeholder: 'Date de fin' %>
+                </div>
+              </div>
+              <div class="toggle-place">
+                Le lieu
+                <label class="switch">
+                  <input type="checkbox" id="checkbox-toggle-survey-place">
+                  <span class="slider round"></span>
+                </label>
+                <%= f.input :destination, id: "event_destination", :input_html => { :class => "d-none", disabled: :true }, :label_html => { :class => "d-none" }, placeholder: 'Votre destination' %>
+              </div>
+              <div class="toggle-budget">
+                Le budget/pers
+                <label class="switch">
+                  <input type="checkbox" id="checkbox-toggle-survey-budget">
+                  <span class="slider round"></span>
+                </label>
+                <%= f.input :budget_per_participant_cents, id: "event_budget_per_participant_cents", :input_html => { :class => "d-none", disabled: :true }, :label_html => { :class => "d-none" }, placeholder: 'Votre budget max par pers.' %>
+              </div>
+            </div>
+
+          <%= f.submit "Créer mon évènement", class: "btn btn-primary" %>
+
+        </div>
+        <div class="col-4">
+          <div class="add-picture" style="background-image: url('https://images.unsplash.com/photo-1532498551838-b7a1cfac622e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2700&q=80'); height: 80%; width: 80%;">
+            <label class="btn btn-primary add-pic-btn">
+            Ajouter une photo
+              <span style="display:none;">
+                <%= f.input :photo, :label_html => { :class => "d-none" } %>
+                <%= f.input :photo_cache, as: :hidden %>
+              </span>
+            </label>
+          </div>
+        </div>
+        <% end %>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="tab-pane fade" id="survey" role="tabpanel" aria-labelledby="survey-tab">Créer un sondage pour choisir avec tous les participants les infos générales
+
+
+
+
+
+
+  </div>
+
   <!-- ONGLET 1 : FIN CRÉA EVENT -->
   <!-- ONGLET 2 : DÉBUT DU FORMULAIRE -->
   <div class="tab-pane fade show active" id="infos" role="tabpanel" aria-labelledby="infos-tab">

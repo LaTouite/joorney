@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 2019_08_27_131744) do
     t.datetime "end_date"
     t.string "destination"
     t.integer "budget_per_participant_cents", default: 0, null: false
-    t.string "budget_per_participant_currency", default: "EUR", null: false
+    t.string "budget_per_participant_currency", default: "USD", null: false
     t.string "photo"
     t.datetime "deadline"
     t.string "token"
