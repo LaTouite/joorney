@@ -70,7 +70,7 @@ const thumbUp = () => {
   const thumb = document.querySelector('.far');
 
   thumb.addEventListener("click", (event) => {
-    ((event.currentTarget.classList.toggle("far")) && (event.currentTarget.classList.toggle("fas")));
+    ((event.currentTarget.classList.toggle("fas")) && (event.currentTarget.classList.toggle("far")));
   });
 }
 
