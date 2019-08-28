@@ -4,5 +4,12 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :events do
     resources :surveys
+    resources :user_events do
+      member do
+        post :send_invitation
+      end
+    end
   end
 end
+
+

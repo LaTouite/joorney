@@ -1,6 +1,7 @@
 class EventsController < ApplicationController
 
   def new
+    # raise
     @event = Event.new
     authorize @event
     @survey = Survey.new
