@@ -83,6 +83,9 @@ topics_attributes =
 },
 {
   name: "Date"
+},
+{
+  name: "Thématiques"
 }]
 
 Topic.create!(topics_attributes)
@@ -106,7 +109,7 @@ suggestions_attributes =
   survey_id: Survey.first[:id],
   topic_id: Topic.first[:id]
 }
-,
+#,
 # {
 #   start_date: Date.new(2019,08,26),
 #   survey_id: Survey.first[:id],
