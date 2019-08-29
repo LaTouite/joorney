@@ -11,8 +11,6 @@ puts 'Cleaning database...'
 Choice.destroy_all
 #Suggestions
 Suggestion.destroy_all
-#Topics
-Topic.destroy_all
 #Surveys
 Survey.destroy_all
 #Events
@@ -72,42 +70,20 @@ surveys_attributes =
 Survey.create!(surveys_attributes)
 puts 'Surveys created !'
 
-puts 'Creating topics...'
-
-topics_attributes =
-[{
-  name: "Destination"
-},
-{
-  name: "Budget / participant"
-},
-{
-  name: "Date"
-},
-{
-  name: "Thématiques"
-}]
-
-Topic.create!(topics_attributes)
-puts 'Topics created !'
-
 puts 'Creating suggestions...'
 
 suggestions_attributes =
 [{
   value: "Prague",
-  survey_id: Survey.first[:id],
-  topic_id: Topic.first[:id]
+  survey_id: Survey.first[:id]
 },
 {
   value: "Marseille",
-  survey_id: Survey.first[:id],
-  topic_id: Topic.first[:id]
+  survey_id: Survey.first[:id]
 },
 {
   value: "Lille",
-  survey_id: Survey.first[:id],
-  topic_id: Topic.first[:id]
+  survey_id: Survey.first[:id]
 }
 #,
 # {
