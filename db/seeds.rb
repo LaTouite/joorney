@@ -83,6 +83,9 @@ topics_attributes =
 },
 {
   name: "Date"
+},
+{
+  name: "Thématiques"
 }]
 
 Topic.create!(topics_attributes)
