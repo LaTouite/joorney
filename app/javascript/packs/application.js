@@ -1,8 +1,10 @@
 import "bootstrap";
 // require("chartkick")
 // require("chart.js")
+import flatpickrInit from '../plugins/flatpickr.js';
+import "flatpickr/dist/themes/material_blue.css";
 
-// Ne fonctionne pas pour la date : à mon avis parce que id de date divisé en plusieurs dans simple form avec année, mois,...
+flatpickrInit();
 
 const initToggleDate = () => {
   const toggle_input_date = document.querySelector("#checkbox-toggle-survey-date");
@@ -92,7 +94,8 @@ if (document.querySelector('.far')) { thumbUp();}
 const plus = () => {
   const plus = document.querySelector('.plus');
   plus.addEventListener("click", (event) => {
-    plus.insertAdjacentHTML('beforebegin', '</br><span>choix 2</span>');
+    const j = "choix 2"
+    plus.insertAdjacentHTML('afterend', j );
   });
 }
 
