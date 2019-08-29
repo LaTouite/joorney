@@ -11,3 +11,33 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+h1 {
+  font-size: 40px;
+  font-weight: bold;
+  color: $black;
+}
+
+h2 {
+  font-size: 28px;
+  font-weight: bold;
+  color: $black;
+}
+
+h3 {
+  font-size: 21px;
+  font-weight: bold;
+  color: $black;
+}
+
+h4 {
+  font-size: 18px;
+  font-weight: bold;
+  color: $grey;
+}
+
+p {
+  font-size: 15px;
+  font-weight: normal;
+  color: $light-grey;
+}

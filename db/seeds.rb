@@ -15,6 +15,8 @@ Suggestion.destroy_all
 Topic.destroy_all
 #Surveys
 Survey.destroy_all
+#User_events
+UserEvent.destroy_all
 #Events
 Event.destroy_all
 #Users (Les Users doivent être détruits en dernier,
@@ -106,7 +108,7 @@ suggestions_attributes =
   survey_id: Survey.first[:id],
   topic_id: Topic.first[:id]
 }
-,
+#,
 # {
 #   start_date: Date.new(2019,08,26),
 #   survey_id: Survey.first[:id],

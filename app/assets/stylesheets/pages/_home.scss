@@ -1,1 +1,93 @@
 // Specific CSS for your home-page
+
+.large-banner {
+  // text-align: center;
+  // padding-top: 15vh;
+  display: flex;
+  // flex-direction: column;
+  height: 500px;
+  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), asset-url("background.jpg");
+  background-size: cover;
+  background-position: center;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.large-banner h1 {
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  color: white;
+}
+
+.large-banner p {
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+.button {
+  position: absolute;
+  top: 462px;
+}
+
+.questions {
+  height: 400px;
+  position: relative;
+  width: 100vw;
+  padding-top: 70px;
+}
+
+#quand {
+  left: 350px;
+  position: absolute;
+  transform: rotate(-2deg);
+}
+
+#quoi {
+  position: absolute;
+  left: 1200px;
+  transform: rotate(-1deg);
+}
+
+#budget {
+  position: absolute;
+  top: 200px;
+  left: 550px;
+  transform: rotate(2deg);
+}
+
+#activites {
+  position: absolute;
+  left: 800px;
+  transform: rotate(1deg);
+  top: 120px;
+}
+
+#loger {
+  position: absolute;
+  left: 1200px;
+  top: 170px;
+  transform: rotate(-3deg);
+}
+
+#agenda {
+  position: absolute;
+  top: 250px;
+  left: 900px;
+  transform: rotate(-1deg);
+}
+
+#transport {
+  position: absolute;
+  left: 1200px;
+  top: 210px;
+  transform: rotate(-3deg);
+}
+
+.explanation {
+  height: 400px;
+}
+
+.p-container {
+  width: 1400px;
+  margin: 0 auto;
+}
+
