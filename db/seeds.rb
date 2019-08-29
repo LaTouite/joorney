@@ -35,7 +35,6 @@ User.create!(users_attributes)
 
 puts 'Users created !'
 
-
 puts 'Creating events...'
 
 events_attributes =
@@ -115,8 +114,5 @@ puts 'Surveys created !'
 # ]
 # Suggestion.create!(suggestions_attributes)
 # puts 'Suggestions created !'
-
-
-
 
 puts 'Finished !'
