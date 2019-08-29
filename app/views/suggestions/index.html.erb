@@ -5,16 +5,13 @@
   <div id="suggestions-disponibility">
     <h4>Disponibilités</h4>
     <div id="suggestions-dates">
-      <div class="suggestions-dates-choice">
-        <% %>
-
-      </div>
-      <div class="suggestions-dates-choice">
-
-      </div>
-      <div class="suggestions-dates-choice">
-
-      </div>
+      <% simple_form_for [@suggestion, @choice] do |f| %>
+        <% @suggestions_dates.each do |suggestion| %>
+          <div class="suggestions-dates-choice">
+            <%= f.input <%= suggestion.start_date.strftime("%d/%m/%Y")%> - <%= suggestion.end_date.strftime("%d/%m/%Y")%> %>
+          </div>
+        <%end%>
+      <%end%>
     </div>
   </div>
 
@@ -24,7 +21,15 @@
 
   <div id="suggestions-destination">
     <h4>Destination</h4>
-
+    <div id="suggestions-destinations">
+      <% simple_form_for [@suggestion, @choice] do |f| %>
+        <% @suggestions_destination.each do |suggestion| %>
+          <div class="suggestions-dates-choice">
+            <h5><%= suggestion.value %> <h5>
+          </div>
+        <%end%>
+      <%end%>
+    </div>
   </div>
 
   <div id="suggestions-thématiques">
