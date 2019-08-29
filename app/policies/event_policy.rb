@@ -10,8 +10,12 @@ class EventPolicy < ApplicationPolicy
   def show?
     return true
   end
-  
+
   def invite?
+    true
+  end
+
+  def accomodation?
     true
   end
 

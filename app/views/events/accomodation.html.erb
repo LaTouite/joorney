@@ -1,0 +1,56 @@
+<div id="banner-dashboard">
+
+</div>
+
+<div class="container">
+
+  <div class="row">
+
+    <div class="col-8">
+      <ul id="dashboard-nav" class="list-inline tabs-underlined">
+        <li>
+          <i class="fas fa-tachometer-alt"></i>
+          <%= link_to "Dashboard", event_path(@event), class: "tab-underlined active" %>
+        </li>
+        <li>
+          <i class="fas fa-poll-h"></i>
+          <%= link_to "Sondage", new_event_path, class: "tab-underlined" %>
+        </li>
+        <li>
+          <i class="fas fa-home"></i>
+          <%= link_to "Logement", new_event_path, class: "tab-underlined" %>
+        </li>
+        <li>
+          <i class="fas fa-snowboarding"></i>
+          <%= link_to "Activités", new_event_path, class: "tab-underlined" %>
+        </li>
+        <li>
+          <i class="fas fa-snowboarding"></i>
+          <%= link_to "Transport", new_event_path, class: "tab-underlined" %>
+        </li>
+        <li>
+          <i class="fas fa-piggy-bank"></i>
+          <%= link_to "Cagnotte", new_event_path, class: "tab-underlined" %>
+        </li>
+        <li>
+          <i class="far fa-calendar-alt"></i>
+          <%= link_to "Agenda", new_event_path, class: "tab-underlined" %>
+        </li>
+      </ul>
+    </div>
+
+    <div class="col-4">
+    </div>
+
+  </div>
+
+  <div>
+    <p> Voici des logements adaptés à votre évènement : </p>
+    <p> - Situés à <%= @event.destination %> </p>
+    <p> - Disponibles du <%= %> au <%= %> </p>
+    <p> - Pour <%= @participants.size %> personnes </p>
+    <p> - A moins de <%= %>€ la nuit </p>
+
+    <!-- <a href="<%=@url%>">Aller sur Airbnb</a> -->
+
+  </div>
