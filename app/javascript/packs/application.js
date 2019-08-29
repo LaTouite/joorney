@@ -1,8 +1,10 @@
 import "bootstrap";
 // require("chartkick")
 // require("chart.js")
+import flatpickrInit from '../plugins/flatpickr.js';
+import "flatpickr/dist/themes/material_blue.css";
 
-// Ne fonctionne pas pour la date : à mon avis parce que id de date divisé en plusieurs dans simple form avec année, mois,...
+flatpickrInit();
 
 const initToggleDate = () => {
   const toggle_input_date = document.querySelector("#checkbox-toggle-survey-date");
@@ -90,13 +92,14 @@ if (document.querySelector('.far')) { thumbUp();}
 
 // clic sur le "+" de survey (dates)
 const plus = () => {
-  const plus = document.querySelector('.plus');
+  const plus = document.querySelector('.plusi');
   plus.addEventListener("click", (event) => {
-    plus.insertAdjacentHTML('beforebegin', '</br><span>choix 2</span>');
+    const j = "<div class= 'questions' id='destination-sugg'><span>choix 1</span><%= f.input :value, placeholder: \"Fontainebleau\", input_html: {onchange: 'Rails.fire(this.form, \"submit\")'} %><%= f.input :topic, as: :hidden, input_html: {value: \"Destination\"} %></div>"
+    plus.insertAdjacentHTML('beforebegin', j);
   });
 }
 
-if (document.querySelector('.plus')) { plus();}
+if (document.querySelector('.plusi')) { plus();}
 
 // const plus = () => {
 //   const plus = document.querySelectorAll('.plus');

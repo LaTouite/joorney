@@ -46,8 +46,6 @@ class EventsController < ApplicationController
     authorize @event
   end
 
-
-
   private
 
   def params_event
