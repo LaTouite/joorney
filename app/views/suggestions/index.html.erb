@@ -3,20 +3,37 @@
   <p> A vos votes ! Pour organiser un séjour au top, j'ai besoin de votre avis ! </p>
 
   <div id="suggestions-disponibility">
+    <h4>Disponibilités</h4>
+    <div id="suggestions-dates">
+      <%= simple_form_for @choice do |f| %>
+        <%# @suggestions_dates.each do |suggestion| %>
+          <div class="suggestions-dates-choice">
+            <!-- <%#= f.input <%= suggestion.start_date.strftime("%d/%m/%Y")%> - <%#= suggestion.end_date.strftime("%d/%m/%Y")%>  -->
+           <%= f.association :suggestion, collection: @suggestions_dates, label_method: :start_date, value_method: :id, include_blank: false, as: :check_boxes %>
+           <%= f.submit %>
 
+          </div>
+        <%end%>
+      <%#end%>
+    </div>
   </div>
 
-  <div>
-
+  <div id="suggestions-budget">
+    <h4>Budget max/pers</h4>
   </div>
 
-  <div>
+  <div id="suggestions-destination">
+    <h4>Destination</h4>
+    <div id="suggestions-destinations">
 
+          <div class="suggestions-dates-choice">
+            <h5> <h5>
+          </div>
+    </div>
   </div>
 
+  <div id="suggestions-thématiques">
+    <h4>Thématiques</h4>
 
-
-
-
-
+  </div>
 </div>

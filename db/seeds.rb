@@ -74,23 +74,38 @@ puts 'Creating suggestions...'
 
 suggestions_attributes =
 [{
+  topic: "Destination",
   value: "Prague",
   survey_id: Survey.first[:id]
 },
 {
+  topic: "Destination",
   value: "Marseille",
   survey_id: Survey.first[:id]
 },
 {
+  topic: "Destination",
   value: "Lille",
   survey_id: Survey.first[:id]
+},
+{
+  topic: "Dates",
+  start_date: Date.parse("Oct 23 2019"),
+  end_date: Date.parse("Oct 25 2019"),
+  survey_id: Survey.first[:id]
+},
+{
+  topic: "Dates",
+  start_date: Date.parse("Nov 12 2019"),
+  end_date: Date.parse("Nov 14 2019"),
+  survey_id: Survey.first[:id]
+},
+{
+  topic: "Dates",
+  start_date: Date.parse("Dec 8 2019"),
+  end_date: Date.parse("Dec 10 2019"),
+  survey_id: Survey.first[:id]
 }
-#,
-# {
-#   start_date: Date.new(2019,08,26),
-#   survey_id: Survey.first[:id],
-#   topic_id: Topic.first[:id]
-# }
 ]
 Suggestion.create!(suggestions_attributes)
 puts 'Suggestions created !'

@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :user_events
+
   resources :events do
     resources :surveys, only: [:new, :create, :edit, :update]
     member do
@@ -24,6 +25,8 @@ Rails.application.routes.draw do
   resources :surveys, only: [:show] do
     resources :suggestions, only: [:create]
   end
+
+  resources :choices, only: [:create]
 end
 
 
