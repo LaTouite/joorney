@@ -1,28 +1,40 @@
 require 'twilio-ruby'
 
 class UserEventsController < ApplicationController
-  def send_invitation
-    raise
+  def create
+    user_event = UserEvent.create(
+      phone_number: params[:user_event][:phone_number],
+      event_id: params[:event_id]
+    )
+    authorize user_event
+    send_invitation(user_event)
+  end
+
+  # custom routes GET - url envoye par twilio
+  # /user_event/:id
+  def confirm_invitation
+    # if user_event.event.token} =
+    # recupere l'user_event avec l'id
+    # renseigne user avec current_user
+    # redirige vers une vue
+  end
+
+  private
+
+  def send_invitation(user_event)
     account_sid = 'AC5d11bdbcef24cf1c35b2cfc4ea880985'
     auth_token = 'fc5f3b1a34a740678c21ee7863e20b9f'
     @client = Twilio::REST::Client.new account_sid, auth_token
 
     @client.api.account.messages.create(
       from: 'whatsapp:+14155238886',
-      # to: 'whatsapp:+33616051380',
-      to: "whatsapp:#{params[phone_number]}",
-      body: 'Salut. Cest moi'
+      to: "whatsapp:+33#{user_event.phone_number[1..-1]}",
+      body: "Salut. localhost:3000/user_event/#{user_event.event.id}?token=#{user_event.event.token}"
+      # confirm_invitation_path
     )
   end
 
-  # une fois que l user a cliqué sur le lien il faut qu il se sign up et que son compte soit joint à l event
-  # def create
-  #   # vraiment besoin d'un token ?
-  #   @event = event.where(event.id = params[:id])
-  #   @user_event = UserEvent.new(params @event)
-  #   @user_event.event = current_user
-  #   @user_event.save
-  #   # redirect_to event_surveys
-  #   # events/:event_id/user_events/new
-  # end
+  def user_event_params
+    params.require(:user_event).permit(:present?, :phone_number)
+  end
 end

@@ -51,6 +51,7 @@ class EventsController < ApplicationController
   end
 
   def invite
+    @user_event = UserEvent.new
     @event = Event.find(params[:id])
     authorize :event, :invite?
   end
@@ -61,6 +62,8 @@ class EventsController < ApplicationController
     # @url = "https://www.airbnb.fr/s/#{@event.destination}/homes?checkin=#{@event.start_date.strftime('%F')}&checkout=#{@event.end_date.strftime('%F')}&price_max=150&adults=#{@participants.size}"
     authorize @event
   end
+
+
 
   private
 

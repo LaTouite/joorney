@@ -32,10 +32,10 @@
     <img src="whatsapp.png" alt="">
     <img src="email.svg" alt="">
   </div>
-
-  <%= simple_form_for @event do |f| %>
-    <%= f.input :name, label: "Numéro de téléphone du participant" %>
-  <%= f.submit "Envoyer l'invitation", class: "btn btn-primary" %>
+   <!-- url: event_user_events_path(@event), method: :post  -->
+  <%= simple_form_for [@event, @user_event] do |f| %>
+    <%= f.input :phone_number, label: "Numéro de téléphone du participant" %>
+    <%= f.submit "Envoyer l'invitation", class: "btn btn-primary" %>
   <% end %>
 
 </div>
