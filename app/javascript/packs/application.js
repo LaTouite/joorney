@@ -92,14 +92,14 @@ if (document.querySelector('.far')) { thumbUp();}
 
 // clic sur le "+" de survey (dates)
 const plus = () => {
-  const plus = document.querySelector('.plusi');
+  const plus = document.querySelector('.plus');
   plus.addEventListener("click", (event) => {
-    const j = "<div class= 'questions' id='destination-sugg'><span>choix 1</span><%= f.input :value, placeholder: \"Fontainebleau\", input_html: {onchange: 'Rails.fire(this.form, \"submit\")'} %><%= f.input :topic, as: :hidden, input_html: {value: \"Destination\"} %></div>"
-    plus.insertAdjacentHTML('beforebegin', j);
+    const j = "choix 2"
+    plus.insertAdjacentHTML('afterend', j );
   });
 }
 
-if (document.querySelector('.plusi')) { plus();}
+if (document.querySelector('.plus')) { plus();}
 
 // const plus = () => {
 //   const plus = document.querySelectorAll('.plus');
