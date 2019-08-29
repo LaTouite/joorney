@@ -6,13 +6,29 @@
         <h4>1. Préciser les champs que vous souhaitez inclure dans le sondage</h4>
         <h4>2. Limiter le nombre de choix en proposant vos idées</h4>
       </div>
+<!--         if @event.destination == nil
+          @topic = Topic.find_by(name: "Destination")
+          @topic.save
+        end
+        if @event.start_date == nil
+          @topic = Topic.find_by(name: "Date")
+          @topic.save
+        end
+        if @event.end_date == nil
+          topic = Topic.new(name: "Date de fin")
+          @topic.save
+        end
+        if @event.budget_per_participant_cents == 0
+          @topic = Topic.find_by(name: "Budget / participant")
+          @topic.save
+        end -->
       <%#= simple_form_for [@event, @survey, @topic] do |f| %>
       <!-- CHAMP 1 début -->
-      <%# if @event.start_date == nil %>
+      <% if @survey.event.start_date.nil? %>
         <div class='mb-5'>
           <div class='champs'>
             <h4 class='champ_nb'>Champ 1</h4>
-            <h4>Disponibilités</h4>
+            <h4><%= Topic.find_by(name: "Date").name %></h4>
           </div>
           <!-- DATES début -->
           <div class='survey-question'>
@@ -23,25 +39,25 @@
           </div>
         <!-- DATES fin -->
         </div>
-      <%# end %>
+      <% end %>
       <!-- CHAMP 1 fin -->
       <!-- CHAMP 2 début -->
-      <%# if @event.budget_per_participant_cents == 0 %>
+      <% if @survey.event.budget_per_participant_cents == 0 %>
         <div class='mb-5'>
           <div class='champs'>
             <h4 class='champ_nb'>Champ 2</h4>
-            <h4>Budget max/participant</h4>
+            <h4><%= Topic.find_by(name: "Budget / participant").name %></h4>
           </div>
-          <p>Chaque participant préciser ason budget<p>
+          <p>Chaque participant précisera son budget<p>
         </div>
-      <%# end %>
+      <% end %>
       <!-- CHAMP 2 fin -->
       <!-- CHAMP 3 début -->
-      <%# if @event.destination == nil %>
+      <% if @survey.event.destination == nil %>
         <div class='mb-5'>
           <div class= 'champs'>
             <h4 class='champ_nb'>Champ 3</h4>
-            <h4>Destination</h4>
+            <h4><%= Topic.find_by(name: "Destination").name %></h4>
           </div>
           <div class='survey-question'>
             <%#= f.input :destination %>
@@ -49,14 +65,14 @@
             <i class="fas fa-plus-circle plus"></i>
           </div>
         </div>
-      <%# end %>
+      <% end %>
       <!-- CHAMP 3 fin -->
       <!-- CHAMP 4 début -->
-      <%# if @event.thematics == nil %>
+      <% if @survey.event.thematics == nil %>
       <div class='mb-5'>
         <div class='champs'>
           <h4 class='champ_nb'>Champ 4</h4>
-          <h4>Thématique</h4>
+          <h4><%= Topic.find_by(name: "Thématiques").name %></h4>
         </div>
         <div class='survey-question'>
           <%#= f.input :thematics, collection: Event::THEMATICS %>
@@ -64,7 +80,7 @@
           <i class="fas fa-plus-circle plus"></i>
         </div>
       </div>
-      <%# end %>
+      <% end %>
       <!-- CHAMP 4 fin -->
       <!-- SUBMIT BTN début -->
       <div class='submit-area mb-5'>
