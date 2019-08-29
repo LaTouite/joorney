@@ -14,6 +14,17 @@ class SuggestionsController < ApplicationController
     @suggestion.survey = Survey.find(params[:survey_id])
     authorize @suggestion
     @suggestion.save!
+    if @suggestion.save
+      respond_to do |format|
+        format.html { redirect_to survey_path(@survey) }
+        format.js  # <-- will render `app/views/suggestion/create.js.erb`
+      end
+    else
+      respond_to do |format|
+        format.html { render 'surveys/show' }
+        format.js  # <-- idem
+      end
+    end
   end
 
   def suggestion_params
