@@ -62,6 +62,8 @@ Event.create!(events_attributes)
 
 puts 'Events created !'
 
+puts 'Creating surveys...'
+
 surveys_attributes =
 [{
   name: "EVG de Nico",
@@ -70,49 +72,49 @@ surveys_attributes =
 Survey.create!(surveys_attributes)
 puts 'Surveys created !'
 
-# topics_attributes =
-# [{
-#   name: "Destination",
-# },
-# {
-#   name: "Budget / participant",
-# },
-# {
-#   name: "Date",
-# }]
-# Topic.create!(topics_attributes)
-# puts 'Topics created !'
+puts 'Creating topics...'
 
-# suggestions_attributes =
-# [{
-#   value: "Prague",
-#   survey_id: Survey.first[:id]
-# },
-# {{
-#   value: "Marseille",
-#   survey_id: Survey.first[:id]
-# },
+topics_attributes =
+[{
+  name: "Destination"
+},
+{
+  name: "Budget / participant"
+},
+{
+  name: "Date"
+}]
+
+Topic.create!(topics_attributes)
+puts 'Topics created !'
+
+puts 'Creating suggestions...'
+
+suggestions_attributes =
+[{
+  value: "Prague",
+  survey_id: Survey.first[:id],
+  topic_id: Topic.first[:id]
+},
+{
+  value: "Marseille",
+  survey_id: Survey.first[:id],
+  topic_id: Topic.first[:id]
+},
+{
+  value: "Lille",
+  survey_id: Survey.first[:id],
+  topic_id: Topic.first[:id]
+}
+,
 # {
-#   value: "Lille",
-#   survey_id: Survey.first[:id]
-# },
-# {
-#   start_date: Sat, 31 Aug 2019,
-#   end_date: Sun, 01 Sep 2019,
-#   survey_id: Survey.first[:id]
-# },
-# {
-#   start_date: Sat, 07 Sep 2019,
-#   end_date: Sun, 08 Sep 2019,
-#   survey_id: Survey.first[:id]
-# },
-# {
-#   start_date: Sat, 14 Sep 2019,
-#   end_date: Sun, 15 Sep 2019,
-#   survey_id: Survey.first[:id]
-# },
-# ]
-# Suggestion.create!(suggestions_attributes)
-# puts 'Suggestions created !'
+#   start_date: Date.new(2019,08,26),
+#   survey_id: Survey.first[:id],
+#   topic_id: Topic.first[:id]
+# }
+]
+Suggestion.create!(suggestions_attributes)
+puts 'Suggestions created !'
+
 
 puts 'Finished !'

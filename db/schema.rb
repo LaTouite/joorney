@@ -10,8 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
-ActiveRecord::Schema.define(version: 2019_08_29_101710) do
+ActiveRecord::Schema.define(version: 2019_08_29_105615) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,9 +32,9 @@ ActiveRecord::Schema.define(version: 2019_08_29_101710) do
     t.date "end_date"
     t.string "destination"
     t.integer "budget_per_participant_cents", default: 0, null: false
-    t.string "budget_per_participant_currency", default: "USD", null: false
+    t.string "budget_per_participant_currency", default: "EUR", null: false
     t.string "photo"
-    t.datetime "deadline"
+    t.date "deadline"
     t.string "token"
     t.bigint "user_id"
     t.datetime "created_at", null: false
@@ -45,8 +44,8 @@ ActiveRecord::Schema.define(version: 2019_08_29_101710) do
 
   create_table "suggestions", force: :cascade do |t|
     t.string "value"
-    t.datetime "start_date"
-    t.datetime "end_date"
+    t.date "start_date"
+    t.date "end_date"
     t.boolean "selected", default: false
     t.bigint "topic_id"
     t.datetime "created_at", null: false
@@ -58,7 +57,7 @@ ActiveRecord::Schema.define(version: 2019_08_29_101710) do
 
   create_table "surveys", force: :cascade do |t|
     t.string "name"
-    t.datetime "deadline"
+    t.date "deadline"
     t.bigint "event_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
