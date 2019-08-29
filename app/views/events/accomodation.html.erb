@@ -47,10 +47,10 @@
   <div>
     <p> Voici des logements adaptés à votre évènement : </p>
     <p> - Situés à <%= @event.destination %> </p>
-    <p> - Disponibles du <%= @event.start_date.strftime("%d/%m/%Y") %> au <%= @event.end_date.strftime("%d/%m/%Y") %> </p>
+    <p> - Disponibles du <%= %> au <%= %> </p>
     <p> - Pour <%= @participants.size %> personnes </p>
     <p> - A moins de <%= %>€ la nuit </p>
 
-    <a href="<%=@url%>">Aller sur Airbnb</a>
+    <!-- <a href="<%=@url%>">Aller sur Airbnb</a> -->
 
   </div>
