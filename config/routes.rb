@@ -19,6 +19,8 @@ Rails.application.routes.draw do
       end
     end
 
+    resources :suggestions, only: [:index]
+
   end
 
   resources :surveys, only: [:show] do

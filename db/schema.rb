@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_29_095205) do
+ActiveRecord::Schema.define(version: 2019_08_29_105615) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "choices", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "suggestion_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["suggestion_id"], name: "index_choices_on_suggestion_id"
+    t.index ["user_id"], name: "index_choices_on_user_id"
+  end
 
   create_table "events", force: :cascade do |t|
     t.string "name"
@@ -25,7 +34,7 @@ ActiveRecord::Schema.define(version: 2019_08_29_095205) do
     t.integer "budget_per_participant_cents", default: 0, null: false
     t.string "budget_per_participant_currency", default: "EUR", null: false
     t.string "photo"
-    t.datetime "deadline"
+    t.date "deadline"
     t.string "token"
     t.bigint "user_id"
     t.datetime "created_at", null: false
@@ -35,18 +44,20 @@ ActiveRecord::Schema.define(version: 2019_08_29_095205) do
 
   create_table "suggestions", force: :cascade do |t|
     t.string "value"
-    t.datetime "start_date"
-    t.datetime "end_date"
+    t.date "start_date"
+    t.date "end_date"
     t.boolean "selected", default: false
     t.bigint "topic_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "survey_id"
+    t.index ["survey_id"], name: "index_suggestions_on_survey_id"
     t.index ["topic_id"], name: "index_suggestions_on_topic_id"
   end
 
   create_table "surveys", force: :cascade do |t|
     t.string "name"
-    t.datetime "deadline"
+    t.date "deadline"
     t.bigint "event_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -55,10 +66,8 @@ ActiveRecord::Schema.define(version: 2019_08_29_095205) do
 
   create_table "topics", force: :cascade do |t|
     t.string "name"
-    t.bigint "survey_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["survey_id"], name: "index_topics_on_survey_id"
   end
 
   create_table "user_events", force: :cascade do |t|
@@ -90,10 +99,12 @@ ActiveRecord::Schema.define(version: 2019_08_29_095205) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "choices", "suggestions"
+  add_foreign_key "choices", "users"
   add_foreign_key "events", "users"
+  add_foreign_key "suggestions", "surveys"
   add_foreign_key "suggestions", "topics"
   add_foreign_key "surveys", "events"
-  add_foreign_key "topics", "surveys"
   add_foreign_key "user_events", "events"
   add_foreign_key "user_events", "users"
 end

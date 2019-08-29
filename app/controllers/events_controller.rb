@@ -10,10 +10,35 @@ class EventsController < ApplicationController
     @event = Event.new(params_event)
     @event.user = current_user
     if @event.save
-      survey = Survey.new(name: @event.name)
-      survey.event = @event
-      survey.save
-      redirect_to survey_path(survey)
+      @survey = Survey.new(name: @event.name)
+      @survey.event = @event
+      @survey.save
+
+      if @survey.save
+        # if @event.destination == nil
+        #   @topic = Topic.new(name: "Destination")
+        #   @topic.survey = @survey
+        #   @topic.save
+        # end
+        # if @event.start_date == nil
+        #   @topic = Topic.new(name: "Dates")
+        #   @topic.survey = @survey
+        #   @topic.save
+        # end
+        # if @event.end_date == nil
+        #   topic = Topic.new(name: "Date de fin")
+        #   @topic.survey = @survey
+        #   @topic.save
+        # end
+        # if @event.budget_per_participant_cents == 0
+        #   @topic = Topic.new(name: "Budget / participant")
+        #   @topic.survey = @survey
+        #   @topic.save
+        # end
+        redirect_to survey_path(@survey)
+        else
+          render :new
+      end
     else
       render :new
     end
