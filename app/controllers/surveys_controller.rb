@@ -17,8 +17,8 @@ class SurveysController < ApplicationController
 
   def show
     @survey = Survey.find(params[:id])
+    @suggestion = Suggestion.new
     authorize @survey
-    @topic = Topic.new
   end
 
   private

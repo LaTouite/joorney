@@ -9,35 +9,18 @@ class EventsController < ApplicationController
   def create
     @event = Event.new(params_event)
     @event.user = current_user
+    if @event.start_date == Date.today && @event.end_date == Date.today
+      @event.start_date = nil
+      @event.end_date = nil
+    end
     if @event.save
       @survey = Survey.new(name: @event.name)
       @survey.event = @event
       @survey.save
-
       if @survey.save
-        # if @event.destination == nil
-        #   @topic = Topic.new(name: "Destination")
-        #   @topic.survey = @survey
-        #   @topic.save
-        # end
-        # if @event.start_date == nil
-        #   @topic = Topic.new(name: "Dates")
-        #   @topic.survey = @survey
-        #   @topic.save
-        # end
-        # if @event.end_date == nil
-        #   topic = Topic.new(name: "Date de fin")
-        #   @topic.survey = @survey
-        #   @topic.save
-        # end
-        # if @event.budget_per_participant_cents == 0
-        #   @topic = Topic.new(name: "Budget / participant")
-        #   @topic.survey = @survey
-        #   @topic.save
-        # end
         redirect_to survey_path(@survey)
-        else
-          render :new
+      else
+        render :new
       end
     else
       render :new
@@ -62,8 +45,6 @@ class EventsController < ApplicationController
     # @url = "https://www.airbnb.fr/s/#{@event.destination}/homes?checkin=#{@event.start_date.strftime('%F')}&checkout=#{@event.end_date.strftime('%F')}&price_max=150&adults=#{@participants.size}"
     authorize @event
   end
-
-
 
   private
 

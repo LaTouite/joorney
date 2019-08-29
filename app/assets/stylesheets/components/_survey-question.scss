@@ -7,11 +7,16 @@
 }
 
 .survey-question {
+  display: flex;
+  justify-content: flex-start;
 }
 
+#dates-sugg :nth-child(1), #dates-sugg :nth-child(2), #dates-sugg :nth-child(3) {
+  margin-right: 20px;
+}
 
-
-.plus {
+.plus, .minus {
+  font-size: 20px;
 }
 
 .submit-area {
