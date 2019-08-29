@@ -13,6 +13,8 @@ Choice.destroy_all
 Suggestion.destroy_all
 #Surveys
 Survey.destroy_all
+#User_events
+UserEvent.destroy_all
 #Events
 Event.destroy_all
 #Users (Les Users doivent être détruits en dernier,
@@ -105,8 +107,8 @@ suggestions_attributes =
   start_date: Date.parse("Dec 8 2019"),
   end_date: Date.parse("Dec 10 2019"),
   survey_id: Survey.first[:id]
-}
-]
+}]
+
 Suggestion.create!(suggestions_attributes)
 puts 'Suggestions created !'
 

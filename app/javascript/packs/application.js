@@ -1,4 +1,9 @@
 import "bootstrap";
+import { loadDynamicBannerText } from '../components/banner';
+
+if (document.querySelector("#banner-typed-text")) {
+  loadDynamicBannerText();
+}
 // require("chartkick")
 // require("chart.js")
 import flatpickrInit from '../plugins/flatpickr.js';
@@ -109,3 +114,19 @@ if (document.querySelector('.plus')) { plus();}
 // }
 
 // if (document.querySelector('.far')) { plus();}
+
+
+
+
+const initDisplayNumber = () => {
+  const whatsapp_icon = document.querySelector(".whatsapp");
+  whatsapp_icon.addEventListener("click", (event) => {
+    event.preventDefault();
+    const phone_number_input = document.querySelector(".number-form");
+    phone_number_input.classList.add("open");
+  });
+}
+
+if (document.querySelector(".whatsapp")) {
+  initDisplayNumber();
+}

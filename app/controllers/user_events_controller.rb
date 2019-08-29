@@ -13,10 +13,16 @@ class UserEventsController < ApplicationController
   # custom routes GET - url envoye par twilio
   # /user_event/:id
   def confirm_invitation
-    # if user_event.event.token} =
     # recupere l'user_event avec l'id
-    # renseigne user avec current_user
-    # redirige vers une vue
+    @user_event = UserEvent.find(params[:id])
+    if params[:token] == @user_event.event.token
+      # renseigne user avec current_user
+      @user_event.user = current_user
+      # redirige vers une vue
+      redirect to
+    else
+      # redirige vers ... a definir
+    end
   end
 
   private
@@ -29,8 +35,7 @@ class UserEventsController < ApplicationController
     @client.api.account.messages.create(
       from: 'whatsapp:+14155238886',
       to: "whatsapp:+33#{user_event.phone_number[1..-1]}",
-      body: "Salut. localhost:3000/user_event/#{user_event.event.id}?token=#{user_event.event.token}"
-      # confirm_invitation_path
+      body: "Salut. localhost:3000/user_events/#{user_event.event.id}/confirm_invitation?token=#{user_event.event.token}"
     )
   end
 
