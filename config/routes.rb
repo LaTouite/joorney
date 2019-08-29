@@ -19,13 +19,11 @@ Rails.application.routes.draw do
         post :send_invitation
       end
     end
-
     resources :suggestions, only: [:index]
-
   end
 
   resources :surveys, only: [:show] do
-    resources :topics, only: [:create]
+    resources :suggestions, only: [:create]
   end
 
   resources :choices, only: [:create]

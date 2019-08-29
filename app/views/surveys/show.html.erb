@@ -1,3 +1,4 @@
+<%= render 'events/tabs-setup' %>
 <!-- ONGLET 2 : DÉBUT DU FORMULAIRE -->
 <div class='m-4'>
   <div class='row'>
@@ -6,86 +7,78 @@
         <h4>1. Préciser les champs que vous souhaitez inclure dans le sondage</h4>
         <h4>2. Limiter le nombre de choix en proposant vos idées</h4>
       </div>
-<!--         if @event.destination == nil
-          @topic = Topic.find_by(name: "Destination")
-          @topic.save
-        end
-        if @event.start_date == nil
-          @topic = Topic.find_by(name: "Date")
-          @topic.save
-        end
-        if @event.end_date == nil
-          topic = Topic.new(name: "Date de fin")
-          @topic.save
-        end
-        if @event.budget_per_participant_cents == 0
-          @topic = Topic.find_by(name: "Budget / participant")
-          @topic.save
-        end -->
-      <%#= simple_form_for [@event, @survey, @topic] do |f| %>
       <!-- CHAMP 1 début -->
-      <% if @survey.event.start_date.nil? %>
-        <div class='mb-5'>
-          <div class='champs'>
-            <h4 class='champ_nb'>Champ 1</h4>
-            <h4><%= Topic.find_by(name: "Date").name %></h4>
+      <%= simple_form_for [@survey, @suggestion], remote: true do |f| %>
+        <% if @survey.event.start_date.nil? %>
+          <div class='mb-5'>
+            <div class='champs'>
+              <h4 class='champ_nb'>Champ 1</h4>
+              <h4>Dates</h4>
+            </div>
+            <!-- DATES début -->
+            <div class='survey-question' id='dates-sugg'>
+              <i class="fas fa-minus-circle minus"></i>
+              <%= f.input :start_date, label: "Date de début", as: :string, required: false, input_html: {class: "datepicker"} %>
+              <%= f.input :end_date, label: "Date de fin", as: :string, required: false, input_html: { class: "datepicker" } %>
+              <i class="fas fa-plus-circle plus"></i>
+            </div>
+          <!-- DATES fin -->
           </div>
-          <!-- DATES début -->
-          <div class='survey-question'>
-            <%#= f.input :start_date, label: "Date de début", required: false, input_html: {class: "datepicker"} %>
-            <%#= f.input :end_date, label: "Date de fin", required: false, input_html: {class: "datepicker"} %>
-            <span>choix 1</span>
-            <i class="fas fa-plus-circle plus"></i>
-          </div>
-        <!-- DATES fin -->
-        </div>
+        <% end %>
       <% end %>
       <!-- CHAMP 1 fin -->
       <!-- CHAMP 2 début -->
-      <% if @survey.event.budget_per_participant_cents == 0 %>
-        <div class='mb-5'>
-          <div class='champs'>
-            <h4 class='champ_nb'>Champ 2</h4>
-            <h4><%= Topic.find_by(name: "Budget / participant").name %></h4>
+      <%= simple_form_for [@survey, @suggestion], remote: true do |f| %>
+        <% if @survey.event.destination == nil %>
+          <div class='mb-5'>
+            <div class= 'champs'>
+              <h4 class='champ_nb'>Champ 2</h4>
+              <h4>Destination</h4>
+            </div>
+            <div class='survey-question' id='destination-sugg'>
+              <%= f.input :value, placeholder: "Fontainebleau", input_html: {onchange: 'Rails.fire(this.form, "submit")'} %>
+              <%= f.input :topic, as: :hidden, input_html: {value: "Destination"} %>
+              <i class="fas fa-plus-circle plus"></i>
+            </div>
           </div>
-          <p>Chaque participant précisera son budget<p>
-        </div>
+        <% end %>
       <% end %>
       <!-- CHAMP 2 fin -->
       <!-- CHAMP 3 début -->
-      <% if @survey.event.destination == nil %>
+
+      <%= simple_form_for [@survey, @suggestion], remote: true do |f| %>
+        <% if @survey.event.thematics == nil %>
         <div class='mb-5'>
-          <div class= 'champs'>
+          <div class='champs'>
             <h4 class='champ_nb'>Champ 3</h4>
-            <h4><%= Topic.find_by(name: "Destination").name %></h4>
+            <h4>Thématiques</h4>
           </div>
-          <div class='survey-question'>
-            <%#= f.input :destination %>
-            <span>choix 1</span>
+          <div class='survey-question' id='thematics-sugg'>
+            <%= f.input :value, collection: Event::THEMATICS, input_html: {onchange: 'Rails.fire(this.form, "submit")'} %>
+            <%= f.input :topic, as: :hidden, input_html: {value: "Thématiques"} %>
             <i class="fas fa-plus-circle plus"></i>
           </div>
         </div>
+        <% end %>
       <% end %>
       <!-- CHAMP 3 fin -->
       <!-- CHAMP 4 début -->
-      <% if @survey.event.thematics == nil %>
-      <div class='mb-5'>
-        <div class='champs'>
-          <h4 class='champ_nb'>Champ 4</h4>
-          <h4><%= Topic.find_by(name: "Thématiques").name %></h4>
-        </div>
-        <div class='survey-question'>
-          <%#= f.input :thematics, collection: Event::THEMATICS %>
-          <span>choix 1</span>
-          <i class="fas fa-plus-circle plus"></i>
-        </div>
-      </div>
+      <%= simple_form_for [@survey, @suggestion], remote: true do |f| %>
+        <% if @survey.event.budget_per_participant_cents == 0 %>
+          <div class='mb-5'>
+            <div class='champs'>
+              <h4 class='champ_nb'>Champ 4</h4>
+              <h4>Budget / participant</h4>
+            </div>
+            <p>Chaque participant précisera son budget<p>
+          </div>
+        <% end %>
       <% end %>
       <!-- CHAMP 4 fin -->
       <!-- SUBMIT BTN début -->
       <div class='submit-area mb-5'>
-        <%#= f.submit "Valider", class: 'btn btn-primary' %>
-        <div><%#= link_to "Réaliser cette étape plus tard" %></div>
+        <%= link_to "Générer votre sondage", invite_event_path(@survey.event), class: 'btn btn-primary' %>
+        <div><%= link_to "Réaliser cette étape plus tard" %></div>
       </div>
       <!-- SUBMIT BTN fin -->
       <p>Pssss: les participants pourront remplir le sondage une fois qu’ils auront rejoint le projet. (étape suivante)</p>
@@ -123,7 +116,6 @@
           <i class="far fa-thumbs-up thumb"></i>
         </div>
       </div>
-      <%# end %>
     </div>
     <!-- ONGLET 2 : FIN DE LA PARTIE DROITE DU FORMULAIRE -->
   </div>
