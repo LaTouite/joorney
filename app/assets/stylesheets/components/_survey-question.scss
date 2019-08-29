@@ -1,3 +1,7 @@
+.test {
+  margin-right: 100px;
+}
+
 .champs {
   display: flex;
 }
@@ -9,10 +13,28 @@
 .survey-question {
   display: flex;
   justify-content: flex-start;
+  align-items: center;
+}
+
+ul {
+  padding-left: 0;
+}
+
+li {
+  list-style-type: none;
 }
 
 #dates-sugg :nth-child(1), #dates-sugg :nth-child(2), #dates-sugg :nth-child(3) {
-  margin-right: 20px;
+  // margin-right: 20px;
+}
+
+.date-plus {
+  border: 0;
+  border-radius: 50%;
+  background-color: black;
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
 }
 
 .plus, .minus {
