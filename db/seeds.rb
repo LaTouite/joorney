@@ -7,6 +7,10 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 puts 'Cleaning database...'
 
+#Choices
+Choice.destroy_all
+#Suggestions
+Suggestion.destroy_all
 #Topics
 Topic.destroy_all
 #Surveys
@@ -51,7 +55,6 @@ events_attributes =
 name: "EVG de Nico",
 event_category: "EVG",
 token: "6789",
-destination: "Prague",
 user_id: User.last[:id]
 }]
 
@@ -59,8 +62,57 @@ Event.create!(events_attributes)
 
 puts 'Events created !'
 
-puts 'Creating surveys...'
+surveys_attributes =
+[{
+  name: "EVG de Nico",
+  event_id: Event.last[:id]
+}]
+Survey.create!(surveys_attributes)
+puts 'Surveys created !'
 
-puts 'Surveys created...'
+# topics_attributes =
+# [{
+#   name: "Destination",
+# },
+# {
+#   name: "Budget / participant",
+# },
+# {
+#   name: "Date",
+# }]
+# Topic.create!(topics_attributes)
+# puts 'Topics created !'
+
+# suggestions_attributes =
+# [{
+#   value: "Prague",
+#   survey_id: Survey.first[:id]
+# },
+# {{
+#   value: "Marseille",
+#   survey_id: Survey.first[:id]
+# },
+# {
+#   value: "Lille",
+#   survey_id: Survey.first[:id]
+# },
+# {
+#   start_date: Sat, 31 Aug 2019,
+#   end_date: Sun, 01 Sep 2019,
+#   survey_id: Survey.first[:id]
+# },
+# {
+#   start_date: Sat, 07 Sep 2019,
+#   end_date: Sun, 08 Sep 2019,
+#   survey_id: Survey.first[:id]
+# },
+# {
+#   start_date: Sat, 14 Sep 2019,
+#   end_date: Sun, 15 Sep 2019,
+#   survey_id: Survey.first[:id]
+# },
+# ]
+# Suggestion.create!(suggestions_attributes)
+# puts 'Suggestions created !'
 
 puts 'Finished !'
