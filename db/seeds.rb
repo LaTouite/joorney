@@ -31,7 +31,6 @@ User.create!(users_attributes)
 
 puts 'Users created !'
 
-
 puts 'Creating events...'
 
 events_attributes =
@@ -59,5 +58,9 @@ user_id: User.last[:id]
 Event.create!(events_attributes)
 
 puts 'Events created !'
+
+puts 'Creating surveys...'
+
+puts 'Surveys created...'
 
 puts 'Finished !'

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_29_065803) do
+ActiveRecord::Schema.define(version: 2019_08_29_101710) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,6 +41,8 @@ ActiveRecord::Schema.define(version: 2019_08_29_065803) do
     t.bigint "topic_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "survey_id"
+    t.index ["survey_id"], name: "index_suggestions_on_survey_id"
     t.index ["topic_id"], name: "index_suggestions_on_topic_id"
   end
 
@@ -55,10 +57,8 @@ ActiveRecord::Schema.define(version: 2019_08_29_065803) do
 
   create_table "topics", force: :cascade do |t|
     t.string "name"
-    t.bigint "survey_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["survey_id"], name: "index_topics_on_survey_id"
   end
 
   create_table "user_events", force: :cascade do |t|
@@ -90,9 +90,9 @@ ActiveRecord::Schema.define(version: 2019_08_29_065803) do
   end
 
   add_foreign_key "events", "users"
+  add_foreign_key "suggestions", "surveys"
   add_foreign_key "suggestions", "topics"
   add_foreign_key "surveys", "events"
-  add_foreign_key "topics", "surveys"
   add_foreign_key "user_events", "events"
   add_foreign_key "user_events", "users"
 end
