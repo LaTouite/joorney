@@ -1,5 +1,9 @@
-.test {
-  margin-right: 100px;
+.form-sugg {
+  padding: 50px;
+}
+
+.dynamic-survey {
+  padding: 20px;
 }
 
 .champs {
@@ -35,9 +39,15 @@ li {
   color: white;
   font-size: 15px;
   font-weight: bold;
+  padding: 0;
+  width: 20px;
 }
 
-.plus, .minus {
+.delete-sugg {
+  font-size: 15px;
+}
+
+.plus {
   font-size: 20px;
 }
 
