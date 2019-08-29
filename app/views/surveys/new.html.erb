@@ -8,7 +8,7 @@
       </div>
       <%= simple_form_for [@event, @survey] do |f| %>
       <!-- CHAMP 1 début -->
-      <% if @event.start_date == nil %>
+      <% if @event.start_date <= Date.now %>
         <div class='mb-5'>
           <div class='champs'>
             <h4 class='champ_nb'>Champ 1</h4>

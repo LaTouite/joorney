@@ -3,6 +3,9 @@
   <div class='row'>
     <div class='col-8'>
       <%= @survey.event.name %>
+      <% if @survey.event.start_date <= Date %>
+        <%= @survey.event.start_date %>
+      <% end %>
       <div class='mb-5'>
         <div class='mb-5'>
           <h4>1. Préciser les champs que vous souhaitez inclure dans le sondage</h4>
