@@ -5,13 +5,16 @@
   <div id="suggestions-disponibility">
     <h4>Disponibilités</h4>
     <div id="suggestions-dates">
-      <% simple_form_for [@suggestion, @choice] do |f| %>
-        <% @suggestions_dates.each do |suggestion| %>
+      <%= simple_form_for @choice do |f| %>
+        <%# @suggestions_dates.each do |suggestion| %>
           <div class="suggestions-dates-choice">
-            <%= f.input <%= suggestion.start_date.strftime("%d/%m/%Y")%> - <%= suggestion.end_date.strftime("%d/%m/%Y")%> %>
+            <!-- <%#= f.input <%= suggestion.start_date.strftime("%d/%m/%Y")%> - <%#= suggestion.end_date.strftime("%d/%m/%Y")%>  -->
+           <%= f.association :suggestion, collection: @suggestions_dates, label_method: :start_date, value_method: :id, include_blank: false, as: :check_boxes %>
+           <%= f.submit %>
+
           </div>
         <%end%>
-      <%end%>
+      <%#end%>
     </div>
   </div>
 
@@ -22,13 +25,10 @@
   <div id="suggestions-destination">
     <h4>Destination</h4>
     <div id="suggestions-destinations">
-      <% simple_form_for [@suggestion, @choice] do |f| %>
-        <% @suggestions_destination.each do |suggestion| %>
+
           <div class="suggestions-dates-choice">
-            <h5><%= suggestion.value %> <h5>
+            <h5> <h5>
           </div>
-        <%end%>
-      <%end%>
     </div>
   </div>
 

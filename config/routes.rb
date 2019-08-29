@@ -27,6 +27,8 @@ Rails.application.routes.draw do
   resources :surveys, only: [:show] do
     resources :topics, only: [:create]
   end
+
+  resources :choices, only: [:create]
 end
 
 
