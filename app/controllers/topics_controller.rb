@@ -6,6 +6,7 @@ class TopicsController < ApplicationController
     @topic = Topic.new(topic_params)
     # 3. On rattache le nouveau topic au survey que l'on a cherche dans l'etape 1
     @topic.survey = @survey
+
     if @topic.save
       redirect_to survey_path(@survey)
     else
