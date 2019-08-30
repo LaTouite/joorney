@@ -12,6 +12,7 @@
   align-items: center;
   justify-content: center;
   position: relative;
+  margin-bottom: 70px;
 }
 
 .large-banner h1 {
@@ -25,7 +26,7 @@
 
 .button {
   position: absolute;
-  top: 462px;
+  top: 362px;
 }
 
 .questions {
@@ -87,7 +88,17 @@
 }
 
 .p-container {
-  width: 1400px;
+  width: 1200px;
   margin: 0 auto;
+}
+
+.rounds {
+  display: flex;
+  margin-top: 40px;
+  background-image: url("bloc_1.svg");
+  height: 304px;
+  width: 1132px;
+  justify-content: center;
+  text-align: center;
 }
 
