@@ -8,7 +8,7 @@
     <p>Astuces & co</p>
   </div>
   <div class="dark-part">
-    <p>Hello X</p>
+    <p>Hello David</p>
     <span class="avatar-navbar"></span>
   </div>
 </div>
@@ -16,9 +16,15 @@
 
 <div class="large-banner">
     <!-- <h1>Découvrez, réservez, <span id="title-back-color">have fun!</span></h1> -->
-    <h1>Organiser un événément réussi n'a jamais été aussi <strong><span id="banner-typed-text"></span></strong></h1>
+    <div class="t-container">
+      <div class="headline">
+        <h1>Organiser un événément réussi n'a jamais été aussi <span id="banner-typed-text"></span> </h1>
+        <%= link_to "Créer mon événément", new_event_path, class: "button" %>
+      </div>
+      <div class="banner-photos">
+      </div>
+    </div>
     <!-- <h2>Ne CHERCHEZ PLUS... TOUT CE QU'IL VOUS FAUT POUR ORGANISER VOS FESTIVITÉS EST RÉUNI ICI :</h2> -->
-    <%= link_to "Créer mon événément", new_event_path, class: "button" %>
 </div>
 
 <!-- <div class="questions">
@@ -32,7 +38,7 @@
 </div> -->
 
 <div class="explanation">
-  <div class="p-container">
+  <div class="container">
     <h2>Gérez toutes les étapes clés de l'organisation d'un événement en un seul et même endroit</h2>
     <div class="rounds">
     </div>
