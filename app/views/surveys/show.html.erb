@@ -40,11 +40,10 @@
             <div>
               <ul>
                 <li>
-                  <%= simple_form_for [@survey, @suggestion], remote: true do |f| %>
+                  <%= simple_form_for [@survey, @suggestion], html: {id: 'new-dates-sugg'}, remote: true do |f| %>
                     <div class='survey-question' id='dates-sugg'>
                       <%= f.input :start_date, label: "Date de début", as: :string, required: false, input_html: {class: "datepicker"} %>
                       <%= f.input :end_date, label: "Date de fin", as: :string, required: false, input_html: { class: "datepicker" } %>
-                      <!-- <i class="fas fa-plus-circle plus"></i> -->
                       <%= f.submit "+", class: "date-plus ml-3"%>
                     </div>
                   <% end %>
@@ -64,7 +63,7 @@
               <h4>Destination</h4>
             </div>
             <div class='survey-question' id='destination-sugg'>
-              <i class="fas fa-minus-circle minus mr-3"></i>
+              <!-- <i class="fas fa-times-circle delete-sugg"></i> -->
               <%= f.input :value, placeholder: "Fontainebleau", label: false, input_html: {onchange: 'Rails.fire(this.form, "submit")'} %>
               <%= f.input :topic, as: :hidden, input_html: {value: "Destination"} %>
               <i class="fas fa-plus-circle plus ml-3"></i>
@@ -126,7 +125,7 @@
         <div class='mb-5'>
           <h4>Dates</h4>
           <div>
-            <div id="suggestions">
+            <div id="sugg-dates">
               <% if @survey.suggestions.blank? %>
                 Ajouter une proposition
               <% else %>
@@ -140,7 +139,10 @@
         <div class='mb-5'>
           <h4>Destination<span> (un seul choix possible)</span></h4>
           <div>
-            <div class='sugg-places'>
+            <div id='sugg-places'>
+              <% @survey.suggestions.each do |suggestion| %>
+                <%= render 'suggestions/destination', suggestion: suggestion %>
+              <% end %>
               <%# if @survey.suggestions.blank? %>
                 <!-- Ajouter une proposition -->
               <%# else %>
@@ -153,12 +155,14 @@
         </div>
         <div class='mb-5'>
           <h4>Thématiques</h4>
-          <div>
-            <div>DIV</div>
-            <i class="far fa-thumbs-up thumb"></i>
+          <div id='sugg-thematics'>
+            <%# @survey.suggestions.each do |suggestion| %>
+              <%#= render 'suggestions/thematic', suggestion: suggestion %>
+            <%# end %>
+            <!-- <i class="far fa-thumbs-up thumb"></i> -->
           </div>
         </div>
-        <div class='mb-5'>
+        <div id='sugg-budget' class='mb-5'>
           <h4>Budget max/participant</h4>
           <%= simple_form_for [@survey, @suggestion], remote: true do |f| %>
             <%= f.input :value, as: :range, class: 'range', collection: 0..10, label: false %>

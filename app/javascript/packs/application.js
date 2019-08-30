@@ -96,13 +96,13 @@ if (document.querySelector('.far')) { thumbUp();}
 // FIN POUCE
 
 // clic sur le "+" de survey (dates)
-const plus = () => {
-  const plus = document.querySelector('.plus');
-  plus.addEventListener("click", (event) => {
-    const j = "choix 2"
-    plus.insertAdjacentHTML('afterend', j );
-  });
-}
+// const plus = () => {
+//   const plus = document.querySelector('.plus');
+//   plus.addEventListener("click", (event) => {
+//     const j = "choix 2"
+//     plus.insertAdjacentHTML('afterend', j );
+//   });
+// }
 
 if (document.querySelector('.plus')) { plus();}
 
