@@ -1,1 +1,28 @@
-console.log('Suggestion created');
+function refreshForm(innerHTML) {
+  const newSuggestionForm = document.getElementById('new_suggestion');
+  newSuggestionForm.innerHTML = innerHTML;
+}
+
+function addSuggestion(SuggestionHTML) {
+  const suggestions = document.getElementById('suggestions');
+  suggestions.insertAdjacentHTML('beforeend', reviewHTML);
+}
+
+<% if @suggestion.errors.any? %>
+  refreshForm('<%= j render "suggestions/form", survey: @survey, suggestion: @suggestion %>');
+<% else %>
+  addSuggestion('<%= j render "suggestions/show", suggestion: @suggestion %>');
+  refreshForm('<%= j render "suggestions/form", survey: @survey, suggestion: Suggestion.new %>');
+<% end %>
+
+function addSuggPlaces(SuggestionHTML) {
+  const suggPlaces = document.getElementById('sugg-places');
+  suggPlaces.insertAdjacentHTML('beforeend', reviewHTML);
+}
+
+<% if @suggestion.errors.any? %>
+  refreshForm('<%= j render "suggestions/form", survey: @survey, suggestion: @suggestion %>');
+<% else %>
+  addSuggestion('<%= j render "suggestions/show", suggestion: @suggestion %>');
+  refreshForm('<%= j render "suggestions/form", survey: @survey, suggestion: Suggestion.new %>');
+<% end %>
