@@ -109,60 +109,66 @@
           <p>Cela m’aidera à proposer une organisation qui contente tout le monde ;)</p>
         </div>
         <!-- DATES DYNAMIQUES (début) -->
-        <div class='mb-5'>
-          <h4>Dates</h4>
-          <div>
-            <div id="sugg-dates">
-              <% if @survey.suggestions.blank? %>
-              <% else %>
-                <% @survey.suggestions.each do |suggestion| %>
-                  <%= render 'suggestions/show', suggestion: suggestion %>
+        <% if @survey.event.start_date == nil %>
+          <div class='mb-5'>
+            <h4>Dates</h4>
+            <div>
+              <div id="sugg-dates">
+                <% if @survey.suggestions.blank? %>
+                <% else %>
+                  <% @survey.suggestions.each do |suggestion| %>
+                    <%= render 'suggestions/show', suggestion: suggestion %>
+                  <% end %>
                 <% end %>
-              <% end %>
+              </div>
             </div>
           </div>
-        </div>
+        <% end %>
         <!-- DATES DYNAMIQUES (fin) -->
         <!-- DESTINATIONS DYNAMIQUES (début) -->
-        <div class='mb-5'>
-          <h4>Destination<span> (un seul choix possible)</span></h4>
-          <div>
-            <div id='sugg-places'>
-              <% @survey.suggestions.each do |suggestion| %>
-                <%= render 'suggestions/destination', suggestion: suggestion %>
-              <% end %>
-              <%# if @survey.suggestions.blank? %>
-                <!-- Ajouter une proposition -->
-              <%# else %>
-                <%# @survey.suggestions.each do |suggestion| %>
-                  <%#= render 'suggestions/show', suggestion: suggestion %>
+        <% if @survey.event.destination == nil %>
+          <div class='mb-5'>
+            <h4>Destination<span> (un seul choix possible)</span></h4>
+            <div>
+              <div id='sugg-places'>
+                <% @survey.suggestions.each do |suggestion| %>
+                  <%= render 'suggestions/destination', suggestion: suggestion %>
+                <% end %>
+                <%# if @survey.suggestions.blank? %>
+                  <!-- Ajouter une proposition -->
+                <%# else %>
+                  <%# @survey.suggestions.each do |suggestion| %>
+                    <%#= render 'suggestions/show', suggestion: suggestion %>
+                  <%# end %>
                 <%# end %>
-              <%# end %>
+              </div>
             </div>
           </div>
-        </div>
+        <% end %>
         <!-- DESTINATIONS DYNAMIQUES (fin) -->
         <!-- THÉMATIQUES DYNAMIQUES (début) -->
-        <div class='mb-5'>
-          <h4>Thématiques</h4>
-          <div id='sugg-thematics'>
-            <%# @survey.suggestions.each do |suggestion| %>
-              <%#= render 'suggestions/thematic', suggestion: suggestion %>
-            <%# end %>
-            <!-- <i class="far fa-thumbs-up thumb"></i> -->
+          <div class='mb-5'>
+            <h4>Thématiques</h4>
+            <div id='sugg-thematics'>
+              <%# @survey.suggestions.each do |suggestion| %>
+                <%#= render 'suggestions/thematic', suggestion: suggestion %>
+              <%# end %>
+              <!-- <i class="far fa-thumbs-up thumb"></i> -->
+            </div>
           </div>
-        </div>
-        <!-- THÉMATIQUES DYNAMIQUES (fin) -->
-        <!-- BUDGET DYNAMIQUE (début) -->
-        <div id='sugg-budget' class='mb-5'>
-          <h4>Budget max/participant</h4>
-          <%= simple_form_for [@survey, @suggestion], remote: true do |f| %>
-            <%= f.input :value, as: :range, class: 'range', collection: 0..10, label: false %>
+          <!-- THÉMATIQUES DYNAMIQUES (fin) -->
+          <!-- BUDGET DYNAMIQUE (début) -->
+          <% if @survey.event. budget_per_participant_cents == 0 %>
+            <div id='sugg-budget' class='mb-5'>
+              <h4>Budget max/participant</h4>
+              <%= simple_form_for [@survey, @suggestion], remote: true do |f| %>
+                <%= f.input :value, as: :range, class: 'range', collection: 0..10, label: false %>
+              <% end %>
+              <div id='range-value'></div>
+            </div>
           <% end %>
-          <div id='range-value'></div>
         </div>
       </div>
-    </div>
     <!-- BUDGET DYNAMIQUE (fin) -->
     <!-- ONGLET 2 : FIN DE LA PARTIE DROITE DU FORMULAIRE -->
   </div>
