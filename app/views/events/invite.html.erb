@@ -1,4 +1,3 @@
-<%= render 'tabs-setup' %>
 <!-- ONGLET 3 (début) -->
 <div class="navbar-joorney">
   <div class="logo">
@@ -18,6 +17,8 @@
 <div class="banner-setup">
   <h1>Setup (3/3)</h1>
 </div>
+
+<%= render 'tabs-setup', event: @event, survey: @event.surveys %>
 
 <div class="container block33">
   <h2>Partagez un lien d'inscription via : </h2>
