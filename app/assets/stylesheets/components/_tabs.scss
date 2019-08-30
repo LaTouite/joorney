@@ -23,11 +23,16 @@
 }
 
 #dashboard-nav i {
-  padding-left: 35px;
+  padding-left: 45px;
 }
 
 #dashboard-nav a {
-  font-size: 12px;
+  font-size: 16px;
   margin-left: 6px;
   margin-right: 6px;
+}
+
+.setup-tabs {
+  display: flex;
+  justify-content: center;
 }

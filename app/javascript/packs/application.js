@@ -1,13 +1,14 @@
 import "bootstrap";
 import { loadDynamicBannerText } from '../components/banner';
-import { getTrueNumber } from '../components/countdown';
+import { initCountdown } from '../components/countdown';
 
 if (document.querySelector("#banner-typed-text")) {
   loadDynamicBannerText();
 }
 
 if (document.querySelector(".countdown-col")) {
-  getTrueNumber();
+  // console.log('.countdown-col')
+  initCountdown();
 }
 
 // require("chartkick")
