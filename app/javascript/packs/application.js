@@ -99,19 +99,23 @@ const thumbUp = () => {
 }
 
 if (document.querySelector('.far')) { thumbUp();}
+
 // FIN POUCE
 
+// AJOUTER UNE SUGGESTION (début)
 // clic sur le "+" de survey (destination)
 const plus = () => {
   const destPlus = document.querySelector('#dest-plus');
   const destDiv = document.querySelector('#destination-sugg');
   destPlus.addEventListener("click", (event) => {
-    const j = "choix 2"
+    const j = "<div><i class='fas fa-times-circle'></i>choix 2</div>"
     destDiv.insertAdjacentHTML('afterend', j );
   });
 }
 
 if (document.querySelector('#dest-plus')) { plus();}
+// AJOUTER UNE SUGGESTION (fin)
+
 
 // const plus = () => {
 //   const plus = document.querySelectorAll('.plus');
