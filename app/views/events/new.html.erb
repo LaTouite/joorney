@@ -15,10 +15,14 @@
     <div id="setup1" class="container">
       <div class="row">
         <div class="col-8">
-          <%= simple_form_for @event do |f| %>
-            <%= f.input :name, label: "Nom de l'évènement" %>
-            <%= f.input :event_category, label: "Type", collection: Event::EVENT_CATEGORIES %>
+          <div class="container-small-new">
+            <%= simple_form_for @event do |f| %>
+              <%= f.input :name, label: "Nom de l'évènement" %>
+              <%= f.input :event_category, label: "Type", collection: Event::EVENT_CATEGORIES %>
+          </div>
+            <br>
             <p> Connaissez-vous déjà ...</p>
+            <br>
             <div class="toggles-list">
               <div class="toggle-date">
                 La date
