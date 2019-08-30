@@ -3,20 +3,35 @@
     <%= link_to "Créer mon évènement", new_event_path, class: "tab-underlined active" %>
   </li>
   <li>
-    <% if survey.nil? %>
-      <%= link_to "Sondage (optionnel)", '#', class: "tab-underlined" %>
-    <% else %>
-      <%= link_to "Sondage (optionnel)", survey_path(survey), class: "tab-underlined" %>
-    <% end %>
+    <%= link_to "Sondage (optionnel)", '#', class: "tab-underlined" %>
   </li>
-  <li>
-    <% if survey.nil? %>
+    <li>
       <%= link_to "Inviter des participants", '#', class: "tab-underlined" %>
-    <% else %>
-      <%= link_to "Inviter des participants", invite_event_path(event), class: "tab-underlined" %>
-    <% end %>
   </li>
 </ul>
 
+
+
+
+
+
+
+    <%# if survey.nil? %>
+      <%#= link_to "Sondage (optionnel)", '#', class: "tab-underlined" %>
+    <%# else %>
+      <%#= link_to "Sondage (optionnel)", survey_path(survey), class: "tab-underlined" %>
+    <%# end %>
+<!--   </li>
+  <li> -->
+    <%# if survey.nil? %>
+      <%#= link_to "Inviter des participants", '#', class: "tab-underlined" %>
+    <%# else %>
+      <%#= link_to "Inviter des participants", invite_event_path(event), class: "tab-underlined" %>
+    <%# end %>
+<!--   </li>
+</ul> -->
+
+
 <!-- survey_path(survey)
 invite_event_path(event) -->
+
