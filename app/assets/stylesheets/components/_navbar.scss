@@ -36,10 +36,15 @@
 }
 
 .navbar-joorney .logo {
-  width: 200px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  width: 20%;
+  background-position: center;
+  // display: flex;
+  // align-items: center;
+  // justify-content: center;
+  background-image: asset-url("logo.png");
+  height: 100%;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
 .navbar-joorney .dark-part {
