@@ -3,21 +3,36 @@
 .large-banner {
   // text-align: center;
   // padding-top: 15vh;
-  display: flex;
+  // display: flex;
   // flex-direction: column;
-  height: 500px;
-  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), asset-url("background.jpg");
-  background-size: cover;
-  background-position: center;
-  align-items: center;
-  justify-content: center;
+  height: 522px;
+  // background-image: url("photosbanner.ppg");
+  // background-size: cover;
+  // background-position: center;
+  // align-items: center;
+  // justify-content: center;
   position: relative;
   margin-bottom: 70px;
 }
 
+.banner-photos {
+  width: 60%;
+  background-image: url("photosbanner.png");
+  // overflow: visible;
+  background-size: cover;
+  background-position: center;
+}
+
+.headline {
+  width:40%;
+  height: 100%;
+  padding-top: 80px;
+}
+
+
 .large-banner h1 {
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  color: white;
+  color: $black;
 }
 
 .large-banner p {
@@ -88,8 +103,15 @@
 }
 
 .p-container {
-  width: 1200px;
+  width: 1100px;
   margin: 0 auto;
+}
+
+.t-container {
+  display: flex;
+  width: 1300px;
+  margin: 0 auto;
+  height: 100%;
 }
 
 .rounds {
