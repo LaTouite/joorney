@@ -13,6 +13,8 @@ class ApplicationController < ActionController::Base
   #   redirect_to(root_path)
   # end
 
+  # @navbar_survey = Survey.last
+
   private
 
   def skip_pundit?

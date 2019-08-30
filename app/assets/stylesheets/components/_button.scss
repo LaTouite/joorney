@@ -82,10 +82,12 @@
     }
 
     #add-pic-btn {
-      position:relative;
+      position: absolute;
+      display: block;
       height: 30px;
-      display: flex;
-      margin: auto;
+      align-items: center;
+      top: 80px;
+      left: 40px;
     }
 
 
