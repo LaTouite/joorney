@@ -1,3 +1,17 @@
+// photo evenement dans banner
+
+#banner-dashboard img {
+  height: 150px;
+  width: 250px;
+  object-fit: cover;
+  position: absolute;
+  left: 160px;
+  top: 30px;
+  border-radius: 5px;
+  transform: rotate(-5deg);
+}
+
+
 .dashboard-card {
   background: #EDEDED;
   border-radius: 5px;
@@ -26,6 +40,7 @@
 
 .db-info-detail-value {
   margin-top: 25px;
+  height: 40%;
 }
 
 .with-border-right {
@@ -59,6 +74,7 @@
 .db-progression-detail i {
   font-size: 20px;
   padding-bottom: 25px;
+  color: $light-grey;
 }
 
 #dashboard-progression-pay {
@@ -85,6 +101,18 @@
   flex-grow: 2;
 }
 
+#dashboard-costs i {
+  font-size: 160px;
+  color: $primary;
+}
+
+.db-costs-chart {
+  height: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 // dashboard settings
 
 #settings {
@@ -99,7 +127,7 @@
 }
 
 .settings-detail {
-  background: #C4C4C4;
+  background: $light-grey;
   border-radius: 5px;
   position: relative;
   width: 20%;
@@ -107,6 +135,10 @@
   padding-bottom: 20%;
   font-size: 14px;
   text-align: center;
+}
+
+.settings-detail p{
+color: white;
 }
 
 .settings-detail i {
@@ -121,4 +153,19 @@
 #timeline {
   height: 100vh;
 }
+
+#top-timeline {
+  height: 200px;
+  border-bottom: 1px solid grey;
+}
+
+#top-timeline h4 {
+  margin-bottom: 30px;
+}
+
+#top-timeline p {
+  font-size: 13px;
+}
+
+
 
