@@ -18,7 +18,7 @@
 
 .banner-photos {
   width: 60%;
-  background-image: url("photosbanner.png");
+  background-image: asset-url("photosbanner.png");
   // overflow: visible;
   background-size: contain;
   background-position: center;
@@ -122,7 +122,7 @@
 .rounds {
   display: flex;
   margin-top: 40px;
-  background-image: url("bloc_1.svg");
+  background-image: asset-url("bloc_1.svg");
   height: 304px;
   width: 1132px;
   justify-content: center;
