@@ -1,12 +1,12 @@
 <div class="navbar-joorney">
-    <%= link_to "", root_path, class: "logo" %>
+  <%= link_to "", root_path, class: "logo" %>
   <div class="onglets">
     <p>Idées d'activités</p>
     <p>Notre concept</p>
     <p>Astuces & co</p>
   </div>
   <div class="dark-part">
-    <p>Hello Sophie</p>
+    <p>Hello <%= current_user.first_name %></p>
     <span class="avatar-navbar"></span>
   </div>
 </div>
