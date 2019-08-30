@@ -5,7 +5,14 @@ var h = document.getElementById('h');
 var m = document.getElementById('m');
 var s = document.getElementById('s');
 
-var x = setInterval(function(){
+let x;
+
+function getTrueNumber(x) {
+  if (x<10) return '0'+x;
+  else return x;
+}
+
+function display(){
   var now = new Date();
   var des = comingdate.getTime() - now.getTime();
   var days = Math.floor(des/(1000 * 60 * 60 * 24));
@@ -19,13 +26,12 @@ var x = setInterval(function(){
   s.innerHTML = getTrueNumber(secs);
 
   if(des <= 0) clearInterval(x);
+}
 
-},1000);
-
-function getTrueNumber(x) {
-  if (x<10) return '0'+x;
-  else return x;
+function initCountdown(){
+  console.log('initCountdown')
+  x = setInterval(display,1000);
 }
 
 // mycode
-export { getTrueNumber };
+export { initCountdown };
