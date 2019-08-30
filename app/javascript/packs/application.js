@@ -107,7 +107,7 @@ const plus = () => {
   const destDiv = document.querySelector('#destination-sugg');
   destPlus.addEventListener("click", (event) => {
     const j = "choix 2"
-    destDiv.insertAdjacentHTML('beforeend', j );
+    destDiv.insertAdjacentHTML('afterend', j );
   });
 }
 
