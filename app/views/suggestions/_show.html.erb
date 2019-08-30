@@ -1,0 +1,19 @@
+<% if suggestion.start_date != nil && suggestion.end_date != nil%>
+  <div>
+    <i class="fas fa-times-circle delete-sugg"></i>
+    <span><%= suggestion.start_date %></span>
+    <span> | </span>
+    <span><%= suggestion.end_date %></span>
+    <i class="far fa-thumbs-up thumb"></i>
+  </div>
+<% end %>
+
+<%#= render 'suggestions/form', survey: @survey, suggestion: @suggestion %>
+
+<%# if suggestion.topic == "Destination" %>
+  <!-- <div> -->
+    <!-- <i class="fas fa-times-circle delete-sugg"></i> -->
+    <%#= suggestion.value %>
+    <!-- <i class="far fa-thumbs-up thumb"></i> -->
+  <!-- </div> -->
+<%# end %>

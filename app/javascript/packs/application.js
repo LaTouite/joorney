@@ -1,9 +1,15 @@
 import "bootstrap";
 import { loadDynamicBannerText } from '../components/banner';
+import { getTrueNumber } from '../components/countdown';
 
 if (document.querySelector("#banner-typed-text")) {
   loadDynamicBannerText();
 }
+
+if (document.querySelector(".countdown-col")) {
+  getTrueNumber();
+}
+
 // require("chartkick")
 // require("chart.js")
 import flatpickrInit from '../plugins/flatpickr.js';
@@ -96,13 +102,13 @@ if (document.querySelector('.far')) { thumbUp();}
 // FIN POUCE
 
 // clic sur le "+" de survey (dates)
-const plus = () => {
-  const plus = document.querySelector('.plus');
-  plus.addEventListener("click", (event) => {
-    const j = "choix 2"
-    plus.insertAdjacentHTML('afterend', j );
-  });
-}
+// const plus = () => {
+//   const plus = document.querySelector('.plus');
+//   plus.addEventListener("click", (event) => {
+//     const j = "choix 2"
+//     plus.insertAdjacentHTML('afterend', j );
+//   });
+// }
 
 if (document.querySelector('.plus')) { plus();}
 

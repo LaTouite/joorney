@@ -1,11 +1,47 @@
-<div id="banner-dashboard">
+<!-- <div class="navbar-joorney">
+  <div class="logo">
+  </div>
+  <div class="onglets">
+    <p>Idées d'activités</p>
+    <p>Notre concept</p>
+    <p>Astuces & co</p>
+  </div>
+  <div class="dark-part">
+    <p>Hello X</p>
+    <span class="avatar-navbar"></span>
+  </div>
+</div> -->
 
+<%= render '/components/top-navbar' %>
+
+<div id="banner-dashboard">
+  <%= cl_image_tag @event.photo %>
+  <div class="title-countdown">
+    <h1> <%= @event.name %> </h1>
+    <div class="time middle">
+      <span>
+        <div id="d">12</div>
+        Jours
+      </span>
+      <span>
+        <div id="h">06</div>
+        Heures
+      </span>
+      <span>
+        <div id="m">35</div>
+        Minutes
+      </span>
+      <span>
+        <div id="s">54</div>
+        Secondes
+      </span>
+    </div>
+  </div>
 </div>
 
 <div class="container">
 
   <div class="row">
-
     <div class="col-8">
       <ul id="dashboard-nav" class="list-inline tabs-underlined">
         <li>
@@ -37,6 +73,15 @@
           <%= link_to "Agenda", new_event_path, class: "tab-underlined" %>
         </li>
       </ul>
+    </div>
+    <div class="col-4">
+    </div>
+
+  </div>
+
+  <div class="row">
+
+    <div class="col-8">
 
       <div id="dashboard-main-info" class="dashboard-card">
         <div class="db-info-detail">
@@ -53,7 +98,7 @@
           <p>Date</p>
           <div class="db-info-detail-value with-border-right">
             <%if @event.start_date? %>
-            <h2><%= @event.start_date.strftime("%d/%m/%F") %> - <%= @event.end_date.strftime("%d/%m/%Y") %></h2>
+            <h6><%= @event.start_date.strftime("%d/%m/%Y") %> - <%= @event.end_date.strftime("%d/%m/%Y") %></h6>
             <% else %>
             <h2>?</h2>
             <%end%>
@@ -147,6 +192,11 @@
 
     <div class="col-4">
       <div id="timeline" class="dashboard-card">
+        <div id="top-timeline">
+          <h4>Dernières activités</h4>
+          <p>Invitations envoyées : en attente des participants</p>
+          <p>Sondage envoyé : en attente des réponses</p>
+        </div>
       </div>
     </div>
   </div>
