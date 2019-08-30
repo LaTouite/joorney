@@ -1,24 +1,13 @@
 <!-- ONGLET 3 (début) -->
-<div class="navbar-joorney">
-  <div class="logo">
-    <p>Logo</p>
-  </div>
-  <div class="onglets">
-    <p>Idées d'activités</p>
-    <p>Notre concept</p>
-    <p>Astuces & co</p>
-  </div>
-  <div class="dark-part">
-    <p>Hello X</p>
-    <span class="avatar-navbar"></span>
-  </div>
-</div>
+
+<%= render '/components/top-navbar' %>
 
 <div class="banner-setup">
   <h1>Setup (3/3)</h1>
 </div>
 
-<%= render 'tabs-setup', event: @event, survey: @event.surveys %>
+<!-- , event: @event, survey: @event.surveys -->
+<%= render 'tabs-setup' %>
 
 <div class="container block33">
   <h2>Partagez un lien d'inscription via : </h2>

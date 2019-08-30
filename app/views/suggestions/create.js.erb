@@ -1,28 +1,30 @@
-function refreshForm(innerHTML) {
-  const newSuggestionForm = document.getElementById('new_suggestion');
-  newSuggestionForm.innerHTML = innerHTML;
+// function refreshForm(innerHTML) {
+//   const newSuggestionForm = document.getElementById('new-dates-sugg');
+//   newSuggestionForm.innerHTML = innerHTML;
+// }
+
+function addSuggDates(SuggDatesHTML) {
+  const suggestions = document.getElementById('sugg-dates');
+  suggestions.insertAdjacentHTML('beforeend', SuggDatesHTML);
 }
 
-function addSuggestion(SuggestionHTML) {
-  const suggestions = document.getElementById('suggestions');
-  suggestions.insertAdjacentHTML('beforeend', reviewHTML);
-}
+<%# if @suggestion.errors.any? %>
+  // refreshForm('<%= j render "suggestions/form", survey: @survey, suggestion: @suggestion %>');
+<%# else %>
+  addSuggDates('<%= j render "suggestions/show", suggestion: @suggestion %>');
+  // refreshForm('<%= j render "suggestions/form", survey: @survey, suggestion: Suggestion.new %>');
+<%# end %>
 
-<% if @suggestion.errors.any? %>
-  refreshForm('<%= j render "suggestions/form", survey: @survey, suggestion: @suggestion %>');
-<% else %>
-  addSuggestion('<%= j render "suggestions/show", suggestion: @suggestion %>');
-  refreshForm('<%= j render "suggestions/form", survey: @survey, suggestion: Suggestion.new %>');
-<% end %>
-
-function addSuggPlaces(SuggestionHTML) {
+function addSuggPlace(SuggPlaceHTML) {
   const suggPlaces = document.getElementById('sugg-places');
-  suggPlaces.insertAdjacentHTML('beforeend', reviewHTML);
+  suggPlaces.insertAdjacentHTML('beforeend', SuggPlaceHTML);
 }
 
-<% if @suggestion.errors.any? %>
-  refreshForm('<%= j render "suggestions/form", survey: @survey, suggestion: @suggestion %>');
-<% else %>
-  addSuggestion('<%= j render "suggestions/show", suggestion: @suggestion %>');
-  refreshForm('<%= j render "suggestions/form", survey: @survey, suggestion: Suggestion.new %>');
-<% end %>
+  addSuggPlace('<%= j render "suggestions/destination", suggestion: @suggestion %>');
+
+// function addSuggThematic(SuggThematicHTML) {
+//   const suggThematics = document.getElementById('sugg-thematics');
+//   suggThematics.insertAdjacentHTML('beforeend', SuggThematicHTML);
+// }
+
+//   addSuggThematic('<%= j render "suggestions/thematic", suggestion: @suggestion %>');

@@ -1,24 +1,12 @@
 
-<div class="navbar-joorney">
-  <div class="logo">
-    <p>Logo</p>
-  </div>
-  <div class="onglets">
-    <p>Idées d'activités</p>
-    <p>Notre concept</p>
-    <p>Astuces & co</p>
-  </div>
-  <div class="dark-part">
-    <p>Hello X</p>
-    <span class="avatar-navbar"></span>
-  </div>
-</div>
+<%= render '/components/top-navbar' %>
 
 <div class="banner-setup">
   <h1>Setup (1/3)</h1>
 </div>
 
-<%= render 'tabs-setup', event: @event, survey: nil  %>
+<!-- , event: @event, survey: nil  -->
+<%= render 'tabs-setup' %>
 
 <!-- 1ER ONGLET -->
 <nav class="tab-content" id="myTabContent">
@@ -60,6 +48,7 @@
                   <span class="slider round"></span>
                 </label>
                 <%= f.input :budget_per_participant_cents, id: "event_budget_per_participant_cents", :input_html => { :class => "d-none", disabled: :true }, :label_html => { :class => "d-none" }, placeholder: 'Votre budget max par pers.' %>
+                 <%= f.submit "Créer mon évènement", class: "button" %>
               </div>
             </div>
 
@@ -79,7 +68,7 @@
             </div>
           </div>
         </div>
-          <%= f.submit "Créer mon évènement", class: "btn btn-primary" %>
+
         <% end %>
       </div>
     </div>
