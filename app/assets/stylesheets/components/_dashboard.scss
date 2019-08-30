@@ -168,4 +168,31 @@ color: white;
 }
 
 
+// countdown css
+.time{
+  color: #fff;
+  text-transform: uppercase;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.middle{
+  text-align: center;
+}
+
+.time span{
+  padding: 0 14px;
+  font-size: 13px;
+  font-family: "Space Mono";
+}
+
+.time span div{
+  font-size: 40px;
+}
+
+.title-countdown {
+  text-align: center;
+}
+
 
