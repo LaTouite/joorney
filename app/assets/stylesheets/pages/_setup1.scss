@@ -3,10 +3,20 @@
 }
 
 .add-picture {
-  background-size : cover;
-  border-radius: 5px;
-  opacity: 0.2;
+  height: 150px;
+  width: 250px;
   display: flex;
   margin: auto;
   margin-top: 10%;
+  position: relative;
 }
+
+.add-picture img {
+  height: 200px;
+  width: 250px;
+  object-fit: cover;
+  background-position: center;
+  border-radius: 5px;
+  opacity: 0.2;
+}
+
