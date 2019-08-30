@@ -11,7 +11,7 @@ function addSuggDates(SuggDatesHTML) {
 <%# if @suggestion.errors.any? %>
   // refreshForm('<%= j render "suggestions/form", survey: @survey, suggestion: @suggestion %>');
 <%# else %>
-  addSuggDates('<%= j render "suggestions/show", suggestion: @suggestion %>');
+addSuggDates('<%= j render "suggestions/show", suggestion: @suggestion %>');
   // refreshForm('<%= j render "suggestions/form", survey: @survey, suggestion: Suggestion.new %>');
 <%# end %>
 
@@ -20,7 +20,7 @@ function addSuggPlace(SuggPlaceHTML) {
   suggPlaces.insertAdjacentHTML('beforeend', SuggPlaceHTML);
 }
 
-  addSuggPlace('<%= j render "suggestions/destination", suggestion: @suggestion %>');
+addSuggPlace('<%= j render "suggestions/destination", suggestion: @suggestion %>');
 
 // function addSuggThematic(SuggThematicHTML) {
 //   const suggThematics = document.getElementById('sugg-thematics');

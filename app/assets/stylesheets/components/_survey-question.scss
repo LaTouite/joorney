@@ -62,3 +62,9 @@ li {
   border-radius: 10px;
   width:100%;
 }
+
+#sugg-places {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
