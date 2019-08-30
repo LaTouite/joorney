@@ -101,16 +101,17 @@ const thumbUp = () => {
 if (document.querySelector('.far')) { thumbUp();}
 // FIN POUCE
 
-// clic sur le "+" de survey (dates)
-// const plus = () => {
-//   const plus = document.querySelector('.plus');
-//   plus.addEventListener("click", (event) => {
-//     const j = "choix 2"
-//     plus.insertAdjacentHTML('afterend', j );
-//   });
-// }
+// clic sur le "+" de survey (destination)
+const plus = () => {
+  const destPlus = document.querySelector('#dest-plus');
+  const destDiv = document.querySelector('#destination-sugg');
+  destPlus.addEventListener("click", (event) => {
+    const j = "choix 2"
+    destDiv.insertAdjacentHTML('beforeend', j );
+  });
+}
 
-if (document.querySelector('.plus')) { plus();}
+if (document.querySelector('#dest-plus')) { plus();}
 
 // const plus = () => {
 //   const plus = document.querySelectorAll('.plus');

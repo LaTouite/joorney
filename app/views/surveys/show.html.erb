@@ -48,12 +48,12 @@
             <div class= 'champs'>
               <h4 class='champ_nb'>Champ 2</h4>
               <h4>Destination</h4>
+              <i class="fas fa-plus-circle ml-3" id='dest-plus'></i>
             </div>
             <div class='survey-question' id='destination-sugg'>
               <!-- <i class="fas fa-times-circle delete-sugg"></i> -->
               <%= f.input :value, placeholder: "Fontainebleau", label: false, input_html: {onchange: 'Rails.fire(this.form, "submit")'} %>
               <%= f.input :topic, as: :hidden, input_html: {value: "Destination"} %>
-              <i class="fas fa-plus-circle plus ml-3"></i>
             </div>
           </div>
         <% end %>
@@ -109,12 +109,12 @@
           <p>Informations à préciser pour l’événement.</p>
           <p>Cela m’aidera à proposer une organisation qui contente tout le monde ;)</p>
         </div>
+        <!-- DATES DYNAMIQUES (début) -->
         <div class='mb-5'>
           <h4>Dates</h4>
           <div>
             <div id="sugg-dates">
               <% if @survey.suggestions.blank? %>
-                Ajouter une proposition
               <% else %>
                 <% @survey.suggestions.each do |suggestion| %>
                   <%= render 'suggestions/show', suggestion: suggestion %>
@@ -123,6 +123,8 @@
             </div>
           </div>
         </div>
+        <!-- DATES DYNAMIQUES (fin) -->
+        <!-- DESTINATIONS DYNAMIQUES (début) -->
         <div class='mb-5'>
           <h4>Destination<span> (un seul choix possible)</span></h4>
           <div>
@@ -140,6 +142,8 @@
             </div>
           </div>
         </div>
+        <!-- DESTINATIONS DYNAMIQUES (fin) -->
+        <!-- THÉMATIQUES DYNAMIQUES (début) -->
         <div class='mb-5'>
           <h4>Thématiques</h4>
           <div id='sugg-thematics'>
@@ -149,6 +153,8 @@
             <!-- <i class="far fa-thumbs-up thumb"></i> -->
           </div>
         </div>
+        <!-- THÉMATIQUES DYNAMIQUES (fin) -->
+        <!-- BUDGET DYNAMIQUE (début) -->
         <div id='sugg-budget' class='mb-5'>
           <h4>Budget max/participant</h4>
           <%= simple_form_for [@survey, @suggestion], remote: true do |f| %>
@@ -158,6 +164,7 @@
         </div>
       </div>
     </div>
+    <!-- BUDGET DYNAMIQUE (fin) -->
     <!-- ONGLET 2 : FIN DE LA PARTIE DROITE DU FORMULAIRE -->
   </div>
   <!-- ONGLET 2 : FIN DU FORMULAIRE -->
