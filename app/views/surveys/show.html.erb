@@ -67,8 +67,12 @@
             <h4>Thématiques</h4>
           </div>
           <div class='survey-question' id='thematics-sugg'>
-            <%= f.input :value, collection: Event::THEMATICS, label: false, input_html: {onchange: 'Rails.fire(this.form, "submit")', multiple: true } %>
-            <%= f.input :topic, as: :hidden, input_html: {value: "Thématiques"} %>
+            <% Event::THEMATICS.each do |thematic| %>
+              <%= f.button :submit, thematic, name:'suggestion[value]', value: thematic, class: 'btn btn-primary m-3', input_html: { onclick: 'Rails.fire(this.form, "submit")'} %>
+              <%= f.input :topic, as: :hidden, input_html: {value: "Thématiques"} %>
+            <% end %>
+            <%#= f.input :value, label: false, collection: Event::THEMATICS, input_html: {onchange: 'Rails.fire(this.form, "submit")' } %>
+            <%#= f.input :topic, as: :hidden, input_html: {value: "Thématiques"} %>
           </div>
         </div>
         <% end %>
@@ -89,7 +93,7 @@
       <!-- CHAMP 4 fin -->
       <!-- SUBMIT BTN début -->
       <div class='submit-area mb-5'>
-        <%= link_to "Générer votre sondage", invite_event_path(@survey.event), class: 'btn btn-primary' %>
+        <%= link_to "Générer votre sondage", invite_event_path(@survey.event), class: 'button' %>
         <div><%= link_to "Réaliser cette étape plus tard" %></div>
       </div>
       <!-- SUBMIT BTN fin -->
@@ -150,15 +154,17 @@
           <div class='mb-5'>
             <h4>Thématiques</h4>
             <div id='sugg-thematics'>
-              <%# @survey.suggestions.each do |suggestion| %>
-                <%#= render 'suggestions/thematic', suggestion: suggestion %>
-              <%# end %>
+              <% @survey.suggestions.each do |suggestion| %>
+                <% if suggestion.value != nil %>
+                  <%= render 'suggestions/thematic', suggestion: suggestion %>
+                <% end %>
+              <% end %>
               <!-- <i class="far fa-thumbs-up thumb"></i> -->
             </div>
           </div>
           <!-- THÉMATIQUES DYNAMIQUES (fin) -->
           <!-- BUDGET DYNAMIQUE (début) -->
-          <% if @survey.event. budget_per_participant_cents == 0 %>
+          <% if @survey.event.budget_per_participant_cents == 0 %>
             <div id='sugg-budget' class='mb-5'>
               <h4>Budget max/participant</h4>
               <%= simple_form_for [@survey, @suggestion], remote: true do |f| %>
