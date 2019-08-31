@@ -12,8 +12,8 @@ class SuggestionsController < ApplicationController
   def create
     @suggestion = Suggestion.create(suggestion_params)
     @suggestion.survey = Survey.find(params[:survey_id])
-    authorize @suggestion
     @suggestion.save!
+    authorize @suggestion
     if @suggestion.save
       respond_to do |format|
         format.html { redirect_to survey_path(@survey) }
@@ -25,6 +25,14 @@ class SuggestionsController < ApplicationController
         format.js  # <-- idem
       end
     end
+  end
+
+  def destroy
+    @suggestion = Suggestion.find(params[:id])
+    @suggestion.destroy
+    @survey = @suggestion.survey
+    authorize @suggestion
+    redirect_to survey_path(@survey)
   end
 
   def suggestion_params

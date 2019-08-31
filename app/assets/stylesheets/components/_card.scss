@@ -26,8 +26,18 @@
 
 
 .card-trip .card-trip-infos {
-  padding: 16px;
+  padding: 10px;
   display: flex;
   justify-content: space-between;
   position: relative;
+}
+
+.places-name {
+  margin: 0px;
+}
+
+.suppr-link{
+  display: block;
+  text-align: center;
+  padding-bottom: 10px;
 }

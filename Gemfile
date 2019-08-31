@@ -27,6 +27,7 @@ gem 'carrierwave', '~> 1.2'
 gem 'mini_magick'
 gem 'fog-aws'
 gem "chartkick"
+gem 'cocoon'
 
 group :development do
   gem 'web-console', '>= 3.3.0'

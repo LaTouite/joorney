@@ -1,6 +1,7 @@
 import "bootstrap";
 import { loadDynamicBannerText } from '../components/banner';
 import { initCountdown } from '../components/countdown';
+//= require cocoon
 
 if (document.querySelector("#banner-typed-text")) {
   loadDynamicBannerText();
@@ -36,8 +37,6 @@ if (document.querySelector("#checkbox-toggle-survey-date")) {
   initToggleDate();
 }
 
-
-
 const initTogglePlace = () => {
   const toggle_input_place = document.querySelector("#checkbox-toggle-survey-place");
   toggle_input_place.addEventListener("click", (event) => {
@@ -51,8 +50,6 @@ const initTogglePlace = () => {
 if (document.querySelector("#checkbox-toggle-survey-place")) {
   initTogglePlace();
 }
-
-
 
 const initToggleBudget = () => {
   const toggle_input_budget = document.querySelector("#checkbox-toggle-survey-budget");
@@ -105,16 +102,16 @@ if (document.querySelector('.far')) { thumbUp();}
 
 // AJOUTER UNE SUGGESTION (début)
 // clic sur le "+" de survey (destination)
-const plus = () => {
-  const destPlus = document.querySelector('#dest-plus');
-  const destDiv = document.querySelector('#destination-sugg');
-  destPlus.addEventListener("click", (event) => {
-    const j = "<div><i class='fas fa-times-circle'></i>choix 2</div>"
-    destDiv.insertAdjacentHTML('afterend', j );
-  });
-}
+// const plus = () => {
+//   const destPlus = document.querySelector('#dest-plus');
+//   const destDiv = document.querySelector('.sq-dir');
+//   destPlus.addEventListener("click", (event) => {
+//     const j = "<div><i class='fas fa-times-circle'></i>choix 2</div>"
+//     destDiv.insertAdjacentHTML('afterend', j );
+//   });
+// }
 
-if (document.querySelector('#dest-plus')) { plus();}
+// if (document.querySelector('#dest-plus')) { plus();}
 // AJOUTER UNE SUGGESTION (fin)
 
 

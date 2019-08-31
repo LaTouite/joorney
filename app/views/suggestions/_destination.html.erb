@@ -1,16 +1,14 @@
-<%# if suggestion.topic == "Destination" %>
-<!--   <div> -->
-    <%#= suggestion.value %>
-<!--     <i class="far fa-thumbs-up thumb"></i>
-  </div> -->
-<%# end %>
-
 <%if suggestion.topic == "Destination" %>
-<div class="card-trip">
-    <img src="" />
-    <div class="card-trip-infos">
-      <h6><%= suggestion.value.capitalize %></h6>
-      <i class="far fa-thumbs-up thumb"></i>
+  <div class="card-trip">
+      <img src="" />
+      <div class="card-trip-infos">
+        <h6 class='places-name'><%= suggestion.value.capitalize %></h6>
+        <i class="far fa-thumbs-up thumb"></i>
+      </div>
+        <%= link_to "Supprimer",
+        survey_suggestion_path(suggestion.survey.id, suggestion),
+        class: 'suppr-link',
+        method: :delete,
+        data: { confirm: "Are you sure?" } %>
     </div>
-  </div>
 <% end %>
