@@ -1,8 +1,7 @@
-<%# if suggestion.topic == "Thématiques" %>
-  <!-- <div> -->
-    <!-- <i class="fas fa-times-circle delete-sugg"></i> -->
-    <%#= suggestion.topic %>
-    <!-- <i class="far fa-thumbs-up thumb"></i> -->
-  <!-- </div> -->
-<%# end %>
+<% if suggestion.topic == "Thématiques" %>
+  <div>
+    <%= suggestion.value %>
+    <i class="far fa-thumbs-up thumb"></i>
+  </div>
+<% end %>
 

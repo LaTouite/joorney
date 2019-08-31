@@ -22,9 +22,9 @@ function addSuggPlace(SuggPlaceHTML) {
 
 addSuggPlace('<%= j render "suggestions/destination", suggestion: @suggestion %>');
 
-// function addSuggThematic(SuggThematicHTML) {
-//   const suggThematics = document.getElementById('sugg-thematics');
-//   suggThematics.insertAdjacentHTML('beforeend', SuggThematicHTML);
-// }
+function addSuggThematic(SuggThematicHTML) {
+  const suggThematics = document.getElementById('sugg-thematics');
+  suggThematics.insertAdjacentHTML('beforeend', SuggThematicHTML);
+}
 
-//   addSuggThematic('<%= j render "suggestions/thematic", suggestion: @suggestion %>');
+  addSuggThematic('<%= j render "suggestions/thematic", suggestion: @suggestion %>');
