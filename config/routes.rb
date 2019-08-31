@@ -33,7 +33,7 @@ Rails.application.routes.draw do
 
   # SURVEY
   resources :surveys, only: [:show] do
-    resources :suggestions, only: [:create]
+    resources :suggestions, only: [:create, :destroy]
   end
 
   # CHOICES

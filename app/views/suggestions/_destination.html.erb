@@ -11,6 +11,9 @@
     <div class="card-trip-infos">
       <h6><%= suggestion.value.capitalize %></h6>
       <i class="far fa-thumbs-up thumb"></i>
+      <%= link_to "Delete", survey_suggestion_path(:id, params[:suggestion_id]),
+      method: :delete,
+      data: { confirm: "Are you sure?" } %>
     </div>
   </div>
 <% end %>

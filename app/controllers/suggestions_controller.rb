@@ -27,6 +27,13 @@ class SuggestionsController < ApplicationController
     end
   end
 
+  def destroy
+    @suggestion = Suggestion.find(params[:id])
+    @suggestion.destroy
+    authorize @suggestion
+    redirect_to surveys_path
+  end
+
   def suggestion_params
     params.require(:suggestion).permit(:start_date, :end_date, :value, :topic)
   end
