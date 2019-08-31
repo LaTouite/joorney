@@ -30,6 +30,7 @@ class SuggestionsController < ApplicationController
   def destroy
     @suggestion = Suggestion.find(params[:id])
     @suggestion.destroy
+    @survey = @suggestion.survey
     authorize @suggestion
     redirect_to survey_path(@survey)
   end
