@@ -9,7 +9,7 @@ class EventsController < ApplicationController
   def create
     @event = Event.new(params_event)
     @event.user = current_user
-    if @event.start_date == Date.today && @event.end_date == Date.today
+    if @event.start_date <= Date.today && @event.end_date <= Date.today
       @event.start_date = nil
       @event.end_date = nil
     end
