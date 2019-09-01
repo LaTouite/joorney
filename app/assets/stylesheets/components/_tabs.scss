@@ -23,6 +23,12 @@
   text-align: center;
 }
 
+#onglet-d:hover {
+  // text-align: center;
+  transform: scale(1.03);
+  // transition-duration: 1s;
+}
+
 #dashboard-nav i {
   padding-left: 45px;
 }

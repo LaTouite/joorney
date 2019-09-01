@@ -35,6 +35,7 @@
   left: 80px;
   top: 83px;
   position: absolute;
+  // transition-duration: cssAnimation 2s forwards;
   animation: cssAnimation 0s 1s forwards;
 
   visibility: hidden;
@@ -55,14 +56,14 @@
 .bubble {
   background-image: asset-url("bubble.png");
   background-size: cover;
-  position: absolute;
-  width: 558px;
-  height: 78px;
-  top: 50px;
-  left: 83px;
-  padding-top: 16px;
-  padding-bottom: 12px;
-  padding-left: 49px;
+    position: absolute;
+    width: 600px;
+    height: 125px;
+    top: 27px;
+    left: 65px;
+    padding-top: 37px;
+    padding-bottom: 13px;
+    padding-left: 71px;
   // padding-right: 35px;
 }
 
@@ -72,6 +73,10 @@
   color: $primary-dark;
 }
 
+.bubble p {
+  color: $black;
+}
+
 .bubble p:nth-child(1) {
   overflow: hidden; /* Ensures the content is not revealed until the animation */
     // border-right: .15em solid orange; /* The typwriter cursor */
@@ -79,7 +84,7 @@
     margin: 0 auto; /* Gives that scrolling effect as the typing happens */
     animation-delay: 5s;
     animation:
-      typing 2.5s steps(30, end),
+      typing 2s steps(30, end),
       // blink-caret .5s step-end infinite;
 }
 
@@ -93,7 +98,7 @@
     //   typing2 3.5s steps(30, end),
     //   blink-caret .5s step-end infinite;
     -webkit-animation: typing2 2.5s steps(30, end);
-    animation: typing2 2.5s steps(30, end);
+    animation: typing2 2s steps(30, end);
 
     -webkit-animation-delay: 3s;
     animation-delay: 3s;

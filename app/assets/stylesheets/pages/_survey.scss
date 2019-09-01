@@ -1,0 +1,118 @@
+#big-number {
+  font-size: 28px;
+  color: $primary-dark;
+}
+
+#champ-number {
+  font-size: 21px;
+  color: $primary;
+}
+
+
+.form-sugg h4 {
+  color: $black
+}
+
+// .content-survey {
+//   margin-top: 80px;
+// }
+
+#parenthese {
+  color: $grey;
+  font-weight: normal;
+}
+
+.survey-question .form-control {
+  width: 100%;
+  margin-top: 0px;
+}
+
+#deadline {
+  height: 40px;
+}
+
+// .survey-question .button-secondary {
+//   padding: 8px 40px;
+//   box-shadow: none;
+// }
+
+.hidden {
+  padding: 0;
+  color: white;
+}
+
+.hidden:hover {
+  padding: 0;
+  color: white;
+}
+
+.champ-div {
+  border-bottom: 1px solid $border-grey;
+  margin-top: 40px;
+  padding-bottom: 40px;
+}
+
+.champ-div h4 {
+  margin-bottom: 20px;
+  font-size: 21px;
+  // color: $primary-dark;
+}
+
+.submit-area {
+  margin-top: 50px;
+}
+
+.formm {
+  padding-top: 90px;
+  // position: absolute
+}
+
+.sondage-title {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+#survey-deadline {
+  margin-bottom: 40px
+}
+
+.dynamic-survey > h4 p {
+  font-size: 15px;
+}
+
+.form-champ {
+  margin-bottom: 20px;
+  // border-bottom: 1px solid $border-grey;
+}
+
+.range {
+  color: blue !important;
+  background-color: blue !important;
+}
+
+.slider-figma {
+  background-image: asset-url('slider.png');
+  height: 28px;
+  width: 400px;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.apercu {
+  background-image: asset-url('apercu.png');
+  // position: relative;
+  height: 98px;
+  width: 231px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-left: 220px;
+  margin-top: -93px;
+  margin-bottom: 19px;
+}
+
+.dynamic-title {
+  color: $primary-dark;
+}
+
+
+
