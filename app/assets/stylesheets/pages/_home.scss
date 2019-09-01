@@ -5,11 +5,12 @@
   // padding-top: 15vh;
   // display: flex;
   // flex-direction: column;
-  height: 530px;
+  height: 720px;
   display: flex;
-  margin-left: 100px;
-  margin-right: 100px;
-  // width: 85%
+  // margin-left: 100px;
+  // margin-right: 100px;
+  width: 90%;
+  margin: 0 auto;
   // background-image: url("photosbanner.ppg");
   // background-size: cover;
   // background-position: center;
@@ -39,6 +40,10 @@
 .vide {
   width: 60%;
   height: 100%;
+  background-image: url("photosbanner.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  overflow: visible;
 }
 
 .headline .button {
@@ -78,7 +83,7 @@
   margin-top: 40px;
   background-image: asset-url("bloc_1.svg");
   height: 304px;
-  width: 1132px;
+  width: 1142px;
   // justify-content: center;
   // text-align: center;
 }
@@ -110,7 +115,8 @@
   // background-position: center;
   // object-fit: cover;
   background-size: cover;
-  height: 4600px;
+  // background-repeat: no-repeat;
+  height: 3950px;
 }
 
 
