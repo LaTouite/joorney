@@ -44,12 +44,28 @@
 
   </div>
 
+
   <div>
-    <p> Voici des logements adaptés à votre évènement : </p>
-    <p> - Situés à <%= @event.destination %> </p>
-    <p> - Disponibles du <%= %> au <%= %> </p>
-    <p> - Pour <%= @participants.size %> personnes </p>
-    <p> - A moins de <%= %>€ la nuit </p>
+
+    <h4> Votre hébergement </h4>
+    <% if @event.accomodation_address? %>
+     <p> Vous serez logé(e)s à l'adresse suivante : <br> <%= @event.accomodation_address %>
+    <% else %>
+      <div class="address-input">
+        <div class="correct-icone-accomodation">
+          <i class="fas fa-home"></i>
+        </div>
+        <%= simple_form_for @event do |f| %>
+          <%= f.input :accomodation_address, :input_html => { :class => "address" }, placeholder: "Veuillez renseigner l'adresse de l'hébergement", label: false %>
+          <%= f.submit "Valider l'adresse" %>
+        <%end%>
+      </div>
+      <h4> Pas encore d'hébergement ? <br> Pas de panique, nous vous aidons à trouver le logement idéal pour votre évènement ! </h4>
+      <p> - Situés à <%= @event.destination %> </p>
+      <p> - Disponibles du <%= %> au <%= %> </p>
+      <p> - Pour <%= @participants.size %> personnes </p>
+      <p> - A moins de <%= %>€ la nuit </p>
+    <%end%>
 
     <!-- <a href="<%=@url%>">Aller sur Airbnb</a> -->
 

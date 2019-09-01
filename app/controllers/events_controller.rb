@@ -28,6 +28,17 @@ class EventsController < ApplicationController
     authorize @event
   end
 
+  def edit
+    @event = Event.find(params[:id])
+    authorize @event
+  end
+
+  def update
+    @event = Event.find(params[:id])
+    @event.update(params_event)
+    authorize @event
+  end
+
   def show
     @event = Event.find(params[:id])
     authorize @event
@@ -41,6 +52,7 @@ class EventsController < ApplicationController
 
   def accomodation
     @event = Event.find(params[:id])
+    @event.update(params_event_accomodation)
     @participants = UserEvent.where(event_id: @event.id)
     # @url = "https://www.airbnb.fr/s/#{@event.destination}/homes?checkin=#{@event.start_date.strftime('%F')}&checkout=#{@event.end_date.strftime('%F')}&price_max=150&adults=#{@participants.size}"
     authorize @event
@@ -49,6 +61,10 @@ class EventsController < ApplicationController
   private
 
   def params_event
-    params.require(:event).permit(:name, :event_category, :thematics, :start_date, :end_date, :destination, :budget_per_participant, :photo, :photo_cache, :deadline, :token)
+    params.require(:event).permit(:name, :event_category, :thematics, :start_date, :end_date, :destination, :budget_per_participant, :photo, :photo_cache, :deadline, :token, :accomodation_address, :accomodation_address)
+  end
+
+  def params_event_accomodation
+    params.permit(:accomodation_address)
   end
 end

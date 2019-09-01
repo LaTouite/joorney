@@ -19,6 +19,14 @@ import "flatpickr/dist/themes/material_blue.css";
 
 flatpickrInit();
 
+//Auto-complete address
+
+import { initAutocomplete } from '../plugins/init_autocomplete.js';
+if (document.querySelector('.address')) {
+  initAutocomplete();
+}
+
+
 const initToggleDate = () => {
   const toggle_input_date = document.querySelector("#checkbox-toggle-survey-date");
   toggle_input_date.addEventListener("click", (event) => {
