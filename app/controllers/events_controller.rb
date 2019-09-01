@@ -30,6 +30,7 @@ class EventsController < ApplicationController
 
   def show
     @event = Event.find(params[:id])
+    @survey = Survey.find_by(event_id: @event.id)
     authorize @event
   end
 

@@ -6,8 +6,8 @@
     class: '',
     method: :delete,
     data: { confirm: "Are you sure?" } %>
-    <span><%= suggestion.start_date %></span>
+    <span><%= suggestion.start_date.day %>-<%= suggestion.start_date.month %>-<%= suggestion.start_date.year %></span>
     <span> | </span>
-    <span><%= suggestion.end_date %></span>
+    <span><%= suggestion.end_date.day %>-<%= suggestion.end_date.month %>-<%= suggestion.end_date.year %></span>
   </div>
 <% end %>
