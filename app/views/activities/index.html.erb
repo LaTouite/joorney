@@ -64,6 +64,16 @@
                 <h2> <%= activity.title %> </h2>
                 <p id="light-details"> <%#= Geocoder.search(activity.address).first.city %> </p>
               </div>
+              <div class="favorite-activity">
+                <%# if event_activity.activity.favorite == false %>
+                  <a href="#" class="favorite">
+                    <i class="far fa-heart"></i>
+                    <i class="fas fa-heart d-none"></i>
+                  </a>
+                <%# else %>
+
+                <%#end%>
+              </div>
               <div class="list-details">
                 <ul>
                   <li><i class="fas fa-users each-logo"></i> <%= activity.duration %> min</li>

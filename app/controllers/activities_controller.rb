@@ -14,7 +14,8 @@ class ActivitiesController < ApplicationController
     @markers = @activities.geocoded.map do |activity|
       {
         lat: activity.latitude,
-        lng: activity.longitude
+        lng: activity.longitude,
+        #image_url: helpers.asset_url('../assets/images/home-solid.svg')
       }
     end
     @markers << {lat: @event.latitude, lng: @event.longitude}

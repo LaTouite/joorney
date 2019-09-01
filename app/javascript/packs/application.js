@@ -33,6 +33,12 @@ if (document.querySelector('#map')) {
   initMapbox();
 }
 
+// Favorite activities
+import { initFavorite } from '../components/favorite';
+if (document.querySelector('.favorite')) {
+  initFavorite();
+}
+
 
 
 const initToggleDate = () => {

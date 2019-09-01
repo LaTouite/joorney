@@ -55,6 +55,8 @@ class EventsController < ApplicationController
     @event.update(params_event_accomodation)
     @participants = UserEvent.where(event_id: @event.id)
     # @url = "https://www.airbnb.fr/s/#{@event.destination}/homes?checkin=#{@event.start_date.strftime('%F')}&checkout=#{@event.end_date.strftime('%F')}&price_max=150&adults=#{@participants.size}"
+    @markers = [ {lat: @event.latitude,
+    lng: @event.longitude} ]
     authorize @event
   end
 
