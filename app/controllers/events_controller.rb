@@ -13,7 +13,7 @@ class EventsController < ApplicationController
       @event.start_date = nil
       @event.end_date = nil
     end
-    if @event.destination = ''
+    if @event.destination == ''
       @event.destination = nil
     end
     if @event.save
