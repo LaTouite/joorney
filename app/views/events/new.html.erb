@@ -52,8 +52,11 @@
                   <span class="slider round"></span>
                 </label>
                 <%= f.input :budget_per_participant_cents, id: "event_budget_per_participant_cents", :input_html => { :class => "d-none", disabled: :true }, :label_html => { :class => "d-none" }, placeholder: 'Votre budget max par pers.' %>
-                 <%= f.submit "Créer mon évènement", class: "button" %>
               </div>
+
+            </div>
+            <div class="cta-part">
+              <%= f.submit "Créer mon évènement", class: "button" %>
             </div>
 
 

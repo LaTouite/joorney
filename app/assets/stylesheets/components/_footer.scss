@@ -1,0 +1,65 @@
+.footer {
+  margin-top: 150px;
+  background-image: url("Footer.png");
+  background-size: cover;
+  height: 355px;
+  display: flex;
+  align-items: center;
+  padding-top: 30px;
+}
+
+.arrange {
+  display: flex;
+  padding: 0px;
+}
+
+.footer p {
+  color: white;
+}
+
+.footer h4 {
+  color: white;
+  font-size: 21px;
+  margin-bottom: 20px;
+}
+
+.reseaux-sociaux p {
+  font-size: 18px;
+  color: white;
+}
+
+.reseaux-sociaux i {
+  color: white;
+  font-size: 28px;
+  padding: 20px;
+}
+
+.reseaux-sociaux p {
+  padding: 20px;
+}
+.reseaux {
+  display: flex;
+}
+
+.service-client p {
+  font-size: 18px;
+  color: white;
+}
+
+.rubrique {
+  margin: 0 20px;
+  flex: 1;
+}
+
+.tel {
+  display: flex;
+}
+
+.tel i {
+  color: white;
+  font-size: 18px;
+}
+
+.rubrique {
+  line-height: 1;
+}

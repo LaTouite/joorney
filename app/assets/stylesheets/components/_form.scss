@@ -1,0 +1,15 @@
+.form-control {
+  background-color: $background-color !important;
+  border-radius: 12px;
+  border: 1px solid white;
+  width: 60%;
+}
+
+.select option {
+  color: $black;
+  // background-color: blue;
+}
+
+select:not(:-internal-list-box) {
+  background-color: blue !important;
+}

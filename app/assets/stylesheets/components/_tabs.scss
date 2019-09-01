@@ -1,10 +1,11 @@
 .tabs-underlined {
   display: flex;
   align-items: center;
+  font-weight: bold;
 }
 
 .tabs-underlined .tab-underlined {
-  color: black;
+  color: $primary-dark;
   padding: 8px;
   margin: 8px 16px;
   opacity: .4;
@@ -15,7 +16,7 @@
 
 .tabs-underlined .tab-underlined.active {
   opacity: 1;
-  border-bottom: 3px solid #555555;
+  border-bottom: 3px solid $primary-dark;
 }
 
 .dashboard-nav li {
