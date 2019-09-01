@@ -9,28 +9,37 @@ function changeNb(id, Nb) {
 }
 
 // Dates partie gauche
-add('new-dates', 'afterend', '<%= j render "suggestions/date", suggestion: @suggestion %>');
+if (document.querySelector("#new-dates")) {
+  add('new-dates', 'afterend', '<%= j render "suggestions/date", suggestion: @suggestion %>');
+}
 
 // Dates partie droite
-add('sugg-dates', 'beforeend', '<%= j render "suggestions/date_survey", suggestion: @suggestion %>');
-
+if (document.querySelector("#sugg-dates")) {
+  add('sugg-dates', 'beforeend', '<%= j render "suggestions/date_survey", suggestion: @suggestion %>');
+}
 // Destinations partie gauche
-add('sugg-places', 'beforeend', '<%= j render "suggestions/destination_survey", suggestion: @suggestion %>');
-
+if (document.querySelector("#sugg-places")) {
+  add('sugg-places', 'beforeend', '<%= j render "suggestions/destination_survey", suggestion: @suggestion %>');
+}
 // Destinations partie droite
-add('new-places', 'beforeend', '<%= j render "suggestions/destination", suggestion: @suggestion %>');
-
+if (document.querySelector("#new-places")) {
+  add('new-places', 'beforeend', '<%= j render "suggestions/destination", suggestion: @suggestion %>');
+}
 // Thématiques partie gauche
-add('sugg-thematics', 'beforeend', '<%= j render "suggestions/thematic", suggestion: @suggestion %>');
-
+if (document.querySelector("#sugg-thematics")) {
+  add('sugg-thematics', 'beforeend', '<%= j render "suggestions/thematic", suggestion: @suggestion %>');
+}
 // Changer le nb de propositions pour les destinations
-changeNb('sugg-dest-nb', '<%= j render "suggestions/dest_nombre", suggestion: @suggestion %>');
-
+if (document.querySelector("#sugg-dest-nb")) {
+  changeNb('sugg-dest-nb', '<%= j render "suggestions/dest_nombre", suggestion: @suggestion %>');
+}
 // Changer le nb de propositions pour les dates
-changeNb('sugg-dates-nb', '<%= j render "suggestions/date_nombre", suggestion: @suggestion %>');
-
+if (document.querySelector("#sugg-dates-nb")) {
+  changeNb('sugg-dates-nb', '<%= j render "suggestions/date_nombre", suggestion: @suggestion %>');
+}
 // Changer le nb de propositions pour les thématiques
-changeNb('sugg-them-nb', '<%= j render "suggestions/thematic_nombre", suggestion: @suggestion %>');
-
+if (document.querySelector("#sugg-them-nb")) {
+  changeNb('sugg-them-nb', '<%= j render "suggestions/thematic_nombre", suggestion: @suggestion %>');
+}
 // export { add };
 // export { changeNb };

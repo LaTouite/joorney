@@ -3,8 +3,9 @@ function changeDeadline(DeadlineHTML) {
   deadline.innerHTML = DeadlineHTML;
 }
 
-changeDeadline('<%= j render "surveys/deadline", survey: @survey %>');
-
+if (document.querySelector("#survey-deadline")) {
+  changeDeadline('<%= j render "surveys/deadline", survey: @survey %>');
+}
 // import { add } from '../suggestions/create';
 
 // add('survey-deadline', 'beforeend', '<%= j render "surveys/deadline", survey: @survey %>');
