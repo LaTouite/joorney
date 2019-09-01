@@ -1,0 +1,100 @@
+<div id="banner-dashboard">
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-8">
+      <ul id="dashboard-nav" class="list-inline tabs-underlined">
+        <li>
+          <i class="fas fa-tachometer-alt"></i>
+          <%= link_to "Dashboard", event_path(@event), class: "tab-underlined active" %>
+        </li>
+        <li>
+          <i class="fas fa-poll-h"></i>
+          <%= link_to "Sondage", new_event_path, class: "tab-underlined" %>
+        </li>
+        <li>
+          <i class="fas fa-home"></i>
+          <%= link_to "Logement", new_event_path, class: "tab-underlined" %>
+        </li>
+        <li>
+          <i class="fas fa-snowboarding"></i>
+          <%= link_to "Activités", new_event_path, class: "tab-underlined" %>
+        </li>
+        <li>
+          <i class="fas fa-snowboarding"></i>
+          <%= link_to "Transport", new_event_path, class: "tab-underlined" %>
+        </li>
+        <li>
+          <i class="fas fa-piggy-bank"></i>
+          <%= link_to "Cagnotte", new_event_path, class: "tab-underlined" %>
+        </li>
+        <li>
+          <i class="far fa-calendar-alt"></i>
+          <%= link_to "Agenda", new_event_path, class: "tab-underlined" %>
+        </li>
+      </ul>
+    </div>
+    <div class="col-4">
+    </div>
+  </div>
+
+  <div class="container-fluid lr">
+    <% if @activities.size == 0 %>
+      <h2> Désolé, nous n'avons pour l'instant aucune activité dans votre secteur à vous proposer.<br> Retentez votre chance d'ici quelques jours !</h2>
+    <% elsif @activities.size == 1 %>
+      <h2> 1 chance de trouver votre bonheur </h2>
+    <% else %>
+      <h2> <%=@activities.size %> chances de trouver votre bonheur </h2>
+    <% end %>
+    <div class="row">
+      <div class="col-7 lr-cards">
+        <% @activities.each do |activity| %>
+        <div class="lr-card">
+  <!-- DIV PHOTO BG + TROPHEE (début) -->
+          <div class="cardp" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path activity.main_photo, height: 300, width: 400, crop: :fill; %>')">
+          </div>
+  <!-- DIV PHOTO BG + TROPHEE (fin) -->
+            <div class="lr-card-info" id="list-activities">
+              <div class="price">
+                <h2> <%= activity.unit_price %>€</h2>
+                <p id="light-details">/pers.</p>
+              </div>
+              <div class="title-city">
+                <h2> <%= activity.title %> </h2>
+                <p id="light-details"> <%#= Geocoder.search(activity.address).first.city %> </p>
+              </div>
+              <div class="list-details">
+                <ul>
+                  <li><i class="fas fa-users each-logo"></i> <%= activity.duration %> min</li>
+                    <% if activity.min_number_of_participants == activity.max_number_of_participants && activity.min_number_of_participants == 1 %>
+                      <li><i class="fas fa-hourglass-end each-logo"></i> 1 participant </li>
+                    <% elsif activity.min_number_of_participants == activity.max_number_of_participants %>
+                      <li><i class="fas fa-hourglass-end each-logo"></i> <%= activity.min_number_of_participants %> participants </li>
+                    <% else %>
+                      <li><i class="fas fa-hourglass-end each-logo"></i> <%= activity.min_number_of_participants %> - <%= activity.max_number_of_participants %> participants </li>
+                    <% end %>
+
+                  <li><i class="fas fa-child each-logo"></i><%= activity.min_age %>ans min.</li>
+                </ul>
+              </div>
+                <div class="dark-blue-empty-button" id="small-btn"> <%= link_to "Découvrir", event_activity_path(@event, activity) %>
+                </div>
+            </div>
+        </div>
+        <%end%>
+      </div>
+
+
+      <div class="col-5">
+        <div
+          id="map"
+          data-markers="<%= @markers.to_json %>"
+          data-mapbox-api-key="pk.eyJ1IjoiY2FtaWxsZWR0eSIsImEiOiJjanpsMTVrZWcwaXQ3M2RuMG1rM242Y3FtIn0.wDpYPwI1WAXhfDMZggbOXw">
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+

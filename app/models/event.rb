@@ -2,6 +2,7 @@ class Event < ApplicationRecord
   belongs_to :user
   has_many :userevents
   has_many :surveys
+  has_many :event_activities
   has_secure_token
 
   EVENT_CATEGORIES = ["EVJF", "EVG", "Anniversaire", "Weekend", "Autre"].freeze

@@ -26,6 +26,14 @@ if (document.querySelector('.address')) {
   initAutocomplete();
 }
 
+// Initialisation map
+import 'mapbox-gl/dist/mapbox-gl.css';
+import { initMapbox } from '../plugins/init_mapbox';
+if (document.querySelector('#map')) {
+  initMapbox();
+}
+
+
 
 const initToggleDate = () => {
   const toggle_input_date = document.querySelector("#checkbox-toggle-survey-date");

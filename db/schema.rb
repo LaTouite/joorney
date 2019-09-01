@@ -10,10 +10,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_01_120241) do
+ActiveRecord::Schema.define(version: 2019_09_01_145624) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "activities", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
+    t.integer "unit_price"
+    t.string "category"
+    t.string "schedule"
+    t.integer "min_number_of_participants"
+    t.integer "max_number_of_participants"
+    t.integer "min_age"
+    t.integer "duration"
+    t.string "address"
+    t.float "latitude"
+    t.float "longitude"
+    t.string "main_photo"
+    t.string "second_photo"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "choices", force: :cascade do |t|
     t.bigint "user_id"
@@ -22,6 +41,17 @@ ActiveRecord::Schema.define(version: 2019_09_01_120241) do
     t.datetime "updated_at", null: false
     t.index ["suggestion_id"], name: "index_choices_on_suggestion_id"
     t.index ["user_id"], name: "index_choices_on_user_id"
+  end
+
+  create_table "event_activities", force: :cascade do |t|
+    t.bigint "activity_id"
+    t.bigint "event_id"
+    t.boolean "favorite", default: false
+    t.boolean "selected", default: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["activity_id"], name: "index_event_activities_on_activity_id"
+    t.index ["event_id"], name: "index_event_activities_on_event_id"
   end
 
   create_table "events", force: :cascade do |t|
@@ -99,6 +129,8 @@ ActiveRecord::Schema.define(version: 2019_09_01_120241) do
 
   add_foreign_key "choices", "suggestions"
   add_foreign_key "choices", "users"
+  add_foreign_key "event_activities", "activities"
+  add_foreign_key "event_activities", "events"
   add_foreign_key "events", "users"
   add_foreign_key "suggestions", "surveys"
   add_foreign_key "surveys", "events"

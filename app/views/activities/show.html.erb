@@ -1,0 +1,65 @@
+<div class='images'>
+  <div class='image-box main-img1'><%= cl_image_tag @activity.main_photo, alt: "Le Wagon", class: "img round"%></div>
+  <div class='image-box main-img2'><%= cl_image_tag @activity.second_photo, alt: "Le Wagon", class: "img round" %></div>
+</div>
+<div class='container main-box mt-3'>
+  <div class='content-booking-box'>
+    <div class='content-box'>
+      <div class='m-3 border-bottom'>
+        <div class='title-price-box'>
+          <h2><%= @activity.title.capitalize %></h2>
+          <div>
+            <h2 class='price'><%= @activity.unit_price %>€</h2>
+            <p id='light-details'>/personne</p>
+          </div>
+        </div>
+        <div class='act-description'>
+          <p class='descr-txt'><%= @activity.description.capitalize %></p>
+        </div>
+<!-- 4 MAIN INFOS -->
+        <div class='info-box'>
+<!-- DUREE -->
+          <div class='each-info-box'>
+            <i class="fas fa-hourglass-end each-logo"></i>
+            <p class="info"></i><%= @activity.duration %> minutes</p>
+          </div>
+<!-- NB DE PARTICIPANTS -->
+          <div class='each-info-box'>
+            <i class="fas fa-users each-logo"></i>
+            <p class="info"></i><%= @activity.min_number_of_participants %> - <%=@activity.max_number_of_participants %> personnes</p>
+          </div>
+<!-- AGE MINI -->
+          <div class='each-info-box'>
+            <i class="fas fa-child each-logo"></i>
+            <p class="info"></i><%= @activity.min_age %> ans min</p>
+          </div>
+<!-- CATEGORY -->
+          <div class='each-info-box'>
+            <i class="fas fa-snowboarding each-logo"></i>
+            <p class="info"><%= @activity.category.capitalize %></p>
+          </div>
+        </div>
+      </div>
+      <div class='ml-3 mr-3 pb-4 pt-4 border-bottom horaires' >
+        <h3 class='mb-3'>Horaires</h3>
+        <p class='mb-3'><%= @activity.schedule %></p>
+      </div>
+      <!-- DEBUT MAP -->
+      <div class='m-3 pb-4 border-bottom'>
+        <h3 class='mb-3'>Nous situer</h3>
+        <p class='mb-3'><%= @activity.address %></p>
+        <div id="map" class='one-map' data-markers="<%= @markers.to_json %>" data-mapbox-api-key="pk.eyJ1IjoiY2FtaWxsZWR0eSIsImEiOiJjanpsMTVrZWcwaXQ3M2RuMG1rM242Y3FtIn0.wDpYPwI1WAXhfDMZggbOXw"></div>
+      </div>
+      <!-- FIN MAP -->
+      <div class='m-3 pt-4'>
+        <h3 class='mb-3'>Avis des membres sur cette activité</h3>
+        <p class='mb-3'>Super activité ! Je recommande</p>
+        <p class='mb-3'>Trop cool</p>
+        <p class='mb-3'>Un peu déçu...</p>
+        <p class='mb-3'>Je le conseille à tous mes potes !!</p>
+      </div>
+    </div>
+<!-- DIV pour utiliser sticky sur booking-waranty-box (début) -->
+<!-- DIV pour utiliser sticky sur booking-waranty-box (fin) -->
+  </div>
+</div>
