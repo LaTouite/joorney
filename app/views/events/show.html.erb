@@ -1,213 +1,219 @@
-<!-- <div class="navbar-joorney">
-  <div class="logo">
-  </div>
-  <div class="onglets">
-    <p>Idées d'activités</p>
-    <p>Notre concept</p>
-    <p>Astuces & co</p>
-  </div>
-  <div class="dark-part">
-    <p>Hello X</p>
-    <span class="avatar-navbar"></span>
-  </div>
-</div> -->
 
 <%= render '/components/top-navbar' %>
 
-<div id="banner-dashboard">
-  <%= cl_image_tag @event.photo %>
-  <div class="countdown-col col">
-    <div class="title-countdown">
-      <h1> <%= @event.name %> </h1>
-      <div class="time middle">
-        <span>
-          <div id="d">12</div>
-          Jours
-        </span>
-        <span>
-          <div id="h">06</div>
-          Heures
-        </span>
-        <span>
-          <div id="m">35</div>
-          Minutes
-        </span>
-        <span>
-          <div id="s">54</div>
-          Secondes
-        </span>
+<div class="backcolor">
+
+  <div id="banner-dashboard">
+    <%= cl_image_tag @event.photo %>
+    <div class="countdown-col col">
+
+      <div class="title-countdown">
+        <h1> <%= @event.name %> </h1>
+        <div class="time middle">
+          <span>
+            <div id="d">12</div>
+            Jours
+          </span>
+          <span>
+            <div id="h">06</div>
+            Heures
+          </span>
+          <span>
+            <div id="m">35</div>
+            Minutes
+          </span>
+          <span>
+            <div id="s">54</div>
+            Secondes
+          </span>
+        </div>
+
+        <div class="avatars">
+          <div class="avatar-p"></div>
+          <div class="avatar-p"></div>
+          <div class="avatar-p"></div>
+          <div class="avatar-p"></div>
+          <div class="avatar-p"></div>
+          <div class="avatar-p"></div>
+          <div class="avatar-p"></div>
+        </div>
       </div>
     </div>
   </div>
-</div>
 
-<div class="container">
 
-  <div class="row">
-    <div class="col-8">
-      <ul id="dashboard-nav" class="list-inline tabs-underlined">
-        <li>
-          <i class="fas fa-tachometer-alt"></i>
-          <%= link_to "Dashboard", event_path(@event), class: "tab-underlined active" %>
-        </li>
-        <li>
-          <i class="fas fa-poll-h"></i>
-          <%= link_to "Sondage", new_event_path, class: "tab-underlined" %>
-        </li>
-        <li>
-          <i class="fas fa-home"></i>
-          <%= link_to "Logement", accomodation_event_path(@event), class: "tab-underlined" %>
-        </li>
-        <li>
-          <i class="fas fa-snowboarding"></i>
-          <%= link_to "Activités", new_event_path, class: "tab-underlined" %>
-        </li>
-        <li>
-          <i class="fas fa-snowboarding"></i>
-          <%= link_to "Transport", new_event_path, class: "tab-underlined" %>
-        </li>
-        <li>
-          <i class="fas fa-piggy-bank"></i>
-          <%= link_to "Cagnotte", new_event_path, class: "tab-underlined" %>
-        </li>
-        <li>
-          <i class="far fa-calendar-alt"></i>
-          <%= link_to "Agenda", new_event_path, class: "tab-underlined" %>
-        </li>
-      </ul>
-    </div>
-    <div class="col-4">
-    </div>
 
-  </div>
+  <div class="container">
 
-  <div class="row">
-
-    <div class="col-8">
-
-      <div id="dashboard-main-info" class="dashboard-card">
-        <div class="db-info-detail">
-          <p>Budget/pers</p>
-          <div class="db-info-detail-value with-border-right">
-            <%if @event.budget_per_participant_cents? %>
-            <h2><%= @event.budget_per_participant_cents * 100 %></h2>
-            <% else %>
-            <h2>?</h2>
-            <%end%>
-          </div>
-        </div>
-        <div class="db-info-detail">
-          <p>Date</p>
-          <div class="db-info-detail-value with-border-right">
-            <%if @event.start_date? %>
-            <h6><%= @event.start_date.strftime("%d/%m/%Y") %> - <%= @event.end_date.strftime("%d/%m/%Y") %></h6>
-            <% else %>
-            <h2>?</h2>
-            <%end%>
-          </div>
-        </div>
-        <div class="db-info-detail">
-          <p>Lieu</p>
-          <div class="db-info-detail-value">
-            <%if @event.destination? %>
-            <h2><%= @event.destination %></h2>
-            <% else %>
-            <h2>?</h2>
-            <%end%>
-          </div>
-        </div>
+    <div class="row">
+      <div class="col-8">
+        <ul id="dashboard-nav" class="list-inline tabs-underlined">
+          <li id="onglet-d">
+            <i class="fas fa-tachometer-alt"></i>
+            <%= link_to "Dashboard", event_path(@event), class: "tab-underlined active" %>
+          </li>
+          <li id="onglet-d">
+            <i class="fas fa-poll-h"></i>
+            <%= link_to "Sondage", new_event_path, class: "tab-underlined" %>
+          </li>
+          <li id="onglet-d">
+            <i class="fas fa-home"></i>
+            <%= link_to "Logement", accomodation_event_path(@event), class: "tab-underlined" %>
+          </li>
+          <li id="onglet-d">
+            <i class="fas fa-snowboarding"></i>
+            <%= link_to "Activités", new_event_path, class: "tab-underlined" %>
+          </li>
+          <li id="onglet-d">
+            <i class="fas fa-snowboarding"></i>
+            <%= link_to "Transport", new_event_path, class: "tab-underlined" %>
+          </li>
+          <li id="onglet-d">
+            <i class="fas fa-piggy-bank"></i>
+            <%= link_to "Cagnotte", new_event_path, class: "tab-underlined" %>
+          </li>
+          <li id="onglet-d">
+            <i class="far fa-calendar-alt"></i>
+            <%= link_to "Agenda", new_event_path, class: "tab-underlined" %>
+          </li>
+        </ul>
+      </div>
+      <div class="col-4">
       </div>
 
-      <div id="dashboard-progression" class="dashboard-card">
-        <a id="dashboard-progression-pay" href=#>
-        Payer la totalité
-        </a>
-        <h4>Progression</h4>
-        <div id="db-progression-details">
-          <div class="db-progression-detail">
-            <i class="fas fa-circle"></i>
-            <p>Sondage</p>
-          </div>
-          <div class="db-progression-detail">
-            <i class="fas fa-circle"></i>
-            <p>Inviter <br>les<br>participants</p>
-          </div>
-          <div class="db-progression-detail">
-            <i class="fas fa-circle"></i>
-            <p>Logement</p>
-          </div>
-          <div class="db-progression-detail">
-            <i class="fas fa-circle"></i>
-            <p>Activités</p>
-          </div>
-          <div class="db-progression-detail">
-            <i class="fas fa-circle"></i>
-            <p>Transport</p>
-          </div>
-          <div class="db-progression-detail">
-            <i class="fas fa-circle"></i>
-            <p>Cagnotte</p>
-          </div>
-          <div class="db-progression-detail">
-            <i class="fas fa-circle"></i>
-            <p>Agenda</p>
-          </div>
-        </div>
-      </div>
+    </div>
 
-      <div id="dashboard-budget">
-        <div id="dashboard-budget-tot" class="dashboard-card">
-          <!-- piechart -->
-          <div class="piechart-div">
-            <div class="box">
-              <div class="chart" data-percent="73">73%</div>
+    <div class="row all-cards">
+
+      <div class="col-8">
+
+        <div id="dashboard-main-info" class="dashboard-card">
+          <div class="db-info-detail">
+            <p>Budget/pers</p>
+            <div class="db-info-detail-value with-border-right">
+              <%if @event.budget_per_participant_cents? %>
+              <h2><%= @event.budget_per_participant_cents * 100 %></h2>
+              <% else %>
+              <h2>?</h2>
+              <%end%>
             </div>
           </div>
-          <!-- end piechart -->
-          <h4>Budget total</h4>
-        </div>
-        <div id="dashboard-costs" class="dashboard-card">
-          <h4>Répartition des coûts</h4>
-          <div class="db-costs-chart">
-            <i class="fas fa-chart-pie"></i>
+          <div class="db-info-detail">
+            <p>Date</p>
+            <div class="db-info-detail-value with-border-right">
+              <%if @event.start_date? %>
+              <h6><%= @event.start_date.strftime("%d/%m/%Y") %> - <%= @event.end_date.strftime("%d/%m/%Y") %></h6>
+              <% else %>
+              <h2>?</h2>
+              <%end%>
+            </div>
           </div>
-          <div class="db-costs-legend">
+          <div class="db-info-detail">
+            <p>Lieu</p>
+            <div class="db-info-detail-value">
+              <%if @event.destination? %>
+              <h2><%= @event.destination %></h2>
+              <% else %>
+              <h2>?</h2>
+              <%end%>
+            </div>
+          </div>
+        </div>
 
+        <div id="dashboard-progression" class="dashboard-card">
+          <div class="top-progression">
+            <h4>Progression</h4>
+            <a class="button-short" href=#>
+            Payer la totalité
+            </a>
+          </div>
+
+          <div id="db-progression-details">
+            <div class="db-progression-detail">
+              <i class="fas fa-circle"></i>
+              <p>Sondage</p>
+            </div>
+            <div class="db-progression-detail">
+              <i class="fas fa-circle"></i>
+              <p>Inviter <br>les<br>participants</p>
+            </div>
+            <div class="db-progression-detail">
+              <i class="fas fa-circle"></i>
+              <p>Logement</p>
+            </div>
+            <div class="db-progression-detail">
+              <i class="fas fa-circle"></i>
+              <p>Activités</p>
+            </div>
+            <div class="db-progression-detail">
+              <i class="fas fa-circle"></i>
+              <p>Transport</p>
+            </div>
+            <div class="db-progression-detail">
+              <i class="fas fa-circle"></i>
+              <p>Cagnotte</p>
+            </div>
+            <div class="db-progression-detail">
+              <i class="fas fa-circle"></i>
+              <p>Agenda</p>
+            </div>
+          </div>
+        </div>
+
+        <div id="dashboard-budget">
+          <div id="dashboard-budget-tot" class="dashboard-card">
+            <!-- piechart -->
+            <div class="piechart-div">
+              <div class="box">
+                <div class="chart" data-percent="73">73%</div>
+              </div>
+            </div>
+            <!-- end piechart -->
+            <h4>Budget total</h4>
+          </div>
+          <div id="dashboard-costs" class="dashboard-card">
+            <h4>Répartition des coûts</h4>
+            <div class="db-costs-chart">
+              <i class="fas fa-chart-pie"></i>
+            </div>
+            <div class="db-costs-legend">
+
+            </div>
+          </div>
+        </div>
+        <div id="settings" class="dashboard-card">
+          <h4>Et plus encore</h4>
+          <div id="settings-details">
+            <div class="settings-detail">
+              <i class="fas fa-poll-h"></i>
+              <p>Créer un sondage</p>
+            </div>
+            <div class="settings-detail">
+              <i class="fas fa-user-friends"></i>
+              <p>Gérer la liste des participants</p>
+            </div>
+            <div class="settings-detail">
+              <i class="fas fa-lightbulb"></i>
+              <p>Voir nos conseils</p>
+            </div>
+            <div class="settings-detail">
+              <i class="fas fa-plus-circle"></i>
+              <p>Créer un autre projet</p>
+            </div>
           </div>
         </div>
       </div>
-      <div id="settings" class="dashboard-card">
-        <h4>Et plus encore</h4>
-        <div id="settings-details">
-          <div class="settings-detail">
-            <i class="fas fa-poll-h"></i>
-            <p>Créer un sondage</p>
-          </div>
-          <div class="settings-detail">
-            <i class="fas fa-user-friends"></i>
-            <p>Gérer la liste des participants</p>
-          </div>
-          <div class="settings-detail">
-            <i class="fas fa-lightbulb"></i>
-            <p>Voir nos conseils</p>
-          </div>
-          <div class="settings-detail">
-            <i class="fas fa-plus-circle"></i>
-            <p>Créer un autre projet</p>
-          </div>
-        </div>
-      </div>
-    </div>
 
-    <div class="col-4">
-      <div id="timeline" class="dashboard-card">
-        <div id="top-timeline">
-          <h4>Dernières activités</h4>
-          <p>Invitations envoyées : en attente des participants</p>
-          <p>Sondage envoyé : en attente des réponses</p>
-          <% if @survey.deadline %>
-            <p>Deadline: <%= @survey.deadline.day %>-<%= @survey.deadline.month %>-<%= @survey.deadline.year %></p>
-          <% end %>
+      <div class="col-4">
+        <div id="timeline" class="dashboard-card">
+          <div id="top-timeline">
+            <h4>Dernières activités</h4>
+            <p>Invitations envoyées : en attente des participants</p>
+            <p>Sondage envoyé : en attente des réponses</p>
+            <% if @survey.deadline %>
+              <p>Deadline: <%= @survey.deadline.day %>-<%= @survey.deadline.month %>-<%= @survey.deadline.year %></p>
+            <% end %>
+          </div>
         </div>
       </div>
     </div>
