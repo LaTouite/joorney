@@ -205,6 +205,9 @@
           <h4>Dernières activités</h4>
           <p>Invitations envoyées : en attente des participants</p>
           <p>Sondage envoyé : en attente des réponses</p>
+          <% if @survey.deadline %>
+            <p>Deadline: <%= @survey.deadline.day %>-<%= @survey.deadline.month %>-<%= @survey.deadline.year %></p>
+          <% end %>
         </div>
       </div>
     </div>

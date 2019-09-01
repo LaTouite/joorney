@@ -1,6 +1,6 @@
 <% if @survey.deadline == nil %>
   Deadline: à déterminer
 <% else %>
-  Deadline: <%= @survey.deadline %>
+  Deadline: <%= @survey.deadline.day %>-<%= @survey.deadline.month %>-<%= @survey.deadline.year %>
 <% end %>
 

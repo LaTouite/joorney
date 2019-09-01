@@ -131,7 +131,7 @@
         <div>
           <h3 class='mb-3'>Sondage
             <%= @survey.name %>
-            <h4 id='survey-deadline'>Deadline: <%= @survey.deadline %></h4>
+            <h4 id='survey-deadline'>Deadline: <%= @survey.deadline.day %>-<%= @survey.deadline.month %>-<%= @survey.deadline.year %></h4>
           </h3>
           <p class='mb-3'>Informations à préciser pour l’événement.
           <br>Cela m’aidera à proposer une organisation qui contente tout le monde ;)</p>
