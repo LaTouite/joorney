@@ -1,0 +1,2 @@
+<% @survey = @suggestion.survey%>
+ (<%= pluralize @survey.suggestions.where(topic: 'Thématiques').size, "suggestion" %>)

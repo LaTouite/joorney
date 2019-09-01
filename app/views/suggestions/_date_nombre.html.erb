@@ -1,0 +1,2 @@
+<% @survey = @suggestion.survey%>
+ (<%= pluralize @survey.suggestions.where.not(start_date: nil).size, "suggestion" %>)
