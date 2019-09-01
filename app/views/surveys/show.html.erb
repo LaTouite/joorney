@@ -134,7 +134,7 @@
             <% if @survey.deadline == nil %>
               <h4 id='survey-deadline'>Deadline: à déterminer</h4>
             <% else %>
-              <h4 id='survey-deadline'>Deadline: <%= @survey.deadline.day %>-<%= @survey.deadline.month %>-<%= @survey.deadline.year %></h4>
+              <h4 id='survey-deadline'>Deadline: <%= @survey.deadline.strftime("%d/%m/%Y") %></h4>
             <% end %>
           </h3>
           <p class='mb-3'>Informations à préciser pour l’événement.
