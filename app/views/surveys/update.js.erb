@@ -1,0 +1,10 @@
+function changeDeadline(DeadlineHTML) {
+  const deadline = document.getElementById('survey-deadline');
+  deadline.innerHTML = DeadlineHTML;
+}
+
+changeDeadline('<%= j render "surveys/deadline", survey: @survey %>');
+
+// import { add } from '../suggestions/create';
+
+// add('survey-deadline', 'beforeend', '<%= j render "surveys/deadline", survey: @survey %>');

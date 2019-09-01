@@ -1,30 +1,36 @@
-// function refreshForm(innerHTML) {
-//   const newSuggestionForm = document.getElementById('new-dates-sugg');
-//   newSuggestionForm.innerHTML = innerHTML;
-// }
-
-function addSuggDates(SuggDatesHTML) {
-  const suggestions = document.getElementById('sugg-dates');
-  suggestions.insertAdjacentHTML('beforeend', SuggDatesHTML);
+function add(newSugg, where, addHTML) {
+  const sugg = document.getElementById(newSugg);
+  sugg.insertAdjacentHTML(where, addHTML);
 }
 
-<%# if @suggestion.errors.any? %>
-  // refreshForm('<%= j render "suggestions/form", survey: @survey, suggestion: @suggestion %>');
-<%# else %>
-addSuggDates('<%= j render "suggestions/show", suggestion: @suggestion %>');
-  // refreshForm('<%= j render "suggestions/form", survey: @survey, suggestion: Suggestion.new %>');
-<%# end %>
-
-function addSuggPlace(SuggPlaceHTML) {
-  const suggPlaces = document.getElementById('sugg-places');
-  suggPlaces.insertAdjacentHTML('beforeend', SuggPlaceHTML);
+function changeNb(id, Nb) {
+  const nb = document.getElementById(id);
+  nb.innerHTML = Nb;
 }
 
-addSuggPlace('<%= j render "suggestions/destination", suggestion: @suggestion %>');
+// Dates partie gauche
+add('new-dates', 'afterend', '<%= j render "suggestions/date", suggestion: @suggestion %>');
 
-function addSuggThematic(SuggThematicHTML) {
-  const suggThematics = document.getElementById('sugg-thematics');
-  suggThematics.insertAdjacentHTML('beforeend', SuggThematicHTML);
-}
+// Dates partie droite
+add('sugg-dates', 'beforeend', '<%= j render "suggestions/date_survey", suggestion: @suggestion %>');
 
-addSuggThematic('<%= j render "suggestions/thematic", suggestion: @suggestion %>');
+// Destinations partie gauche
+add('sugg-places', 'beforeend', '<%= j render "suggestions/destination_survey", suggestion: @suggestion %>');
+
+// Destinations partie droite
+add('new-places', 'beforeend', '<%= j render "suggestions/destination", suggestion: @suggestion %>');
+
+// Thématiques partie gauche
+add('sugg-thematics', 'beforeend', '<%= j render "suggestions/thematic", suggestion: @suggestion %>');
+
+// Changer le nb de propositions pour les destinations
+changeNb('sugg-dest-nb', '<%= j render "suggestions/dest_nombre", suggestion: @suggestion %>');
+
+// Changer le nb de propositions pour les dates
+changeNb('sugg-dates-nb', '<%= j render "suggestions/date_nombre", suggestion: @suggestion %>');
+
+// Changer le nb de propositions pour les thématiques
+changeNb('sugg-them-nb', '<%= j render "suggestions/thematic_nombre", suggestion: @suggestion %>');
+
+// export { add };
+// export { changeNb };

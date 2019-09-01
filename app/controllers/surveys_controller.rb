@@ -21,6 +21,28 @@ class SurveysController < ApplicationController
     authorize @survey
   end
 
+  def edit
+    @survey = Survey.find(params[:id])
+    authorize @survey
+  end
+
+  def update
+    @survey = Survey.find(params[:id])
+    @survey.update(survey_params)
+    authorize @survey
+    if @survey.deadline != nil
+      respond_to do |format|
+        format.html { redirect_to survey_path(@survey) }
+        format.js  # <-- will render `app/views/surveys/update.js.erb`
+      end
+    else
+      respond_to do |format|
+        format.html { render 'surveys/show' }
+        format.js  # <-- idem
+      end
+    end
+  end
+
   private
 
   def survey_params

@@ -32,7 +32,7 @@ Rails.application.routes.draw do
   end
 
   # SURVEY
-  resources :surveys, only: [:show] do
+  resources :surveys, only: [:show, :edit, :update] do
     resources :suggestions, only: [:create, :destroy]
   end
 

@@ -15,9 +15,11 @@ if (document.querySelector(".countdown-col")) {
 // require("chartkick")
 // require("chart.js")
 import flatpickrInit from '../plugins/flatpickr.js';
+// import flatpickrInitDeadline from '../plugins/flatpickr.js';
 import "flatpickr/dist/themes/material_blue.css";
 
 flatpickrInit();
+// flatpickrInitDeadline();
 
 const initToggleDate = () => {
   const toggle_input_date = document.querySelector("#checkbox-toggle-survey-date");
@@ -99,33 +101,6 @@ const thumbUp = () => {
 if (document.querySelector('.far')) { thumbUp();}
 
 // FIN POUCE
-
-// AJOUTER UNE SUGGESTION (début)
-// clic sur le "+" de survey (destination)
-// const plus = () => {
-//   const destPlus = document.querySelector('#dest-plus');
-//   const destDiv = document.querySelector('.sq-dir');
-//   destPlus.addEventListener("click", (event) => {
-//     const j = "<div><i class='fas fa-times-circle'></i>choix 2</div>"
-//     destDiv.insertAdjacentHTML('afterend', j );
-//   });
-// }
-
-// if (document.querySelector('#dest-plus')) { plus();}
-// AJOUTER UNE SUGGESTION (fin)
-
-
-// const plus = () => {
-//   const plus = document.querySelectorAll('.plus');
-//   plus.forEach.addEventListener("click", (event) => {
-//     plus.insertAdjacentHTML('beforebegin', '</br><span>choix 2</span>');
-//   });
-// }
-
-// if (document.querySelector('.far')) { plus();}
-
-
-
 
 const initDisplayNumber = () => {
   const whatsapp_icon = document.querySelector(".whatsapp");
