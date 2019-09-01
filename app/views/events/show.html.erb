@@ -52,7 +52,7 @@
         </li>
         <li>
           <i class="fas fa-poll-h"></i>
-          <%= link_to "Sondage", new_event_path, class: "tab-underlined" %>
+          <%= link_to "Sondage", survey_path(@survey), class: "tab-underlined" %>
         </li>
         <li>
           <i class="fas fa-home"></i>
@@ -206,7 +206,7 @@
           <p>Invitations envoyées : en attente des participants</p>
           <p>Sondage envoyé : en attente des réponses</p>
           <% if @survey.deadline %>
-            <p>Deadline: <%= @survey.deadline.day %>-<%= @survey.deadline.month %>-<%= @survey.deadline.year %></p>
+            <p>Deadline: <%= @survey.deadline.strftime("%d/%m/%Y") %></p>
           <% end %>
         </div>
       </div>

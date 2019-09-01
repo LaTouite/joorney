@@ -1,8 +1,8 @@
 <% if suggestion.start_date != nil && suggestion.end_date != nil%>
   <div>
-    <span><%= suggestion.start_date.day %>-<%= suggestion.start_date.month %>-<%= suggestion.start_date.year %></span>
+    <span><%= suggestion.start_date.strftime("%d/%m/%Y") %></span>
     <span> | </span>
-    <span><%= suggestion.end_date.day %>-<%= suggestion.end_date.month %>-<%= suggestion.end_date.year %></span>
+    <span><%= suggestion.end_date.strftime("%d/%m/%Y") %></span>
     <i class="far fa-thumbs-up thumb"></i>
   </div>
 <% end %>
