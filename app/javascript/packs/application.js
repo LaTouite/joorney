@@ -1,6 +1,7 @@
 import "bootstrap";
 import { loadDynamicBannerText } from '../components/banner';
 import { initCountdown } from '../components/countdown';
+import { chartDo } from '../components/chart';
 //= require cocoon
 
 if (document.querySelector("#banner-typed-text")) {
@@ -10,6 +11,12 @@ if (document.querySelector("#banner-typed-text")) {
 if (document.querySelector(".countdown-col")) {
   // console.log('.countdown-col')
   initCountdown();
+}
+
+// chart doughnut
+if (document.querySelector(".doughnut-chart")) {
+  // console.log('.countdown-col')
+  chartDo();
 }
 
 // require("chartkick")
