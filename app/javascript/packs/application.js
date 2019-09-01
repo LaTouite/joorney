@@ -13,8 +13,8 @@ if (document.querySelector(".countdown-col")) {
   initCountdown();
 }
 
-if (document.getElementById("doughnut-chart")) {
-  // console.log('.countdown-col')
+
+if (document.querySelector(".doughnut-chart")) {
   chartDo();
 }
 
