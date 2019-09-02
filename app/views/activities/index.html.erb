@@ -65,14 +65,16 @@
                 <p id="light-details"> <%#= Geocoder.search(activity.address).first.city %> </p>
               </div>
               <div class="favorite-activity">
-                <%# if event_activity.activity.favorite == false %>
-                  <a href="#" class="favorite">
+                <% if @favorited_activities.include?(activity) %>
+                  <% event_activity = @event_activities.find_by(activity_id: activity.id) %>
+                  <%= link_to event_activity_path(event_activity), method: :delete, class: "favorite" do %>
+                    <i class="fas fa-heart"></i>
+                  <% end %>
+                <% else %>
+                  <%= link_to event_activity_event_activities_path(@event, activity), method: :post, class: "favorite" do %>
                     <i class="far fa-heart"></i>
-                    <i class="fas fa-heart d-none"></i>
-                  </a>
-                <%# else %>
-
-                <%#end%>
+                  <% end %>
+                <% end %>
               </div>
               <div class="list-details">
                 <ul>

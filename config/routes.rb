@@ -32,8 +32,12 @@ Rails.application.routes.draw do
     resources :suggestions, only: [:index]
 
     # ACTIVITIES via EVENTS
-    resources :activities, only: [:index, :show]
+    resources :activities, only: [:index, :show] do
+      resources :event_activities, only: [:create]
+    end
   end
+
+  resources :event_activities, only: [:destroy]
 
   # SURVEY
   resources :surveys, only: [:show] do

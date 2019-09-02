@@ -11,6 +11,9 @@ class ActivitiesController < ApplicationController
     #   @activities = Activity.near([@event.destination.latitude, @event.destination.longitude], 30, :order => :distance)
     end
 
+    @event_activities = @event.event_activities
+    @favorited_activities = @event.activities
+
     @markers = @activities.geocoded.map do |activity|
       {
         lat: activity.latitude,
@@ -29,5 +32,4 @@ class ActivitiesController < ApplicationController
     @markers = [ {lat: @activity.latitude,
         lng: @activity.longitude} ]
   end
-
 end
