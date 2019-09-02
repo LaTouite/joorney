@@ -1,8 +1,28 @@
-<div class='container'>
-  <h2>Log in</h2>
+<div class="navbar-joorney">
+  <%= link_to "", root_path, class: "logo" %>
+  <div class="onglets">
+    <p>Idées d'activités</p>
+    <p>Notre concept</p>
+    <p>Astuces & co</p>
+  </div>
+  <div class="dark-part">
+    <p>Connexion</p>
+    <p>Inscription</p>
+    <span class="avatar-navbar"></span>
+  </div>
+</div>
+
+<br>
+<br>
+<br>
+
+
+
+<div class='container-l mt-5'>
+  <h2 id="log-title">Log in</h2>
 
   <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-    <div class="form-inputs">
+    <div class="form-inputs login-form">
       <%= f.input :email,
                   required: false,
                   autofocus: true,
@@ -14,7 +34,7 @@
     </div>
 
     <div class="form-actions">
-      <%= f.button :submit, "Log in" %>
+      <%= f.button :submit, "Log in", class: "button-short adjust" %>
     </div>
   <% end %>
 
