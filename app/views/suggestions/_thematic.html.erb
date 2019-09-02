@@ -1,5 +1,10 @@
 <% if suggestion.topic == "Thématiques" %>
-  <div>
+  <div id="<%= suggestion.value %>">
+    <%= link_to 'S',
+    survey_suggestion_path(suggestion.survey.id, suggestion),
+    class: '',
+    method: :delete,
+    data: { confirm: "Are you sure?" } %>
     <%= suggestion.value %>
     <i class="far fa-thumbs-up thumb"></i>
   </div>

@@ -1,9 +1,8 @@
 <% if suggestion.start_date != nil && suggestion.end_date != nil%>
   <div>
-    <i class="fas fa-times-circle delete-sugg"></i>
-    <%= link_to "Supprimer",
+    <%= link_to "",
     survey_suggestion_path(suggestion.survey.id, suggestion),
-    class: '',
+    class: 'cross-delete',
     method: :delete,
     data: { confirm: "Are you sure?" } %>
     <span><%= suggestion.start_date.strftime("%d/%m/%Y") %></span>

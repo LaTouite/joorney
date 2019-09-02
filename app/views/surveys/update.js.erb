@@ -1,3 +1,4 @@
+// CHANGEMENT AUTO DE LA DEADLINE LORSQU'ELLE EST MODIFIEE
 function changeDeadline(DeadlineHTML) {
   const deadline = document.getElementById('survey-deadline');
   deadline.innerHTML = DeadlineHTML;
@@ -6,6 +7,3 @@ function changeDeadline(DeadlineHTML) {
 if (document.querySelector("#survey-deadline")) {
   changeDeadline('<%= j render "surveys/deadline", survey: @survey %>');
 }
-// import { add } from '../suggestions/create';
-
-// add('survey-deadline', 'beforeend', '<%= j render "surveys/deadline", survey: @survey %>');
