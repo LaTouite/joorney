@@ -2,42 +2,42 @@
 </div>
 
 <div class="container">
-  <div class="row">
-    <div class="col-8">
-      <ul id="dashboard-nav" class="list-inline tabs-underlined">
-        <li>
-          <i class="fas fa-tachometer-alt"></i>
-          <%= link_to "Dashboard", event_path(@event), class: "tab-underlined active" %>
-        </li>
-        <li>
-          <i class="fas fa-poll-h"></i>
-          <%= link_to "Sondage", new_event_path, class: "tab-underlined" %>
-        </li>
-        <li>
-          <i class="fas fa-home"></i>
-          <%= link_to "Logement", new_event_path, class: "tab-underlined" %>
-        </li>
-        <li>
-          <i class="fas fa-snowboarding"></i>
-          <%= link_to "Activités", new_event_path, class: "tab-underlined" %>
-        </li>
-        <li>
-          <i class="fas fa-snowboarding"></i>
-          <%= link_to "Transport", new_event_path, class: "tab-underlined" %>
-        </li>
-        <li>
-          <i class="fas fa-piggy-bank"></i>
-          <%= link_to "Cagnotte", new_event_path, class: "tab-underlined" %>
-        </li>
-        <li>
-          <i class="far fa-calendar-alt"></i>
-          <%= link_to "Agenda", new_event_path, class: "tab-underlined" %>
-        </li>
-      </ul>
+    <div class="row">
+      <div class="col-8">
+        <ul id="dashboard-nav" class="list-inline tabs-underlined">
+          <li id="onglet-d">
+            <i class="fas fa-tachometer-alt"></i>
+            <%= link_to "Dashboard", event_path(@event), class: "tab-underlined" %>
+          </li>
+          <li id="onglet-d">
+            <i class="fas fa-poll-h"></i>
+            <%= link_to "Sondage", new_event_path, class: "tab-underlined" %>
+          </li>
+          <li id="onglet-d">
+            <i class="fas fa-home"></i>
+            <%= link_to "Logement", accomodation_event_path(@event), class: "tab-underlined" %>
+          </li>
+          <li id="onglet-d">
+            <i class="fas fa-snowboarding"></i>
+            <%= link_to "Activités", event_activities_path(@event), class: "tab-underlined active" %>
+          </li>
+          <li id="onglet-d">
+            <i class="fas fa-snowboarding"></i>
+            <%= link_to "Transport", new_event_path, class: "tab-underlined" %>
+          </li>
+          <li id="onglet-d">
+            <i class="fas fa-piggy-bank"></i>
+            <%= link_to "Cagnotte", new_event_path, class: "tab-underlined" %>
+          </li>
+          <li id="onglet-d">
+            <i class="far fa-calendar-alt"></i>
+            <%= link_to "Agenda", new_event_path, class: "tab-underlined" %>
+          </li>
+        </ul>
+      </div>
+      <div class="col-4">
+      </div>
     </div>
-    <div class="col-4">
-    </div>
-  </div>
 
   <div class="container-fluid lr">
     <% if @activities.size == 0 %>
@@ -96,7 +96,9 @@
               </div>
               <div class="title-city">
                 <h2> <%= activity.title %> </h2>
-                <p id="light-details"> <%= Geocoder.search(activity.address).first.city %> </p>
+                <%if activity.geocoded? %>
+                  <p id="light-details"> <%= Geocoder.search(activity.address).first.city %> </p>
+                <% end %>
               </div>
               <div class="list-details">
                 <ul>

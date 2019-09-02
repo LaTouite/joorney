@@ -20,7 +20,19 @@
 </div>
 
 <!-- , event: @event, survey: nil  -->
-<%= render 'tabs-setup' %>
+<div class="setup-tabs">
+  <ul id="setup-nav" class="list-inline tabs-underlined">
+    <li>
+      <%= link_to "Créer mon évènement", new_event_path, class: "tab-underlined active" %>
+    </li>
+    <li>
+      <%= link_to "Sondage (optionnel)", '#', class: "tab-underlined" %>
+    </li>
+      <li>
+        <%= link_to "Inviter des participants", '#', class: "tab-underlined" %>
+    </li>
+  </ul>
+</div>
 
 
 <!-- 1ER ONGLET -->
@@ -36,46 +48,6 @@
               <br>
               <%= f.input :event_category, label: "Type", collection: Event::EVENT_CATEGORIES %>
           </div>
-            <br>
-            <!-- <p> Connaissez-vous déjà ...</p> -->
-            <br>
-            <div class="toggles-list">
-              <div class="toggle-date">
-                <strong>La date</strong>
-                <label class="switch">
-                  <input type="checkbox" id="checkbox-toggle-survey-date">
-                  <span class="slider round switch-text"></span>
-                </label>
-                <div id="event_start_date_full" class="d-none" disabled >
-                  <%= f.input :start_date, label: "Date de début", placeholder: 'Date de début' %>
-                </div>
-                <div id="event_end_date_full" class="d-none" disabled>
-                  <%= f.input :end_date, label: "Date de fin", placeholder: 'Date de fin' %>
-                </div>
-              </div>
-              <div class="toggle-place">
-                <strong>Le lieu</strong>
-                <label class="switch">
-                  <input type="checkbox" id="checkbox-toggle-survey-place">
-                  <span class="slider round"></span>
-                </label>
-                <%= f.input :destination, id: "event_destination", :input_html => { :class => "d-none address", disabled: :true }, :label_html => { :class => "d-none .address" }, placeholder: 'Votre destination' %>
-              </div>
-              <div class="toggle-budget">
-                <strong>Le budget/pers</strong>
-                <label class="switch">
-                  <input type="checkbox" id="checkbox-toggle-survey-budget">
-                  <span class="slider round"></span>
-                </label>
-                <%= f.input :budget_per_participant_cents, id: "event_budget_per_participant_cents", :input_html => { :class => "d-none", disabled: :true }, :label_html => { :class => "d-none" }, placeholder: 'Votre budget max par pers.' %>
-              </div>
-
-            </div>
-            <div class="cta-part">
-              <%= f.submit "Créer mon évènement", class: "button" %>
-            </div>
-
-
         </div>
         <div class="col-4">
 <!--           <div class="add-picture"> -->
@@ -95,7 +67,48 @@
 <!--           </div> -->
         </div>
 
-        <% end %>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <h6> Et connaissez-vous déjà... </h6>
+        <div class="toggles-list">
+              <div class="toggle-date">
+                <strong>La date</strong>
+                <label class="switch">
+                  <input type="checkbox" id="checkbox-toggle-survey-date">
+                  <span class="slider round switch-text"></span>
+                </label>
+                <div id="event_start_date_full" class="d-none" disabled >
+                  <%= f.input :start_date, label: "Date de début", as: :string, required: false, input_html: {class: "datepicker"} %>
+                  <%#= f.input :start_date, label: "Date de début", placeholder: 'Date de début' %>
+                </div>
+                <div id="event_end_date_full" class="d-none" disabled>
+                  <%= f.input :end_date, label: "Date de fin", as: :string, required: false, input_html: { class: "datepicker" } %>
+                  <%#= f.input :end_date, label: "Date de fin", placeholder: 'Date de fin' %>
+                </div>
+              </div>
+              <div class="toggle-place">
+                <strong>Le lieu</strong>
+                <label class="switch">
+                  <input type="checkbox" id="checkbox-toggle-survey-place">
+                  <span class="slider round"></span>
+                </label>
+                <%= f.input :destination, id: "event_destination", :input_html => { :class => "d-none address", disabled: :true }, :label_html => { :class => "d-none .address" }, placeholder: 'Votre destination' %>
+              </div>
+              <div class="toggle-budget">
+                <strong>Le budget/pers</strong>
+                <label class="switch">
+                  <input type="checkbox" id="checkbox-toggle-survey-budget">
+                  <span class="slider round"></span>
+                </label>
+                <%= f.input :budget_per_participant_cents, id: "event_budget_per_participant_cents", :input_html => { :class => "d-none", disabled: :true }, :label_html => { :class => "d-none" }, placeholder: 'Votre budget max par pers.' %>
+              </div>
+            </div>
+            <div class="cta-part">
+              <%= f.submit "Créer mon évènement", class: "button" %>
+            </div>
+            <% end %>
+          </div>
       </div>
     </div>
 
