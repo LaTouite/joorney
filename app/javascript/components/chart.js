@@ -8,17 +8,17 @@ const chartDo = () => {
   let myChart = new Chart(CHART, {
       type: 'doughnut',
       data: {
-        labels: ["Logement", "Activités", "Transport", "Autres"],
+        labels: ["Logement", "Activités", "Transport"],
         datasets: [
           {
             label: "Population (millions)",
-            backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9"],
-            data: [2478,5267,734,784]
+            backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f"],
+            data: [2478,5267,734]
           },
                     {
             label: "blaba (millions)",
-            backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9"],
-            data: [3000,567,4374,7544]
+            backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f"],
+            data: [2478,5267,734]
           }
         ]
       },
