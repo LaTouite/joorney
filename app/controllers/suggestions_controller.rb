@@ -16,7 +16,7 @@ class SuggestionsController < ApplicationController
     authorize @suggestion
     if @suggestion.save
       respond_to do |format|
-        format.html { redirect_to survey_path(@survey) }
+        format.html { redirect_to survey_path(@suggestion.survey) }
         format.js  # <-- will render `app/views/suggestion/create.js.erb`
       end
     else

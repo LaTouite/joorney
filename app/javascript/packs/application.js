@@ -2,6 +2,7 @@ import "bootstrap";
 import { loadDynamicBannerText } from '../components/banner';
 import { initCountdown } from '../components/countdown';
 import { chartDo } from '../components/chart';
+// export { clic } from '..components/thematic';
 //= require cocoon
 
 if (document.querySelector("#banner-typed-text")) {
@@ -28,7 +29,6 @@ flatpickrInit();
 // flatpickrInitDeadline();
 
 //Auto-complete address
-
 import { initAutocomplete } from '../plugins/init_autocomplete.js';
 if (document.querySelector('.address')) {
   initAutocomplete();
@@ -46,8 +46,6 @@ import { initFavorite } from '../components/favorite';
 if (document.querySelector('.favorite')) {
   initFavorite();
 }
-
-
 
 const initToggleDate = () => {
   const toggle_input_date = document.querySelector("#checkbox-toggle-survey-date");
@@ -113,22 +111,33 @@ if (document.querySelector('.range')) { range();}
 
 // POUCE change de couleur au clic
 const thumbUp = () => {
-  const thumb = document.querySelector('.far');
+  const thumb = document.querySelectorAll('.thumb');
 
-  thumb.addEventListener("click", (event) => {
-    if (event.currentTarget.classList.contains('far')) {
-      event.currentTarget.classList.remove("far");
-      event.currentTarget.classList.add("fas");
-    } else {
-      event.currentTarget.classList.remove("fas");
-      event.currentTarget.classList.add("far");
-    }
+  thumb.forEach((item) => {
+    item.addEventListener("click", (event) => {
+      event.currentTarget.classList.toggle("green-thumb");
+    });
   });
 }
 
-if (document.querySelector('.far')) { thumbUp();}
-
+if (document.querySelector('.thumb')) { thumbUp();}
 // FIN POUCE
+
+// CLIC SUR THEMATICS
+const clic =() => {
+  const thematic = document.querySelectorAll(".thematic-tag");
+  thematic.forEach((item) => {
+    item.addEventListener("click", (event) => {
+      event.currentTarget.classList.toggle("green");
+    });
+  });
+}
+
+if (document.querySelector(".thematic-tag")) {
+  clic();
+}
+
+// FIN CLIC SUR THEMATICS
 
 const initDisplayNumber = () => {
   const whatsapp_icon = document.querySelector(".whatsapp");
@@ -141,4 +150,19 @@ const initDisplayNumber = () => {
 
 if (document.querySelector(".whatsapp")) {
   initDisplayNumber();
+}
+
+// CLIC SUR AJOUTER UNE DATE (SURVEY NEW)
+const addDates = () => {
+  const calPlus = document.querySelector(".cal-plus");
+  calPlus.addEventListener("click", (event) => {
+  const form = document.querySelector("#new-dates-sugg");
+  // const datePlus = document.querySelector(".date-plus");
+    form.submit();
+    // event.datePlus.submit();
+  });
+}
+
+if (document.querySelector(".cal-plus")) {
+  addDates();
 }
