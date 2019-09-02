@@ -2,6 +2,7 @@ import "bootstrap";
 import { loadDynamicBannerText } from '../components/banner';
 import { initCountdown } from '../components/countdown';
 import { chartDo } from '../components/chart';
+// export { clic } from '..components/thematic';
 //= require cocoon
 
 if (document.querySelector("#banner-typed-text")) {
@@ -28,7 +29,6 @@ flatpickrInit();
 // flatpickrInitDeadline();
 
 //Auto-complete address
-
 import { initAutocomplete } from '../plugins/init_autocomplete.js';
 if (document.querySelector('.address')) {
   initAutocomplete();
@@ -47,12 +47,15 @@ if (document.querySelector('.favorite')) {
   initFavorite();
 }
 
-
+// Budget total activités en fonction des participants
+import { initPrice} from '../components/form-event-activity';
+if (document.querySelector("#event_activity_nb_of_participants")) {
+  initPrice();
+}
 
 const initToggleDate = () => {
   const toggle_input_date = document.querySelector("#checkbox-toggle-survey-date");
   toggle_input_date.addEventListener("click", (event) => {
-    event.preventDefault();
     const start_date = document.querySelector("#event_start_date_full");
     console.log(start_date);
     start_date.classList.toggle("d-none");
@@ -70,7 +73,6 @@ if (document.querySelector("#checkbox-toggle-survey-date")) {
 const initTogglePlace = () => {
   const toggle_input_place = document.querySelector("#checkbox-toggle-survey-place");
   toggle_input_place.addEventListener("click", (event) => {
-    event.preventDefault();
     const destination = document.querySelector("#event_destination");
     destination.classList.toggle("d-none");
     destination.removeAttribute('disabled');
@@ -84,7 +86,6 @@ if (document.querySelector("#checkbox-toggle-survey-place")) {
 const initToggleBudget = () => {
   const toggle_input_budget = document.querySelector("#checkbox-toggle-survey-budget");
   toggle_input_budget.addEventListener("click", (event) => {
-    event.preventDefault();
     const budget = document.querySelector("#event_budget_per_participant_cents");
     budget.classList.toggle("d-none");
     budget.removeAttribute('disabled');
@@ -113,22 +114,33 @@ if (document.querySelector('.range')) { range();}
 
 // POUCE change de couleur au clic
 const thumbUp = () => {
-  const thumb = document.querySelector('.far');
+  const thumb = document.querySelectorAll('.thumb');
 
-  thumb.addEventListener("click", (event) => {
-    if (event.currentTarget.classList.contains('far')) {
-      event.currentTarget.classList.remove("far");
-      event.currentTarget.classList.add("fas");
-    } else {
-      event.currentTarget.classList.remove("fas");
-      event.currentTarget.classList.add("far");
-    }
+  thumb.forEach((item) => {
+    item.addEventListener("click", (event) => {
+      event.currentTarget.classList.toggle("green-thumb");
+    });
   });
 }
 
-if (document.querySelector('.far')) { thumbUp();}
-
+if (document.querySelector('.thumb')) { thumbUp();}
 // FIN POUCE
+
+// CLIC SUR THEMATICS
+const clic =() => {
+  const thematic = document.querySelectorAll(".thematic-tag");
+  thematic.forEach((item) => {
+    item.addEventListener("click", (event) => {
+      event.currentTarget.classList.toggle("green");
+    });
+  });
+}
+
+if (document.querySelector(".thematic-tag")) {
+  clic();
+}
+
+// FIN CLIC SUR THEMATICS
 
 const initDisplayNumber = () => {
   const whatsapp_icon = document.querySelector(".whatsapp");
@@ -143,11 +155,18 @@ if (document.querySelector(".whatsapp")) {
   initDisplayNumber();
 }
 
-// const initForm = () => {
-//   const btn = document.querySelector(".alert-b");
-//   if (btn) {
-//     btn.addEventListener("submit", (event) => {
-//         alert("L'invitation a bien été envoyée");
-//     });
-//   }
-// }
+// CLIC SUR AJOUTER UNE DATE (SURVEY NEW)
+const addDates = () => {
+  const calPlus = document.querySelector(".cal-plus");
+  calPlus.addEventListener("click", (event) => {
+  const form = document.querySelector("#new-dates-sugg");
+  // const datePlus = document.querySelector(".date-plus");
+    form.submit();
+    // event.datePlus.submit();
+  });
+}
+
+if (document.querySelector(".cal-plus")) {
+  addDates();
+}
+

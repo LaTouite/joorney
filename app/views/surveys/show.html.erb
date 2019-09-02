@@ -6,7 +6,19 @@
 </div>
 
 <!-- , event: @survey.event, survey: @survey -->
-<%= render 'events/tabs-setup' %>
+<div class="setup-tabs">
+  <ul id="setup-nav" class="list-inline tabs-underlined">
+    <li>
+      <%= link_to "Créer mon évènement", new_event_path, class: "tab-underlined" %>
+    </li>
+    <li>
+      <%= link_to "Sondage (optionnel)", '#', class: "tab-underlined active" %>
+    </li>
+      <li>
+        <%= link_to "Inviter des participants", '#', class: "tab-underlined" %>
+    </li>
+  </ul>
+</div>
 
 <!-- ONGLET 2 : DÉBUT DU FORMULAIRE -->
 <div class='m-4'>
@@ -20,7 +32,7 @@
           <div class='champs'>
             <br>
             <br>
-            <h4><strong id="champ-number">1 </strong>Deadline</h4>
+            <h4><strong id="champ-number"></strong>Deadline</h4>
           </div>
           <div>
             <%= simple_form_for @survey, html: {id: 'new-deadline'}, remote: true do |f| %>
@@ -41,15 +53,16 @@
           <div class='champ-div'>
             <div class='champs'>
               <!-- <h4 class='champ_nb'>Champ 1</h4> -->
-              <h4><strong id="champ-number">2 </strong>Dates</h4>
+              <h4><strong id="champ-number"></strong>Dates</h4>
             </div>
             <!-- DATES début -->
-            <div>
+            <div id='dates-what'>
               <%= simple_form_for [@survey, @suggestion], html: {id: 'new-dates-sugg'}, remote: true do |f| %>
                 <div class='survey-question' id='dates-sugg'>
                   <%= f.input :start_date, label: "Date de début", as: :string, required: false, input_html: {class: "datepicker"} %>
                   <%= f.input :end_date, label: "Date de fin", as: :string, required: false, input_html: { class: "datepicker" } %>
-                  <%= f.submit "+", class: "date-plus ml-3"%>
+                  <%= f.submit "+", class: "date-plus ml-3" %>
+                    <i class="far fa-calendar-plus cal-plus  d-none"></i>
                 </div>
               <% end %>
             </div>
@@ -69,11 +82,12 @@
         <% if @survey.event.destination == nil %>
           <div class='champ-div'>
             <div class= 'champs'>
-              <h4><strong id="champ-number">2 </strong>Destination</h4>
+              <h4><strong id="champ-number"></strong>Destination</h4>
             </div>
              <!-- id='destination-sugg' -->
             <div class='survey-question sq-direction'>
-              <%= f.input :value, placeholder: "Votre suggestion", label: false %>
+              <%#= f.input :value, placeholder: "Votre suggestion", label: false %>
+              <%= f.input :value, label: false,input_html: {placeholder: "Destination", class: "address" } %>
               <%= f.input :topic, as: :hidden, input_html: {value: "Destination"} %>
             </div>
             <div id='new-places'>
@@ -93,11 +107,11 @@
         <div class='champ-div'>
           <div class='champs'>
             <!-- <h4 class='champ_nb'>Champ 3</h4> -->
-            <h4><strong id="champ-number">3 </strong>Thématiques</h4>
+            <h4><strong id="champ-number"></strong>Thématiques</h4>
           </div>
           <div class='survey-question' id='thematics-sugg'>
             <% Event::THEMATICS.each do |thematic| %>
-              <%= f.button :submit, thematic, name:'suggestion[value]', value: thematic, class: 'thematic-tag mr-3', input_html: { onclick: 'Rails.fire(this.form, "submit")'} %>
+              <%= f.button :submit, thematic, name:'suggestion[value]', value: thematic, class: 'thematic-tag mr-3 mb-3', input_html: { onclick: 'Rails.fire(this.form, "submit")'} %>
               <%= f.input :topic, as: :hidden, input_html: {value: "Thématiques"} %>
             <% end %>
             <%#= f.input :value, label: false, collection: Event::THEMATICS, input_html: {onchange: 'Rails.fire(this.form, "submit")' } %>
@@ -116,7 +130,7 @@
           <div class='champ-div'>
             <div class='champs'>
               <!-- <h4 class='champ_nb'>Champ 4</h4> -->
-              <h4><strong id="champ-number">4 </strong>Budget / pers</h4>
+              <h4><strong id="champ-number"></strong>Budget / pers</h4>
             </div>
             <p>Chaque participant précisera son budget<p>
           </div>
@@ -128,7 +142,7 @@
       <!-- SUBMIT BTN début -->
       <div class='submit-area mb-5'>
         <%= link_to "Générer votre sondage", invite_event_path(@survey.event), class: 'button' %>
-        <div id="cta-link"><%= link_to "Réaliser cette étape plus tard" %></div>
+        <div id="cta-link"><%= link_to "Réaliser cette étape plus tard", invite_event_path(@survey.event) %></div>
       </div>
       <!-- SUBMIT BTN fin -->
       <!-- <p>Pssss: les participants pourront remplir le sondage une fois qu’ils auront rejoint le projet.</p>
@@ -154,7 +168,7 @@
           <br>Cela m’aidera à proposer une organisation qui contente tout le monde ;)</p>
 
             <% if @survey.deadline == nil %>
-              <h4 id='survey-deadline'>Deadline: </h4>
+              <h4 id='survey-deadline'>Deadline: à déterminer</h4>
             <% else %>
               <h4 id='survey-deadline'>Deadline: <%= @survey.deadline.strftime("%d/%m/%Y") %></h4>
             <% end %>
@@ -182,7 +196,7 @@
         <!-- DESTINATIONS DYNAMIQUES (début) -->
         <% if @survey.event.destination == nil %>
           <div class='mb-5'>
-            <h4 class='form-champ'>Destination<!-- <span id='sugg-dest-nb'> (<%= pluralize @survey.suggestions.where(topic: 'Destination').size, "suggestion" %>)</span> --></h4>
+            <h4 class='form-champ'>Destination<!-- <span id='sugg-dest-nb'> (<%#= pluralize @survey.suggestions.where(topic: 'Destination').size, "suggestion" %>)</span> --></h4>
             <p>(un seul choix possible pour les participants)</p>
             <div>
               <div id='sugg-places'>

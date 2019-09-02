@@ -7,7 +7,19 @@
 </div>
 
 <!-- , event: @event, survey: @event.surveys -->
-<%= render 'tabs-setup' %>
+<div class="setup-tabs">
+  <ul id="setup-nav" class="list-inline tabs-underlined">
+    <li>
+      <%= link_to "Créer mon évènement", new_event_path, class: "tab-underlined" %>
+    </li>
+    <li>
+      <%= link_to "Sondage (optionnel)", '#', class: "tab-underlined" %>
+    </li>
+      <li>
+        <%= link_to "Inviter des participants", '#', class: "tab-underlined active" %>
+    </li>
+  </ul>
+</div>
 
 <div class="container block33">
   <h2>Partagez un lien d'inscription via : </h2>
