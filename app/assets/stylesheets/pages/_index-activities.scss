@@ -1,0 +1,259 @@
+// .simple_form .event_accomodation_address {
+//   width: 100%;
+// }
+
+// hp-card
+.lr {
+  margin-top: 20px;
+}
+
+.each-image{
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.lr h2 {
+  letter-spacing: 0px;
+  // color: $dark-blue;
+  margin-bottom: 50px;
+  margin-left: 20px
+}
+
+.lr-card p {
+  line-height: 20px;
+}
+
+.hp-card {
+  height: 210px;
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  background-size: cover;
+  position: relative;
+}
+
+
+
+.zoom {
+  position: relative;
+}
+
+// .award-tag p {
+//   justify-content: center;
+//   align-items: center;
+// }
+
+// .hp-card:hover {
+//   transform: scale(1.05);
+// }
+
+// #card-title:hover {
+//   transform: scale(1.05);
+// }
+
+.zoom:hover {
+  transform: scale(1.01);
+}
+
+.lr-card:hover {
+  transform: scale(1.01);
+}
+
+
+#card-title {
+  // margin-top: -35px;
+  position: absolute;
+  text-align: center;
+  color: white;
+  text-decoration: none;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+}
+
+
+.lr-card {
+  overflow: hidden;
+  height: 230px;
+  width: 100%;
+  background: white;
+  box-shadow: 0 2px 20px rgba(0,0,0, 0.05);
+  display: flex;
+  margin-bottom: 28px;
+  border-radius: 5px;
+  background-repeat: no-repeat;
+}
+
+.lr-card img {
+  height: 100%;
+  width: 270px;
+  object-fit: cover;
+  border-left-radius: 5px;
+}
+
+.lr-card-info {
+  position: relative;
+  padding: 22px;
+  height: 100%;
+  flex-grow: 1;
+  border: 1px solid $primary-light;
+  border-left: none;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.lr-card-info h4 {
+  margin-bottom: 0px;
+}
+
+.lr-card-info ul {
+  padding-top: 30px;
+  padding-left: 0px;
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+}
+
+.lr-card-info li {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 8px;
+  padding-right: 8px;
+  // background-color: $light-blue;
+  border-radius: 5px;
+}
+
+.lr-card #small-btn {
+  position: absolute;
+  bottom: 20px; right: 20px;
+  border: 2px solid $primary;
+  color: $primary;
+}
+
+
+
+// #list-activities a {
+//   display: inline-block;
+//   border: 1px solid $dark-blue;
+//   border-radius: 5px;
+//   padding: 5px 25px;
+
+//   color: $dark-blue;
+//   text-decoration: none;
+//   font-weight: bold;
+// }
+
+// #list-activities a:hover {
+//   color: white;
+//   background-color: $dark-blue;
+// }
+
+.lr-card-info .price {
+  position: absolute;
+  top: 35px; right: 20px;
+}
+
+.lr-card-info .favorite-activity {
+  position: absolute;
+  top: 10px; right: 20px;
+}
+
+// #user-activities a {
+//   display: inline-block
+// }
+
+.price h2, p {
+  margin: 0px;
+  letter-spacing: 0px;
+  // line-height: 1;
+}
+
+.price h2 {
+  color: $primary;
+}
+
+.title-city h2 {
+  letter-spacing: 0px;
+  font-size: 25px;
+  color: $grey;
+  margin-bottom: 0px;
+  margin-left: 0px
+}
+
+.container-fluid {
+  margin-top: 50px;
+  width: 100%;
+}
+
+
+.lr-cards {
+  // padding-right: 20px;
+  padding-left: 25px;
+  padding-right: 0px;
+}
+
+.list-details li {
+  font-weight: 400;
+  color: $grey;
+}
+
+.list-details i {
+  font-size: 20px;
+  // margin-left: 57px;
+  // margin-top: 5px;margin-left: 57px;
+  // margin-top: 5px;
+  margin-right: 10px;
+  color: $primary;
+}
+
+
+// .card-product h2 {
+//   font-size: 16px;
+//   font-weight: bold;
+//   margin: 0;
+// }
+
+// .card-product p {
+//   font-size: 12px;
+//   line-height: 1.4;
+//   opacity: .7;
+//   margin-bottom: 0;
+//   margin-top: 8px;
+// }
+
+// .card-product .card-product-infos {
+//   padding: 16px;
+// }
+
+.cardp {
+    position: relative;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border-radius: 2px;
+    background: no-repeat center;
+    width: 40%;
+    background-size: cover;
+    // border: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+#loc-accomodation {
+  padding-left: 11px;
+  margin-bottom: 30px;
+}
+
+.favorite-activity {
+  display: inline-block;
+}
+
+.favorite-activity p {
+  color: $primary-light;
+  font-weight: bold;
+}
+
+

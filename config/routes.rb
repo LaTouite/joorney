@@ -33,11 +33,11 @@ Rails.application.routes.draw do
 
     # ACTIVITIES via EVENTS
     resources :activities, only: [:index, :show] do
-      resources :event_activities, only: [:create]
+      resources :event_activities, only: [:create, :destroy]
     end
   end
 
-  resources :event_activities, only: [:destroy]
+  # resources :event_activities, only: [:destroy]
 
   # SURVEY
   resources :surveys, only: [:show, :edit, :update] do

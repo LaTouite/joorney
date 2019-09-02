@@ -47,6 +47,12 @@ if (document.querySelector('.favorite')) {
   initFavorite();
 }
 
+// Budget total activités en fonction des participants
+import { initPrice} from '../components/form-event-activity';
+if (document.querySelector("#event_activity_nb_of_participants")) {
+  initPrice();
+}
+
 
 
 const initToggleDate = () => {

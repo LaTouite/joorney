@@ -18,7 +18,7 @@ class ActivitiesController < ApplicationController
       {
         lat: activity.latitude,
         lng: activity.longitude,
-        #image_url: helpers.asset_url('../assets/images/home-solid.svg')
+        # image_url: helpers.asset_url('../assets/images/home-solid.svg')
       }
     end
     @markers << {lat: @event.latitude, lng: @event.longitude}
@@ -27,6 +27,8 @@ class ActivitiesController < ApplicationController
 
   def show
     @activity = Activity.find(params[:id])
+    @event_activity = EventActivity.new
+    @event = Event.find(params[:event_id])
     authorize @activity
 
     @markers = [ {lat: @activity.latitude,
