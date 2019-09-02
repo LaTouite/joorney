@@ -14,7 +14,7 @@ if (document.querySelector(".countdown-col")) {
 }
 
 
-if (document.querySelector(".doughnut-chart")) {
+if (document.querySelector("#doughnut-chart")) {
   chartDo();
 }
 
