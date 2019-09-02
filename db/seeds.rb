@@ -28,7 +28,43 @@ users_attributes =
 first_name: "Sophie",
 last_name: "Fonfec",
 email: "sophie@gmail.com",
-password: "8Lalasoso"
+password: "8Lalasoso",
+remote_profile_picture_url: "https://res.cloudinary.com/dvc6dt55q/image/upload/v1567432731/https_3A_2F_2Fspecials-images.forbesimg.com_2Fdam_2Fimageserve_2F1078084172_2F960x0_zj16ca.jpg",
+},
+{
+first_name: "Maxime",
+last_name: "Gaillard",
+email: "maxime@gmail.com",
+password: "7Lalasoso",
+remote_profile_picture_url: "https://res.cloudinary.com/dvc6dt55q/image/upload/v1567432772/guybenson_tnj7yi.jpg",
+},
+{
+first_name: "Pierre-Antoine",
+last_name: "Lemoine",
+email: "pierre.antoine@gmail.com",
+password: "6Lalasoso",
+remote_profile_picture_url: "https://res.cloudinary.com/dvc6dt55q/image/upload/v1567432734/joey-degrandis-hsam-memory_znylj3.jpg",
+},
+{
+first_name: "Estelle",
+last_name: "Guerin",
+email: "estelle@gmail.com",
+password: "5Lalasoso",
+remote_profile_picture_url: "https://res.cloudinary.com/dvc6dt55q/image/upload/v1567432732/20190807-104829-PEOPLESMULDERS-T5_28987_dlkwrs.jpg",
+},
+{
+first_name: "Vincent",
+last_name: "Michaud",
+email: "vincent@gmail.com",
+password: "4Lalasoso",
+remote_profile_picture_url: "https://res.cloudinary.com/dvc6dt55q/image/upload/v1567432769/Guy-sample_376_268_s_c1_psq8ea.jpg",
+},
+{
+first_name: "Jean",
+last_name: "Monnier",
+email: "jean@gmail.com",
+password: "3Lalasoso",
+remote_profile_picture_url: "https://res.cloudinary.com/dvc6dt55q/image/upload/v1567432764/brendan-guy-450_adsmgk.jpg",
 }]
 
 User.create!(users_attributes)

@@ -1,6 +1,6 @@
 class Event < ApplicationRecord
   belongs_to :user
-  has_many :userevents
+  has_many :user_events
   has_many :surveys
   has_many :event_activities
   has_many :activities, through: :event_activities
@@ -17,4 +17,12 @@ class Event < ApplicationRecord
 
   geocoded_by :accomodation_address
   after_validation :geocode, if: :will_save_change_to_accomodation_address?
+
+  after_create :populate_event
+  def populate_event
+    # background job (lance au bout de 10 sc)
+    FakeJob.perform_now(self.id)
+      # user = User.last
+      # self is the event (mean current_event)
+  end
 end
