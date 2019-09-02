@@ -156,17 +156,18 @@ if (document.querySelector(".whatsapp")) {
 }
 
 // CLIC SUR AJOUTER UNE DATE (SURVEY NEW)
-const addDates = () => {
-  const calPlus = document.querySelector(".cal-plus");
-  calPlus.addEventListener("click", (event) => {
-  const form = document.querySelector("#new-dates-sugg");
-  // const datePlus = document.querySelector(".date-plus");
-    form.submit();
-    // event.datePlus.submit();
+const simulateClickOn = (realclick, simulateclick) => {
+  const realClk = document.querySelector(realclick);
+  realClk.addEventListener("click", (event) => {
+  const simulateClk = document.querySelector(simulateclick);
+    simulateClk.click();
   });
 }
 
 if (document.querySelector(".cal-plus")) {
-  addDates();
+  simulateClickOn(".cal-plus", "#date-plus");
 }
 
+if (document.querySelector(".deadline-supp")) {
+  simulateClickOn(".deadline-supp", "#button-delete");
+}

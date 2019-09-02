@@ -24,19 +24,26 @@ li {
   list-style-type: none;
 }
 
-#dates-sugg :nth-child(1), #dates-sugg :nth-child(2), #dates-sugg :nth-child(3) {
-  // margin-right: 20px;
+.deadline-supp, .cal-plus {
+  color: $primary;
 }
 
-.date-plus {
-  border: 0;
-  border-radius: 50%;
-  color: red;
-  font-size: 15px;
-  font-weight: bold;
-  padding: 0;
-  width: 20px;
+.deadline-supp {
+  font-size: 20px;
 }
+
+.cal-plus {
+  font-size: 35px;
+}
+// .date-plus {
+//   border: 0;
+//   border-radius: 50%;
+//   color: red;
+//   font-size: 15px;
+//   font-weight: bold;
+//   padding: 0;
+//   width: 20px;
+// }
 
 .delete-sugg {
   font-size: 15px;
@@ -127,24 +134,11 @@ li {
   font-family: "Font Awesome 5 Free";
 }
 
-// .cal-plus {
-//   position: absolute;
-// }
-
 .date-plus {
   position: relative;
   display: inline-block;
   width: 100px;
   height: 100px;
-}
-
-.date-plus:after {
-  position: absolute;
-  content: "/f271";
-  font-family: "Font Awesome 5 Free";
-  width: 100px;
-  height: 100px;
-  color: red;
 }
 
 .thumb:hover {
