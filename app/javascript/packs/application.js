@@ -47,10 +47,15 @@ if (document.querySelector('.favorite')) {
   initFavorite();
 }
 
+// Budget total activités en fonction des participants
+import { initPrice} from '../components/form-event-activity';
+if (document.querySelector("#event_activity_nb_of_participants")) {
+  initPrice();
+}
+
 const initToggleDate = () => {
   const toggle_input_date = document.querySelector("#checkbox-toggle-survey-date");
   toggle_input_date.addEventListener("click", (event) => {
-    event.preventDefault();
     const start_date = document.querySelector("#event_start_date_full");
     console.log(start_date);
     start_date.classList.toggle("d-none");
@@ -68,7 +73,6 @@ if (document.querySelector("#checkbox-toggle-survey-date")) {
 const initTogglePlace = () => {
   const toggle_input_place = document.querySelector("#checkbox-toggle-survey-place");
   toggle_input_place.addEventListener("click", (event) => {
-    event.preventDefault();
     const destination = document.querySelector("#event_destination");
     destination.classList.toggle("d-none");
     destination.removeAttribute('disabled');
@@ -82,7 +86,6 @@ if (document.querySelector("#checkbox-toggle-survey-place")) {
 const initToggleBudget = () => {
   const toggle_input_budget = document.querySelector("#checkbox-toggle-survey-budget");
   toggle_input_budget.addEventListener("click", (event) => {
-    event.preventDefault();
     const budget = document.querySelector("#event_budget_per_participant_cents");
     budget.classList.toggle("d-none");
     budget.removeAttribute('disabled');

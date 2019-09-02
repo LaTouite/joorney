@@ -61,5 +61,31 @@
     </div>
 <!-- DIV pour utiliser sticky sur booking-waranty-box (début) -->
 <!-- DIV pour utiliser sticky sur booking-waranty-box (fin) -->
+    <div class='content-booking'>
+<!-- DIV pour utiliser sticky sur booking-waranty-box (début) -->
+      <div class='booking-waranty-box'>
+        <!-- DEBUT DU FORMULAIRE DE BOOKING -->
+        <div class='card booking-box m-3 p-3 fcolor'>
+          <%= simple_form_for [@event, @activity, @event_activity] do |f| %>
+            <div class='sub-book'>
+              <%= f.input :nb_of_participants, label: 'Participants', collection: (1..20) %>
+            </div>
+            <!-- TOTAL début -->
+            <div class='total mt-3 mb-3'>
+              <h6>Total</h6>
+              <h6 class='total-price'><span class='calcul'></span>€</h6>
+            </div>
+            <!-- TOTAL fin -->
+            <!-- SUBMIT ou SIGN IN bouton début -->
+              <div class='mt-3 mb-2'>
+                <%= f.submit "Ajouter à ma liste", class: 'dark-button resa-btn p-0' %>
+              </div>
+            <!-- SUBMIT ou SIGN IN bouton fin -->
+          <% end %>
+        </div>
+        <!-- FIN DU FORMULAIRE DE BOOKING -->
+      </div>
+<!-- DIV pour utiliser sticky sur booking-waranty-box (fin) -->
+    </div>
   </div>
 </div>

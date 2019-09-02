@@ -1,5 +1,17 @@
-.address-input {
+// .address-input {
+//   display: flex;
+// }
+
+.address-input .simple-form {
   display: flex;
+}
+
+.algolia_places {
+  width: 60%;
+}
+
+#correct-input-address {
+  margin: 0px;
 }
 
 .correct-icone-accomodation {
@@ -18,6 +30,6 @@
   flex-grow: 1;
 }
 
-.address-input .form-control {
-  flex-grow: 1;
-}
+// .address-input .form-control {
+//   flex-grow: 1;
+// }

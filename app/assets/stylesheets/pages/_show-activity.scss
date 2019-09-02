@@ -32,7 +32,14 @@
 }
 
 .content-box {
-  width: 65%;
+  width: 70%;
+}
+
+.content-booking {
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  align-item: center;
 }
 
 .title-price-box {

@@ -75,10 +75,13 @@
 
     .toggles-list {
       display: flex;
+      margin-top: 20px;
+      padding-top: 20px;
     }
 
     .toggles-list div {
       flex-grow: 1;
+      min-width: 33.333%;
     }
 
     #add-pic-btn {
