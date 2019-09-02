@@ -5,6 +5,6 @@
     class: 'cross-delete',
     method: :delete,
     data: { confirm: "Are you sure?" } %>
-    <span><%= suggestion.value.capitalize %></span>
+   <span><%= Geocoder.search(suggestion.value).first.city %>, <%= Geocoder.search(suggestion.value).first.country %></span>
   </div>
 <% end %>

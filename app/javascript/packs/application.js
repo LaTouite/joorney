@@ -153,16 +153,16 @@ if (document.querySelector(".whatsapp")) {
 }
 
 // CLIC SUR AJOUTER UNE DATE (SURVEY NEW)
-// const addDates = () => {
-//   const calPlus = document.querySelector(".cal-plus");
-//   calPlus.addEventListener("click", (event) => {
-//   const newDatePlus = document.querySelector("#new-dates-sugg");
-//   const datePlus = document.querySelector(".date-plus");
-//     event.newDatePlus.click();
-//     event.datePlus.submit();
-//   });
-// }
+const addDates = () => {
+  const calPlus = document.querySelector(".cal-plus");
+  calPlus.addEventListener("click", (event) => {
+  const form = document.querySelector("#new-dates-sugg");
+  // const datePlus = document.querySelector(".date-plus");
+    form.submit();
+    // event.datePlus.submit();
+  });
+}
 
-// if (document.querySelector(".cal-plus")) {
-//   addDates();
-// }
+if (document.querySelector(".cal-plus")) {
+  addDates();
+}

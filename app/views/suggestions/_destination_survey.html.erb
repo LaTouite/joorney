@@ -2,7 +2,7 @@
   <div class="card-trip">
     <img src="" />
     <div class="card-trip-infos">
-      <h6 class='places-name'><%= suggestion.value.capitalize %></h6>
+      <h6 class='places-name'><%= Geocoder.search(suggestion.value).first.city %>, <%= Geocoder.search(suggestion.value).first.country %></h6>
       <i class="far fa-thumbs-up thumb"></i>
     </div>
   </div>

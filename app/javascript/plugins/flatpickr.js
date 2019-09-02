@@ -10,14 +10,4 @@ const flatpickrInit = () => {
   })
 }
 
-// const flatpickrInitDeadline = () => {
-//   flatpickr(".datepicker-deadline", {
-//     inline: true,
-//     // mode: "range",
-//     dateFormat: "Y-m-d",
-//     minDate: "today"
-//   })
-// }
-
 export default flatpickrInit;
-// export default flatpickrInitDeadline;
