@@ -58,6 +58,7 @@ token: "6789",
 user_id: User.last[:id]
 }]
 
+
 Event.create!(events_attributes)
 
 puts 'Events created !'
