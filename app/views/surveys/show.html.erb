@@ -74,7 +74,7 @@
              <!-- id='destination-sugg' -->
             <div class='survey-question sq-direction'>
               <%= f.input :value, placeholder: "Votre suggestion", label: false %>
-              <%= f.input :topic, as: :hidden, input_html: {value: "Destination"} %>
+              <%= f.input :topic, as: :hidden, input_html: {value: "Destination", class: "address" } %>
             </div>
             <div id='new-places'>
               <% @survey.suggestions.each do |suggestion| %>
@@ -128,7 +128,7 @@
       <!-- SUBMIT BTN début -->
       <div class='submit-area mb-5'>
         <%= link_to "Générer votre sondage", invite_event_path(@survey.event), class: 'button' %>
-        <div id="cta-link"><%= link_to "Réaliser cette étape plus tard" %></div>
+        <div id="cta-link"><%= link_to "Réaliser cette étape plus tard", invite_event_path(@survey.event) %></div>
       </div>
       <!-- SUBMIT BTN fin -->
       <!-- <p>Pssss: les participants pourront remplir le sondage une fois qu’ils auront rejoint le projet.</p>

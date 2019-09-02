@@ -95,3 +95,19 @@ li {
   flex-wrap: wrap;
   justify-content: flex-start;
 }
+
+.green {
+  color: green;
+  border-color: green;
+  background-color: $done;
+}
+
+.green:hover {
+  color: green;
+  border-color: green;
+  background-color: $done;
+}
+
+.green-thumb {
+  color: $done;
+}

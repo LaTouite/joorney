@@ -2,6 +2,7 @@ import "bootstrap";
 import { loadDynamicBannerText } from '../components/banner';
 import { initCountdown } from '../components/countdown';
 import { chartDo } from '../components/chart';
+// export { clic } from '..components/thematic';
 //= require cocoon
 
 if (document.querySelector("#banner-typed-text")) {
@@ -113,22 +114,33 @@ if (document.querySelector('.range')) { range();}
 
 // POUCE change de couleur au clic
 const thumbUp = () => {
-  const thumb = document.querySelector('.far');
+  const thumb = document.querySelectorAll('.far');
 
-  thumb.addEventListener("click", (event) => {
-    if (event.currentTarget.classList.contains('far')) {
-      event.currentTarget.classList.remove("far");
-      event.currentTarget.classList.add("fas");
-    } else {
-      event.currentTarget.classList.remove("fas");
-      event.currentTarget.classList.add("far");
-    }
+  thumb.forEach((item) => {
+    item.addEventListener("click", (event) => {
+      event.currentTarget.classList.toggle("green-thumb");
+    });
   });
 }
 
 if (document.querySelector('.far')) { thumbUp();}
-
 // FIN POUCE
+
+// CLIC SUR THEMATICS
+const clic =() => {
+  const thematic = document.querySelectorAll(".thematic-tag");
+  thematic.forEach((item) => {
+    item.addEventListener("click", (event) => {
+      event.currentTarget.classList.toggle("green");
+    });
+  });
+}
+
+if (document.querySelector(".thematic-tag")) {
+  clic();
+}
+
+// FIN CLIC SUR THEMATICS
 
 const initDisplayNumber = () => {
   const whatsapp_icon = document.querySelector(".whatsapp");

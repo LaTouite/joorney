@@ -5,7 +5,7 @@ const flatpickrInit = () => {
   flatpickr(".datepicker", {
     // inline: true,
     // mode: "range",
-    dateFormat: "Y-m-d",
+    dateFormat: "d-m-Y",
     minDate: "today"
   })
 }
