@@ -86,6 +86,7 @@ ActiveRecord::Schema.define(version: 2019_09_01_145624) do
     t.datetime "updated_at", null: false
     t.bigint "survey_id"
     t.string "topic"
+    t.boolean "picked"
     t.index ["survey_id"], name: "index_suggestions_on_survey_id"
   end
 

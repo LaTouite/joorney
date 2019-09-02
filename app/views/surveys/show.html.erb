@@ -97,7 +97,7 @@
           </div>
           <div class='survey-question' id='thematics-sugg'>
             <% Event::THEMATICS.each do |thematic| %>
-              <%= f.button :submit, thematic, name:'suggestion[value]', value: thematic, class: 'thematic-tag mr-3', input_html: { onclick: 'Rails.fire(this.form, "submit")'} %>
+              <%= f.button :submit, thematic, name:'suggestion[value]', value: thematic, class: 'thematic-tag mr-3 mb-3', input_html: { onclick: 'Rails.fire(this.form, "submit")'} %>
               <%= f.input :topic, as: :hidden, input_html: {value: "Thématiques"} %>
             <% end %>
             <%#= f.input :value, label: false, collection: Event::THEMATICS, input_html: {onchange: 'Rails.fire(this.form, "submit")' } %>
@@ -154,7 +154,7 @@
           <br>Cela m’aidera à proposer une organisation qui contente tout le monde ;)</p>
 
             <% if @survey.deadline == nil %>
-              <h4 id='survey-deadline'>Deadline: </h4>
+              <h4 id='survey-deadline'>Deadline: à déterminer</h4>
             <% else %>
               <h4 id='survey-deadline'>Deadline: <%= @survey.deadline.strftime("%d/%m/%Y") %></h4>
             <% end %>

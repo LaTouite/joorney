@@ -1,7 +1,6 @@
 <%if suggestion.topic == "Destination" %>
   <div>
-    <i class="fas fa-times-circle delete-sugg"></i>
-    <%= link_to "Supprimer",
+    <%= link_to '<i class="fas fa-times-circle delete-sugg"></i>',
     survey_suggestion_path(suggestion.survey.id, suggestion),
     class: '',
     method: :delete,
