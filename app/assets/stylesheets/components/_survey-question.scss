@@ -1,13 +1,10 @@
 .form-sugg {
   padding: 50px;
+  padding-top: 0px;
 }
 
-.dynamic-survey {
-  padding: 20px;
-}
 
 .champs {
-  display: flex;
 }
 
 .champ_nb {
@@ -57,14 +54,38 @@ li {
   align-items: center;
 }
 
-.dynamic-survey {
-  border: 1px solid black;
-  border-radius: 10px;
-  width:100%;
+#cta-link a {
+  margin-top: 25px;
+  color: $primary-dark;
 }
+
+#cta-link:hover a {
+  color: $primary-dark;
+  text-decoration: none;
+}
+
+.dynamic-survey {
+  // border: 1px solid black;
+  border-radius: 12px;
+  width:100%;
+  transform: rotate(1deg);
+  // box-shadow: 0px 2px 15px rgba(0, 0, 0, .2);
+  box-shadow: 0 14px 28px rgba(0,0,0,0.17), 0 10px 10px rgba(0,0,0,0.13);
+  padding: 30px;
+  border: 2px solid $secondary;
+}
+
+// .dynamic-survey:hover {
+//   transform: scale(1.03);
+//   transition-duration: 0.5s;
+// }
 
 #sugg-places {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
+}
+
+.submit-area > .button {
+  margin-bottom: 20px;
 }

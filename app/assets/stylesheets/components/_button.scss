@@ -96,19 +96,87 @@
   text-decoration: none;
   background-color: $primary-dark;
   text-align: center;
-  box-shadow: 0px 2px 20px rgba(0,0,0,0.15);
+  // box-shadow: 0px 2px 20px rgba(0,0,0,0.15);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
   padding: 22px 60px;
   color: white;
   font-weight: bold;
   font-size: 18px;
+  border: 1px solid $primary-dark;
 }
 
 .button:hover {
   background-color: $primary-hover ;
+  transform: scale(1.03);
 }
 
 
 a:hover {
   text-decoration: none;
   color: white;
+  transform: scale(1.03);
+  transition-duration: 0.5s;
+}
+
+.button-secondary {
+  border-radius: 12px;
+  text-decoration: none;
+  background-color: white;
+  border: 2px solid $primary-dark;
+  text-align: center;
+  // box-shadow: 0px 2px 20px rgba(0,0,0,0.15);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15), 0 6px 6px rgba(0,0,0,0.20);
+  padding: 22px 50px;
+  color: $primary-dark;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.button-secondary:hover {
+  transform: scale(1.03);
+  transition-duration: 0.5s;
+}
+
+.button-delete {
+  width: 50px;
+  height: 30px;
+}
+
+.thematic-tag {
+  padding: 8px 40px;
+  background-color: $background-color;
+  border-radius: 12px;
+  border: 1px solid $primary-dark;
+  margin-right: 8px;
+  color: $primary-dark;
+}
+
+.btn:hover {
+  color: $primary-dark;
+  transition-duration: 0.5s;
+}
+
+.thematic-tag:hover {
+  transform: rotate(2deg);
+  transition-duration: 0.6s;
+}
+
+.button-short {
+  border-radius: 12px;
+  text-decoration: none;
+  background-color: $primary-dark;
+  text-align: center;
+  // box-shadow: 0px 2px 20px rgba(0,0,0,0.15);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.08), 0 6px 6px rgba(0,0,0,0.10);
+  padding: 12px 35px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  margin-left: 300px;
+}
+
+.button-short:hover {
+  background-color: $primary-hover ;
+  transform: scale(1.03);
+  transition-duration: 0.6s;
 }

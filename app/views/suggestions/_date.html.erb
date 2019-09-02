@@ -1,4 +1,4 @@
-<%if suggestion.topic == "Destination" %>
+<% if suggestion.start_date != nil && suggestion.end_date != nil%>
   <div>
     <i class="fas fa-times-circle delete-sugg"></i>
     <%= link_to "Supprimer",
@@ -6,6 +6,8 @@
     class: '',
     method: :delete,
     data: { confirm: "Are you sure?" } %>
-    <span><%= suggestion.value.capitalize %></span>
+    <span><%= suggestion.start_date.strftime("%d/%m/%Y") %></span>
+    <span> | </span>
+    <span><%= suggestion.end_date.strftime("%d/%m/%Y") %></span>
   </div>
 <% end %>

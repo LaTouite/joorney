@@ -40,7 +40,7 @@ Rails.application.routes.draw do
   resources :event_activities, only: [:destroy]
 
   # SURVEY
-  resources :surveys, only: [:show] do
+  resources :surveys, only: [:show, :edit, :update] do
     resources :suggestions, only: [:create, :destroy]
   end
 

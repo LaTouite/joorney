@@ -40,7 +40,7 @@
 .vide {
   width: 60%;
   height: 100%;
-  background-image: url("photosbanner.png");
+  background-image: asset-url("photosbanner.png");
   background-size: contain;
   background-repeat: no-repeat;
   overflow: visible;
@@ -104,7 +104,7 @@
 
 .background-home {
 
-  background: url(Background.svg);
+  background: asset-url("Background.svg");
   // background-image: no-repeat;
   // background-size: contain;
   // background-position: center;

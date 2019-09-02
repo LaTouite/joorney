@@ -9,12 +9,14 @@
     <%= stylesheet_link_tag 'application', media: 'all' %>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css">
     <%= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
   </head>
   <body>
     <%= yield %>
     <%= render '/components/footer' %>
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
+
     <!-- <script src="countdown.js"></script> -->
 
     <!-- piechart.js -->

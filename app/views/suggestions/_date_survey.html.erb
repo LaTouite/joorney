@@ -1,9 +1,8 @@
 <% if suggestion.start_date != nil && suggestion.end_date != nil%>
   <div>
-    <i class="fas fa-times-circle delete-sugg"></i>
-    <span><%= suggestion.start_date %></span>
+    <span><%= suggestion.start_date.strftime("%d/%m/%Y") %></span>
     <span> | </span>
-    <span><%= suggestion.end_date %></span>
+    <span><%= suggestion.end_date.strftime("%d/%m/%Y") %></span>
     <i class="far fa-thumbs-up thumb"></i>
   </div>
 <% end %>
