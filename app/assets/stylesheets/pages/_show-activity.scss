@@ -1,0 +1,147 @@
+.main-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.images {
+  max-width: 100vw;
+  height: 30vw;
+  display:flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  margin-left: 25px;
+  margin-right: 25px;
+}
+
+.image-box {
+}
+
+.img {
+  height: 100vh;
+  width: 100vh;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.main-img1{
+  margin-right: 10px;
+}
+
+.main-img2 {
+  margin-left: 10px;
+}
+
+.content-box {
+  width: 65%;
+}
+
+.title-price-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title-price-box, .act-description, .info-box, .horaires {
+  margin-bottom: 40px;
+}
+
+.horaires {
+  // margin-bottom: 40px !important;
+}
+
+.price {
+  color: $primary;
+}
+
+.info-box {
+  display: flex;
+  justify-content: space-between;
+}
+
+.info {
+  // background-color: $light-purple;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.booking-waranty-box {
+  position: sticky;
+  padding: 0px;
+  top: 0px;
+}
+
+.total, .content-booking-box {
+  display: flex;
+  justify-content: space-between;
+}
+
+.total {
+  width: 100%;
+}
+
+// .total-price {
+//   color: $dark-purple;
+// }
+
+.total h6 {
+  font-size: 27px;
+  color: $primary;
+}
+
+.sub-book, .total {
+  margin-bottom: 20px;
+}
+
+.booking-box {
+  background-color: white;
+  border-radius: 10px;
+}
+
+.submit-btn {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.one-map {
+  height: 300px !important;
+  margin: 0px !important;
+}
+
+.each-info-box {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: 150px;
+}
+
+.each-logo {
+  font-size: 30px;
+  padding-bottom: 10px;
+  color: $primary;
+}
+
+.little-logo {
+  color: $primary;
+}
+
+.title-price-box #light-details {
+  line-height: 0px;
+}
+
+.title-price-box h2 {
+  font-size: 30px;
+}
+
+.info-box p {
+  font-weight: 500;
+}
+
+.round{
+  border-radius: 5px;
+}
+
+.act-description p {
+  font-size: 16px;
+  text-align: justify;
+}
+

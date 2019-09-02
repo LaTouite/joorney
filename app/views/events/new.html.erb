@@ -59,7 +59,7 @@
                   <input type="checkbox" id="checkbox-toggle-survey-place">
                   <span class="slider round"></span>
                 </label>
-                <%= f.input :destination, id: "event_destination", :input_html => { :class => "d-none", disabled: :true }, :label_html => { :class => "d-none" }, placeholder: 'Votre destination' %>
+                <%= f.input :destination, id: "event_destination", :input_html => { :class => "d-none address", disabled: :true }, :label_html => { :class => "d-none .address" }, placeholder: 'Votre destination' %>
               </div>
               <div class="toggle-budget">
                 <strong>Le budget/pers</strong>

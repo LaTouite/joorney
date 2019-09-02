@@ -28,8 +28,16 @@ Rails.application.routes.draw do
         post :send_invitation
       end
     end
+    # SUGGESTIONS via EVENTS
     resources :suggestions, only: [:index]
+
+    # ACTIVITIES via EVENTS
+    resources :activities, only: [:index, :show] do
+      resources :event_activities, only: [:create]
+    end
   end
+
+  resources :event_activities, only: [:destroy]
 
   # SURVEY
   resources :surveys, only: [:show, :edit, :update] do

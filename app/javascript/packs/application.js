@@ -27,6 +27,28 @@ import "flatpickr/dist/themes/material_blue.css";
 flatpickrInit();
 // flatpickrInitDeadline();
 
+//Auto-complete address
+
+import { initAutocomplete } from '../plugins/init_autocomplete.js';
+if (document.querySelector('.address')) {
+  initAutocomplete();
+}
+
+// Initialisation map
+import 'mapbox-gl/dist/mapbox-gl.css';
+import { initMapbox } from '../plugins/init_mapbox';
+if (document.querySelector('#map')) {
+  initMapbox();
+}
+
+// Favorite activities
+import { initFavorite } from '../components/favorite';
+if (document.querySelector('.favorite')) {
+  initFavorite();
+}
+
+
+
 const initToggleDate = () => {
   const toggle_input_date = document.querySelector("#checkbox-toggle-survey-date");
   toggle_input_date.addEventListener("click", (event) => {

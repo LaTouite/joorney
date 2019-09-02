@@ -1,0 +1,23 @@
+.address-input {
+  display: flex;
+}
+
+.correct-icone-accomodation {
+  width: 50px;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+
+.correct-icone-accomodation i {
+  margin-top: auto;
+  font-size: 30px;
+}
+
+.address-input i {
+  flex-grow: 1;
+}
+
+.address-input .form-control {
+  flex-grow: 1;
+}
