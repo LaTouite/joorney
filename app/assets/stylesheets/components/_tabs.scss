@@ -23,19 +23,30 @@
   text-align: center;
 }
 
+#onglet-d i {
+  font-size: 28px;
+  color: $primary;
+}
+
+#onglet-d > .fa-tachometer-alt {
+  color: $primary-dark;
+}
+
 #onglet-d:hover {
   // text-align: center;
   transform: scale(1.03);
   // transition-duration: 1s;
 }
 
-#onglet-d i {
-  font-size: 28px;
+
+#onglet-d {
+  text-align: center;
 }
 
-#dashboard-nav i {
-  padding-left: 45px;
-}
+
+// #dashboard-nav i {
+//   padding-left: 45px;
+// }
 
 #dashboard-nav a {
   font-size: 16px;

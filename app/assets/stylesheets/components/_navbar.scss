@@ -26,6 +26,17 @@
   // margin-bottom: 100px;
 }
 
+.navbar-joorney-nosticky {
+  display: flex;
+  height: 70px;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, .1);
+  background-color: white;
+  top: 0;
+  z-index: 10;
+  // margin-bottom: 100px;
+}
+
+
 // .navbar-joorney.sticky {
 
 // }
@@ -75,8 +86,58 @@
   font-weight: bold;
 }
 
-.navbar-joorney .logo p {
+.navbar-joorney-nosticky .logo p {
   margin-bottom: 0px;
 }
+
+.navbar-joorney-nosticky .onglets {
+  display: flex;
+  flex-grow: 1;
+  width: 30vw;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar-joorney-nosticky .onglets p {
+  margin-left: 30px;
+  margin-right: 30px;
+  margin-bottom: 0px;
+}
+
+.navbar-joorney-nosticky .logo {
+  width: 20%;
+  background-position: center;
+  // display: flex;
+  // align-items: center;
+  // justify-content: center;
+  background-image: asset-url("logo.png");
+  height: 100%;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.navbar-joorney-nosticky .dark-part {
+  width: 340px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  justify-content: space-between;
+  padding: 0 50px;
+  background-image: asset-url("nav_rectangle.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+// .navbar-joorney .dark-part p {
+.navbar-joorney-nosticky .dark-part p {
+  margin-bottom: 0px;
+  color: white;
+  font-weight: bold;
+}
+
+.navbar-joorney-nosticky .logo p {
+  margin-bottom: 0px;
+}
+
 
 

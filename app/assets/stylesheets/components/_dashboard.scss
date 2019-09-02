@@ -20,7 +20,7 @@
   position: relative;
   display: flex;
   position: relative;
-  margin-left: 1093px;
+  margin-left: 816px;
   margin-bottom: -48px;
 }
 
@@ -30,7 +30,7 @@
   object-fit: cover;
   position: absolute;
   left: 160px;
-  top: 30px;
+  top: 93px;
   border-radius: 12px;
   transform: rotate(-5deg);
 }
@@ -161,6 +161,7 @@
   padding: 8px;
   font-size: 14px;
   text-align: center;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
 .settings-detail:hover {
@@ -191,7 +192,7 @@ color: white;
 
 #top-timeline {
   height: 200px;
-  border-bottom: 1px solid grey;
+  // border-bottom: 1px solid grey;
 }
 
 #top-timeline h4 {
@@ -285,4 +286,17 @@ color: white;
   padding: 20px;
 }
 
+.one-activity {
+  display: flex;
+  margin-bottom: 30px;
+  border-bottom: 1px solid $border-grey;
+}
+
+.one-activity > .avatar-navbar {
+  margin-right: 15px;
+}
+
+.activity-content {
+  line-height: 0.8;
+}
 

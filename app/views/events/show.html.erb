@@ -1,5 +1,5 @@
 
-<%= render '/components/top-navbar' %>
+<%= render '/components/top-navbar-nosticky' %>
 
 <div class="backcolor">
 
@@ -27,16 +27,18 @@
             Secondes
           </span>
         </div>
-
-        <div class="avatars">
-          <div class="avatar-p"></div>
-          <div class="avatar-p"></div>
-          <div class="avatar-p"></div>
-          <div class="avatar-p"></div>
-          <div class="avatar-p"></div>
-          <div class="avatar-p"></div>
-          <div class="avatar-p"></div>
+        <div class="container">
+          <div class="avatars">
+            <div id="avatar-number">6</div>
+            <div class="avatar-p"></div>
+            <div class="avatar-p"></div>
+            <div class="avatar-p"></div>
+            <div class="avatar-p"></div>
+            <div class="avatar-p"></div>
+            <div class="avatar-p"></div>
+          </div>
         </div>
+
       </div>
     </div>
   </div>
@@ -87,7 +89,7 @@
 
         <div id="dashboard-main-info" class="dashboard-card">
           <div class="db-info-detail">
-            <p>Budget/pers</p>
+            <H4>Budget/pers</H4>
             <div class="db-info-detail-value with-border-right">
               <%if @event.budget_per_participant_cents? %>
               <h2><%= @event.budget_per_participant_cents * 100 %></h2>
@@ -97,17 +99,19 @@
             </div>
           </div>
           <div class="db-info-detail">
-            <p>Date</p>
+            <H4>Date</H4>
             <div class="db-info-detail-value with-border-right">
               <%if @event.start_date? %>
-              <h6><%= @event.start_date.strftime("%d/%m/%Y") %> - <%= @event.end_date.strftime("%d/%m/%Y") %></h6>
+              <!-- <h6><%= @event.start_date.strftime("%d/%m/%Y") %> - <%= @event.end_date.strftime("%d/%m/%Y") %></h6> -->
+              <h6><%= @event.start_date.strftime("%d/%m/%Y") %></h6>
+              <h6><%= @event.end_date.strftime("%d/%m/%Y") %></h6>
               <% else %>
               <h2>?</h2>
               <%end%>
             </div>
           </div>
           <div class="db-info-detail">
-            <p>Lieu</p>
+            <H4>Lieu</H4>
             <div class="db-info-detail-value">
               <%if @event.destination? %>
               <h2><%= @event.destination %></h2>
@@ -207,8 +211,47 @@
       <div id="timeline" class="dashboard-card">
         <div id="top-timeline">
           <h4>Dernières activités</h4>
-          <p>Invitations envoyées : en attente des participants</p>
-          <p>Sondage envoyé : en attente des réponses</p>
+
+          <div class="one-activity">
+            <div class="avatar-navbar"></div>
+            <div class="activity-content">
+              <p><strong>Théo</strong></p>
+              <p>a rejoint le projet</p>
+              <p>il y a 20 heures</p>
+            </div>
+          </div>
+          <div class="one-activity">
+            <div class="avatar-navbar"></div>
+            <div class="activity-content">
+              <p><strong>Théo</strong></p>
+              <p>a rejoint le projet</p>
+              <p>il y a 20 heures</p>
+            </div>
+          </div>
+
+
+          <% @event.user_events.each do |userevent| %>
+            <!-- <div class="avatar-navbar"></div> -->
+
+            <% if userevent.user_id != nil %>
+              <%= cl_image_tag User.find(userevent.user_id).profile_picture, height: 200, width: 200 %>
+            <% end %>
+
+            <div class="activity-content">
+              <!-- pour ne pas casser la logique de l'api (user optional true) on filtre les userevent qui n'ont pas d'id -->
+              <% if userevent.user_id != nil %>
+                <%= User.find(userevent.user_id).first_name %>
+              <% end %>
+              <% if userevent.action1 %>
+                <p>a rejoint le projet</p>
+              <% end %>
+              <% if userevent.action2 %>
+                <p>a répondu au sondage</p>
+              <% end %>
+            </div>
+          <% end %>
+
+
           <% if @survey.deadline %>
             <p>Deadline: <%= @survey.deadline.strftime("%d/%m/%Y") %></p>
           <% end %>

@@ -142,3 +142,12 @@ const initDisplayNumber = () => {
 if (document.querySelector(".whatsapp")) {
   initDisplayNumber();
 }
+
+// const initForm = () => {
+//   const btn = document.querySelector(".alert-b");
+//   if (btn) {
+//     btn.addEventListener("submit", (event) => {
+//         alert("L'invitation a bien été envoyée");
+//     });
+//   }
+// }
