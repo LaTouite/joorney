@@ -31,8 +31,7 @@ li {
 .date-plus {
   border: 0;
   border-radius: 50%;
-  background-color: black;
-  color: white;
+  color: red;
   font-size: 15px;
   font-weight: bold;
   padding: 0;
@@ -97,17 +96,53 @@ li {
 }
 
 .green {
-  color: green;
-  border-color: green;
+  color: white;
+  border-color: white;
   background-color: $done;
 }
 
 .green:hover {
-  color: green;
-  border-color: green;
+  color: white;
+  border-color: white;
   background-color: $done;
 }
 
 .green-thumb {
   color: $done;
+}
+
+.cross-delete {
+  position: relative;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+}
+
+.cross-delete:after {
+  position: absolute;
+  content: "\f057";
+  width: 20px;
+  height: 20px;
+  top: 2px;
+  font-family: "Font Awesome 5 Free";
+}
+
+// .cal-plus {
+//   position: absolute;
+// }
+
+.date-plus {
+  position: relative;
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+}
+
+.date-plus:after {
+  position: absolute;
+  content: "/f271";
+  font-family: "Font Awesome 5 Free";
+  width: 100px;
+  height: 100px;
+  color: red;
 }

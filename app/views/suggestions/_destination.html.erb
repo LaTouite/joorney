@@ -1,8 +1,8 @@
 <%if suggestion.topic == "Destination" %>
   <div>
-    <%= link_to '<i class="fas fa-times-circle delete-sugg"></i>',
+    <%= link_to '',
     survey_suggestion_path(suggestion.survey.id, suggestion),
-    class: '',
+    class: 'cross-delete',
     method: :delete,
     data: { confirm: "Are you sure?" } %>
     <span><%= suggestion.value.capitalize %></span>

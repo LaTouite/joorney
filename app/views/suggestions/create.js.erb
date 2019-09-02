@@ -25,8 +25,9 @@ if (document.querySelector("#sugg-places")) {
 if (document.querySelector("#new-places")) {
   add('new-places', 'beforeend', '<%= j render "suggestions/destination", suggestion: @suggestion %>');
 }
-// Thématiques partie gauche
+// Thématiques partie droite
 if (document.querySelector("#sugg-thematics")) {
+
   add('sugg-thematics', 'beforeend', '<%= j render "suggestions/thematic", suggestion: @suggestion %>');
 }
 // Changer le nb de propositions pour les destinations

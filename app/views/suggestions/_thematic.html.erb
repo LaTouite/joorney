@@ -1,5 +1,5 @@
 <% if suggestion.topic == "Thématiques" %>
-  <div>
+  <div id="<%= suggestion.value %>">
     <%= link_to 'S',
     survey_suggestion_path(suggestion.survey.id, suggestion),
     class: '',

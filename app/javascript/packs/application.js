@@ -29,7 +29,6 @@ flatpickrInit();
 // flatpickrInitDeadline();
 
 //Auto-complete address
-
 import { initAutocomplete } from '../plugins/init_autocomplete.js';
 if (document.querySelector('.address')) {
   initAutocomplete();
@@ -47,8 +46,6 @@ import { initFavorite } from '../components/favorite';
 if (document.querySelector('.favorite')) {
   initFavorite();
 }
-
-
 
 const initToggleDate = () => {
   const toggle_input_date = document.querySelector("#checkbox-toggle-survey-date");
@@ -114,7 +111,7 @@ if (document.querySelector('.range')) { range();}
 
 // POUCE change de couleur au clic
 const thumbUp = () => {
-  const thumb = document.querySelectorAll('.far');
+  const thumb = document.querySelectorAll('.thumb');
 
   thumb.forEach((item) => {
     item.addEventListener("click", (event) => {
@@ -123,7 +120,7 @@ const thumbUp = () => {
   });
 }
 
-if (document.querySelector('.far')) { thumbUp();}
+if (document.querySelector('.thumb')) { thumbUp();}
 // FIN POUCE
 
 // CLIC SUR THEMATICS
@@ -154,3 +151,18 @@ const initDisplayNumber = () => {
 if (document.querySelector(".whatsapp")) {
   initDisplayNumber();
 }
+
+// CLIC SUR AJOUTER UNE DATE (SURVEY NEW)
+// const addDates = () => {
+//   const calPlus = document.querySelector(".cal-plus");
+//   calPlus.addEventListener("click", (event) => {
+//   const newDatePlus = document.querySelector("#new-dates-sugg");
+//   const datePlus = document.querySelector(".date-plus");
+//     event.newDatePlus.click();
+//     event.datePlus.submit();
+//   });
+// }
+
+// if (document.querySelector(".cal-plus")) {
+//   addDates();
+// }
