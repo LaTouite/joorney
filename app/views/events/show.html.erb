@@ -107,7 +107,7 @@
             <H4>Budget/pers</H4>
             <div class="db-info-detail-value with-border-right">
               <%if @event.budget_per_participant_cents? %>
-              <h2><%= @event.budget_per_participant_cents * 100 %></h2>
+              <h2><%= @event.budget_per_participant_cents %></h2>
               <% else %>
               <h2>?</h2>
               <%end%>
@@ -117,7 +117,7 @@
             <H4>Date</H4>
             <div class="db-info-detail-value with-border-right">
               <%if @event.start_date? %>
-              <!-- <h6><%= @event.start_date.strftime("%d/%m/%Y") %> - <%= @event.end_date.strftime("%d/%m/%Y") %></h6> -->
+              <!-- <h6><%= @event.start_date.strftime() %> - <%= @event.end_date.strftime() %></h6> -->
               <h6><%= @event.start_date.strftime("%d/%m/%Y") %></h6>
               <h6><%= @event.end_date.strftime("%d/%m/%Y") %></h6>
               <% else %>
@@ -129,7 +129,8 @@
             <H4>Lieu</H4>
             <div class="db-info-detail-value">
               <%if @event.destination? %>
-              <h4><%= @event.destination %></h4>
+              <!-- <h4><%= @event.destination %></h4> -->
+              <h4> <%= Geocoder.search(@event.destination).first.city %> </h4>
               <% else %>
               <h2>?</h2>
               <%end%>

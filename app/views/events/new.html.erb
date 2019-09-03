@@ -43,7 +43,7 @@
       <%= simple_form_for @event do |f| %>
       <div class="row">
         <div class="col-8">
-          <div class="container-small-new">
+          <div id="input-name-category" class="container-small-new">
               <%= f.input :name, label: "Nom de l'évènement" %>
               <br>
               <%= f.input :event_category, label: "Type", collection: Event::EVENT_CATEGORIES %>
