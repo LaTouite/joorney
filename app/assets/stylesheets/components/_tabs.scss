@@ -28,7 +28,8 @@
   color: $primary;
 }
 
-#onglet-d > .fa-tachometer-alt {
+#onglet-d #main-icon {
+  font-size: 28px;
   color: $primary-dark;
 }
 
@@ -42,6 +43,7 @@
 #onglet-d {
   text-align: center;
 }
+
 
 
 // #dashboard-nav i {

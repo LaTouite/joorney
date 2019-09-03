@@ -1,6 +1,62 @@
-<div id="banner-dashboard">
+<%= render '/components/top-navbar-nosticky' %>
 
-</div>
+<!-- <div class="backcolor"> -->
+
+  <div id="banner-dashboard">
+    <%= cl_image_tag @event.photo %>
+    <div class="countdown-col col">
+      <div class="title-countdown">
+        <h1> <%= @event.name %> </h1>
+        <% if @event.start_date %>
+          <div class="time middle">
+            <span>
+              <div id="d">12</div>
+              Jours
+            </span>
+            <span>
+              <div id="h">06</div>
+              Heures
+            </span>
+            <span>
+              <div id="m">35</div>
+              Minutes
+            </span>
+            <span>
+              <div id="s">02</div>
+              Secondes
+            </span>
+          </div>
+        <% end %>
+<!--         <div class="container">
+          <div class="avatars">
+            <div id="avatar-number">6</div>
+            <div class="avatar-p"></div>
+            <div class="avatar-p"></div>
+            <div class="avatar-p"></div>
+            <div class="avatar-p"></div>
+            <div class="avatar-p"></div>
+            <div class="avatar-p"></div>
+          </div>
+        </div> -->
+
+        <div class="container">
+          <div class="avatars">
+            <div id="avatar-number"><%= @event.user_events.count %></div>
+            <% @event.user_events.each do |userevent| %>
+
+              <% if userevent.user_id != nil %>
+                <%= cl_image_tag userevent.user.profile_picture, class: 'avatar-p' %>
+              <% end %>
+            <% end %>
+
+            <%= cl_image_tag current_user.profile_picture, class: "avatar-p" %>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
 
 <div class="container">
 
@@ -16,7 +72,7 @@
             <%= link_to "Sondage", new_event_path, class: "tab-underlined" %>
           </li>
           <li id="onglet-d">
-            <i class="fas fa-home"></i>
+            <i class="fas fa-home" id="main-icon"></i>
             <%= link_to "Logement", accomodation_event_path(@event), class: "tab-underlined active" %>
           </li>
           <li id="onglet-d">
@@ -24,7 +80,7 @@
             <%= link_to "Activités", event_activities_path(@event), class: "tab-underlined" %>
           </li>
           <li id="onglet-d">
-            <i class="fas fa-snowboarding"></i>
+            <i class="fas fa-plane"></i>
             <%= link_to "Transport", new_event_path, class: "tab-underlined" %>
           </li>
           <li id="onglet-d">
