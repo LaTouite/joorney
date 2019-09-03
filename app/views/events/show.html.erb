@@ -151,10 +151,18 @@
           <div id="db-progression-details">
             <!-- SURVEY -->
               <div class="db-progression-detail">
-                <% if @survey %>
-                  <i class="fas fa-circle in-progress"></i>
-                <% else %>
+                <% answer = [] %>
+                <% @event.user_events.map do |guest| %>
+                  <% if guest.user_id != nil %>
+                    <% answer << guest.action2 %>
+                  <% end %>
+                <% end %>
+                <% if @survey.suggestions == [] && @event.user_events.count == 1 %>
                   <i class="fas fa-circle not-started"></i>
+                <% elsif answer.uniq.count == 1 && answer.uniq.first == true %>
+                  <i class="fas fa-circle done"></i>
+                <% else %>
+                  <i class="fas fa-circle in-progress"></i>
                 <% end %>
                 <p>Sondage</p>
               </div>
@@ -163,7 +171,9 @@
               <div class="db-progression-detail">
                 <% join = [] %>
                 <% @event.user_events.map do |guest| %>
-                  <% join << guest.action1 %>
+                  <% if guest.user_id != nil %>
+                    <% join << guest.action1 %>
+                  <% end %>
                 <% end %>
                 <% if join.uniq.count == 1 && join.uniq.first == nil %>
                   <i class="fas fa-circle done"></i>
@@ -191,10 +201,10 @@
               <% @event.event_activities.map do |activity| %>
                 <% selected << activity.selected %>
               <% end %>
-              <% if @event.event_activities %>
+              <% if @event.event_activities != [] %>
                 <i class="fas fa-circle in-progress"></i>
-              <% elsif selected.uniq.count == 1 && selected.uniq.first == false %>
-                <i class="fas fa-circle done"></i>
+              <%# elsif selected.uniq.count == 1 && selected.uniq.first == false %>
+                <!-- <i class="fas fa-circle done"></i> -->
               <% else %>
                 <i class="fas fa-circle not-started"></i>
               <% end %>
@@ -223,33 +233,33 @@
         </div>
 
         <!-- DASHBOARD FRISE DE PROGRESSION (fin) -->
-          <div id="dashboard-costs" class="dashboard-card">
-            <h4>Répartition des coûts</h4>
-            <div class="chart-labels">
-              <div class="db-costs-chart">
-                <canvas id="doughnut-chart" width="250" height="150"></canvas>
-                <!-- <canvas id="doughnut-chart" width="230" height="130"></canvas> -->
+        <div id="dashboard-costs" class="dashboard-card">
+          <h4>Répartition des coûts</h4>
+          <div class="chart-labels">
+            <div class="db-costs-chart">
+              <canvas id="doughnut-chart" width="250" height="150"></canvas>
+              <!-- <canvas id="doughnut-chart" width="230" height="130"></canvas> -->
+            </div>
+            <div class="labels">
+              <div class="label-color">
+                <span id="label-budget"></span>
+                <p>Budget restant</p>
               </div>
-              <div class="labels">
-                <div class="label-color">
-                  <span id="label-budget"></span>
-                  <p>Budget restant</p>
-                </div>
-                <div class="label-color">
-                  <span id="label-activity"></span>
-                  <p>Activités</p>
-                </div>
-                <div class="label-color">
-                  <span id="label-logement"></span>
-                  <p>Logement</p>
-                </div>
-                <div class="label-color">
-                  <span id="label-transport"></span>
-                  <p>Transport</p>
-                </div>
+              <div class="label-color">
+                <span id="label-activity"></span>
+                <p>Activités</p>
+              </div>
+              <div class="label-color">
+                <span id="label-logement"></span>
+                <p>Logement</p>
+              </div>
+              <div class="label-color">
+                <span id="label-transport"></span>
+                <p>Transport</p>
               </div>
             </div>
           </div>
+        </div>
 
 
         <div id="settings" class="dashboard-card">
@@ -300,29 +310,29 @@
 
           <% @event.user_events.each do |userevent| %>
             <!-- <div class="avatar-navbar"></div> -->
-          <div class="one-activity">
-            <!-- avatar -->
             <% if userevent.user_id != nil && userevent.user_id != current_user.id %>
-              <%= cl_image_tag userevent.user.profile_picture, class: 'avatar-p' %>
-            <% end %>
+              <div class="one-activity">
+                <!-- avatar -->
+                <%= cl_image_tag userevent.user.profile_picture, class: 'avatar-p' %>
 
-            <!-- content div -->
-            <div class="activity-content">
-              <!-- pour ne pas casser la logique de l'api (user optional true) on filtre les userevent qui n'ont pas d'id -->
-              <% if userevent.user_id != nil && userevent.user_id != current_user.id %>
-                <%= userevent.user.first_name %>
-              <% end %>
-              <% if userevent.action1 && userevent.user_id != current_user.id %>
-                <p>a rejoint le projet</p>
-              <% end %>
-              <% if userevent.action2 && userevent.user_id != current_user.id %>
-                <p>a répondu au sondage</p>
-              <% end %>
-              <% if userevent.user_id != current_user.id %>
-              <p><%= userevent.time_ago %></p>
-              <% end %>
-            </div>
-          </div>
+                <!-- content div -->
+                <div class="activity-content">
+                  <!-- pour ne pas casser la logique de l'api (user optional true) on filtre les userevent qui n'ont pas d'id -->
+                  <% if userevent.user_id != nil && userevent.user_id != current_user.id %>
+                    <%= userevent.user.first_name %>
+                  <% end %>
+                  <% if userevent.action1 && userevent.user_id != current_user.id %>
+                    <p>a rejoint le projet</p>
+                  <% end %>
+                  <% if userevent.action2 && userevent.user_id != current_user.id %>
+                    <p>a répondu au sondage</p>
+                  <% end %>
+                  <% if userevent.user_id != current_user.id %>
+                    <p><%= userevent.time_ago %></p>
+                  <% end %>
+                </div>
+              </div>
+            <% end %>
           <% end %>
 
 
