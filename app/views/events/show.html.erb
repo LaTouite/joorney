@@ -129,7 +129,7 @@
             <H4>Lieu</H4>
             <div class="db-info-detail-value">
               <%if @event.destination? %>
-              <h2><%= @event.destination %></h2>
+              <h4><%= @event.destination %></h4>
               <% else %>
               <h2>?</h2>
               <%end%>
@@ -148,10 +148,18 @@
           <div id="db-progression-details">
             <!-- SURVEY -->
               <div class="db-progression-detail">
-                <% if @survey %>
-                  <i class="fas fa-circle in-progress"></i>
-                <% else %>
+                <% answer = [] %>
+                <% @event.user_events.map do |guest| %>
+                  <% if guest.user_id != nil %>
+                    <% answer << guest.action2 %>
+                  <% end %>
+                <% end %>
+                <% if @survey.suggestions == [] && @event.user_events.count == 1 %>
                   <i class="fas fa-circle not-started"></i>
+                <% elsif answer.uniq.count == 1 && answer.uniq.first == true %>
+                  <i class="fas fa-circle done"></i>
+                <% else %>
+                  <i class="fas fa-circle in-progress"></i>
                 <% end %>
                 <p>Sondage</p>
               </div>
@@ -190,10 +198,10 @@
               <% @event.event_activities.map do |activity| %>
                 <% selected << activity.selected %>
               <% end %>
-              <% if @event.event_activities %>
+              <% if @event.event_activities != [] %>
                 <i class="fas fa-circle in-progress"></i>
-              <% elsif selected.uniq.count == 1 && selected.uniq.first == false %>
-                <i class="fas fa-circle done"></i>
+              <%# elsif selected.uniq.count == 1 && selected.uniq.first == false %>
+                <!-- <i class="fas fa-circle done"></i> -->
               <% else %>
                 <i class="fas fa-circle not-started"></i>
               <% end %>
@@ -220,7 +228,7 @@
             <!-- AGENDA (fin) -->
           </div>
         </div>
-        
+
         <!-- DASHBOARD FRISE DE PROGRESSION (fin) -->
         <div id="dashboard-costs" class="dashboard-card">
           <h4>Répartition des coûts</h4>
