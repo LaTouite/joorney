@@ -7,6 +7,7 @@ class UserEventsController < ApplicationController
       event_id: params[:event_id]
     )
     authorize user_event
+    Event.find(params[:event_id]).populate_event
     send_invitation(user_event)
   end
 
