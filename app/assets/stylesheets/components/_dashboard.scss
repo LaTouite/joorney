@@ -24,16 +24,16 @@
   margin-bottom: -48px;
 }
 
-#banner-dashboard img {
-  height: 150px;
-  width: 250px;
-  object-fit: cover;
-  position: absolute;
-  left: 160px;
-  top: 93px;
-  border-radius: 12px;
-  transform: rotate(-5deg);
-}
+// #banner-dashboard img {
+//   height: 150px;
+//   width: 250px;
+//   object-fit: cover;
+//   position: absolute;
+//   left: 160px;
+//   top: 93px;
+//   border-radius: 12px;
+//   transform: rotate(-5deg);
+// }
 
 
 .dashboard-card {
@@ -195,9 +195,9 @@ color: white;
   // border-bottom: 1px solid grey;
 }
 
-#top-timeline h4 {
-  margin-bottom: 30px;
-}
+// #top-timeline h4 {
+//   margin-bottom: 30px;
+// }
 
 #top-timeline p {
   font-size: 13px;
@@ -288,7 +288,8 @@ color: white;
 
 .one-activity {
   display: flex;
-  margin-bottom: 30px;
+  padding-bottom: 30px;
+  padding-top: 30px;
   border-bottom: 1px solid $border-grey;
 }
 
@@ -296,7 +297,12 @@ color: white;
   margin-right: 15px;
 }
 
-.activity-content {
-  line-height: 0.8;
+// .activity-content {
+//   line-height: 0.8;
+// }
+
+.one-activity > .avatar-p {
+  margin-right: 18px;
 }
+
 

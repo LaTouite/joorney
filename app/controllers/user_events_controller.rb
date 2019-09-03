@@ -35,7 +35,7 @@ class UserEventsController < ApplicationController
     @client.api.account.messages.create(
       from: 'whatsapp:+14155238886',
       to: "whatsapp:+33#{user_event.phone_number[1..-1]}",
-      body: "Salut. localhost:3000/user_events/#{user_event.event.id}/confirm_invitation?token=#{user_event.event.token}"
+      body: "Hello. localhost:3000/user_events/#{user_event.event.id}/confirm_invitation?token=#{user_event.event.token}"
     )
     redirect_to event_path(user_event.event_id)
   end
