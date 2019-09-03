@@ -1,4 +1,5 @@
 import "bootstrap";
+
 import { loadDynamicBannerText } from '../components/banner';
 import { initCountdown } from '../components/countdown';
 import { chartDo } from '../components/chart';
@@ -30,7 +31,7 @@ flatpickrInit();
 
 //Auto-complete address
 import { initAutocomplete } from '../plugins/init_autocomplete.js';
-if (document.querySelector('.address')) {
+if (document.querySelector('.address-autocomplete')) {
   initAutocomplete();
 }
 

@@ -40,10 +40,10 @@
 
   <div class="tab-pane fade show active" id="infos" role="tabpanel" aria-labelledby="infos-tab">
     <div id="setup1" class="container">
+      <%= simple_form_for @event do |f| %>
       <div class="row">
         <div class="col-8">
           <div class="container-small-new">
-            <%= simple_form_for @event do |f| %>
               <%= f.input :name, label: "Nom de l'évènement" %>
               <br>
               <%= f.input :event_category, label: "Type", collection: Event::EVENT_CATEGORIES %>
@@ -93,7 +93,7 @@
                   <input type="checkbox" id="checkbox-toggle-survey-place">
                   <span class="slider round"></span>
                 </label>
-                <%= f.input :destination, id: "event_destination", :input_html => { :class => "d-none address", disabled: :true }, :label_html => { :class => "d-none .address" }, placeholder: 'Votre destination' %>
+                <%= f.input :destination, id: "event_destination", :input_html => { :class => "d-none address-autocomplete" }, :label_html => { :class => "d-none" }, placeholder: 'Votre destination' %>
               </div>
               <div class="toggle-budget">
                 <strong>Le budget/pers</strong>
@@ -107,9 +107,9 @@
             <div class="cta-part">
               <%= f.submit "Créer mon évènement", class: "button" %>
             </div>
-            <% end %>
           </div>
       </div>
+    <% end %>
     </div>
 
   </div>
