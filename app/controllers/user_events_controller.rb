@@ -28,8 +28,8 @@ class UserEventsController < ApplicationController
   private
 
   def send_invitation(user_event)
-    account_sid = 'AC5d11bdbcef24cf1c35b2cfc4ea880985'
-    auth_token = 'fc5f3b1a34a740678c21ee7863e20b9f'
+    account_sid = ENV['ACCOUNT_SID']
+    auth_token = ENV['AUTH_TOKEN']
     @client = Twilio::REST::Client.new account_sid, auth_token
 
     @client.api.account.messages.create(
