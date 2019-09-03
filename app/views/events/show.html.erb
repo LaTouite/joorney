@@ -131,10 +131,12 @@
           </div>
 
           <div id="db-progression-details">
-            <div class="db-progression-detail">
-              <i class="fas fa-circle"></i>
-              <p>Sondage</p>
-            </div>
+            <% if @event.survey %>
+              <div class="db-progression-detail">
+                <i class="fas fa-circle"></i>
+                <p>Sondage</p>
+              </div>
+            <% end %>
             <div class="db-progression-detail">
               <i class="fas fa-circle"></i>
               <p>Inviter <br>les<br>participants</p>
