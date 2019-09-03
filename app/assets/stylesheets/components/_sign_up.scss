@@ -1,0 +1,32 @@
+.signup {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.names {
+  display: flex;
+}
+
+.form-control {
+  width: 100%;
+}
+
+.fname, .lname {
+  width:100%;
+}
+
+.su {
+  text-align: center;
+}
+
+.su, .su-input {
+  margin-left: 250px;
+  margin-right: 250px;
+}
+
+.su-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
