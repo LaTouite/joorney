@@ -27,7 +27,7 @@
             Secondes
           </span>
         </div>
-        <div class="container">
+<!--         <div class="container">
           <div class="avatars">
             <div id="avatar-number">6</div>
             <div class="avatar-p"></div>
@@ -36,6 +36,20 @@
             <div class="avatar-p"></div>
             <div class="avatar-p"></div>
             <div class="avatar-p"></div>
+          </div>
+        </div> -->
+
+        <div class="container">
+          <div class="avatars">
+            <div id="avatar-number"><%= @event.user_events.count %></div>
+            <% @event.user_events.each do |userevent| %>
+
+              <% if userevent.user_id != nil %>
+                <%= cl_image_tag User.find(userevent.user_id).profile_picture, class: 'avatar-p' %>
+              <% end %>
+
+            <% end %>
+
           </div>
         </div>
 
@@ -216,7 +230,7 @@
         <div id="top-timeline">
           <h4>Dernières activités</h4>
 
-          <div class="one-activity">
+        <!--   <div class="one-activity">
             <div class="avatar-navbar"></div>
             <div class="activity-content">
               <p><strong>Théo</strong></p>
@@ -231,29 +245,37 @@
               <p>a rejoint le projet</p>
               <p>il y a 20 heures</p>
             </div>
-          </div>
+          </div> -->
 
 
           <% @event.user_events.each do |userevent| %>
             <!-- <div class="avatar-navbar"></div> -->
-
-            <% if userevent.user_id != nil %>
-              <%= cl_image_tag User.find(userevent.user_id).profile_picture, height: 200, width: 200 %>
+          <div class="one-activity">
+            <!-- avatar -->
+            <% if userevent.user_id != nil && userevent.user_id != current_user.id %>
+              <%= cl_image_tag User.find(userevent.user_id).profile_picture, class: 'avatar-p' %>
             <% end %>
 
+            <!-- content div -->
             <div class="activity-content">
               <!-- pour ne pas casser la logique de l'api (user optional true) on filtre les userevent qui n'ont pas d'id -->
-              <% if userevent.user_id != nil %>
+              <% if userevent.user_id != nil && userevent.user_id != current_user.id %>
                 <%= User.find(userevent.user_id).first_name %>
               <% end %>
-              <% if userevent.action1 %>
+              <% if userevent.action1 && userevent.user_id != current_user.id %>
                 <p>a rejoint le projet</p>
               <% end %>
-              <% if userevent.action2 %>
+              <% if userevent.action2 && userevent.user_id != current_user.id %>
                 <p>a répondu au sondage</p>
               <% end %>
+              <% if userevent.user_id != current_user.id %>
+              <p><%= userevent.time_ago %></p>
+              <% end %>
             </div>
+          </div>
           <% end %>
+
+
 
 
           <% if @survey.deadline %>

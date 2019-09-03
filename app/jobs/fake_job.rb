@@ -8,7 +8,31 @@ class FakeJob < ApplicationJob
     [{
     present: true,
     event_id: event_id,
-    user: User.first,
+    user: User.all[1],
+    action1: true,
+    action2: false,
+    time_ago: "21 heures"
+    },
+    {
+    present: true,
+    event_id: event_id,
+    user: User.all[2],
+    action1: true,
+    action2: false,
+    time_ago: "21 heures"
+    },
+    {
+    present: true,
+    event_id: event_id,
+    user: User.all[3],
+    action1: true,
+    action2: false,
+    time_ago: "21 heures"
+    },
+    {
+    present: true,
+    event_id: event_id,
+    user: User.all[4],
     action1: true,
     action2: false,
     time_ago: "21 heures"
@@ -19,7 +43,7 @@ class FakeJob < ApplicationJob
     user: User.last,
     action1: true,
     action2: true,
-    time_ago: "9 heures"
+    time_ago: "9 heures",
     }]
     .each do |item|
       UserEvent.create!(item)
