@@ -9,7 +9,7 @@ class FakeJob < ApplicationJob
     event_id: event_id,
     user: User.first,
     action1: true,
-    action2: false,
+    action2: true,
     time_ago: "Il y a 5 heures",
     }]
     # sleep 5
@@ -18,7 +18,7 @@ class FakeJob < ApplicationJob
     event_id: event_id,
     user: User.all[1],
     action1: true,
-    action2: false,
+    action2: true,
     time_ago: "Il y a 5 heures"
     },
     {
@@ -26,7 +26,7 @@ class FakeJob < ApplicationJob
     event_id: event_id,
     user: User.all[2],
     action1: true,
-    action2: false,
+    action2: true,
     time_ago: "Il y a 7 heures"
     },
     {
@@ -34,7 +34,7 @@ class FakeJob < ApplicationJob
     event_id: event_id,
     user: User.all[3],
     action1: true,
-    action2: false,
+    action2: true,
     time_ago: "Il y a 9 heures"
     },
     {
@@ -42,7 +42,7 @@ class FakeJob < ApplicationJob
     event_id: event_id,
     user: User.all[4],
     action1: true,
-    action2: false,
+    action2: true,
     time_ago: "Il y a 15 heures"
     },
     {
