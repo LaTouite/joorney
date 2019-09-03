@@ -1,13 +1,13 @@
 <div class="navbar-joorney">
   <%= link_to "", root_path, class: "logo" %>
   <div class="onglets">
-    <p>Idées d'activités</p>
-    <p>Notre concept</p>
-    <p>Astuces & co</p>
+   <p>Idées d'activités</p>
+   <p>Notre concept</p>
+   <p>Astuces & co</p>
   </div>
   <div class="dark-part">
-    <p>Hello <%= current_user.first_name %></p>
-    <%= cl_image_tag current_user.profile_picture, class: "avatar-navbar" %>
-    <!-- <span class="avatar-navbar"></span> -->
+   <p>Hello <%= current_user.first_name %></p>
+   <!-- <span class="avatar-navbar"></span> -->
+   <%= cl_image_tag current_user.profile_picture, class: "avatar-navbar" %>
   </div>
 </div>

@@ -136,7 +136,7 @@
             </div>
           </div>
         </div>
-
+        <!-- DASHBOARD FRISE DE PROGRESSION (début) -->
         <div id="dashboard-progression" class="dashboard-card">
           <div class="top-progression">
             <h4>Progression</h4>
@@ -146,47 +146,82 @@
           </div>
 
           <div id="db-progression-details">
-            <% if @survey %>
+            <!-- SURVEY -->
               <div class="db-progression-detail">
-                <i class="fas fa-circle in-progress"></i>
+                <% if @survey %>
+                  <i class="fas fa-circle in-progress"></i>
+                <% else %>
+                  <i class="fas fa-circle not-started"></i>
+                <% end %>
                 <p>Sondage</p>
               </div>
-            <% end %>
-            <%#= @event.user_event.action1 %>
+            <!-- SURVEY (fin) -->
+            <!-- INVITÉS (début) -->
               <div class="db-progression-detail">
-                <i class="fas fa-circle not-started"></i>
-                <p>Participants</p>
+                <% join = [] %>
+                <% @event.user_events.map do |guest| %>
+                  <% join << guest.action1 %>
+                <% end %>
+                <% if join.uniq.count == 1 && join.uniq.first == nil %>
+                  <i class="fas fa-circle done"></i>
+                <% elsif join.uniq.count == 1 && join.uniq.first == true %>
+                  <i class="fas fa-circle done"></i>
+                <% else %>
+                  <i class="fas fa-circle in-progress"></i>
+                <% end %>
+                <p>Invités</p>
               </div>
-            <%# end %>
+            <!-- INVITÉS (fin) -->
+            <!-- LOGEMENT (début) -->
             <div class="db-progression-detail">
-              <i class="fas fa-circle not-started"></i>
+              <% if @event.destination != nil %>
+                <i class="fas fa-circle done"></i>
+              <% else %>
+                <i class="fas fa-circle not-started"></i>
+              <% end %>
               <p>Logement</p>
             </div>
+            <!-- LOGEMENT (fin) -->
+            <!-- ACTIVITÉS (début) -->
             <div class="db-progression-detail">
-              <i class="fas fa-circle not-started"></i>
+              <% selected = [] %>
+              <% @event.event_activities.map do |activity| %>
+                <% selected << activity.selected %>
+              <% end %>
+              <% if @event.event_activities %>
+                <i class="fas fa-circle in-progress"></i>
+              <% elsif selected.uniq.count == 1 && selected.uniq.first == false %>
+                <i class="fas fa-circle done"></i>
+              <% else %>
+                <i class="fas fa-circle not-started"></i>
+              <% end %>
               <p>Activités</p>
             </div>
+            <!-- ACTIVITÉS (fin) -->
+            <!-- TRANSPORT (début) -->
             <div class="db-progression-detail">
               <i class="fas fa-circle not-started"></i>
               <p>Transport</p>
             </div>
+            <!-- TRANSPORT (fin) -->
+            <!-- CAGNOTTE (début) -->
             <div class="db-progression-detail">
               <i class="fas fa-circle not-started"></i>
               <p>Cagnotte</p>
             </div>
+            <!-- CAGNOTTE (fin) -->
+            <!-- AGENDA (debut) -->
             <div class="db-progression-detail">
               <i class="fas fa-circle not-started"></i>
               <p>Agenda</p>
             </div>
+            <!-- AGENDA (fin) -->
           </div>
         </div>
 
-
-        <div id="dashboard-costs" class="dashboard-card">
-
-          <h4 id="title-cost">Répartition des coûts</h4>
-
-          <div class="chart-labels">
+        <!-- DASHBOARD FRISE DE PROGRESSION (fin) -->
+          <div id="dashboard-costs" class="dashboard-card">
+            <h4>Répartition des coûts</h4>
             <div class="db-costs-chart">
               <canvas id="doughnut-chart" width="250" height="150"></canvas>
               <!-- <canvas id="doughnut-chart" width="230" height="130"></canvas> -->
