@@ -131,8 +131,8 @@
             <H4>Lieu</H4>
             <div class="db-info-detail-value">
               <%if @event.destination? %>
-              <!-- <h2><%= @event.destination %></h2> -->
-              <%= Geocoder.search(@event.destination).first.city %>
+              <!-- <h4><%= @event.destination %></h4> -->
+              <h4> <%= Geocoder.search(@event.destination).first.city %> </h4>
               <% else %>
               <h2>?</h2>
               <%end%>
