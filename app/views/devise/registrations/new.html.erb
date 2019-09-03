@@ -10,12 +10,14 @@
         <div class='names'>
           <div class='fname mr-3'>
             <%= f.input :first_name,
+                    label: "prénom",
                     required: true,
                     autofocus: true,
                     input_html: { autocomplete: "prénom" }%>
           </div>
           <div class='lname ml-3'>
             <%= f.input :last_name,
+                    label: "nom",
                     required: true,
                     autofocus: true,
                     input_html: { autocomplete: "nom" }%>
