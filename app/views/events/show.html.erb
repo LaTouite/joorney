@@ -131,32 +131,36 @@
           </div>
 
           <div id="db-progression-details">
+            <% if @survey %>
+              <div class="db-progression-detail">
+                <i class="fas fa-circle in-progress"></i>
+                <p>Sondage</p>
+              </div>
+            <% end %>
+            <%#= @event.user_event.action1 %>
+              <div class="db-progression-detail">
+                <i class="fas fa-circle not-started"></i>
+                <p>Participants</p>
+              </div>
+            <%# end %>
             <div class="db-progression-detail">
-              <i class="fas fa-circle"></i>
-              <p>Sondage</p>
-            </div>
-            <div class="db-progression-detail">
-              <i class="fas fa-circle"></i>
-              <p>Inviter <br>les<br>participants</p>
-            </div>
-            <div class="db-progression-detail">
-              <i class="fas fa-circle"></i>
+              <i class="fas fa-circle not-started"></i>
               <p>Logement</p>
             </div>
             <div class="db-progression-detail">
-              <i class="fas fa-circle"></i>
+              <i class="fas fa-circle not-started"></i>
               <p>Activités</p>
             </div>
             <div class="db-progression-detail">
-              <i class="fas fa-circle"></i>
+              <i class="fas fa-circle not-started"></i>
               <p>Transport</p>
             </div>
             <div class="db-progression-detail">
-              <i class="fas fa-circle"></i>
+              <i class="fas fa-circle not-started"></i>
               <p>Cagnotte</p>
             </div>
             <div class="db-progression-detail">
-              <i class="fas fa-circle"></i>
+              <i class="fas fa-circle not-started"></i>
               <p>Agenda</p>
             </div>
           </div>
