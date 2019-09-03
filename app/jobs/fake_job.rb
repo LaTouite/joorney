@@ -4,6 +4,14 @@ class FakeJob < ApplicationJob
   # user_id: User.sample(1).first,
 
   def perform(event_id)
+    [{
+    present: true,
+    event_id: event_id,
+    user: User.first,
+    action1: true,
+    action2: false,
+    time_ago: "Il y a 5 heures",
+    }]
     sleep 5
     [{
     present: true,
@@ -11,7 +19,7 @@ class FakeJob < ApplicationJob
     user: User.all[1],
     action1: true,
     action2: false,
-    time_ago: "21 heures"
+    time_ago: "Il y a 5 heures"
     },
     {
     present: true,
@@ -19,7 +27,7 @@ class FakeJob < ApplicationJob
     user: User.all[2],
     action1: true,
     action2: false,
-    time_ago: "21 heures"
+    time_ago: "Il y a 7 heures"
     },
     {
     present: true,
@@ -27,7 +35,7 @@ class FakeJob < ApplicationJob
     user: User.all[3],
     action1: true,
     action2: false,
-    time_ago: "21 heures"
+    time_ago: "Il y a 9 heures"
     },
     {
     present: true,
@@ -35,7 +43,7 @@ class FakeJob < ApplicationJob
     user: User.all[4],
     action1: true,
     action2: false,
-    time_ago: "21 heures"
+    time_ago: "Il y a 15 heures"
     },
     {
     present: true,
@@ -43,7 +51,7 @@ class FakeJob < ApplicationJob
     user: User.last,
     action1: true,
     action2: true,
-    time_ago: "9 heures",
+    time_ago: "Il y a 1 jour",
     }]
     .each do |item|
       UserEvent.create!(item)
