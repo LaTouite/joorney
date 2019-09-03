@@ -9,24 +9,26 @@
 
       <div class="title-countdown">
         <h1> <%= @event.name %> </h1>
-        <div class="time middle">
-          <span>
-            <div id="d">12</div>
-            Jours
-          </span>
-          <span>
-            <div id="h">06</div>
-            Heures
-          </span>
-          <span>
-            <div id="m">35</div>
-            Minutes
-          </span>
-          <span>
-            <div id="s">54</div>
-            Secondes
-          </span>
-        </div>
+        <% if @event.start_date %>
+          <div class="time middle">
+            <span>
+              <div id="d">12</div>
+              Jours
+            </span>
+            <span>
+              <div id="h">06</div>
+              Heures
+            </span>
+            <span>
+              <div id="m">35</div>
+              Minutes
+            </span>
+            <span>
+              <div id="s">02</div>
+              Secondes
+            </span>
+          </div>
+        <% end %>
 <!--         <div class="container">
           <div class="avatars">
             <div id="avatar-number">6</div>
@@ -64,7 +66,7 @@
       <div class="col-8">
         <ul id="dashboard-nav" class="list-inline tabs-underlined">
           <li id="onglet-d">
-            <i class="fas fa-tachometer-alt"></i>
+            <i class="fas fa-tachometer-alt" id="main-icon"></i>
             <%= link_to "Dashboard", event_path(@event), class: "tab-underlined active" %>
           </li>
           <li id="onglet-d">
@@ -80,7 +82,7 @@
             <%= link_to "Activités", event_activities_path(@event), class: "tab-underlined" %>
           </li>
           <li id="onglet-d">
-            <i class="fas fa-snowboarding"></i>
+            <i class="fas fa-plane"></i>
             <%= link_to "Transport", new_event_path, class: "tab-underlined" %>
           </li>
           <li id="onglet-d">
@@ -332,8 +334,6 @@
               </div>
             <% end %>
           <% end %>
-
-
 
 
           <% if @survey.deadline %>

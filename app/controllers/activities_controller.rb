@@ -18,7 +18,7 @@ class ActivitiesController < ApplicationController
       {
         lat: activity.latitude,
         lng: activity.longitude,
-        image_url: helpers.asset_url('logo.png')
+        image_url: helpers.asset_url('snowboarding-solid.svg')
       }
     end
     @markers << {lat: @event.latitude, lng: @event.longitude, image_url: helpers.asset_url('home-solid.svg')}
