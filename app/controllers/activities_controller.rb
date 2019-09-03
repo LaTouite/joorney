@@ -18,10 +18,10 @@ class ActivitiesController < ApplicationController
       {
         lat: activity.latitude,
         lng: activity.longitude,
-        # image_url: helpers.asset_url('../assets/images/home-solid.svg')
+        image_url: helpers.asset_url('logo.png')
       }
     end
-    @markers << {lat: @event.latitude, lng: @event.longitude}
+    @markers << {lat: @event.latitude, lng: @event.longitude, image_url: helpers.asset_url('home-solid.svg')}
 
   end
 

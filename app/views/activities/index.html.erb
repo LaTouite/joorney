@@ -38,6 +38,7 @@
       <div class="col-4">
       </div>
     </div>
+  </div>
 
   <div class="container-fluid lr">
     <% if @activities.size == 0 %>
@@ -53,7 +54,9 @@
       <%# elsif @event.destination %>
         <!-- <p id="loc-accomodation">Voici les activités à moins de 30km de <%= @event.destination %> :</p> -->
       <%# else %>
+        <% if @event.accomodation_address == nil %>
         <p> Vous avez déjà un hébergement ? Indiquez son adresse pour trouver les activités les plus proches </p>
+        <% end %>
         <div id="icon-and-input-address" class="d-flex align-items-center">
           <div class="correct-icone-accomodation">
             <i class="fas fa-home"></i>
@@ -76,6 +79,11 @@
         <div class="lr-card">
   <!-- DIV PHOTO BG + TROPHEE (début) -->
           <div class="cardp" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path activity.main_photo, height: 300, width: 400, crop: :fill; %>')">
+            <% if @favorited_activities.include?(activity) %>
+              <div class="award">
+                <p class="trophy trophy-award">Dans ma liste</p>
+              </div>
+            <% end %>
           </div>
   <!-- DIV PHOTO BG + TROPHEE (fin) -->
             <div class="lr-card-info" id="list-activities">
@@ -83,12 +91,12 @@
                 <h2> <%= activity.unit_price %>€</h2>
                 <p id="light-details">/pers.</p>
               </div>
-              <div class="favorite-activity">
-                <% if @favorited_activities.include?(activity) %>
-                  <div>
+              <!-- <div class="favorite-activity"> -->
+                <%# if @favorited_activities.include?(activity) %>
+<!--                   <div>
                     <p>Déjà dans ma liste</p>
-                  </div>
-                <%end%>
+                  </div> -->
+                <%#end%>
                   <%# event_activity = @event_activities.find_by(activity_id: activity.id) %>
                     <!-- <i class="fas fa-heart"></i> -->
                   <%# end %>
@@ -97,7 +105,7 @@
                     <!-- <i class="far fa-heart"></i> -->
                   <%# end %>
                 <%# end %>
-              </div>
+              <!-- </div> -->
               <div class="title-city">
                 <h2> <%= activity.title %> </h2>
                 <%if activity.geocoded? %>
@@ -136,5 +144,4 @@
 
     </div>
   </div>
-</div>
 

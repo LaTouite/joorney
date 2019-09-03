@@ -57,7 +57,16 @@ class FakeJob < ApplicationJob
       UserEvent.create!(item)
     end
 
-  end
+  #   event_attributes =
+  #   {
+  #     destination: "Marseille",
+  #     start_date: Date.parse("09/20/2019"),
+  #     end_date: Date.parse("09/22/2019"),
+  #     budget_per_participant_cents: 200,
+  #   }
+  #   event_concerned = Event.find(event_id)
+  #   event_concerned.update(event_attributes)
+  # end
 end
 
 # def perform(event)

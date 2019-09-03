@@ -107,7 +107,7 @@
             <H4>Budget/pers</H4>
             <div class="db-info-detail-value with-border-right">
               <%if @event.budget_per_participant_cents? %>
-              <h2><%= @event.budget_per_participant_cents * 100 %></h2>
+              <h2><%= @event.budget_per_participant_cents %></h2>
               <% else %>
               <h2>?</h2>
               <%end%>
@@ -117,7 +117,7 @@
             <H4>Date</H4>
             <div class="db-info-detail-value with-border-right">
               <%if @event.start_date? %>
-              <!-- <h6><%= @event.start_date.strftime("%d/%m/%Y") %> - <%= @event.end_date.strftime("%d/%m/%Y") %></h6> -->
+              <!-- <h6><%= @event.start_date.strftime() %> - <%= @event.end_date.strftime() %></h6> -->
               <h6><%= @event.start_date.strftime("%d/%m/%Y") %></h6>
               <h6><%= @event.end_date.strftime("%d/%m/%Y") %></h6>
               <% else %>
@@ -129,7 +129,8 @@
             <H4>Lieu</H4>
             <div class="db-info-detail-value">
               <%if @event.destination? %>
-              <h2><%= @event.destination %></h2>
+              <!-- <h2><%= @event.destination %></h2> -->
+              <%= Geocoder.search(@event.destination).first.city %>
               <% else %>
               <h2>?</h2>
               <%end%>
@@ -219,19 +220,6 @@
           </div>
         </div>
 
-        <div id="dashboard-budget">
-          <div id="dashboard-budget-tot" class="dashboard-card">
-            <!-- piechart -->
-            <div class="piechart-div">
-              <div class="box">
-                <div class="chart" data-percent="73">73%</div>
-                <div> Budget tot : <%= @budget_tot %> </div>
-                <div> Budget act : <%= @budget_activities %> </div>
-              </div>
-            </div>
-            <!-- end piechart -->
-            <h4>Budget total</h4>
-          </div>
         <!-- DASHBOARD FRISE DE PROGRESSION (fin) -->
           <div id="dashboard-costs" class="dashboard-card">
             <h4>Répartition des coûts</h4>

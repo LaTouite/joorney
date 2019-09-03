@@ -2,6 +2,10 @@
   margin-top: 40px;
 }
 
+#input-name-category .form-control {
+  width: 60%;
+}
+
 .add-picture {
   height: 150px;
   width: 250px;
@@ -24,3 +28,6 @@
   margin: 0 auto;
 }
 
+#event_destination svg {
+  display: none !important;
+}
