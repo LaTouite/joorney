@@ -88,7 +88,7 @@
              <!-- id='destination-sugg' -->
             <div class='survey-question sq-direction'>
               <%#= f.input :value, placeholder: "Votre suggestion", label: false %>
-              <%= f.input :value, label: false,input_html: {placeholder: "Destination", class: "address" } %>
+              <%= f.input :value, label: false,input_html: {placeholder: "Destination", class: "address-autocomplete" } %>
               <%= f.input :topic, as: :hidden, input_html: {value: "Destination"} %>
             </div>
             <div id='new-places'>

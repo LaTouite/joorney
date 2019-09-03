@@ -60,7 +60,7 @@
           </div>
           <div id="address-input" style="width: 600px; height: 44px;">
             <%= simple_form_for @event, html: {id: 'new-accomodation'} do |f| %>
-              <%= f.input :accomodation_address, :input_html => { :class => "address", :id => "correct-input-address" }, placeholder: "Veuillez renseigner l'adresse de l'hébergement", label: false %>
+              <%= f.input :accomodation_address, :input_html => { :class => "address-autocomplete", :id => "correct-input-address" }, placeholder: "Veuillez renseigner l'adresse de l'hébergement", label: false %>
           </div>
           <%= f.submit "Valider l'adresse", class: 'd-none' , input_html: { onclick: 'Rails.fire(this.form, "submit")'} %>
           <!-- <span id="address-details"><%= render 'events/accomodationinactivities', event: @event %></span> -->
