@@ -2,17 +2,17 @@
 //   display: flex;
 // }
 
-.address-input .simple-form {
-  display: flex;
-}
+// .address-input .simple-form {
+//   display: flex;
+// }
 
-.algolia_places {
-  width: 60%;
-}
+// .algolia_places {
+//   width: 60%;
+// }
 
-#correct-input-address {
-  margin: 0px;
-}
+// #correct-input-address {
+//   margin: 0px;
+// }
 
 .correct-icone-accomodation {
   width: 50px;
@@ -24,12 +24,5 @@
 .correct-icone-accomodation i {
   margin-top: auto;
   font-size: 30px;
+  color: $primary-dark;
 }
-
-.address-input i {
-  flex-grow: 1;
-}
-
-// .address-input .form-control {
-//   flex-grow: 1;
-// }
