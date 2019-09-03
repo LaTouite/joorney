@@ -12,7 +12,7 @@ class FakeJob < ApplicationJob
     action2: false,
     time_ago: "Il y a 5 heures",
     }]
-    sleep 5
+    # sleep 5
     [{
     present: true,
     event_id: event_id,
@@ -57,10 +57,6 @@ class FakeJob < ApplicationJob
       UserEvent.create!(item)
     end
 
-    # .each do |item|
-      # p item
-      # UserEvent.create!(present: item.present?, event_id: item.event_id, user_id: item.user_id, action1: item.action1, action2: item.action2, time_ago: item.time_ago)
-    # end
   end
 end
 

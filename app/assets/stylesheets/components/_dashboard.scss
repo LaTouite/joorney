@@ -111,9 +111,9 @@
 
 // dashboard budget
 
-#dashboard-budget {
-  display: flex;
-}
+// #dashboard-budget {
+//   display: flex;
+// }
 
 #dashboard-budget-tot {
   height: 350px;
@@ -123,7 +123,12 @@
 
 #dashboard-costs {
   height: 350px;
-  flex-grow: 2;
+  // flex-grow: 2;
+  // display: flex;
+}
+
+.chart-labels {
+  display: flex;
 }
 
 #dashboard-costs i {
@@ -132,10 +137,16 @@
 }
 
 .db-costs-chart {
-  height: 91%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  width: 60%;
+  height: 90%;
+  // display: flex;
+  // align-items: center;
+  // justify-content: center;
+}
+
+.labels {
+  width: 40%;
+  height: 90%;
 }
 
 // dashboard settings
@@ -279,11 +290,11 @@ color: white;
   margin-top: 40px;
 }
 
-#doughnut-chart {
-  width: 400px;
-  height: 220px;
-  padding: 20px;
-}
+// #doughnut-chart {
+//   width: 400px;
+//   height: 220px;
+//   padding: 20px;
+// }
 
 .one-activity {
   display: flex;
@@ -304,4 +315,11 @@ color: white;
   margin-right: 18px;
 }
 
+#title-cost {
+  margin-bottom: 20px;
+}
+
+
+
+// .label-budget
 
