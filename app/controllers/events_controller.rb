@@ -13,9 +13,9 @@ class EventsController < ApplicationController
     #   @event.start_date = nil
     #   @event.end_date = nil
     # end
-    # if @event.destination == ''
-    #   @event.destination = nil
-    # end
+    if @event.destination == ''
+      @event.destination = nil
+    end
     if @event.save
       @survey = Survey.new(name: @event.name)
       @survey.event = @event
