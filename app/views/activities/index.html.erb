@@ -48,22 +48,26 @@
       <h2> <%=@activities.size %> chances de trouver votre bonheur </h2>
     <% end %>
     <div class="accomodation-in-activities">
-      <% if @event.accomodation_address %>
-        <p id="loc-accomodation">Voici les activités à moins de 30km de votre hébergement :</p>
-      <% elsif @event.destination %>
-        <p id="loc-accomodation">Voici les activités à moins de 30km de <%= @event.destination %> :</p>
-      <% else %>
+      <%# if @event.accomodation_address %>
+        <!-- <p id="loc-accomodation">Voici les activités à moins de 30km de votre hébergement :</p> -->
+      <%# elsif @event.destination %>
+        <!-- <p id="loc-accomodation">Voici les activités à moins de 30km de <%= @event.destination %> :</p> -->
+      <%# else %>
         <p> Vous avez déjà un hébergement ? Indiquez son adresse pour trouver les activités les plus proches </p>
-        <div class="address-input">
-        <div class="correct-icone-accomodation">
-          <i class="fas fa-home"></i>
+        <div id="icon-and-input-address" class="d-flex align-items-center">
+          <div class="correct-icone-accomodation">
+            <i class="fas fa-home"></i>
+          </div>
+          <div id="address-input" style="width: 600px; height: 44px;">
+            <%= simple_form_for @event, html: {id: 'new-accomodation'} do |f| %>
+              <%= f.input :accomodation_address, :input_html => { :class => "address", :id => "correct-input-address" }, placeholder: "Veuillez renseigner l'adresse de l'hébergement", label: false %>
+          </div>
+          <%= f.submit "Valider l'adresse", class: 'd-none' , input_html: { onclick: 'Rails.fire(this.form, "submit")'} %>
+          <!-- <span id="address-details"><%= render 'events/accomodationinactivities', event: @event %></span> -->
         </div>
-        <%= simple_form_for @event do |f| %>
-          <%= f.input :accomodation_address, :input_html => { :class => "address", :id => "correct-input-address" }, placeholder: "Veuillez renseigner l'adresse de l'hébergement", label: false %>
-          <%= f.submit "Valider l'adresse" %>
+        <div id="address-details"><%= render 'events/accomodationinactivities', event: @event %></div>
         <%end%>
-      </div>
-      <% end %>
+      <%# end %>
     </div>
 
     <div class="row">

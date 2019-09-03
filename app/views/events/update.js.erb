@@ -1,0 +1,13 @@
+console.log('hello')
+
+function addAccomodation(accomodationHTML) {
+  const accomodation = document.getElementById('address-details');
+  // accomodation.insertAdjacentHTML('beforeend', accomodationHTML);
+  accomodation.innerHTML = accomodationHTML
+}
+
+if (document.getElementById('new-accomodation')) {
+  addAccomodation('<%= j render "events/accomodationinactivities", event: @event %>');
+}
+
+

@@ -38,8 +38,16 @@ class EventsController < ApplicationController
 
   def update
     @event = Event.find(params[:id])
-    @event.update(params_event)
     authorize @event
+    if @event.update(params_event)
+      redirect_to event_activities_path(@event)
+    end
+    # if @event.update(params_event)
+    #   respond_to do |format|
+    #     format.html { redirect_to event_activities_path(@event) }
+    #     format.js
+    #   end
+    # end
   end
 
   def show
@@ -69,7 +77,7 @@ class EventsController < ApplicationController
   private
 
   def params_event
-    params.require(:event).permit(:name, :event_category, :thematics, :start_date, :end_date, :destination, :budget_per_participant, :photo, :photo_cache, :deadline, :token, :accomodation_address, :accomodation_address)
+    params.require(:event).permit(:name, :event_category, :thematics, :start_date, :end_date, :destination, :budget_per_participant, :photo, :photo_cache, :deadline, :token, :accomodation_address)
   end
 
   def params_event_accomodation
