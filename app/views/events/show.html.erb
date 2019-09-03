@@ -47,8 +47,9 @@
               <% if userevent.user_id != nil %>
                 <%= cl_image_tag userevent.user.profile_picture, class: 'avatar-p' %>
               <% end %>
-
             <% end %>
+
+            <%= cl_image_tag current_user.profile_picture, class: "avatar-p" %>
 
           </div>
         </div>
@@ -135,7 +136,7 @@
             </div>
           </div>
         </div>
-
+        <!-- DASHBOARD FRISE DE PROGRESSION (début) -->
         <div id="dashboard-progression" class="dashboard-card">
           <div class="top-progression">
             <h4>Progression</h4>
@@ -145,38 +146,76 @@
           </div>
 
           <div id="db-progression-details">
-            <% if @survey %>
+            <!-- SURVEY -->
               <div class="db-progression-detail">
-                <i class="fas fa-circle in-progress"></i>
+                <% if @survey %>
+                  <i class="fas fa-circle in-progress"></i>
+                <% else %>
+                  <i class="fas fa-circle not-started"></i>
+                <% end %>
                 <p>Sondage</p>
               </div>
-            <% end %>
-            <%#= @event.user_event.action1 %>
+            <!-- SURVEY (fin) -->
+            <!-- INVITÉS (début) -->
               <div class="db-progression-detail">
-                <i class="fas fa-circle not-started"></i>
-                <p>Participants</p>
+                <% join = [] %>
+                <% @event.user_events.map do |guest| %>
+                  <% join << guest.action1 %>
+                <% end %>
+                <% if join.uniq.count == 1 && join.uniq.first == nil %>
+                  <i class="fas fa-circle done"></i>
+                <% elsif join.uniq.count == 1 && join.uniq.first == true %>
+                  <i class="fas fa-circle done"></i>
+                <% else %>
+                  <i class="fas fa-circle in-progress"></i>
+                <% end %>
+                <p>Invités</p>
               </div>
-            <%# end %>
+            <!-- INVITÉS (fin) -->
+            <!-- LOGEMENT (début) -->
             <div class="db-progression-detail">
-              <i class="fas fa-circle not-started"></i>
+              <% if @event.destination != nil %>
+                <i class="fas fa-circle done"></i>
+              <% else %>
+                <i class="fas fa-circle not-started"></i>
+              <% end %>
               <p>Logement</p>
             </div>
+            <!-- LOGEMENT (fin) -->
+            <!-- ACTIVITÉS (début) -->
             <div class="db-progression-detail">
-              <i class="fas fa-circle not-started"></i>
+              <% selected = [] %>
+              <% @event.event_activities.map do |activity| %>
+                <% selected << activity.selected %>
+              <% end %>
+              <% if @event.event_activities %>
+                <i class="fas fa-circle in-progress"></i>
+              <% elsif selected.uniq.count == 1 && selected.uniq.first == false %>
+                <i class="fas fa-circle done"></i>
+              <% else %>
+                <i class="fas fa-circle not-started"></i>
+              <% end %>
               <p>Activités</p>
             </div>
+            <!-- ACTIVITÉS (fin) -->
+            <!-- TRANSPORT (début) -->
             <div class="db-progression-detail">
               <i class="fas fa-circle not-started"></i>
               <p>Transport</p>
             </div>
+            <!-- TRANSPORT (fin) -->
+            <!-- CAGNOTTE (début) -->
             <div class="db-progression-detail">
               <i class="fas fa-circle not-started"></i>
               <p>Cagnotte</p>
             </div>
+            <!-- CAGNOTTE (fin) -->
+            <!-- AGENDA (debut) -->
             <div class="db-progression-detail">
               <i class="fas fa-circle not-started"></i>
               <p>Agenda</p>
             </div>
+            <!-- AGENDA (fin) -->
           </div>
         </div>
 
@@ -193,17 +232,35 @@
             <!-- end piechart -->
             <h4>Budget total</h4>
           </div>
+        <!-- DASHBOARD FRISE DE PROGRESSION (fin) -->
           <div id="dashboard-costs" class="dashboard-card">
             <h4>Répartition des coûts</h4>
             <div class="db-costs-chart">
-              <!-- <i class="fas fa-chart-pie"></i> -->
-              <canvas id="doughnut-chart" width="150" height="100"></canvas>
+              <canvas id="doughnut-chart" width="250" height="150"></canvas>
+              <!-- <canvas id="doughnut-chart" width="230" height="130"></canvas> -->
             </div>
-<!--             <div class="db-costs-legend">
-
-            </div> -->
+            <div class="labels">
+              <div class="label-color">
+                <span id="label-budget"></span>
+                <p>Budget restant</p>
+              </div>
+              <div class="label-color">
+                <span id="label-activity"></span>
+                <p>Activités</p>
+              </div>
+              <div class="label-color">
+                <span id="label-logement"></span>
+                <p>Logement</p>
+              </div>
+              <div class="label-color">
+                <span id="label-transport"></span>
+                <p>Transport</p>
+              </div>
+            </div>
           </div>
         </div>
+
+
         <div id="settings" class="dashboard-card">
           <h4>Settings</h4>
           <div id="settings-details">
