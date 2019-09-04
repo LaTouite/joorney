@@ -3,7 +3,7 @@
   width: 100%;
   height: 200px;
   // background-color: $primary-dark;
-  background: url(Gradient.png);
+  background: asset-url("Gradient.png");
   background-size: cover;
 
   // background: linear-gradient(0.25turn, #36D1DC, #5B86E5);
@@ -35,6 +35,17 @@
 //   transform: rotate(-5deg);
 // }
 
+.img-dashboard {
+  height: 150px;
+  width: 250px;
+  object-fit: cover;
+  position: absolute;
+  left: 160px;
+  top: 93px;
+  border-radius: 12px;
+  transform: rotate(-5deg);
+  border: 1px solid $black;
+}
 
 .dashboard-card {
   background: white;
@@ -93,7 +104,7 @@
   text-align: center;
 }
 
-.db-progression-detail p{
+.db-progression-detail p {
   font-size: 12px;
 }
 
@@ -129,20 +140,34 @@
 
 .chart-labels {
   display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #dashboard-costs i {
-  font-size: 160px;
   color: $primary;
 }
 
 .db-costs-chart {
   width: 60%;
   height: 90%;
+  position: relative;
   // display: flex;
   // align-items: center;
   // justify-content: center;
 }
+
+
+.db-costs-chart .budget-tot-center{
+  position: absolute;
+  top: 42%;  /* position the top  edge of the element at the middle of the parent */
+  left: 40%;
+}
+
+.budget-tot-center p {
+  font-size: 10px;
+  }
+
 
 .labels {
   width: 40%;
@@ -214,7 +239,7 @@ color: white;
 }
 
 
-// countdown css
+// countdown css opacity 1
 .time {
   color: $black;
   text-transform: uppercase;
@@ -236,6 +261,37 @@ color: white;
 .time span div{
   font-size: 40px;
 }
+
+// time css opacity 0
+
+.time-opacity-0 {
+  color: $black;
+  text-transform: uppercase;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  opacity: 0;
+}
+
+.middle-opacity-0 {
+  text-align: center;
+  opacity: 0;
+}
+
+.time-opacity-0 span {
+  padding: 0 14px;
+  font-size: 13px;
+  font-family: "Space Mono";
+  opacity: 0;
+}
+
+.time-opacity-0 span div {
+  font-size: 40px;
+  opacity: 0;
+}
+
+
+
 
 .title-countdown {
   text-align: center;
@@ -319,8 +375,22 @@ color: white;
   margin-bottom: 20px;
 }
 
+.label-color i {
+  font-size: 15px;
+}
 
+.label-color {
+  display: flex;
+  padding: 6px;
+  align-items: center;
+}
 
+#budget-circle {
+  color: $done !important;
+}
 
 // .label-budget
 
+// #title_position-time {
+//   margin-top: 40px;
+// }

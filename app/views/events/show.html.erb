@@ -4,13 +4,34 @@
 <div class="backcolor">
 
   <div id="banner-dashboard">
-    <%= cl_image_tag @event.photo %>
+    <%= cl_image_tag @event.photo, class: "img-dashboard" %>
     <div class="countdown-col col">
 
       <div class="title-countdown">
-        <h1> <%= @event.name %> </h1>
+        <!-- <h1> <%= @event.name %> </h1> -->
         <% if @event.start_date %>
+          <h1> <%= @event.name %> </h1>
           <div class="time middle">
+            <span>
+              <div id="d"></div>
+              Jours
+            </span>
+            <span>
+              <div id="h"></div>
+              Heures
+            </span>
+            <span>
+              <div id="m"></div>
+              Minutes
+            </span>
+            <span>
+              <div id="s"></div>
+              Secondes
+            </span>
+          </div>
+        <% else %>
+          <h1 id="title_position-time"> <%= @event.name %> </h1>
+          <div class="time-opacity-0 middle-opacity-0">
             <span>
               <div id="d"></div>
               Jours
@@ -247,30 +268,41 @@
               <canvas id="doughnut-chart" width="250" height="150"></canvas>
               <!-- <canvas id="doughnut-chart" width="230" height="130"></canvas> -->
               <% if @event.budget_per_participant_cents == 0 || @event.budget_per_participant_cents == nil %>
-                <p> En attente de budget </p>
+                <h5> En attente de budget </h5>
+              <% else %>
+                <div class="budget-tot-center">
+                  <p>Budget total</p>
+                  <h2><%= @budget_tot %>€</h2>
+              </div>
               <% end %>
             </div>
 
             <% if @event.budget_per_participant_cents > 0 %>
               <div class="labels">
-                <div class="label-color">
+<!--                 <div class="label-color">
                   <span id="label-budget-tot"></span>
+                  <i class="fas fa-circle"></i>
                   <p>Budget total : <%= @budget_tot %>€</p>
-                </div>
+                </div> -->
                 <div class="label-color">
                   <span id="label-budget"></span>
+                  <i class="fas fa-circle" id="budget-circle"></i>
                   <p>Budget restant  : <%= @budget_remaining %>€</p>
                 </div>
+                <br>
                 <div class="label-color">
                   <span id="label-activity"></span>
+                  <i class="fas fa-circle"></i>
                   <p>Activités : <%= @budget_activities %>€</p>
                 </div>
                 <div class="label-color">
                   <span id="label-logement"></span>
+                  <i class="fas fa-circle"></i>
                   <p>Logement : 0€</p>
                 </div>
                 <div class="label-color">
                   <span id="label-transport"></span>
+                  <i class="fas fa-circle"></i>
                   <p>Transport  : 0€</p>
                 </div>
               </div>
@@ -324,7 +356,11 @@
             </div>
           </div> -->
 
-
+          <% if @event.destination == nil %>
+            <div class="activity-content">
+              <p>Retrouvez ici en temps réel les actus de votre évènement (participants, réponse au sondage,...)</p>
+            </div>
+          <% end %>
           <% @event.user_events.each do |userevent| %>
             <!-- <div class="avatar-navbar"></div> -->
             <% if userevent.user_id != nil && userevent.user_id != current_user.id %>
