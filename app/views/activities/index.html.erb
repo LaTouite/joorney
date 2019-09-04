@@ -98,13 +98,20 @@
   </div>
 
   <div class="container-fluid lr">
-    <% if @activities.size == 0 %>
-      <h2> Désolé, nous n'avons pour l'instant aucune activité dans votre secteur à vous proposer.<br> Retentez votre chance d'ici quelques jours !</h2>
-    <% elsif @activities.size == 1 %>
-      <h2> 1 chance de trouver votre bonheur </h2>
+    <%# if @activities.size == 0 %>
+      <!-- <h2> Désolé, nous n'avons pour l'instant aucune activité dans votre secteur à vous proposer.<br> Retentez votre chance d'ici quelques jours !</h2> -->
+    <%# elsif @activities.size == 1 %>
+      <!-- <h2> 1 chance de trouver votre bonheur </h2> -->
+    <%# else %>
+      <!-- <h2> <%=@activities.size %> chances de trouver votre bonheur </h2> -->
+    <%# end %>
+
+    <% if @event.accomodation_address == nil %>
+      <h2> Plus de 250 activités disponibles </h2>
     <% else %>
-      <h2> <%=@activities.size %> chances de trouver votre bonheur </h2>
+      <h2> <%=@activities.size %> activités trouvées près de l'adresse indiquée </h2>
     <% end %>
+
     <div class="accomodation-in-activities">
       <%# if @event.accomodation_address %>
         <!-- <p id="loc-accomodation">Voici les activités à moins de 30km de votre hébergement :</p> -->
@@ -123,9 +130,6 @@
               <%= f.input :accomodation_address, :input_html => { :class => "address-autocomplete", :id => "correct-input-address" }, placeholder: "Veuillez renseigner l'adresse de l'hébergement", label: false %>
           </div>
           <%= f.submit "Valider l'adresse", class: 'd-none' , input_html: { onclick: 'Rails.fire(this.form, "submit")'} %>
-          <!-- <span id="address-details"><%= render 'events/accomodationinactivities', event: @event %></span> -->
-        </div>
-        <div id="address-details"><%= render 'events/accomodationinactivities', event: @event %></div>
         <%end%>
       <%# end %>
     </div>
@@ -164,7 +168,7 @@
                 <%# end %>
               <!-- </div> -->
               <div class="title-city">
-                <h2> <%= activity.title %> </h2>
+                <h3> <%= activity.title %> </h3>
                 <%if activity.geocoded? %>
                   <p id="light-details"> <%= Geocoder.search(activity.address).first.city %> </p>
                 <% end %>
@@ -183,7 +187,7 @@
                   <li><i class="fas fa-child each-logo"></i><%= activity.min_age %>ans min.</li>
                 </ul>
               </div>
-                <div class="dark-blue-empty-button" id="small-btn"> <%= link_to "Découvrir", event_activity_path(@event, activity) %>
+              <div class="button-secondary" id="discover-button"> <%= link_to "Découvrir", event_activity_path(@event, activity) %>
                 </div>
             </div>
         </div>

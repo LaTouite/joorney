@@ -57,7 +57,7 @@
 }
 
 .price {
-  color: $primary;
+  color: $primary-dark;
 }
 
 .info-box {
@@ -102,6 +102,10 @@
 .booking-box {
   background-color: white;
   border-radius: 10px;
+}
+
+.booking-box .total h6 {
+  color: $primary-dark;
 }
 
 .submit-btn {
