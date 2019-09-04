@@ -30,7 +30,6 @@ gem 'mini_magick'
 gem 'fog-aws'
 gem "chartkick"
 gem 'cocoon'
-gem 'stripe'
 
 group :development do
   gem 'web-console', '>= 3.3.0'

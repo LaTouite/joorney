@@ -19,11 +19,7 @@ class UserEventsController < ApplicationController
     # )
 
     user_events.each do |user_event|
-      send_invitation(user_event)
-    end
-    # Attention, destroy les event-user à qui ont envoie le message whatsapp avant de seeder des user-event dans le FakeJob
-    user_events.each do |user_event|
-      user_event.destroy
+      InvitationJob.perform_later(user_event.id)
     end
 
     Event.find(params[:event_id]).populate_event
@@ -46,18 +42,6 @@ class UserEventsController < ApplicationController
   end
 
   private
-
-  def send_invitation(user_event)
-    account_sid = ENV['ACCOUNT_SID']
-    auth_token = ENV['AUTH_TOKEN']
-    @client = Twilio::REST::Client.new account_sid, auth_token
-
-    @client.api.account.messages.create(
-      from: 'whatsapp:+14155238886',
-      to: "whatsapp:+33#{user_event.phone_number[1..-1]}",
-      body: "Hello. localhost:3000/user_events/#{user_event.event.id}/confirm_invitation?token=#{user_event.event.token}"
-    )
-  end
 
   def user_event_params
     params.require(:user_event).permit(:present?, :phone_number)
