@@ -8,13 +8,17 @@ function changeNb(id, Nb) {
   nb.innerHTML = Nb;
 }
 
-function refreshDates() {
-  document.getElementById("suggestion_start_date").value = "";
-  document.getElementById("suggestion_end_date").value = "";
+function refresh(id) {
+  document.getElementById(id).value = "";
 }
 
 if (document.getElementById("suggestion_start_date")) {
-  refreshDates();
+  refresh("suggestion_start_date");
+  refresh("suggestion_end_date");
+}
+
+if (document.getElementById("suggestion_value")) {
+  refresh("suggestion_value");
 }
 
 // Dates partie gauche
