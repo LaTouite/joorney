@@ -140,20 +140,34 @@
 
 .chart-labels {
   display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #dashboard-costs i {
-  font-size: 160px;
   color: $primary;
 }
 
 .db-costs-chart {
   width: 60%;
   height: 90%;
+  position: relative;
   // display: flex;
   // align-items: center;
   // justify-content: center;
 }
+
+
+.db-costs-chart .budget-tot-center{
+  position: absolute;
+  top: 42%;  /* position the top  edge of the element at the middle of the parent */
+  left: 40%;
+}
+
+.budget-tot-center p {
+  font-size: 10px;
+  }
+
 
 .labels {
   width: 40%;
@@ -361,12 +375,22 @@ color: white;
   margin-bottom: 20px;
 }
 
+.label-color i {
+  font-size: 15px;
+}
 
+.label-color {
+  display: flex;
+  padding: 6px;
+  align-items: center;
+}
 
+#budget-circle {
+  color: $done !important;
+}
 
 // .label-budget
 
 // #title_position-time {
 //   margin-top: 40px;
 // }
-

@@ -140,6 +140,20 @@ a:hover {
   transition-duration: 0.5s;
 }
 
+#discover-button {
+  width: 40%;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  padding: 10px 30px;
+}
+
+#discover-button a {
+  color: $primary-dark;
+}
+
+
+
 .button-delete {
   width: 50px;
   height: 30px;
@@ -179,6 +193,26 @@ a:hover {
 }
 
 .button-short:hover {
+  background-color: $primary-hover ;
+  transform: scale(1.03);
+  transition-duration: 0.6s;
+}
+
+// Idem button-short sans margin left
+.button-small {
+  border-radius: 12px;
+  text-decoration: none;
+  background-color: $primary-dark;
+  text-align: center;
+  // box-shadow: 0px 2px 20px rgba(0,0,0,0.15);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.08), 0 6px 6px rgba(0,0,0,0.10);
+  padding: 12px 35px;
+  color: white;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.button-small:hover {
   background-color: $primary-hover ;
   transform: scale(1.03);
   transition-duration: 0.6s;
