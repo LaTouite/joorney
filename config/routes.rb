@@ -26,6 +26,9 @@ Rails.application.routes.draw do
     member do
       get 'accomodation'
     end
+    member do
+      get 'payment'
+    end
 
     # USER_EVENTS via EVENTS
     resources :user_events do

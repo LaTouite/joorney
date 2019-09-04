@@ -1,0 +1,44 @@
+<div class='container p-5 details'>
+  <h1>Paiement</h1>
+  <div>
+    <h2>Détails</h2>
+  </div>
+  <div class='row'>
+    <div class='col-3 colonne'>
+      <p><i class="act-logo fas fa-snowboarding"></i></p>
+      <% @event.event_activities.each do |pref| %>
+        <p class='act-spec' id='act-name'><%= pref.activity.title %><p>
+      <% end %>
+    </div>
+
+    <div class='col-3 colonne'>
+      <p><i class="act-logo fas fa-users"></i></p>
+      <% @event.event_activities.each do |pref| %>
+        <p class='act-spec'><%= pref.nb_of_participants %><p>
+      <% end %>
+    </div>
+
+    <div class='col-3 colonne'>
+      <p><i class="act-logo far fa-clock"></i></p>
+      <% @event.event_activities.each do |pref| %>
+        <p class='act-spec'><%= pref.activity_id %><p>
+      <% end %>
+    </div>
+
+    <div class='col-3 colonne'>
+      <p><i class="act-logo fas fa-money-bill-wave"></i></p>
+      <% @event.event_activities.each do |pref| %>
+        <p class='act-spec'><%= pref.nb_of_participants * pref.activity.unit_price %> €<p>
+      <% end %>
+    </div>
+  </div>
+  <% total = 0%>
+  <% @event.event_activities.each do |pref| %>
+    <% total_price = pref.nb_of_participants * pref.activity.unit_price %>
+    <% total += total_price%>
+  <% end %>
+  <div class='row lign'>
+      <div class='col-6'>Prix total</div>
+      <div class='col-6' id='tot-price'><%= total %> €</div>
+  </div>
+</div>

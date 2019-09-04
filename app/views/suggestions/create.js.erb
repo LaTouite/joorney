@@ -8,14 +8,26 @@ function changeNb(id, Nb) {
   nb.innerHTML = Nb;
 }
 
-function refreshDates() {
-  document.getElementById("suggestion_start_date").value = "";
-  document.getElementById("suggestion_end_date").value = "";
+// FUNCTION REFRESH
+function refresh(id, text) {
+  document.getElementById(id).value = text;
 }
 
+// REFRESH SUR DATE DE DEBUT ET DATE DE FIN
 if (document.getElementById("suggestion_start_date")) {
-  refreshDates();
+  refresh("suggestion_start_date", '');
+  refresh("suggestion_end_date", '');
 }
+
+// REFRESH SUR DESTINATION
+if (document.getElementById("suggestion_value")) {
+  refresh("suggestion_value", '');
+}
+
+// REFRESH SUR CATEGORIES
+// if (document.getElementById("thematics-sugg")) {
+//   refresh("thematics-sugg", 'thematics-sugg');
+// }
 
 // Dates partie gauche
 if (document.querySelector("#new-dates")) {

@@ -86,6 +86,11 @@ class EventsController < ApplicationController
     authorize @event
   end
 
+  def payment
+    @event = Event.find(params[:id])
+    authorize @event
+  end
+
   private
 
   def params_event
