@@ -38,7 +38,6 @@ class UserEventsController < ApplicationController
       to: "whatsapp:+33#{user_event.phone_number[1..-1]}",
       body: "Hello. localhost:3000/user_events/#{user_event.event.id}/confirm_invitation?token=#{user_event.event.token}"
     )
-    raise
     redirect_to event_path(user_event.event_id)
   end
 

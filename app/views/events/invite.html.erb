@@ -56,16 +56,16 @@
 
     <div class="number-form">
 
-      <div class="known-member">
+      <!-- <div class="known-member">
         <h3>Guest déjà membre de Joorney ?</h3>
         <p><strong id="blackk">Nom</strong> (pour retrouver son numéro)</p>
 
-      </div>
+      </div> -->
 
       <div class="new-member">
-        <h3>Nouveau membre ?</h3>
+<!--         <h3>Nouveau membre ?</h3> -->
         <%= simple_form_for [@event, @user_event], class: "invite-form" do |f| %>
-          <%= f.input :phone_number, label: "Numéro de téléphone" %>
+          <%= f.input :phone_number, label: "Numéros de téléphone" %>
           <%= f.submit "Envoyer l’invitation", class: "btn btn-primary button alert-b" %>
         <% end %>
       </div>
