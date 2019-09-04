@@ -12,19 +12,19 @@
         <% if @event.start_date %>
           <div class="time middle">
             <span>
-              <div id="d">12</div>
+              <div id="d"></div>
               Jours
             </span>
             <span>
-              <div id="h">06</div>
+              <div id="h"></div>
               Heures
             </span>
             <span>
-              <div id="m">35</div>
+              <div id="m"></div>
               Minutes
             </span>
             <span>
-              <div id="s">02</div>
+              <div id="s"></div>
               Secondes
             </span>
           </div>
@@ -240,22 +240,27 @@
               <canvas id="doughnut-chart" width="250" height="150"></canvas>
               <!-- <canvas id="doughnut-chart" width="230" height="130"></canvas> -->
             </div>
+
             <div class="labels">
               <div class="label-color">
+                <span id="label-budget-tot"></span>
+                <p>Budget total : <%= @budget_tot %>€</p>
+              </div>
+              <div class="label-color">
                 <span id="label-budget"></span>
-                <p>Budget restant</p>
+                <p>Budget restant  : <%= @budget_remaining %>€</p>
               </div>
               <div class="label-color">
                 <span id="label-activity"></span>
-                <p>Activités</p>
+                <p>Activités : <%= @budget_activities %>€</p>
               </div>
               <div class="label-color">
                 <span id="label-logement"></span>
-                <p>Logement</p>
+                <p>Logement : 0€</p>
               </div>
               <div class="label-color">
                 <span id="label-transport"></span>
-                <p>Transport</p>
+                <p>Transport  : 0€</p>
               </div>
             </div>
           </div>
@@ -344,5 +349,9 @@
       </div>
     </div>
   </div>
+
+    <span id="budget-tot" data-budget-tot="<%= @budget_tot %>" class="d-none"><%= @budget_tot %></span>
+    <span id="budget-activities" data-budget-activities="<%= @budget_activities %>" class="d-none"><%= @budget_activities %></span>
+    <span id="budget-remaining" data-budget-remaining="<%= @budget_remaining %>" class="d-none"><%= @budget_remaining %></span>
 </div>
 
