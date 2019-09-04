@@ -54,11 +54,14 @@ if (document.querySelector("#event_activity_nb_of_participants")) {
   initPrice();
 }
 
-//
-import { PopUp } from '../components/popup-invitation';
-if (document.querySelector(".submit-invitation")) {
-  PopUp();
-}
+
+// Affichage PopUp envoi invitations
+import { initSweetalert } from '../plugins/init_sweetalert';
+initSweetalert('.submit-invitation', {
+  title: "C'est parti !",
+  text: 'Vos invitations ont bien été envoyées',
+  icon: "success"
+});
 
 const initToggleDate = () => {
   const toggle_input_date = document.querySelector("#checkbox-toggle-survey-date");
