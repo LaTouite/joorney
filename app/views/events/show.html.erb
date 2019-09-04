@@ -131,7 +131,7 @@
             <H4>Lieu</H4>
             <div class="db-info-detail-value">
               <%if @event.destination? %>
-              <!-- <h4><%= @event.destination %></h4> -->
+              <!-- <h4><%#= @event.destination %></h4> -->
               <h4> <%= Geocoder.search(@event.destination).first.city %> </h4>
               <% else %>
               <h2>?</h2>
@@ -143,9 +143,7 @@
         <div id="dashboard-progression" class="dashboard-card">
           <div class="top-progression">
             <h4>Progression</h4>
-            <a class="button-short" href=#>
-            Payer la totalité
-            </a>
+            <%= link_to "Payer la totalité", payment_event_path(@event), class: "button-short" %>
           </div>
 
           <div id="db-progression-details">
