@@ -10,10 +10,16 @@
 }
 
 .icons i {
-  font-size: 40px;
+  font-size: 50px;
   padding-left: 40px;
   margin-bottom: 40px;
 }
+
+// .icons i:hover {
+//   font-size: 60px;
+//   transition-duration: 0.4s;
+// }
+
 
 .number-form {
   opacity: 0;
@@ -98,6 +104,11 @@
   color: $primary-dark;
 }
 
+#copier-cta:hover {
+  background-color: $primary-dark;
+  color: white;
+}
+
 .fa-facebook-messenger {
   color: #1877f2;
 }
@@ -107,8 +118,12 @@
 }
 
 .fa-at {
-  color: #f36d23;
+  color: $primary-dark;
 }
+
+// .icons > .fab {
+//   font-size: 50px;
+// }
 
 
 

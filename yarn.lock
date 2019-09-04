@@ -2946,6 +2946,11 @@ follow-redirects@^1.0.0:
   dependencies:
     debug "^3.2.6"
 
+font-awesome-animation@^0.2.1:
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/font-awesome-animation/-/font-awesome-animation-0.2.1.tgz#38f1c323ce9baf0932a5dc5596ece762e42f58b0"
+  integrity sha512-kOLT6yuQG06xRrjLoI1cCVrmMyREnKIk7TCkdRd4nQtHnSue4pRxvyTKN3SVV4Zs/pasfMxd296a11u7uSBI3A==
+
 for-in@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/for-in/-/for-in-1.0.2.tgz#81068d295a8142ec0ac726c6e2200c30fb6d5e80"
@@ -3559,6 +3564,11 @@ insert-css@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/insert-css/-/insert-css-2.0.0.tgz#eb5d1097b7542f4c79ea3060d3aee07d053880f4"
   integrity sha1-610Ql7dUL0x56jBg067gfQU4gPQ=
+
+install@^0.13.0:
+  version "0.13.0"
+  resolved "https://registry.yarnpkg.com/install/-/install-0.13.0.tgz#6af6e9da9dd0987de2ab420f78e60d9c17260776"
+  integrity sha512-zDml/jzr2PKU9I8J/xyZBQn8rPCAY//UOYNmR01XwNwyfhEWObo2SWfSl1+0tm1u6PhxLwDnfsT/6jB7OUxqFA==
 
 internal-ip@^4.3.0:
   version "4.3.0"

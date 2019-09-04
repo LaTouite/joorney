@@ -1,0 +1,31 @@
+.lign {
+  display: flex;
+  justify-content: space-between;
+}
+
+.colonne {
+  text-align: center;
+}
+
+#act-name {
+  text-align: left;
+}
+
+#tot-price {
+  text-align: right;
+}
+
+.details {
+  padding: 5px;
+  margin-top: 30px;
+  border-radius: 15px;
+}
+
+.act-logo {
+  margin-bottom: 30px;
+}
+
+.act-spec {
+  margin-bottom: 20px;
+}
+
