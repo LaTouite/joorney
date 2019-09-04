@@ -4,13 +4,34 @@
 <div class="backcolor">
 
   <div id="banner-dashboard">
-    <%= cl_image_tag @event.photo %>
+    <%= cl_image_tag @event.photo, class: "img-dashboard" %>
     <div class="countdown-col col">
 
       <div class="title-countdown">
-        <h1> <%= @event.name %> </h1>
+        <!-- <h1> <%= @event.name %> </h1> -->
         <% if @event.start_date %>
+          <h1> <%= @event.name %> </h1>
           <div class="time middle">
+            <span>
+              <div id="d"></div>
+              Jours
+            </span>
+            <span>
+              <div id="h"></div>
+              Heures
+            </span>
+            <span>
+              <div id="m"></div>
+              Minutes
+            </span>
+            <span>
+              <div id="s"></div>
+              Secondes
+            </span>
+          </div>
+        <% else %>
+          <h1 id="title_position-time"> <%= @event.name %> </h1>
+          <div class="time-opacity-0 middle-opacity-0">
             <span>
               <div id="d"></div>
               Jours
