@@ -55,10 +55,18 @@ if (document.querySelector("#event_activity_nb_of_participants")) {
 }
 
 //
-import { PopUp } from '../components/popup-invitation';
-if (document.querySelector(".submit-invitation")) {
-  PopUp();
-}
+// import { PopUp } from '../components/popup-invitation';
+// if (document.querySelector(".submit-invitation")) {
+//   PopUp();
+// }
+
+//
+import { initSweetalert } from '../plugins/init_sweetalert';
+initSweetalert('.submit-invitation', {
+  title: "A nice alert",
+  text: "This is a great alert, isn't it?",
+  icon: "success"
+});
 
 const initToggleDate = () => {
   const toggle_input_date = document.querySelector("#checkbox-toggle-survey-date");
