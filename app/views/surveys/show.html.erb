@@ -111,9 +111,19 @@
             <h4><strong id="champ-number"></strong>Thématiques</h4>
           </div>
           <div class='survey-question' id='thematics-sugg'>
+            <% val = [] %>
+            <% @survey.suggestions.map do |sugg| %>
+              <% val << sugg.value %>
+            <% end %>
+            <% val.compact.uniq %>
             <% Event::THEMATICS.each do |thematic| %>
-              <%= f.button :submit, thematic, name:'suggestion[value]', value: thematic, class: 'thematic-tag mr-3 mb-3', input_html: { onclick: 'Rails.fire(this.form, "submit")'} %>
-              <%= f.input :topic, as: :hidden, input_html: {value: "Thématiques"} %>
+              <% if val.include?(thematic) == false %>
+                <%= f.button :submit, thematic, name:'suggestion[value]', value: thematic, class: 'thematic-tag mr-3 mb-3', input_html: { onclick: 'Rails.fire(this.form, "submit")'} %>
+                <%= f.input :topic, as: :hidden, input_html: {value: "Thématiques"} %>
+              <% else %>
+                <%= f.button :button, thematic, name:'suggestion[value]', value: thematic, class: 'thematic-tag mr-3 mb-3 green', disabled: 'true' %>
+                <%= f.input :topic, as: :hidden, input_html: {value: "Thématiques"} %>
+              <% end %>
             <% end %>
             <%#= f.input :value, label: false, collection: Event::THEMATICS, input_html: {onchange: 'Rails.fire(this.form, "submit")' } %>
             <%#= f.input :topic, as: :hidden, input_html: {value: "Thématiques"} %>
