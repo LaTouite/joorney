@@ -1,6 +1,6 @@
 <%if suggestion.topic == "Destination" %>
   <div class="card-trip">
-    <img src="" />
+    <img src="https://source.unsplash.com/400x225/?city,<%= Geocoder.search(suggestion.value).first.city %>" />
     <div class="card-trip-infos">
       <h6 class='places-name'><%= Geocoder.search(suggestion.value).first.city %>, <%= Geocoder.search(suggestion.value).first.country %></h6>
       <i class="far fa-thumbs-up thumb"></i>
