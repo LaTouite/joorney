@@ -164,7 +164,16 @@
         <div id="dashboard-progression" class="dashboard-card">
           <div class="top-progression">
             <h4>Progression</h4>
-            <%= link_to "Payer la totalité", payment_event_path(@event), class: "button-short" %>
+            <% total = 0 %>
+            <% @event.event_activities.each do |pref| %>
+              <% total_price = pref.nb_of_participants * pref.activity.unit_price %>
+              <% total += total_price%>
+            <% end %>
+            <% if total == 0 %>
+              <%= link_to "Payer la totalité", payment_event_path(@event), class: "button-short", disabled: true %>
+            <% else %>
+              <%= link_to "Payer la totalité", payment_event_path(@event), class: "button-short" %>
+            <% end %>
           </div>
 
           <div id="db-progression-details">

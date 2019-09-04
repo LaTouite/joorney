@@ -1,6 +1,9 @@
-.lign {
-  display: flex;
-  justify-content: space-between;
+#main-b {
+  background-color: grey;
+}
+
+.details-txt {
+  margin-top: 100px;
 }
 
 .colonne {
@@ -19,6 +22,7 @@
   padding: 5px;
   margin-top: 30px;
   border-radius: 15px;
+  background-color: white;
 }
 
 .act-logo {
@@ -29,3 +33,15 @@
   margin-bottom: 20px;
 }
 
+#total-div {
+  margin: 0;
+}
+
+.payment-title {
+  text-align: center;
+}
+
+.lign {
+  display: flex;
+  justify-content: center;
+}

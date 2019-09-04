@@ -1,0 +1,144 @@
+act-cards{
+  background-color: red;
+}
+
+.card-num {
+  background-color: $done;
+  border: 0px;
+  font-size: 20px;
+}
+
+.num{
+  position: absolute;
+  bottom: 100px;
+  left: 40px;
+  height: 35px;
+  width: 50%;
+}
+
+.date-ech {
+  position: absolute;
+  bottom: 60px;
+  height: 35px;
+  width: 13%;
+  left: 50%;
+}
+
+.user-names {
+  position: absolute;
+  bottom: 20px;
+  height: 35px;
+  width: 80%;
+  left: 40px;
+}
+
+.crypto {
+  position: absolute;
+  top: 60px;
+  height: 35px;
+  width: 40%;
+  right: 50%;
+  text-align: right;
+  background-color: white;
+}
+
+.cryptodiv {
+}
+
+.cards-big-ctn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  vertical-align: center;
+  margin-bottom: 100px;
+  position:relative;
+  top: 75px;
+}
+
+.act-cards {
+  perspective: 800px;
+  width: 500px;
+  height: 200px;
+}
+
+.act-card {
+  position:absolute;
+  background-size: cover;
+  transition: 2s;
+  backface-visibility: hidden;
+  height: 300px;
+  width: 500px;
+  border-radius: 20px;
+  background-color: $done;
+}
+@-webkit-keyframes movedevant {
+  from {
+    transform: rotate3D(0);
+  }
+
+  to {
+    transform: rotate3D(0, 1, 0, 180deg);
+  }
+}
+
+@keyframes movedevant {
+  from {
+    transform: rotate3D(0);
+  }
+
+  to {
+    transform: rotate3D(0, 1, 0, 180deg);
+  }
+}
+
+.act-cards:hover #devant
+{
+  animation: movedevant 2s; /* 3 étapes */
+  animation-iteration-count:1;
+  animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes movederriere {
+  from {
+    transform: rotate3D(0, 1, 0, -180deg);
+  }
+
+  to {
+    transform: rotate3D(0, 1, 0, 0deg);
+  }
+}
+
+@keyframes movederriere {
+  from {
+    transform: rotate3D(0, 1, 0, -180deg);
+  }
+
+  to {
+    transform: rotate3D(0, 1, 0, 0deg);
+  }
+}
+
+.act-cards:hover #derriere
+{
+  animation: movederriere 2s; /* 3 étapes */
+  animation-iteration-count:1;
+  animation-fill-mode: forwards;
+}
+
+// .act-cards:hover #devant{
+//   transform: rotateY(180deg);
+// }
+
+// .act-cards:hover #derriere{
+//   transform: rotateY(0deg);
+// }
+
+// #devant {
+//   z-index: 100;
+// }
+
+// #derriere {
+//   z-index: 50;
+//   font-size: 10px;
+//   transform: rotateY(-180deg);
+// }
