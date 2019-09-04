@@ -21,7 +21,7 @@ class UserEventsController < ApplicationController
     user_events.each do |user_event|
       send_invitation(user_event)
     end
-
+    # Attention, destroy les event-user à qui ont envoie le message whatsapp avant de seeder des user-event dans le FakeJob
     user_events.each do |user_event|
       user_event.destroy
     end
