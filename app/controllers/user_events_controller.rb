@@ -2,13 +2,32 @@ require 'twilio-ruby'
 
 class UserEventsController < ApplicationController
   def create
-    user_event = UserEvent.create(
-      phone_number: params[:user_event][:phone_number],
+    numbers = params[:user_event][:phone_number]
+    numbers_arr = numbers.split(', ')
+
+    user_events = numbers_arr.map do |number|
+      user_event = UserEvent.create(
+      phone_number: number,
       event_id: params[:event_id]
     )
-    authorize user_event
+      authorize user_event
+    end
+
+    # user_event = UserEvent.create(
+    #   phone_number: params[:user_event][:phone_number],
+    #   event_id: params[:event_id]
+    # )
+
+    user_events.each do |user_event|
+      send_invitation(user_event)
+    end
+
+    user_events.each do |user_event|
+      user_event.destroy
+    end
+
     Event.find(params[:event_id]).populate_event
-    send_invitation(user_event)
+    redirect_to event_path(params[:event_id])
   end
 
   # custom routes GET - url envoye par twilio
@@ -38,8 +57,6 @@ class UserEventsController < ApplicationController
       to: "whatsapp:+33#{user_event.phone_number[1..-1]}",
       body: "Hello. localhost:3000/user_events/#{user_event.event.id}/confirm_invitation?token=#{user_event.event.token}"
     )
-    raise
-    redirect_to event_path(user_event.event_id)
   end
 
   def user_event_params

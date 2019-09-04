@@ -43,7 +43,7 @@
 
         <div class="container">
           <div class="avatars">
-            <div id="avatar-number"><%= @event.user_events.count %></div>
+            <div id="avatar-number"><%= @event.user_events.count + 1 %></div>
             <% @event.user_events.each do |userevent| %>
 
               <% if userevent.user_id != nil %>
