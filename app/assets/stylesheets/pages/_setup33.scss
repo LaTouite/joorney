@@ -59,6 +59,8 @@
   display: flex;
   width: 100%;
   justify-content: center;
+  padding-right: 40px;
+  padding-left: 40px;
 }
 
 #code {
@@ -80,7 +82,16 @@
 }
 
 .je-partage {
-  width: 33%
+  width: 33%;
+  flex-direction: row;
+  // display:flex;
+  align-items: center;
+}
+
+#copier-cta {
+  padding: 25px 50px;
+  border: 1px solid $primary-dark;
+  border-radius: 60px;
 }
 
 
