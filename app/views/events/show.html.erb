@@ -7,6 +7,7 @@
     <%= cl_image_tag @event.photo, class: "img-dashboard" %>
     <div class="countdown-col col">
 
+
       <div class="title-countdown">
         <!-- <h1> <%= @event.name %> </h1> -->
         <% if @event.start_date %>
@@ -50,18 +51,6 @@
             </span>
           </div>
         <% end %>
-<!--         <div class="container">
-          <div class="avatars">
-            <div id="avatar-number">6</div>
-            <div class="avatar-p"></div>
-            <div class="avatar-p"></div>
-            <div class="avatar-p"></div>
-            <div class="avatar-p"></div>
-            <div class="avatar-p"></div>
-            <div class="avatar-p"></div>
-          </div>
-        </div> -->
-
         <div class="container">
           <div class="avatars">
             <div id="avatar-number"><%= @event.user_events.count + 1 %></div>
@@ -76,8 +65,8 @@
 
           </div>
         </div>
-
       </div>
+
     </div>
   </div>
 
