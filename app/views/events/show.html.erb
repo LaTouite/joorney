@@ -239,30 +239,35 @@
             <div class="db-costs-chart">
               <canvas id="doughnut-chart" width="250" height="150"></canvas>
               <!-- <canvas id="doughnut-chart" width="230" height="130"></canvas> -->
+              <% if @event.budget_per_participant_cents == 0 || @event.budget_per_participant_cents == nil %>
+                <p> En attente de budget </p>
+              <% end %>
             </div>
 
-            <div class="labels">
-              <div class="label-color">
-                <span id="label-budget-tot"></span>
-                <p>Budget total : <%= @budget_tot %>€</p>
+            <% if @event.budget_per_participant_cents > 0 %>
+              <div class="labels">
+                <div class="label-color">
+                  <span id="label-budget-tot"></span>
+                  <p>Budget total : <%= @budget_tot %>€</p>
+                </div>
+                <div class="label-color">
+                  <span id="label-budget"></span>
+                  <p>Budget restant  : <%= @budget_remaining %>€</p>
+                </div>
+                <div class="label-color">
+                  <span id="label-activity"></span>
+                  <p>Activités : <%= @budget_activities %>€</p>
+                </div>
+                <div class="label-color">
+                  <span id="label-logement"></span>
+                  <p>Logement : 0€</p>
+                </div>
+                <div class="label-color">
+                  <span id="label-transport"></span>
+                  <p>Transport  : 0€</p>
+                </div>
               </div>
-              <div class="label-color">
-                <span id="label-budget"></span>
-                <p>Budget restant  : <%= @budget_remaining %>€</p>
-              </div>
-              <div class="label-color">
-                <span id="label-activity"></span>
-                <p>Activités : <%= @budget_activities %>€</p>
-              </div>
-              <div class="label-color">
-                <span id="label-logement"></span>
-                <p>Logement : 0€</p>
-              </div>
-              <div class="label-color">
-                <span id="label-transport"></span>
-                <p>Transport  : 0€</p>
-              </div>
-            </div>
+            <% end %>
           </div>
         </div>
 

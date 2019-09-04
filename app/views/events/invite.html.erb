@@ -66,7 +66,7 @@
 <!--         <h3>Nouveau membre ?</h3> -->
         <%= simple_form_for [@event, @user_event], class: "invite-form" do |f| %>
           <%= f.input :phone_number, label: "Numéros de téléphone" %>
-          <%= f.submit "Envoyer l’invitation", class: "btn btn-primary button alert-b" %>
+          <%= f.submit "Envoyer l’invitation", class: "btn btn-primary button alert-b submit-invitation" %>
         <% end %>
       </div>
 

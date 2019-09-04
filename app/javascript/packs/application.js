@@ -54,6 +54,12 @@ if (document.querySelector("#event_activity_nb_of_participants")) {
   initPrice();
 }
 
+//
+import { PopUp } from '../components/popup-invitation';
+if (document.querySelector(".submit-invitation")) {
+  PopUp();
+}
+
 const initToggleDate = () => {
   const toggle_input_date = document.querySelector("#checkbox-toggle-survey-date");
   toggle_input_date.addEventListener("click", (event) => {
