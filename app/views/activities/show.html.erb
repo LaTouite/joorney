@@ -1,6 +1,8 @@
+<%= render '/components/top-navbar' %>
+
 <div class='images'>
-  <div class='image-box main-img1'><%= cl_image_tag @activity.main_photo, alt: "Le Wagon", class: "img round"%></div>
-  <div class='image-box main-img2'><%= cl_image_tag @activity.second_photo, alt: "Le Wagon", class: "img round" %></div>
+  <div class='image-box main-img1'><%= cl_image_tag @activity.main_photo, alt: "Le Wagon", class: "img round bord"%></div>
+  <div class='image-box main-img2'><%= cl_image_tag @activity.second_photo, alt: "Le Wagon", class: "img round bord" %></div>
 </div>
 <div class='container main-box mt-3'>
   <div class='content-booking-box'>
@@ -26,7 +28,7 @@
 <!-- NB DE PARTICIPANTS -->
           <div class='each-info-box'>
             <i class="fas fa-users each-logo"></i>
-            <p class="info"></i><%= @activity.min_number_of_participants %> - <%=@activity.max_number_of_participants %> personnes</p>
+            <p class="info"></i><%= @activity.min_number_of_participants %>-<%=@activity.max_number_of_participants %> personnes</p>
           </div>
 <!-- AGE MINI -->
           <div class='each-info-box'>
@@ -72,8 +74,8 @@
             </div>
             <!-- TOTAL début -->
             <div class='total mt-3 mb-3'>
-              <h6>Total</h6>
-              <h6 class='total-price'><span class='calcul'></span>€</h6>
+              <h2>Total</h2>
+              <h2 class='total-price'><span class='calcul'></span>€</h2>
             </div>
             <!-- TOTAL fin -->
             <!-- SUBMIT ou SIGN IN bouton début -->

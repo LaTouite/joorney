@@ -280,17 +280,18 @@
 }
 
 .notif-bell {
-  padding: 20px 25px;
+  // padding: 20px 25px;
   position: relative;
-  border-radius: 60px;
+  // border-radius: 60px;
   right: -5px;
-  background-color: $primary;
-  color: $primary-dark;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  // background-color: $primary;
+  color: $primary;
+  // font-size: 21px;
+  // box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
 .notif-bell i {
-  font-size: 21px;
+  font-size: 28px;
 }
 
 
