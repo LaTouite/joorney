@@ -298,9 +298,24 @@
 
 #list-tags-thematics .thematic-tag{
     padding: 6px 8px;
+    text-align: center;
+    line-height: 20px;
 }
 
 #list-tags-thematics .thematic-tag a{
     font-size: 13px;
 }
 
+i {
+  font-size: 28px;
+  color: $primary;
+}
+
+.fa-play {
+  font-size: 40px;
+  color: $secondary;
+}
+
+.correct-icone-accomodation > i {
+  color: $primary;
+}

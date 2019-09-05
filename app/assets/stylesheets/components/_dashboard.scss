@@ -398,6 +398,7 @@
 
 .backcolor {
   background-color: $background-color;
+  margin-top: -40px;
   // background: linear-gradient(0.25turn, $background-color, $secondary);
 }
 
@@ -602,5 +603,7 @@
   border-radius: 12px;
 }
 
-
+.mrg-dash {
+  margin-top: 35px;
+}
 
