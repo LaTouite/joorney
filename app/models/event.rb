@@ -7,7 +7,7 @@ class Event < ApplicationRecord
   has_secure_token
 
   EVENT_CATEGORIES = ["EVJF", "EVG", "Anniversaire", "Weekend", "Autre"].freeze
-  THEMATICS = ["Culture", "Sports extrêmes", "Sensation", "Gastronomie"].freeze
+  THEMATICS = ["Culture", "Sports nautiques", "Sports extrêmes", "Sensation", "Gastronomie", "Bien-être", "Nature", "Sports mécaniques", "Ludique", "Loisirs créatifs"].freeze
 
   validates :name, presence: true
   validates :event_category, presence: true, inclusion: { in: EVENT_CATEGORIES }

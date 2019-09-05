@@ -57,11 +57,22 @@ if (document.querySelector("#event_activity_nb_of_participants")) {
 
 // Affichage PopUp envoi invitations
 import { initSweetalert } from '../plugins/init_sweetalert';
+if (document.querySelector('.submit-invitation')) {
 initSweetalert('.submit-invitation', {
   title: "C'est parti !",
   text: 'Vos invitations ont bien été envoyées',
   icon: "success"
 });
+}
+
+if (document.querySelector('.button-payment')) {
+  initSweetalert('.button-payment', {
+  title: "Paiement validé",
+  text: "Il ne reste plus qu'à vous amuser !",
+  icon: "success",
+  timer: 2000
+});
+}
 
 const initToggleDate = () => {
   const toggle_input_date = document.querySelector("#checkbox-toggle-survey-date");
