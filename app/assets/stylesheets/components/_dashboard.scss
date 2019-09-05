@@ -52,8 +52,12 @@
   border-radius: 12px;
   margin-top: 20px;
   margin-bottom: 10px;
-  padding: 20px;
+  // padding: 20px;
   box-shadow: 0 5px 20px rgba(0,0,0,0.05), 0 3px 6px rgba(0,0,0,0.05);
+}
+
+.pad {
+  padding: 0px 20px;
 }
 
 // dashboard infos
@@ -184,7 +188,7 @@
 #settings-details {
   display: flex;
   justify-content: space-around;
-  margin-top: 50px;
+  margin-top: 30px;
 }
 
 .settings-detail {
@@ -197,6 +201,7 @@
   font-size: 14px;
   text-align: center;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-bottom: 12px solid $primary;
 }
 
 .settings-detail:hover {
@@ -205,14 +210,14 @@
 }
 
 
-.settings-detail p{
-color: white;
+.settings-detail p {
+  color: white;
 }
 
 .settings-detail i {
   font-size: 40px;
   color: white;
-  padding-top: 10px;
+  padding-top: 20px;
   padding-bottom: 10px;
 }
 
@@ -225,7 +230,7 @@ color: white;
   z-index: 11;
 }
 
-#top-timeline {
+.top-timeline {
   height: 200px;
   // border-bottom: 1px solid grey;
 }
@@ -460,6 +465,30 @@ color: white;
 }
 
 .new-card h4 {
+  color: white;
+}
+
+#msg-no-activity {
+  margin-top: 30px;
+}
+
+.settings-detail p {
+  margin-bottom: 20px;
+}
+
+.dark-back {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: $primary-dark;
+  padding-top: 5px;
+  height: 40px;
+  border-radius: 12px 12px 0px 0px;
+}
+
+.dark-back h4 {
   color: white;
 }
 
