@@ -12,6 +12,7 @@
   width: 100%;
   border-radius: 12px;
   transform: rotate(2deg);
+  // border: 2px solid $brown;
 }
 
 #setup1 {
@@ -129,4 +130,24 @@
     opacity: 1;
   }
 }
+
+.toggle-date {
+  color: $primary-dark;
+}
+
+.toggle-place {
+  color: $primary-dark;
+}
+
+.toggle-budget {
+  color: $primary-dark;
+}
+
+input:checked + .slider {
+    background-color: $primary;
+}
+
+// .slider {
+//   background-color: $background-color;
+// }
 

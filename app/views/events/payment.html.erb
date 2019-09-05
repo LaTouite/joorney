@@ -1,77 +1,81 @@
 <%= render '/components/top-navbar-nosticky' %>
-<div id='main-b'>
-  <div class='container p-5'>
-    <h1 class='payment-title'>Paiement</h1>
-    <!-- CARTE BANCAIRE (début) -->
-    <div class='lign cards-big-ctn'>
-      <div class='act-cards'>
-        <div class="act-card" id="derriere">
-          <div class="cryptodiv">
-            <input class="card-num crypto" type="text" name="" id="" placeholder="000">
+
+<div class="back-color-payment">
+<!--   <div id='main-b'> -->
+    <div class='container p-5'>
+      <h1 class='payment-title'>Paiement</h1>
+      <!-- CARTE BANCAIRE (début) -->
+      <div class='lign cards-big-ctn'>
+        <div class='act-cards'>
+          <div class="act-card" id="derriere">
+            <div class="cryptodiv">
+              <input class="card-num crypto" type="text" name="" id="" placeholder="000">
+            </div>
+          </div>
+          <div class="act-card" id="devant">
+            <div>
+              <input class="card-num num" type="text" name="" id="" placeholder="0123-4567-8910-1112">
+            </div>
+            <div>
+              <input class="card-num date-ech" type="text" name="" id="" placeholder="00/00">
+            </div>
+            <div>
+              <input class="card-num user-names" type="text" name="" id="" placeholder="<%= @current_user.first_name %> <%= @current_user.last_name %>">
+            </div>
           </div>
         </div>
-        <div class="act-card" id="devant">
-          <div>
-            <input class="card-num num" type="text" name="" id="" placeholder="0123-4567-8910-1112">
+      </div>
+      <!-- CARTE BANCAIRE (fin) -->
+      <div class='details'>
+        <div class='ml-3 mr-3 details-txt'>
+          <h2>Détails</h2>
+        </div>
+        <div class='row ml-3 mr-3'>
+          <div class='col-3 colonne'>
+            <p><i class="act-logo fas fa-snowboarding"></i></p>
+            <% @event.event_activities.each do |pref| %>
+              <p class='act-spec' id='act-name'><%= pref.activity.title %><p>
+            <% end %>
           </div>
-          <div>
-            <input class="card-num date-ech" type="text" name="" id="" placeholder="00/00">
+
+          <div class='col-3 colonne'>
+            <p><i class="act-logo fas fa-users"></i></p>
+            <% @event.event_activities.each do |pref| %>
+              <p class='act-spec'><%= pref.nb_of_participants %><p>
+            <% end %>
           </div>
-          <div>
-            <input class="card-num user-names" type="text" name="" id="" placeholder="<%= @current_user.first_name %> <%= @current_user.last_name %>">
+
+          <div class='col-3 colonne'>
+            <p><i class="act-logo far fa-clock"></i></p>
+            <% @event.event_activities.each do |pref| %>
+              <p class='act-spec'><%= pref.activity_id %><p>
+            <% end %>
+          </div>
+
+          <div class='col-3 colonne'>
+            <p><i class="act-logo fas fa-money-bill-wave"></i></p>
+            <% @event.event_activities.each do |pref| %>
+              <p class='act-spec'><%= pref.nb_of_participants * pref.activity.unit_price %> €<p>
+            <% end %>
           </div>
         </div>
+
+        <!-- PARTIE TOTAL -->
+        <div class='row ml-3 mr-3 mb-3 pt-5 border-top lign' id='total-div'>
+          <% total = 0 %>
+          <% @event.event_activities.each do |pref| %>
+            <% total_price = pref.nb_of_participants * pref.activity.unit_price %>
+            <% total += total_price%>
+          <% end %>
+          <div class='col-6'><h2>Prix total</h2></div>
+          <div class='col-6' id='tot-price'><%= total %> €</div>
+        </div>
+        <!-- BOUTON LIEN PAYER (début) -->
+        <div class='lign'>
+          <%= link_to "Payer", event_path(@event), class: "button-payment" %>
+        </div>
+        <!-- BOUTON LIEN PAYER (fin) -->
       </div>
     </div>
-    <!-- CARTE BANCAIRE (fin) -->
-    <div class='details'>
-      <div class='ml-3 mr-3 details-txt'>
-        <h2>Détails</h2>
-      </div>
-      <div class='row ml-3 mr-3'>
-        <div class='col-3 colonne'>
-          <p><i class="act-logo fas fa-snowboarding"></i></p>
-          <% @event.event_activities.each do |pref| %>
-            <p class='act-spec' id='act-name'><%= pref.activity.title %><p>
-          <% end %>
-        </div>
-
-        <div class='col-3 colonne'>
-          <p><i class="act-logo fas fa-users"></i></p>
-          <% @event.event_activities.each do |pref| %>
-            <p class='act-spec'><%= pref.nb_of_participants %><p>
-          <% end %>
-        </div>
-
-        <div class='col-3 colonne'>
-          <p><i class="act-logo far fa-clock"></i></p>
-          <% @event.event_activities.each do |pref| %>
-            <p class='act-spec'><%= pref.activity_id %><p>
-          <% end %>
-        </div>
-
-        <div class='col-3 colonne'>
-          <p><i class="act-logo fas fa-money-bill-wave"></i></p>
-          <% @event.event_activities.each do |pref| %>
-            <p class='act-spec'><%= pref.nb_of_participants * pref.activity.unit_price %> €<p>
-          <% end %>
-        </div>
-      </div>
-
-      <div class='row ml-3 mr-3 mb-3 pt-5 border-top lign' id='total-div'>
-        <% total = 0 %>
-        <% @event.event_activities.each do |pref| %>
-          <% total_price = pref.nb_of_participants * pref.activity.unit_price %>
-          <% total += total_price%>
-        <% end %>
-        <div class='col-6'>Prix total</div>
-        <div class='col-6' id='tot-price'><%= total %> €</div>
-      </div>
-      <!-- BOUTON LIEN PAYER (début) -->
-      <div class='lign'>
-        <%= link_to "Payer", event_path(@event), class: "", id: "pay-btn" %>
-      </div>
-      <!-- BOUTON LIEN PAYER (fin) -->
-    </div>
-  </div>
+<!--   </div> -->
 </div>

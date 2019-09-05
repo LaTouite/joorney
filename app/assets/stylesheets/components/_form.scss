@@ -4,6 +4,7 @@
   border: 1px solid white;
   width: 60%;
   height: 44px;
+  color: $primary-dark;
 }
 
 .select option {
@@ -13,4 +14,8 @@
 
 select:not(:-internal-list-box) {
   background-color: blue !important;
+}
+
+.form-control-label {
+  color: $primary-dark;
 }
