@@ -30,8 +30,8 @@
 .joorney-msg {
   // display: flex;
   // position: relative;
-  width: 645px;
-  height: 124px;
+  width: 680px;
+  height: 200px;
   // position: absolute;
   left: 80px;
   top: 83px;
@@ -48,10 +48,12 @@
 
 .mr-joorney {
   background-image: asset-url("mr_joorney.png");
-  background-size: cover;
-  width: 100px;
+  // background-size: cover;
+  width: 152px;
   position: absolute;
-  height: 84px;
+  height: 190px;
+  right: 533px;
+  bottom: 91px;
 }
 
 .bubble {
@@ -61,7 +63,7 @@
     width: 600px;
     height: 125px;
     top: 27px;
-    left: 65px;
+    left: 121px;
     padding-top: 37px;
     padding-bottom: 13px;
     padding-left: 71px;
@@ -71,7 +73,7 @@
 
 
 #name {
-  color: $primary-dark;
+  color: $not-started;
 }
 
 .bubble p {

@@ -138,14 +138,15 @@ a:hover {
   // box-shadow: 0px 2px 20px rgba(0,0,0,0.15);
   box-shadow: 0 10px 20px rgba(0,0,0,0.15), 0 6px 6px rgba(0,0,0,0.20);
   padding: 22px 50px;
-  color: $secondary;
+  color: $primary-dark;
   font-weight: bold;
   font-size: 18px;
 }
 
 .button-secondary:hover {
   transform: scale(1.03);
-  transition-duration: 0.5s;
+  transition-duration: 0.3s;
+  background-color: $secondary;
 }
 
 #discover-button {
