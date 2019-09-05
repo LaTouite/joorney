@@ -11,6 +11,7 @@
     <%= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script> -->
     <!-- <link rel="stylesheet" href="font-awesome-animation.min.css"> -->
+    <%= favicon_link_tag %>
   </head>
   <body>
     <%= yield %>
@@ -19,24 +20,6 @@
     <%= javascript_pack_tag 'application' %>
 
     <!-- <script src="countdown.js"></script> -->
-
-    <!-- piechart.js -->
-    <!-- <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
-    <script src="jquery.easypiechart.js"></script>
-    <script>
-      $(function() {
-          $('.chart').easyPieChart({
-            //your options goes here
-            size: 180,
-            barColor: 'blue',
-            scaleColor: false,
-            lineWidth: 10,
-            // trackColor: 'gray',
-            lineCap: 'circle',
-            animate: 1000 // animation time
-          });
-      });
-    </script> -->
 
   </body>
 </html>

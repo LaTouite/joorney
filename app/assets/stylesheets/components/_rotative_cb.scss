@@ -1,11 +1,11 @@
 .card-num {
   background-color: $primary-dark;
   border: 0px;
-  font-size: 20px;
+  font-size: 21px;
 }
 
 .num, .date-ech, .user-names {
-  color: $yellow;
+  color: $background-color;
 }
 
 .num::placeholder, .date-ech::placeholder, .user-names::placeholder {
@@ -24,11 +24,28 @@
 .puces-cb {
   height: 55px;
   width: 80px;
-  background-color: $yellow;
+  // background-color: $yellow;
   border-radius: 10px;
   position: absolute;
   top: 90px;
   left: 40px;
+  background-image: asset-url("puce.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.cb-logo {
+  height: 55px;
+  width: 94px;
+  // background-color: $yellow;
+  // border-radius: 10px;
+  border: 2px solid white;
+  position: absolute;
+  top: 20px;
+  left: 390px;
+  background-image: asset-url("cb.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
 .date-ech {
@@ -50,12 +67,22 @@
 // ARRIERE
 .crypto {
   position: absolute;
-  top: 60px;
+  top: 115px;
   height: 35px;
   width: 40%;
   right: 50%;
   text-align: right;
   background-color: white;
+}
+
+.bande-noire {
+  position: absolute;
+  top: 30px;
+  height: 45px;
+  width: 100%;
+  // right: 50%;
+  // text-align: right;
+  background-color: black;
 }
 
 // ANIMATION 3D ROTATION
@@ -66,7 +93,7 @@
   vertical-align: center;
   margin-bottom: 100px;
   position:relative;
-  top: 75px;
+  top: 50px;
 }
 
 .act-cards {
@@ -146,7 +173,7 @@
   position: absolute;
   font-size: 50px;
   right: -60px;
-  bottom: -15px;
+  bottom: 36px;
   color: $yellow;
   text-shadow: grey 1px 0 10px;
 }
