@@ -1,15 +1,34 @@
 .card-num {
-  background-color: black;
+  background-color: $primary-dark;
   border: 0px;
   font-size: 20px;
 }
 
-.num{
+.num, .date-ech, .user-names {
+  color: $yellow;
+}
+
+.num::placeholder, .date-ech::placeholder, .user-names::placeholder {
+  color: white;
+  opacity: 0.6;
+}
+
+.num {
   position: absolute;
   bottom: 100px;
   left: 40px;
   height: 35px;
   width: 50%;
+}
+
+.puces-cb {
+  height: 55px;
+  width: 80px;
+  background-color: $yellow;
+  border-radius: 10px;
+  position: absolute;
+  top: 90px;
+  left: 40px;
 }
 
 .date-ech {
@@ -28,6 +47,7 @@
   left: 40px;
 }
 
+// ARRIERE
 .crypto {
   position: absolute;
   top: 60px;
@@ -38,6 +58,7 @@
   background-color: white;
 }
 
+// ANIMATION 3D ROTATION
 .cards-big-ctn {
   display: flex;
   justify-content: center;
@@ -63,8 +84,10 @@
   height: 300px;
   width: 500px;
   border-radius: 20px;
-  background-color: black;
+  background-color: $primary-dark;
 }
+
+
 @-webkit-keyframes movedevant {
   from {
     transform: rotate3D(0);
@@ -121,8 +144,11 @@
 
 .click-rot {
   position: absolute;
-  right: -20px;
-  bottom: -25px;
+  font-size: 50px;
+  right: -60px;
+  bottom: -15px;
+  color: $yellow;
+  text-shadow: grey 1px 0 10px;
 }
 
 // .act-cards:hover #devant{

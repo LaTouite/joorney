@@ -48,8 +48,9 @@ if (document.querySelector("#new-places")) {
 }
 // Thématiques partie droite
 if (document.querySelector("#sugg-thematics")) {
-
-  add('sugg-thematics', 'beforeend', '<%= j render "suggestions/thematic", suggestion: @suggestion %>');
+  const thematic = document.querySelector("#sugg-thematics");
+  thematic.innerHTML = "<%= j render 'suggestions/thematic', suggestion: @suggestion %>";
+  // add('sugg-thematics', 'beforeend', '<%= j render "suggestions/thematic", suggestion: @suggestion %>');
 }
 // Changer le nb de propositions pour les destinations
 if (document.querySelector("#sugg-dest-nb")) {

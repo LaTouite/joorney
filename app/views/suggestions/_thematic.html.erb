@@ -1,12 +1,21 @@
-<% if suggestion.topic == "Thématiques" %>
-  <div id="<%= suggestion.value %>">
-    <%= link_to 'S',
-    survey_suggestion_path(suggestion.survey.id, suggestion),
-    class: '',
-    method: :delete,
-    data: { confirm: "Are you sure?" } %>
-    <%= suggestion.value %>
-    <i class="far fa-thumbs-up thumb"></i>
-  </div>
-<% end %>
+<div id="">
+  <!-- id=<%#= suggestion.value %> -->
+<!--   <%#= link_to 'S',
+  survey_suggestion_path(suggestion.survey.id, suggestion),
+  class: '',
+  method: :delete,
+  data: { confirm: "Are you sure?" } %> -->
+  <%#= suggestion.value %>
+  <% @thematics.each do |thematic| %>
+    <div>
+      <%= link_to 'S',
+      survey_suggestion_path(@survey, thematic),
+      class: '',
+      method: :delete,
+      data: { confirm: "Are you sure?" } %>
+      <%= thematic.value %>
+      <i class="far fa-thumbs-up thumb"></i>
+    </div>
+  <% end %>
+</div>
 
