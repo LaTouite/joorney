@@ -65,12 +65,12 @@
 }
 
 .navbar-joorney .dark-part {
-  width: 340px;
+  width: 360px;
   display: flex;
   align-items: center;
   position: relative;
   justify-content: space-between;
-  padding: 0 50px;
+  padding: 0 22px;
   background-image: asset-url("nav_rectangle.svg");
   background-repeat: no-repeat;
   background-size: cover;
@@ -80,6 +80,7 @@
 .navbar-joorney .dark-part p {
   margin-bottom: 0px;
   color: white;
+  margin-right: 8px;
   font-weight: bold;
 }
 
