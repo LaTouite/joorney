@@ -20,11 +20,12 @@
 }
 
 .avatar-navbar {
-  width: 40px;
-  height: 40px;
+  width: 60px;
+  height: 60px;
   background: $grey;
   border-radius: 50%;
   box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  border: 2px solid $primary-dark;
   // border: white 1px solid;
 }
 
@@ -34,7 +35,7 @@
   background: $light-grey;
   border-radius: 50%;
   box-shadow: 0 1px 2px rgba(0,0,0,0.2);
-  border: 2px solid $black;
+  border: 2px solid $primary-dark;
   margin-right: -8px;
 }
 
