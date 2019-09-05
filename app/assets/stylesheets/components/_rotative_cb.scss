@@ -1,9 +1,5 @@
-act-cards{
-  background-color: red;
-}
-
 .card-num {
-  background-color: $done;
+  background-color: black;
   border: 0px;
   font-size: 20px;
 }
@@ -42,9 +38,6 @@ act-cards{
   background-color: white;
 }
 
-.cryptodiv {
-}
-
 .cards-big-ctn {
   display: flex;
   justify-content: center;
@@ -59,6 +52,7 @@ act-cards{
   perspective: 800px;
   width: 500px;
   height: 200px;
+  position: relative;
 }
 
 .act-card {
@@ -91,7 +85,7 @@ act-cards{
   }
 }
 
-.act-cards:hover #devant
+.rotate3D-card #devant
 {
   animation: movedevant 2s; /* 3 étapes */
   animation-iteration-count:1;
@@ -118,11 +112,17 @@ act-cards{
   }
 }
 
-.act-cards:hover #derriere
+.rotate3D-card #derriere
 {
   animation: movederriere 2s; /* 3 étapes */
   animation-iteration-count:1;
   animation-fill-mode: forwards;
+}
+
+.click-rot {
+  position: absolute;
+  right: -20px;
+  bottom: -25px;
 }
 
 // .act-cards:hover #devant{

@@ -28,8 +28,12 @@
   margin: 0 auto;
 }
 
-.event_destination {
+.event_destination  {
   svg {
     display: none !important;
   }
+}
+
+button > svg {
+  display: none !important;
 }
