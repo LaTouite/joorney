@@ -43,28 +43,28 @@
           <h2>Détails</h2>
         </div>
         <div class='row ml-3 mr-3 mt-5'>
-          <div class='col-3 colonne'>
+          <div class='col-6 colonne'>
             <p><i class="act-logo fas fa-snowboarding"></i></p>
             <% @event.event_activities.each do |pref| %>
               <h4 class='act-spec' id='act-name'><%= pref.activity.title %><h4>
             <% end %>
           </div>
 
-          <div class='col-3 colonne'>
+          <div class='col-2 colonne'>
             <p><i class="act-logo fas fa-users"></i></p>
             <% @event.event_activities.each do |pref| %>
               <h4 class='act-spec'><%= pref.nb_of_participants %><h4>
             <% end %>
           </div>
 
-          <div class='col-3 colonne'>
+          <div class='col-2 colonne'>
             <p><i class="act-logo far fa-clock"></i></p>
             <% @event.event_activities.each do |pref| %>
               <h4 class='act-spec'><%= pref.activity_id %><h4>
             <% end %>
           </div>
 
-          <div class='col-3 colonne'>
+          <div class='col-2 colonne'>
             <p><i class="act-logo fas fa-money-bill-wave"></i></p>
             <% @event.event_activities.each do |pref| %>
               <h4 class='act-spec'><%= pref.nb_of_participants * pref.activity.unit_price %> €</h4>

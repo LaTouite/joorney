@@ -1,7 +1,7 @@
 
 <%= render '/components/top-navbar-nosticky' %>
 
-<div class="backcolor">
+
 
   <div id="banner-dashboard">
     <%= cl_image_tag @event.photo, class: "img-dashboard" %>
@@ -68,11 +68,13 @@
     </div>
   </div>
 
+<div class="backcolor">
+
   <div class="container">
 
     <div class="row">
       <div class="col-8">
-        <ul id="dashboard-nav" class="list-inline tabs-underlined">
+        <ul id="dashboard-nav" class="list-inline tabs-underlined mrg-dash">
           <li id="onglet-d">
             <i class="fas fa-tachometer-alt" id="main-icon"></i>
             <%= link_to "Dashboard", event_path(@event), class: "tab-underlined active" %>
@@ -286,23 +288,23 @@
                 <div class="label-color">
                   <span id="label-budget"></span>
                   <i class="fas fa-circle" id="budget-circle"></i>
-                  <span id="budget-back"><h4>Budget restant  : <%= @budget_remaining %>€</h4></span>
+                  <h4>Budget restant: <%= @budget_remaining %>€</h4>
                 </div>
                 <br>
                 <div class="label-color">
                   <span id="label-activity"></span>
                   <i class="fas fa-circle" id="budget-activity-circle"></i>
-                  <p>Activités : <%= @budget_activities %>€</p>
+                  <p>Activités: <%= @budget_activities %>€</p>
                 </div>
                 <div class="label-color">
                   <span id="label-logement"></span>
                   <i class="fas fa-circle"></i>
-                  <p>Logement : 0€</p>
+                  <p>Logement: 0€</p>
                 </div>
                 <div class="label-color">
                   <span id="label-transport"></span>
                   <i class="fas fa-circle"></i>
-                  <p>Transport  : 0€</p>
+                  <p>Transport: 0€</p>
                 </div>
               </div>
             </div>
