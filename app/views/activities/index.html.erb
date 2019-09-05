@@ -130,14 +130,15 @@
     </div>
 
     <div id="list-tags-thematics">
-      <% sugg = [] %>
-      <% @survey.suggestions.where(topic: "Thématiques").each do |suggestion| %>
-        <% sugg << suggestion.value %>
-      <% end %>
-      <% sugg %>
+      <%# sugg = [] %>
+      <%# @survey.suggestions.where(topic: "Thématiques").each do |suggestion| %>
+        <%# sugg << suggestion.value %>
+      <%# end %>
+      <%# sugg %>
 
       <% Event::THEMATICS.each do |thematic| %>
-        <% if sugg.include?(thematic) %>
+        <%# if sugg.include?(thematic) %>
+        <% if thematic == "Sports nautiques" || thematic == "Gastronomie"%>
           <div class="thematic-tag mr-3 mb-3 green">
             <a><%= thematic %></a>
           </div>

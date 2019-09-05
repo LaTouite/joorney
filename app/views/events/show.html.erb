@@ -225,10 +225,10 @@
             <!-- LOGEMENT (fin) -->
             <!-- ACTIVITÉS (début) -->
             <div class="db-progression-detail">
-              <% selected = [] %>
-              <% @event.event_activities.map do |activity| %>
-                <% selected << activity.selected %>
-              <% end %>
+              <%# favorite = [] %>
+              <%# @event.event_activities.map do |activity| %>
+                <%# favorite << activity.favorite %>
+              <%# end %>
               <% if @event.event_activities != [] %>
                 <i class="fas fa-circle in-progress"></i>
               <%# elsif selected.uniq.count == 1 && selected.uniq.first == false %>
