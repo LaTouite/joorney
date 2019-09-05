@@ -289,3 +289,18 @@
   font-size: 30px;
 }
 
+#list-tags-thematics {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  margin-bottom: 10px;
+}
+
+#list-tags-thematics .thematic-tag{
+    padding: 6px 8px;
+}
+
+#list-tags-thematics .thematic-tag a{
+    font-size: 13px;
+}
+

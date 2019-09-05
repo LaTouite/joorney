@@ -21,7 +21,10 @@ class ActivitiesController < ApplicationController
         image_url: helpers.asset_url('picto-joorney.png')
       }
     end
-    @markers << {lat: @event.latitude, lng: @event.longitude, image_url: helpers.asset_url('home-solid.svg')}
+
+    unless @event.latitude.nil?
+      @markers << {lat: @event.latitude, lng: @event.longitude, image_url: helpers.asset_url('home-solid.svg')}
+    end
 
   end
 
