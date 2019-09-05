@@ -144,9 +144,11 @@
 
 .click-rot {
   position: absolute;
-  right: -20px;
-  bottom: -25px;
+  font-size: 50px;
+  right: -60px;
+  bottom: -15px;
   color: $yellow;
+  text-shadow: grey 1px 0 10px;
 }
 
 // .act-cards:hover #devant{
