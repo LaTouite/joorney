@@ -4,7 +4,6 @@ class FakeJob < ApplicationJob
   # user_id: User.sample(1).first,
 
   def perform(event_id)
-
     [{
     present: true,
     event_id: event_id,

@@ -352,7 +352,7 @@
               <p id="msg-no-activity">Retrouvez ici en temps réel les actus de votre évènement (participants, réponse au sondage,...)</p>
             </div>
           <% end %>
-          <% @event.user_events.each do |userevent| %>
+          <% @event.user_events.take(5).each do |userevent| %>
             <!-- <div class="avatar-navbar"></div> -->
             <% if userevent.user_id != nil && userevent.user_id != current_user.id %>
               <div class="one-activity">

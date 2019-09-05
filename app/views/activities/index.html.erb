@@ -116,9 +116,6 @@
       <%# elsif @event.destination %>
         <!-- <p id="loc-accomodation">Voici les activités à moins de 30km de <%= @event.destination %> :</p> -->
       <%# else %>
-        <% if @event.accomodation_address == nil %>
-        <p> Vous avez déjà un hébergement ? Indiquez son adresse pour trouver les activités les plus proches </p>
-        <% end %>
         <div id="icon-and-input-address" class="d-flex align-items-center">
           <div class="correct-icone-accomodation">
             <i class="fas fa-home"></i>
@@ -130,6 +127,20 @@
           <%= f.submit "Valider l'adresse", class: 'd-none' , input_html: { onclick: 'Rails.fire(this.form, "submit")'} %>
         <%end%>
       <%# end %>
+    </div>
+
+    <div id="list-tags-thematics">
+      <% Event::THEMATICS.each do |thematic| %>
+        <% if thematic == "Sports nautiques" || thematic == "Gastronomie" %>
+          <div class="thematic-tag mr-3 mb-3 green">
+            <a><%= thematic %></a>
+          </div>
+        <% else %>
+          <div class="thematic-tag mr-3 mb-3">
+            <a><%= thematic %></a>
+          </div>
+        <% end %>
+      <%end%>
     </div>
 
     <div class="row">

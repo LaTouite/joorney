@@ -7,7 +7,7 @@ class UserEventsController < ApplicationController
     numbers_arr = numbers.split(', ')
 
     user_events = numbers_arr.map do |number|
-      user_event = UserEvent.create(
+      user_event = UserEvent.create!(
       phone_number: number,
       event_id: params[:event_id]
     )
@@ -23,8 +23,9 @@ class UserEventsController < ApplicationController
       InvitationJob.perform_later(user_event.id)
     end
 
-    Event.find(params[:event_id]).populate_event
-    redirect_to event_path(params[:event_id])
+    @event = Event.find(params[:event_id])
+    @event.populate_event
+    redirect_to event_path(@event)
   end
 
   # custom routes GET - url envoye par twilio
