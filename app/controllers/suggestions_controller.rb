@@ -10,9 +10,11 @@ class SuggestionsController < ApplicationController
   end
 
   def create
+    @survey = Survey.find(params[:survey_id])
     @suggestion = Suggestion.create(suggestion_params)
-    @suggestion.survey = Survey.find(params[:survey_id])
+    @suggestion.survey = @survey
     @suggestion.save!
+    @thematics = @survey.suggestions.where(topic: "Thématiques")
     authorize @suggestion
     if @suggestion.save
       respond_to do |format|

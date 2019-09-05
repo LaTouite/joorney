@@ -123,17 +123,17 @@ const range = () => {
 if (document.querySelector('.range')) { range();}
 
 // POUCE change de couleur au clic
-const thumbUp = () => {
-  const thumb = document.querySelectorAll('.thumb');
+// const thumbUp = () => {
+//   const thumb = document.querySelectorAll('.thumb');
 
-  thumb.forEach((item) => {
-    item.addEventListener("click", (event) => {
-      event.currentTarget.classList.toggle("green-thumb");
-    });
-  });
-}
+//   thumb.forEach((item) => {
+//     item.addEventListener("click", (event) => {
+//       event.currentTarget.classList.toggle("green-thumb");
+//     });
+//   });
+// }
 
-if (document.querySelector('.thumb')) { thumbUp();}
+// if (document.querySelector('.thumb')) { thumbUp();}
 // FIN POUCE
 
 // ROTATIVE CARD (début)

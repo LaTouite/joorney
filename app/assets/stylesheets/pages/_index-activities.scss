@@ -63,7 +63,7 @@
 }
 
 .lr-card:hover {
-  transform: scale(1.01);
+  box-shadow: 0 2px 20px rgba(0,0,0, 0.10);
 }
 
 
@@ -85,7 +85,7 @@
   height: 230px;
   width: 100%;
   background: white;
-  box-shadow: 0 2px 20px rgba(0,0,0, 0.05);
+  box-shadow: 0 3px 15px rgba(0,0,0, 0.10);
   display: flex;
   margin-bottom: 28px;
   border-radius: 5px;
@@ -104,7 +104,7 @@
   padding: 22px;
   height: 100%;
   flex-grow: 1;
-  border: 1px solid $primary-light;
+  border: 1px solid $border-grey;
   border-left: none;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
@@ -137,6 +137,10 @@
   bottom: 20px; right: 20px;
   border: 2px solid $primary;
   color: $primary;
+}
+
+#light-details-ville {
+  margin-top: 7px;
 }
 
 
@@ -179,12 +183,12 @@
 }
 
 .price h2 {
-  color: $primary-dark;
+  color: $secondary;
 }
 
 .title-city h3 {
   letter-spacing: 0px;
-  color: $grey;
+  // color: $grey;
   margin-bottom: 0px;
   margin-left: 0px
 }

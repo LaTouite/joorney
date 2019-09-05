@@ -168,7 +168,7 @@
               <div class="title-city">
                 <h3> <%= activity.title %> </h3>
                 <%if activity.geocoded? %>
-                  <p id="light-details"> <%= Geocoder.search(activity.address).first.city %> </p>
+                  <p id="light-details-ville"> <%= Geocoder.search(activity.address).first.city %> </p>
                 <% end %>
               </div>
               <div class="list-details">
@@ -179,7 +179,7 @@
                     <% elsif activity.min_number_of_participants == activity.max_number_of_participants %>
                       <li><i class="fas fa-hourglass-end each-logo"></i> <%= activity.min_number_of_participants %> participants </li>
                     <% else %>
-                      <li><i class="fas fa-hourglass-end each-logo"></i> <%= activity.min_number_of_participants %> - <%= activity.max_number_of_participants %> participants </li>
+                      <li><i class="fas fa-hourglass-end each-logo"></i> <%= activity.min_number_of_participants %>-<%= activity.max_number_of_participants %> participants </li>
                     <% end %>
 
                   <li><i class="fas fa-child each-logo"></i><%= activity.min_age %>ans min.</li>
