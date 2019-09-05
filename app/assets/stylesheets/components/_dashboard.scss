@@ -142,10 +142,15 @@
   // display: flex;
 }
 
+#dashboard-costs > .dark-back {
+  padding-right: 444px;
+}
+
 .chart-labels {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 20px;
 }
 
 #dashboard-costs i {
@@ -187,7 +192,7 @@
 .chart-labels-without-budget {
   display: flex;
   justify-content: center;
-  margin-top: 4%;
+  margin-top: 18px;
 }
 
 
@@ -207,6 +212,7 @@
 .labels {
   width: 40%;
   height: 90%;
+  padding: 0px;
 }
 
 // dashboard settings
@@ -223,33 +229,37 @@
 }
 
 .settings-detail {
-  background: $primary-dark;
+  background: $primary;
   border-radius: 5px;
   /* position: relative; */
+  // border-bottom: 12px solid $primary;
   width: 20%;
   min-height: 80%;
   padding: 8px;
   font-size: 14px;
   text-align: center;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  border-top: 12px solid $primary;
+  border-top: 12px solid $primary-dark;
 }
 
 .settings-detail:hover {
   transform: scale(1.03);
   transition-duration: 0.6s;
+  background: $secondary;
 }
 
 
 .settings-detail p {
-  color: white;
+  color: $primary-dark;
+  font-weight: bold;
 }
 
 .settings-detail i {
   font-size: 40px;
-  color: white;
+  // color: white;
   padding-top: 20px;
   padding-bottom: 10px;
+  color: $primary-dark;
 }
 
 // timeline
@@ -260,6 +270,29 @@
   top: 0;
   z-index: 11;
 }
+
+#timeline > .dark-back {
+  position: relative;
+}
+
+#timeline > .dark-back h4 {
+  margin-right: 26px;
+}
+
+.notif-bell {
+  padding: 20px 25px;
+  position: relative;
+  border-radius: 60px;
+  right: -5px;
+  background-color: $primary;
+  color: $primary-dark;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.notif-bell i {
+  font-size: 21px;
+}
+
 
 .top-timeline {
   height: 200px;
@@ -374,7 +407,7 @@
 .top-progression {
   display: flex;
   width: 100%;
-  height: 50px;
+  height: 45px;
   justify-content: space-betwwen;
   align-items: center;
   background-color: $primary-dark;
@@ -383,7 +416,7 @@
 
 .top-progression > .button-short {
   position: absolute;
-  top: 30px;
+  top: 23px;
   left: 162px;
 }
 
@@ -437,7 +470,8 @@
 }
 
 .label-color i {
-  font-size: 15px;
+  font-size: 21px;
+  margin-right: 20px;
 }
 
 .label-color {
@@ -482,7 +516,7 @@
 .titles {
   display: flex;
   width: 100%;
-  height: 40px;
+  height: 45px;
 }
 
 
@@ -498,7 +532,7 @@
   text-align: center;
   background-color: $primary-dark;
   padding-top: 5px;
-  height: 40px;
+  height: 45px;
 }
 
 .rightt {
@@ -541,7 +575,7 @@
   text-align: center;
   background-color: $primary-dark;
   padding-top: 5px;
-  height: 40px;
+  height: 45px;
   border-radius: 12px 12px 0px 0px;
 }
 
@@ -556,6 +590,12 @@
 // #settings > .dark-back h4 {
 //   margin-left: 30px;
 // }
+
+#budget-back {
+  padding: 20px 40px;
+  background-color: $background-color;
+  border-radius: 12px;
+}
 
 
 

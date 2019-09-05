@@ -260,7 +260,9 @@
 
         <!-- DASHBOARD FRISE DE PROGRESSION (fin) -->
         <div id="dashboard-costs" class="dashboard-card">
-          <h4>Répartition des coûts</h4>
+          <div class="dark-back">
+            <h4>Répartition des coûts</h4>
+          </div>
           <% if @event.budget_per_participant_cents == 0 || @event.budget_per_participant_cents == nil %>
             <div class="chart-labels-without-budget">
               <div class="db-costs-chart-without-budget">
@@ -284,7 +286,7 @@
                 <div class="label-color">
                   <span id="label-budget"></span>
                   <i class="fas fa-circle" id="budget-circle"></i>
-                  <p>Budget restant  : <%= @budget_remaining %>€</p>
+                  <span id="budget-back"><h4>Budget restant  : <%= @budget_remaining %>€</h4></span>
                 </div>
                 <br>
                 <div class="label-color">
@@ -337,6 +339,11 @@
       <div id="timeline" class="dashboard-card">
         <div class="dark-back">
           <h4>Dernières activités</h4>
+          <%# if @event.destination %>
+            <div class="notif-bell">
+              <i class="fas fa-bell"></i>
+            </div>
+          <%# end %>
         </div>
         <div class="top-timeline pad">
 
