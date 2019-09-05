@@ -12,9 +12,8 @@ class FakeJob < ApplicationJob
     action1: true,
     action2: true,
     time_ago: "Il y a 5 heures",
-    }]
-    # sleep 5
-    [{
+    },
+    {
     present: true,
     event_id: event_id,
     user: User.all[1],

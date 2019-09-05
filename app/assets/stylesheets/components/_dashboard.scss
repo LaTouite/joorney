@@ -157,6 +157,34 @@
   // justify-content: center;
 }
 
+.db-costs-chart-without-budget {
+  width: 60%;
+  height: 90%;
+  position: relative;
+}
+
+.db-costs-chart-without-budget .no-budget-tot-center{
+  position: absolute;
+  top: 45%;  /* position the top  edge of the element at the middle of the parent */
+  left: 10%;
+  width: 80%;
+  background-color: $primary-light;
+}
+
+.db-costs-chart-without-budget h5{
+  text-align: center;
+  margin-bottom: 0px;
+}
+
+
+.chart-labels-without-budget {
+  display: flex;
+  justify-content: center;
+  margin-top: 4%;
+}
+
+
+
 
 .db-costs-chart .budget-tot-center{
   position: absolute;
