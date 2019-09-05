@@ -11,7 +11,6 @@ if (document.querySelector("#banner-typed-text")) {
 }
 
 if (document.querySelector(".countdown-col")) {
-  // console.log('.countdown-col')
   initCountdown();
 }
 
@@ -78,7 +77,6 @@ const initToggleDate = () => {
   const toggle_input_date = document.querySelector("#checkbox-toggle-survey-date");
   toggle_input_date.addEventListener("click", (event) => {
     const start_date = document.querySelector("#event_start_date_full");
-    console.log(start_date);
     start_date.classList.toggle("d-none");
     start_date.removeAttribute('disabled');
     const end_date = document.querySelector("#event_end_date_full");

@@ -8,9 +8,7 @@ const chartDo = () => {
 
 
   var CHART = document.getElementById("doughnut-chart");
-  console.log(budget_tot);
-  console.log(budget_act);
-  console.log(budget_rem);
+
   if ((budget_tot == 0) || (budget_tot == undefined)) {
     let myChart = new Chart(CHART, {
       type: 'doughnut',

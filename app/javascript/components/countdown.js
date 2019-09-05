@@ -29,7 +29,6 @@ function display(){
 }
 
 function initCountdown(){
-  // console.log('initCountdown')
   x = setInterval(display,1000);
 }
 
