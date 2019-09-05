@@ -28,25 +28,25 @@ puts 'Creating users...'
 
 users_attributes =
 [{
-first_name: "Sophie",
-last_name: "Fonfec",
-email: "sophie@gmail.com",
+first_name: "David",
+last_name: "Ladiv",
+email: "david@gmail.com",
 password: "8Lalasoso",
-remote_profile_picture_url: "https://res.cloudinary.com/dvc6dt55q/image/upload/v1567432731/https_3A_2F_2Fspecials-images.forbesimg.com_2Fdam_2Fimageserve_2F1078084172_2F960x0_zj16ca.jpg",
+remote_profile_picture_url: "https://res.cloudinary.com/dvc6dt55q/image/upload/v1567687462/_JBU8582-1_David_Touitou_l427zi.jpg",
 },
 {
-first_name: "Maxime",
-last_name: "Gaillard",
-email: "maxime@gmail.com",
+first_name: "Théo",
+last_name: "Twillio",
+email: "theo@gmail.com",
 password: "7Lalasoso",
-remote_profile_picture_url: "https://res.cloudinary.com/dvc6dt55q/image/upload/v1567432772/guybenson_tnj7yi.jpg",
+remote_profile_picture_url: "https://res.cloudinary.com/dvc6dt55q/image/upload/v1567687445/_JBU8492-1_The%CC%81o_Rouland_y81miz.jpg",
 },
 {
-first_name: "Pierre-Antoine",
-last_name: "Lemoine",
-email: "pierre.antoine@gmail.com",
+first_name: "Camille",
+last_name: "Laseed",
+email: "camille@gmail.com",
 password: "6Lalasoso",
-remote_profile_picture_url: "https://res.cloudinary.com/dvc6dt55q/image/upload/v1567432734/joey-degrandis-hsam-memory_znylj3.jpg",
+remote_profile_picture_url: "https://res.cloudinary.com/dvc6dt55q/image/upload/v1567687500/_JBU8613-1_Camille_Dethorey_x1odzc.jpg",
 },
 {
 first_name: "Estelle",
