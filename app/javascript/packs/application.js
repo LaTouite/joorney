@@ -136,6 +136,19 @@ const thumbUp = () => {
 if (document.querySelector('.thumb')) { thumbUp();}
 // FIN POUCE
 
+// ROTATIVE CARD (début)
+const rotCard = () => {
+  const clickbtn = document.querySelector('.click-rot');
+  const rotCard= document.querySelector('.act-cards');
+
+  clickbtn.addEventListener("click", (event) => {
+    rotCard.classList.toggle("rotate3D-card");
+  });
+}
+
+if (document.querySelector('.click-rot')) { rotCard();}
+// ROTATIVE CARD (fin)
+
 // CLIC SUR THEMATICS
 const clic =() => {
   const thematic = document.querySelectorAll(".thematic-tag");
