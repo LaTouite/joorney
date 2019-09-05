@@ -17,7 +17,7 @@ const chartDo = () => {
       data: {
         datasets: [
           { label: "Population (millions)",
-            backgroundColor: ["#4C5759", "#8e5ea2","#3cba9f", "#E59B43"],
+            backgroundColor: ["#EDEDED", "#8e5ea2","#3cba9f", "#E59B43"],
             data: [100,0,0,0]
           },
         ]

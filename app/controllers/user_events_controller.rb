@@ -2,7 +2,7 @@ require 'twilio-ruby'
 
 class UserEventsController < ApplicationController
   def create
-    sleep 3
+    sleep 2
     numbers = params[:user_event][:phone_number]
     numbers_arr = numbers.split(', ')
 

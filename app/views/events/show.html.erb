@@ -53,16 +53,15 @@
         <% end %>
         <div class="container">
           <div class="avatars">
-            <div id="avatar-number"><%= @event.user_events.count + 1 %></div>
-            <% @event.user_events.each do |userevent| %>
-
-              <% if userevent.user_id != nil %>
-                <%= cl_image_tag userevent.user.profile_picture, class: 'avatar-p' %>
+            <div id="avatar-number"><%= @event.user_events.count %></div>
+              <% if @event.user_events.count == 1 %>
+                <%= cl_image_tag current_user.profile_picture, class: "avatar-p" %>
+              <% else %>
+                <% @event.user_events.each do |userevent| %>
+                    <%= cl_image_tag userevent.user.profile_picture, class: 'avatar-p' %>
+                <% end %>
               <% end %>
-            <% end %>
-
-            <%= cl_image_tag current_user.profile_picture, class: "avatar-p" %>
-
+            </div>
           </div>
         </div>
       </div>
@@ -263,27 +262,26 @@
         <!-- DASHBOARD FRISE DE PROGRESSION (fin) -->
         <div id="dashboard-costs" class="dashboard-card">
           <h4>Répartition des coûts</h4>
-          <div class="chart-labels">
-            <div class="db-costs-chart">
-              <canvas id="doughnut-chart" width="250" height="150"></canvas>
+          <% if @event.budget_per_participant_cents == 0 || @event.budget_per_participant_cents == nil %>
+            <div class="chart-labels-without-budget">
+              <div class="db-costs-chart-without-budget">
+                <canvas id="doughnut-chart" width="250" height="150"></canvas>
+                <div class="no-budget-tot-center">
+                  <h5> En attente de budget </h5>
               <!-- <canvas id="doughnut-chart" width="230" height="130"></canvas> -->
-              <% if @event.budget_per_participant_cents == 0 || @event.budget_per_participant_cents == nil %>
-                <h5> En attente de budget </h5>
-              <% else %>
+                </div>
+              </div>
+            </div>
+          <% else %>
+            <div class="chart-labels">
+              <div class="db-costs-chart">
+                <canvas id="doughnut-chart" width="250" height="150"></canvas>
                 <div class="budget-tot-center">
                   <p>Budget total</p>
                   <h2><%= @budget_tot %>€</h2>
+                </div>
               </div>
-              <% end %>
-            </div>
-
-            <% if @event.budget_per_participant_cents > 0 %>
               <div class="labels">
-<!--                 <div class="label-color">
-                  <span id="label-budget-tot"></span>
-                  <i class="fas fa-circle"></i>
-                  <p>Budget total : <%= @budget_tot %>€</p>
-                </div> -->
                 <div class="label-color">
                   <span id="label-budget"></span>
                   <i class="fas fa-circle" id="budget-circle"></i>
@@ -306,8 +304,8 @@
                   <p>Transport  : 0€</p>
                 </div>
               </div>
-            <% end %>
-          </div>
+            </div>
+          <% end %>
         </div>
 
 
