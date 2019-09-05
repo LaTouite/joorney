@@ -7,7 +7,6 @@
     <%= cl_image_tag @event.photo, class: "img-dashboard" %>
     <div class="countdown-col col">
 
-
       <div class="title-countdown">
         <!-- <h1> <%= @event.name %> </h1> -->
         <% if @event.start_date %>
@@ -55,10 +54,10 @@
           <div class="avatars">
             <div id="avatar-number"><%= @event.user_events.count %></div>
               <% if @event.user_events.count == 1 %>
-                <%= cl_image_tag current_user.profile_picture, class: "avatar-p" %>
+                <%= cl_image_tag current_user.profile_picture, width: 50, height: 50, crop: :thumb, gravity: :face, class: "avatar-p" %>
               <% else %>
                 <% @event.user_events.each do |userevent| %>
-                    <%= cl_image_tag userevent.user.profile_picture, class: 'avatar-p' %>
+                    <%= cl_image_tag userevent.user.profile_picture, width: 50, height: 50, crop: :thumb, gravity: :face, class: "avatar-p" %>
                 <% end %>
               <% end %>
             </div>
