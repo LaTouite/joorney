@@ -230,11 +230,12 @@
           <div class='mb-5 '>
             <h4 class="form-champ">Thématiques<span id='sugg-them-nb'> (<%= pluralize @survey.suggestions.where(topic: 'Thématiques').size, "suggestion" %>)</span></h4>
             <div id='sugg-thematics'>
-              <% @survey.suggestions.each do |suggestion| %>
-                <% if suggestion.value != nil %>
-                  <%= render 'suggestions/thematic', suggestion: suggestion %>
-                <% end %>
-              <% end %>
+              <%# @survey.suggestions.each do |suggestion| %>
+                <%# if suggestion.value != nil %>
+                  <%= render 'suggestions/thematic' %>
+                <!-- , suggestion: suggestion -->
+                <%# end %>
+              <%# end %>
               <!-- <i class="far fa-thumbs-up thumb"></i> -->
             </div>
           </div>
