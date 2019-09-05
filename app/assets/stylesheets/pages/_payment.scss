@@ -1,7 +1,63 @@
+
+.details-txt {
+  margin-top: 100px;
+}
+
+.colonne {
+  text-align: center;
+}
+
+#act-name {
+  text-align: left;
+}
+
+#tot-price {
+  text-align: right;
+  color: $secondary;
+}
+
+.details {
+  padding: 20px;
+  // margin-top: 30px;
+  border-radius: 12px;
+  background-color: white;
+  box-shadow: 0px 4px 40px rgba(0,0,0,0.25);
+  height: 500px;
+  margin: -45px auto;
+  width: 55vw;
+}
+
+.act-logo {
+  margin-bottom: 30px;
+}
+
+.act-spec {
+  margin-bottom: 20px;
+}
+
+#total-div {
+  margin: 0;
+}
+
+.payment-title {
+  text-align: center;
+  color: $background-color;
+}
+
+.lign {
+  display: flex;
+  justify-content: center;
+}
+
+
 .back-color-payment {
   background: asset-url("back-gradient.png");
-  height: 1148px;
+  height: 1600px;
   width: 100%;
   background-size: cover;
   // background-color: blue;
+}
+
+.no-padding {
+  padding: 0px;
 }
