@@ -6,6 +6,14 @@ class ApplicationPolicy
     @record = record
   end
 
+  def not_found?
+    true
+  end
+
+  def internal_server_error?
+    true
+  end
+
   def index?
     false
   end
