@@ -1,14 +1,51 @@
 <!-- navbar present only on dashboard (without sticky css) -->
-<div class="navbar-joorney-nosticky">
-  <%= link_to "", root_path, class: "logo" %>
-  <div class="onglets">
-    <p>Idées d'activités</p>
+
+<!-- <div class="navbar-joorney-nosticky"> -->
+  <%#= link_to "", root_path, class: "logo" %>
+  <!-- <div class="onglets"> -->
+    <!-- <p>Idées d'activités</p>
     <p>Notre concept</p>
     <p>Astuces & co</p>
   </div>
-  <div class="dark-part">
-    <p>Hello <%= current_user.first_name %></p>
+  <div class="dark-part"> -->
+    <!-- <p>Hello <%= current_user.first_name %></p> -->
     <!-- <span class="avatar-navbar"></span> -->
-    <%= cl_image_tag current_user.profile_picture, class: "avatar-navbar" %>
+    <%#= cl_image_tag current_user.profile_picture, width: 60, height: 60, crop: :thumb, gravity: :face, class: "avatar-navbar" %>
+  <!-- </div> -->
+<!-- </div> -->
+
+
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon" id="navbar-joorney-nosticky" >
+  <%= link_to "", root_path, class: "logo" %>
+
+  <div class="onglets">
+<!--     <ul class="navbar-nav mr-auto">
+      <li class="nav-item"> -->
+        <p><%= link_to "Idées d'activités", "#", class: "nav-link", id: "link-navbar" %></p>
+<!--       </li>
+      <li class="nav-item"> -->
+        <p><%= link_to "Notre concept", "#", class: "nav-link", id: "link-navbar" %></p>
+<!--       </li>
+      <li class="nav-item"> -->
+        <p><%= link_to "Astuces & co", "#", class: "nav-link", id: "link-navbar" %></p>
+<!--       </li>
+    </ul> -->
+  </div>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <% if user_signed_in? %>
+      <div class="dark-part nav-item dropdown">
+        <p>Hello <%= current_user.first_name %></p>
+  <!-- <span class="avatar-navbar"></span> -->
+        <%= cl_image_tag current_user.profile_picture, width: 60, height: 60, crop: :thumb, gravity: :face, class: "avatar-navbar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+        <%= link_to "Me déconnecter", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+        </div>
+      </div>
+      <% else %>
+        <div class="dark-part">
+          <%= link_to "Me Connecter", new_user_session_path %>
+          <%= link_to "M'inscrire", new_user_registration_path %>
+        </div>
+      <% end %>
   </div>
 </div>
