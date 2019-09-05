@@ -40,7 +40,7 @@ const chartDo = () => {
       data: {
         datasets: [
           { label: "Population (millions)",
-            backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f", "#E59B43"],
+            backgroundColor: ["#0FB4C6", "#2E9DB6","#3cba9f", "#E59B43"],
             data: [budget_rem,budget_act,0,0]
           },
         ]

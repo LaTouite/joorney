@@ -327,7 +327,7 @@ Accompagnement shopping
   duration: 90,
   remote_main_photo_url: "https://res.cloudinary.com/dvc6dt55q/image/upload/v1566559194/degustation-de-vin-francais_lrfxox.jpg",
   remote_second_photo_url: "https://res.cloudinary.com/dvc6dt55q/image/upload/v1566559199/degustation-de-vin-dans_t89vs6.jpg",
-  address: "16 rue Wagram, 75016 Paris",
+  address: "38 Boulevard de la Libération, Marseille",
   },
 
           {
@@ -363,7 +363,7 @@ Venez redécouvrir la bière grâce à cet atelier de découverte de bières art
   duration: 60,
   remote_main_photo_url: "https://res.cloudinary.com/dvc6dt55q/image/upload/v1566559227/barcelone_degustation_bieres_artisanales_bjk5gb.jpg",
   remote_second_photo_url: "https://res.cloudinary.com/dvc6dt55q/image/upload/v1566559234/image_whjk89.jpg",
-  address: "27 Rue des Jacobins, Clermont-Ferrand",
+  address: "3 Impasse Camoins, Marseille",
   },
 
             {
@@ -397,7 +397,7 @@ Après une description des ingrédients, des spiritueux, des décorations, du ma
   duration: 90,
   remote_main_photo_url: "https://res.cloudinary.com/dvc6dt55q/image/upload/v1566559149/80274_w1024h768c1cx2378cy1278cxt0cyt0cxb4799cyb3199_piavco.jpg",
   remote_second_photo_url: "https://res.cloudinary.com/dvc6dt55q/image/upload/v1566559150/SatsumaFeature_h86hsn.jpg",
-  address: "54 Rue Gustave Delory, Lille",
+  address: "2 Boulevard des Grands Pins, Marseille",
   },
 ]
 Activity.create!(activities_attributes)
