@@ -51,7 +51,7 @@
   background: white;
   border-radius: 12px;
   margin-top: 20px;
-  margin-bottom: 10px;
+  margin-bottom: 30px;
   // padding: 20px;
   box-shadow: 0 5px 20px rgba(0,0,0,0.05), 0 3px 6px rgba(0,0,0,0.05);
 }
@@ -98,7 +98,7 @@
 #db-progression-details {
   display: flex;
   justify-content: space-around;
-  margin-top: 20px;
+  margin-top: 60px;
 }
 
 .db-progression-detail {
@@ -169,10 +169,13 @@
 
 .db-costs-chart-without-budget .no-budget-tot-center{
   position: absolute;
-  top: 45%;  /* position the top  edge of the element at the middle of the parent */
+  top: 42%;  /* position the top  edge of the element at the middle of the parent */
   left: 10%;
   width: 80%;
-  background-color: $primary-light;
+  background-color: $primary;
+  padding: 15px 40px;
+  border-radius: 12px;
+  box-shadow: 0px 2px 20px rgba(0,0,0,0.25);
 }
 
 .db-costs-chart-without-budget h5{
@@ -229,7 +232,7 @@
   font-size: 14px;
   text-align: center;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  border-bottom: 12px solid $primary;
+  border-top: 12px solid $primary;
 }
 
 .settings-detail:hover {
@@ -373,6 +376,31 @@
   width: 100%;
   height: 50px;
   justify-content: space-betwwen;
+  align-items: center;
+  background-color: $primary-dark;
+  border-radius: 12px 12px 0px 0px;
+}
+
+.top-progression > .button-short {
+  position: absolute;
+  top: 30px;
+  left: 162px;
+}
+
+
+// width: 33.33%;
+// display: flex;
+// justify-content: center;
+// align-items: center;
+// text-align: center;
+// background-color: #01345B;
+// padding-top: 5px;
+// height: 40px;
+
+.top-progression h4 {
+  color: white;
+  margin-left: 30px;
+  margin-top: 5px;
 }
 
 .all-cards {
@@ -443,7 +471,7 @@
 .new-card {
   margin-top: 20px;
   height: 130px;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
   background-color: white;
   flex-direction: row;
   width: 100%;
@@ -482,6 +510,7 @@
   text-align: center;
   height: 90px;
   padding-top: 25px;
+  border-right: 1px solid $border-grey;
   // padding-top: 20px;
 }
 
@@ -519,5 +548,14 @@
 .dark-back h4 {
   color: white;
 }
+
+#settings > .dark-back {
+  padding-right: 578px;
+}
+
+// #settings > .dark-back h4 {
+//   margin-left: 30px;
+// }
+
 
 
