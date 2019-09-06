@@ -13,7 +13,7 @@ class ActivitiesController < ApplicationController
     end
 
     @event_activities = @event.event_activities
-    @favorited_activities = @event.activities
+    # @favorited_activities = @event.activities
 
     @markers = @activities.geocoded.map do |activity|
       {

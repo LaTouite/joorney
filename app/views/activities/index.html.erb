@@ -156,7 +156,7 @@
         <div class="lr-card">
   <!-- DIV PHOTO BG + TROPHEE (début) -->
           <div class="cardp" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path activity.main_photo, height: 300, width: 400, crop: :fill; %>')">
-            <% if @favorited_activities.include?(activity) %>
+            <% if @event_activities.include?(EventActivity.where(activity_id: activity.id, event_id: @event.id).first) %>
               <div class="award">
                 <p class="trophy trophy-award">Dans ma liste</p>
               </div>

@@ -60,7 +60,8 @@ if (document.querySelector('.submit-invitation')) {
 initSweetalert('.submit-invitation', {
   title: "C'est parti !",
   text: 'Vos invitations ont bien été envoyées',
-  icon: "success"
+  icon: "success",
+  // imageUrl: "assets/images/picto-joorney.png"
 });
 }
 
