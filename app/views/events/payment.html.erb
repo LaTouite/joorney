@@ -42,7 +42,7 @@
         <div class='ml-3 mr-3 details-txt'>
           <h2>Détails</h2>
         </div>
-        <div class='row ml-3 mr-3 mt-5'>
+        <div class='row ml-3 mr-3 mt-3'>
           <div class='col-6 colonne'>
             <p><i class="act-logo fas fa-snowboarding"></i></p>
             <% @event.event_activities.each do |pref| %>
@@ -53,27 +53,27 @@
           <div class='col-2 colonne'>
             <p><i class="act-logo fas fa-users"></i></p>
             <% @event.event_activities.each do |pref| %>
-              <h4 class='act-spec'><%= pref.nb_of_participants %><h4>
+              <h4 class='act-spec' id='act-participants'><%= pref.nb_of_participants %><h4>
             <% end %>
           </div>
 
           <div class='col-2 colonne'>
             <p><i class="act-logo far fa-clock"></i></p>
             <% @event.event_activities.each do |pref| %>
-              <h4 class='act-spec'><%= pref.activity_id %><h4>
+              <h4 class='act-spec' id='act-duration'><%= pref.activity_id %> min.<h4>
             <% end %>
           </div>
 
           <div class='col-2 colonne'>
-            <p><i class="act-logo fas fa-money-bill-wave"></i></p>
+            <p><i class="act-logo fas fa-euro-sign"></i></p>
             <% @event.event_activities.each do |pref| %>
-              <h4 class='act-spec'><%= pref.nb_of_participants * pref.activity.unit_price %> €</h4>
+              <h4 class='act-spec' id='act-price'><%= pref.nb_of_participants * pref.activity.unit_price %> €</h4>
             <% end %>
           </div>
         </div>
 
         <!-- PARTIE TOTAL -->
-        <div class='row ml-3 mr-3 mb-3 pt-5 border-top lign' id='total-div'>
+        <div class='row ml-3 mr-3 mb-3 pt-5 lign' id='total-div'>
           <% total = 0 %>
           <% @event.event_activities.each do |pref| %>
             <% total_price = pref.nb_of_participants * pref.activity.unit_price %>
