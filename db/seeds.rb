@@ -49,25 +49,25 @@ password: "6Lalasoso",
 remote_profile_picture_url: "https://res.cloudinary.com/dvc6dt55q/image/upload/v1567687500/_JBU8613-1_Camille_Dethorey_x1odzc.jpg",
 },
 {
-first_name: "Estelle",
+first_name: "Lisa",
 last_name: "Guerin",
 email: "estelle@gmail.com",
 password: "5Lalasoso",
-remote_profile_picture_url: "https://res.cloudinary.com/dvc6dt55q/image/upload/v1567432732/20190807-104829-PEOPLESMULDERS-T5_28987_dlkwrs.jpg",
+remote_profile_picture_url: "https://res.cloudinary.com/dvc6dt55q/image/upload/v1567763569/_JBU7779-1_Lisa_Ngo_mvsobt.jpg",
 },
 {
-first_name: "Vincent",
+first_name: "Arthur",
 last_name: "Michaud",
 email: "vincent@gmail.com",
 password: "4Lalasoso",
-remote_profile_picture_url: "https://res.cloudinary.com/dvc6dt55q/image/upload/v1567432769/Guy-sample_376_268_s_c1_psq8ea.jpg",
+remote_profile_picture_url: "https://res.cloudinary.com/dvc6dt55q/image/upload/v1567763581/_JBU8159-1_Arthur_Marie_f79qyp.jpg",
 },
 {
-first_name: "Jean",
+first_name: "Arnaud",
 last_name: "Monnier",
 email: "jean@gmail.com",
 password: "3Lalasoso",
-remote_profile_picture_url: "https://res.cloudinary.com/dvc6dt55q/image/upload/v1567432764/brendan-guy-450_adsmgk.jpg",
+remote_profile_picture_url: "https://res.cloudinary.com/dvc6dt55q/image/upload/v1567763589/_JBU8348-1_Arnaud_De_Castelbajac_ttvzip.jpg",
 }]
 
 User.create!(users_attributes)
