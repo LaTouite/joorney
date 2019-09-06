@@ -113,7 +113,7 @@ li {
 }
 
 .green:hover {
-  color: white;
+  color: $primary-dark;
   border-color: white;
   background-color: $done;
 }
@@ -127,6 +127,14 @@ li {
   display: inline-block;
   width: 20px;
   height: 20px;
+}
+
+.deadline-supp:hover {
+  color: $yellow;
+}
+
+.cross-delete:hover {
+  color: $yellow;
 }
 
 .cross-delete:after {
