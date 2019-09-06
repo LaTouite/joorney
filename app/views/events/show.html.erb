@@ -169,7 +169,7 @@
               <%# total_price = pref.nb_of_participants * pref.activity.unit_price %>
               <%# total += total_price%>
             <%# end %>
-            <% if @event.event_activities = [] %>
+            <% if @event.event_activities == [] %>
               <%= link_to "Payer la totalité", payment_event_path(@event), class: "button-short disabled" %>
             <% else %>
               <%= link_to "Payer la totalité", payment_event_path(@event), class: "button-short" %>
@@ -225,10 +225,10 @@
             <!-- LOGEMENT (fin) -->
             <!-- ACTIVITÉS (début) -->
             <div class="db-progression-detail">
-              <% selected = [] %>
-              <% @event.event_activities.map do |activity| %>
-                <% selected << activity.selected %>
-              <% end %>
+              <%# selected = [] %>
+              <%# @event.event_activities.map do |activity| %>
+                <%# selected << activity.selected %>
+              <%# end %>
               <% if @event.event_activities != [] %>
                 <i class="fas fa-circle in-progress"></i>
               <%# elsif selected.uniq.count == 1 && selected.uniq.first == false %>
