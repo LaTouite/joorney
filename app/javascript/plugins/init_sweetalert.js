@@ -9,4 +9,5 @@ const initSweetalert = (selector, options = {}) => {
   }
 };
 
+
 export { initSweetalert };

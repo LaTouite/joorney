@@ -43,7 +43,7 @@ class FakeJob < ApplicationJob
     user: User.last,
     action1: true,
     action2: true,
-    time_ago: "Il y a 1 jour",
+    time_ago: "Il y a 1 jour"
     }]
     .each do |item|
       UserEvent.create!(item)

@@ -74,6 +74,7 @@ if (document.querySelector('.button-payment')) {
 });
 }
 
+
 const initToggleDate = () => {
   const toggle_input_date = document.querySelector("#checkbox-toggle-survey-date");
   toggle_input_date.addEventListener("click", (event) => {
