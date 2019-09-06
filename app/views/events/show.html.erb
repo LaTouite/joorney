@@ -363,7 +363,10 @@
               <br>
               <p>Vos invitations ont été envoyées</p>
               <br>
-              <p> Votre sondage a été envoyé. Deadline au <%= @survey.deadline.strftime("%d/%m/%Y") %></p>
+              <p> Votre sondage a été envoyé. </p>
+                <% if @survey.deadline %>
+                  <p>Deadline au <%= @survey.deadline.strftime("%d/%m/%Y") %></p>
+                <%end%>
             </div>
           <% end %>
           <% @event.user_events.take(5).each do |userevent| %>
