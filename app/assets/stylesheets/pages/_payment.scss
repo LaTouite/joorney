@@ -5,6 +5,7 @@
 
 .colonne {
   text-align: center;
+  border-right: 1px solid $border-grey;
 }
 
 #act-name {
@@ -29,6 +30,7 @@
 
 .act-logo {
   margin-bottom: 30px;
+  color: $grey-icons;
 }
 
 .act-spec {
@@ -60,4 +62,23 @@
 
 .no-padding {
   padding: 0px;
+}
+
+#act-price {
+  color: $secondary;
+}
+
+#act-participants {
+  color: $grey;
+  font-weight: normal;
+}
+
+#act-duration {
+  color: $grey;
+  font-weight: normal;
+}
+
+#act-name {
+  color: $grey;
+  font-weight: normal;
 }

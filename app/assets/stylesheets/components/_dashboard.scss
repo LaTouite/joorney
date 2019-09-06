@@ -50,7 +50,7 @@
 .dashboard-card {
   background: white;
   border-radius: 12px;
-  margin-top: 20px;
+  margin-top: 10px;
   margin-bottom: 30px;
   // padding: 20px;
   box-shadow: 0 5px 20px rgba(0,0,0,0.05), 0 3px 6px rgba(0,0,0,0.05);
@@ -150,7 +150,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 20px;
+  margin: 10px;
 }
 
 #dashboard-costs i {
@@ -201,18 +201,23 @@
 .db-costs-chart .budget-tot-center{
   position: absolute;
   top: 42%;  /* position the top  edge of the element at the middle of the parent */
-  left: 40%;
+  left: 37%;
 }
 
 .budget-tot-center p {
-  font-size: 10px;
-  }
+  font-size: 13px;
+}
+
+.budget-tot-center h2 {
+  // margin-left: 12px;
+}
 
 
 .labels {
   width: 40%;
   height: 90%;
   padding: 0px;
+  margin-top: 30px;
 }
 
 // dashboard settings
@@ -226,6 +231,7 @@
   display: flex;
   justify-content: space-around;
   margin-top: 30px;
+  padding: 0px 15px;
 }
 
 .settings-detail {
@@ -239,7 +245,7 @@
   font-size: 14px;
   text-align: center;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  border-top: 12px solid $primary-dark;
+  border-bottom: 12px solid $primary-dark;
 }
 
 .settings-detail:hover {
@@ -311,11 +317,12 @@
 
 // countdown css opacity 1
 .time {
-  color: $black;
+  color: $primary-dark;
   text-transform: uppercase;
   width: 100%;
   display: flex;
   justify-content: center;
+  // font-weight: bold;
 }
 
 .middle{
@@ -453,6 +460,7 @@
   padding-bottom: 30px;
   padding-top: 30px;
   border-bottom: 1px solid $border-grey;
+  line-height: 24px;
 }
 
 .one-activity > .avatar-navbar {
@@ -478,16 +486,17 @@
 
 .label-color {
   display: flex;
-  padding: 6px;
+  // padding: 6px;
   align-items: center;
+  margin-bottom: 30px;
 }
 
 #budget-circle {
-  color: #0FB4C6 !important;
+  color: $grey-icons !important;
 }
 
 #budget-activity-circle {
-  color: #2E9DB6 !important;
+  color: $primary !important;
 }
 
 // .label-budget
@@ -509,7 +518,7 @@
 // new card design
 
 .new-card {
-  margin-top: 20px;
+  margin-top: 10px;
   height: 130px;
   margin-bottom: 30px;
   background-color: white;
@@ -546,7 +555,7 @@
 }
 
 .tier {
-  width: 33%;
+  width: 33.33%;
   text-align: center;
   height: 90px;
   padding-top: 25px;
@@ -590,7 +599,7 @@
 }
 
 #settings > .dark-back {
-  padding-right: 578px;
+  padding-right: 555px;
 }
 
 // #settings > .dark-back h4 {
@@ -607,3 +616,35 @@
   margin-top: 35px;
 }
 
+#budget-tota {
+  color: $grey-icons;
+}
+
+#b-tot {
+  color: $grey-icons;
+}
+
+#budget-transport {
+  color: #488FD1 !important;
+}
+
+#budget-loge {
+  color: #1AB9EB !important;
+}
+
+.t-div {
+  text-align: center;
+}
+
+.prenom {
+  font-weight: bold;
+}
+
+#very-light {
+  color: $light-grey;
+  font-size: 13px;
+}
+
+#little-margin {
+  margin-bottom: 8px;
+}

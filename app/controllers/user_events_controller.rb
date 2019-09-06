@@ -5,25 +5,26 @@ class UserEventsController < ApplicationController
     sleep 2
     numbers = params[:user_event][:phone_number]
     numbers_arr = numbers.split(', ')
+    @event = Event.find(params[:event_id])
+    @user_event = UserEvent.create(user: current_user, event: @event)
+    authorize @user_event
 
-    user_events = numbers_arr.map do |number|
-      user_event = UserEvent.create!(
-      phone_number: number,
-      event_id: params[:event_id]
-    )
-      authorize user_event
-    end
+    # user_events = numbers_arr.map do |number|
+    #   user_event = UserEvent.create!(
+    #   phone_number: number,
+    #   event_id: params[:event_id]
+    # )
+    # end
 
     # user_event = UserEvent.create(
     #   phone_number: params[:user_event][:phone_number],
     #   event_id: params[:event_id]
     # )
 
-    user_events.each do |user_event|
-      InvitationJob.perform_later(user_event.id)
-    end
+    # user_events.each do |user_event|
+    #   InvitationJob.perform_later(user_event.id)
+    # end
 
-    @event = Event.find(params[:event_id])
     @event.populate_event
     redirect_to event_path(@event)
   end

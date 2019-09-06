@@ -169,7 +169,7 @@
               <%# total_price = pref.nb_of_participants * pref.activity.unit_price %>
               <%# total += total_price%>
             <%# end %>
-            <% if @event.event_activities == [] %>
+            <% if @event.event_activities.empty? %>
               <%= link_to "Payer la totalité", payment_event_path(@event), class: "button-short disabled" %>
             <% else %>
               <%= link_to "Payer la totalité", payment_event_path(@event), class: "button-short" %>
@@ -225,9 +225,11 @@
             <!-- LOGEMENT (fin) -->
             <!-- ACTIVITÉS (début) -->
             <div class="db-progression-detail">
-              <%# selected = [] %>
+
+              <%# favorite = [] %>
               <%# @event.event_activities.map do |activity| %>
-                <%# selected << activity.selected %>
+                <%# favorite << activity.favorite %>
+
               <%# end %>
               <% if @event.event_activities != [] %>
                 <i class="fas fa-circle in-progress"></i>
@@ -278,33 +280,34 @@
           <% else %>
             <div class="chart-labels">
               <div class="db-costs-chart">
-                <canvas id="doughnut-chart" width="250" height="150"></canvas>
+                <canvas id="doughnut-chart" width="280" height="180"></canvas>
                 <div class="budget-tot-center">
-                  <p>Budget total</p>
-                  <h2><%= @budget_tot %>€</h2>
+                  <p><strong id="b-tot">Budget restant</strong></p>
+                  <div class="t-div"><h2 id="budget-tota"> <%= @budget_remaining %>€</h2></div>
                 </div>
               </div>
               <div class="labels">
-                <div class="label-color">
+                <!-- <div class="label-color">
                   <span id="label-budget"></span>
                   <i class="fas fa-circle" id="budget-circle"></i>
-                  <h4>Budget restant: <%= @budget_remaining %>€</h4>
-                </div>
-                <br>
+                  <p>Budget restant: <strong><%= @budget_remaining %>€</strong></p>
+                </div> -->
+<!--                 <br> -->
                 <div class="label-color">
                   <span id="label-activity"></span>
                   <i class="fas fa-circle" id="budget-activity-circle"></i>
-                  <p>Activités: <%= @budget_activities %>€</p>
+                  <p>Activités: <strong><%= @budget_activities %>€</strong></p>
+
                 </div>
                 <div class="label-color">
                   <span id="label-logement"></span>
-                  <i class="fas fa-circle"></i>
-                  <p>Logement: 0€</p>
+                  <i class="fas fa-circle" id="budget-loge"></i>
+                  <p>Logement: <strong>0€</strong></p>
                 </div>
                 <div class="label-color">
                   <span id="label-transport"></span>
-                  <i class="fas fa-circle"></i>
-                  <p>Transport: 0€</p>
+                  <i class="fas fa-circle" id="budget-transport"></i>
+                  <p>Transport: <strong>0€</strong></p>
                 </div>
               </div>
             </div>
@@ -314,7 +317,7 @@
 
         <div id="settings" class="dashboard-card">
           <div class="dark-back">
-            <h4>Settings</h4>
+            <h4>Paramètres</h4>
           </div>
           <div id="settings-details">
             <div class="settings-detail">
@@ -365,7 +368,7 @@
                 <div class="activity-content">
                   <!-- pour ne pas casser la logique de l'api (user optional true) on filtre les userevent qui n'ont pas d'id -->
                   <% if userevent.user_id != nil && userevent.user_id != current_user.id %>
-                    <%= userevent.user.first_name %>
+                   <strong id="little-margin"><%= userevent.user.first_name %></strong>
                   <% end %>
                   <% if userevent.action1 && userevent.user_id != current_user.id %>
                     <p>a rejoint le projet</p>
@@ -374,7 +377,7 @@
                     <p>a répondu au sondage</p>
                   <% end %>
                   <% if userevent.user_id != current_user.id %>
-                    <p><%= userevent.time_ago %></p>
+                    <p id="very-light"><%= userevent.time_ago %></p>
                   <% end %>
                 </div>
               </div>

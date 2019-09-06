@@ -2,6 +2,7 @@ class ActivitiesController < ApplicationController
 
   def index
     @event = Event.find(params[:event_id])
+    @survey = Survey.find_by(event_id: @event.id)
     @activities = policy_scope(Activity)
 
     if @event.accomodation_address?
