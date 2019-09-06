@@ -185,9 +185,12 @@
                     <% answer << guest.action2 %>
                   <% end %>
                 <% end %>
+
                 <% if @survey.suggestions == [] && @event.user_events.count == 1 %>
                   <i class="fas fa-circle not-started"></i>
-                <% elsif answer.uniq.count == 1 && answer.uniq.first == true %>
+                <!-- ATTENTION CONDITION CI-DESSOUS A SUPPRIMER PAR LA SUITE (SEED) -->
+                <% elsif @event.destination != nil %>
+                <%# elsif answer.uniq.count == 1 && answer.uniq.first == true %>
                   <i class="fas fa-circle done"></i>
                 <% else %>
                   <i class="fas fa-circle in-progress"></i>
@@ -205,7 +208,9 @@
                 <% end %>
                 <% if join.uniq.count == 1 && join.uniq.first == nil %>
                   <i class="fas fa-circle done"></i>
-                <% elsif join.uniq.count == 1 && join.uniq.first == true %>
+                <!-- ATTENTION CONDITION CI-DESSOUS A SUPPRIMER PAR LA SUITE (SEED) -->
+                <% elsif @event.destination != nil %>
+                <%# elsif join.uniq.count == 1 && join.uniq.first == true %>
                   <i class="fas fa-circle done"></i>
                 <% else %>
                   <i class="fas fa-circle in-progress"></i>
