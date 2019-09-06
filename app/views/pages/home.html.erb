@@ -1,29 +1,38 @@
-
-<div class="background-home">
+<!-- <div class="background-home"> -->
   <%= render '/components/top-navbar' %>
 
   <div class="large-banner">
+    <div class="container-banner">
       <div class="headline">
-        <h1>Organiser un événement réussi n'a jamais été aussi</h1>
-        <h1 id="headline-title"><span id="banner-typed-text"></span></h1>
+        <h1>Organiser un événement réussi n'a jamais été</h1>
+        <h1 id="headline-title">aussi <span id="banner-typed-text"></span></h1>
+        <br>
+        <br>
+        <br>
+        <!-- <br> -->
         <%= link_to "Créer mon événement", new_event_path, class: "button" %>
         <!-- <div class="banner-photos">
         </div> -->
       </div>
       <div class="vide">
       </div>
+    </div>
   </div>
 
   <div class="explanation">
     <div class="container">
-      <h2>Gérez toutes les étapes clés de l'organisation d'un événement en un seul et même endroit</h2>
+      <h2><span id="banner-typed-text">Gérez</span> toutes les étapes clés de l'organisation d'un événement en un seul et même endroit</h2>
       <div class="rounds">
       </div>
     </div>
   </div>
+  <div class="cta-reminder">
+    <%= link_to "Créer mon événement", new_event_path, class: "button" %>
+  </div>
   <!-- BOUTON CACHÉ DE DÉCONNEXION -->
+
   <%= link_to 'Log out', destroy_user_session_path, method: :delete, style: 'color: white' %>
-</div>
+<!-- </div> -->
 
 
 
