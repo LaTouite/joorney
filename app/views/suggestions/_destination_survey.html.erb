@@ -1,6 +1,20 @@
 <%if suggestion.topic == "Destination" %>
   <div class="card-trip">
-    <img src="https://source.unsplash.com/400x225/?city,<%= Geocoder.search(suggestion.value).first.city %>" />
+
+    <% if Geocoder.search(suggestion.value).first.city == "Marseille" %>
+      <%= image_tag "Marseille.jpg", width: 200, height: 112, crop: :thumb, 'aria-haspopup': true, 'aria-expanded': false %>
+      <!-- <img src="Marseille.jpg" alt='Photo de la Bonne Mère à Marseille' width='200' height="112" /> -->
+    <% elsif Geocoder.search(suggestion.value).first.city == "Nice" %>
+      <%= image_tag "Nice.jpg", width: 200, height: 112, crop: :thumb, 'aria-haspopup': true, 'aria-expanded': false %>
+      <!-- <img src="Nice.jpg" alt='Photo de la Promenade des Anglais à Nice' /> -->
+    <% elsif Geocoder.search(suggestion.value).first.city == "Montpellier" %>
+      <%= image_tag "Montpellier.jpg", width: 200, height: 112, crop: :thumb, 'aria-haspopup': true, 'aria-expanded': false %>
+      <!-- <img src="Montpellier.jpg" alt='Photo de Montpellier' width='200' height="112" /> -->
+    <% else %>
+      <%#= image_path "https://source.unsplash.com/200x112/?city,Geocoder.search(suggestion.value).first.city", width: 200, height: 112, crop: :thumb, "aria-haspopup": true, "aria-expanded": false %>
+      <img src="https://source.unsplash.com/200x112/?city,<%= Geocoder.search(suggestion.value).first.city %>"  width='200' height="112" />
+    <% end %>
+
     <div class="card-trip-infos">
       <p class='places-name'><%= Geocoder.search(suggestion.value).first.city %>, <%= Geocoder.search(suggestion.value).first.country %></p>
       <i class="far fa-thumbs-up thumb"></i>
