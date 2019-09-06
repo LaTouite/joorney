@@ -74,6 +74,10 @@ if (document.querySelector('.button-payment')) {
 });
 }
 
+import { initPicturePreview } from '../components/picture_preview';
+if (document.querySelector("#pic-uploaded")) {
+  initPicturePreview();
+}
 
 const initToggleDate = () => {
   const toggle_input_date = document.querySelector("#checkbox-toggle-survey-date");

@@ -49,18 +49,18 @@
         </div>
         <div class="col-4">
 <!--           <div class="add-picture"> -->
-            <div class="back-photo">
+            <div class="back-photo" id="pic-uploaded">
 
             </div>
             <!-- <img src='https://images.unsplash.com/photo-1532498551838-b7a1cfac622e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2700&q=80'> -->
             <div id="add-pic-btn" >
-              <label class="button-secondary" id="pic-btn">
-              Ajouter une photo
-              <span style="display:none;">
-                <%= f.input :photo, :label_html => { :class => "d-none" } %>
-                <%= f.input :photo_cache, as: :hidden %>
-              </span>
-              </label>
+                <label class="button-secondary">
+                Ajouter une photo
+                <span style="display:none;">
+                  <%= f.input :photo, :label_html => { :class => "d-none" } %>
+                  <%= f.input :photo_cache, as: :hidden %>
+                </span>
+                </label>
             </div>
 <!--           </div> -->
         </div>
